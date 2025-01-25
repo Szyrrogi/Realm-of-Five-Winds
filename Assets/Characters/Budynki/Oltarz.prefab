@@ -178,7 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 42
   Name: "O\u0142tarz"
-  Cost: 8
+  Cost: 6
   Star: 2
   Initiative: 15
   MaxHealth: 30

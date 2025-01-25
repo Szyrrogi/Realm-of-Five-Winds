@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Pole : MonoBehaviour
 {
-    public GameObject line;
+    public Linia line;
     public GameObject unit;
     public GameObject potencialUnit;
 
@@ -20,7 +20,7 @@ public class Pole : MonoBehaviour
         mainCamera = Camera.main;
         if(unit != null)
         {
-            unit.GetComponent<DragObject>().pole = gameObject;
+            unit.GetComponent<DragObject>().pole = this;
             Vector3 newPosition = transform.position;
 
             newPosition.z -= 2f;
@@ -42,7 +42,7 @@ public class Pole : MonoBehaviour
         (!onlyBuilding || DragObject.moveObject.GetComponent<Building>()))
         {
             potencialUnit = DragObject.moveObject;
-            potencialUnit.GetComponent<DragObject>().potencialPole = this.gameObject;
+            potencialUnit.GetComponent<DragObject>().potencialPole = this;
 
         }
     }

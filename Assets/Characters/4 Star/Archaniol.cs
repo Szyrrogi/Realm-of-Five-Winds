@@ -22,7 +22,7 @@ public class Archaniol : Heros
             if(FightManager.Tomb[tombCount - 1].y == (Enemy ? 1 : 0))
             {
                 Pole newPole = FindPole();
-                if(newPole != null && newPole !=  GetComponent<DragObject>().pole.GetComponent<Pole>())
+                if(newPole != null && newPole !=  GetComponent<DragObject>().pole)
                 {
                     healCount--;
                     GameObject newUnit = Instantiate(EventSystem.eventSystem.GetComponent<CharacterManager>().characters[(int)FightManager.Tomb[tombCount - 1].x], new Vector3(0,0,0), Quaternion.identity);
@@ -39,8 +39,8 @@ public class Archaniol : Heros
 
     public Pole FindPole()
     {
-        int nr = GetComponent<DragObject>().pole.GetComponent<Pole>().nr;
-        int rzad = GetComponent<DragObject>().pole.GetComponent<Pole>().line.GetComponent<Linia>().nr;
+        int nr = GetComponent<DragObject>().pole.nr;
+        int rzad = GetComponent<DragObject>().pole.line.nr;
         FightManager fightManager = EventSystem.eventSystem.GetComponent<FightManager>();
         Debug.Log(rzad + " - " + nr);
         Pole pole = fightManager.GetPole(rzad , nr);

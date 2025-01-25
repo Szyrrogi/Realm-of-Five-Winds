@@ -15,7 +15,7 @@ public class ShopVisitor : MonoBehaviour
     {
         if(!GetComponent<Unit>().Enemy)
         {
-            if(GetComponent<DragObject>().pole.GetComponent<Pole>().line != null)
+            if(GetComponent<DragObject>().pole.line != null)
             {
                 if(!EventSystem.eventSystem.GetComponent<ShopManager>().shopVisitors.Contains(this))
                     EventSystem.eventSystem.GetComponent<ShopManager>().shopVisitors.Add(this);

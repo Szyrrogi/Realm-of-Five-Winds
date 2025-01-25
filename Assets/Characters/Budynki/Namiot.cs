@@ -6,7 +6,7 @@ public class Namiot : Building
 {
     public override IEnumerator Action()
     {
-        foreach(Pole pole in GetComponent<DragObject>().pole.GetComponent<Pole>().line.GetComponent<Linia>().pola)
+        foreach(Pole pole in GetComponent<DragObject>().pole.line.pola)
         {
             if(pole.unit != null && pole.unit.GetComponent<Unit>().Enemy == Enemy)
             {
@@ -14,7 +14,7 @@ public class Namiot : Building
                 yield return new WaitForSeconds(0.5f);
             }
         }
-        foreach(Pole pole in GetComponent<DragObject>().pole.GetComponent<Pole>().line.GetComponent<Linia>().LineNext.pola)
+        foreach(Pole pole in GetComponent<DragObject>().pole.line.LineNext.pola)
         {
             if(pole.unit != null && pole.unit.GetComponent<Unit>().Enemy == Enemy)
             {

@@ -41,7 +41,7 @@ public class ShopObject : MonoBehaviour
         pos.z -= 2f;
         GameObject newUnit = Instantiate(unit, pos, Quaternion.identity);
         poleDocelowe.unit = newUnit; // Przypisanie jednostki do pola
-        newUnit.GetComponent<DragObject>().pole = poleDocelowe.gameObject;
+        newUnit.GetComponent<DragObject>().pole = poleDocelowe;
 
         unit = nullObject;
         image.sprite = nullObject.GetComponent<SpriteRenderer>().sprite;

@@ -6,8 +6,8 @@ public class DragObject : MonoBehaviour
     private Vector3 offset;
     private Camera mainCamera;
     public static GameObject moveObject;
-    public GameObject pole;
-    public GameObject potencialPole;
+    public Pole pole;
+    public Pole potencialPole;
 
     void Start()
     {
@@ -41,26 +41,26 @@ public class DragObject : MonoBehaviour
             float distance = distanceX + distanceY;
             if(distance < 0.8f)
             {
-                if(potencialPole.GetComponent<Pole>().unit != null && pole != null)
+                if(potencialPole.unit != null && pole != null)
                 {
-                    if(pole.GetComponent<Pole>().unit.GetComponent<Unit>().Name == potencialPole.GetComponent<Pole>().unit.GetComponent<Unit>().Name 
-                    && potencialPole.GetComponent<Pole>().unit.GetComponent<Unit>() && pole != potencialPole && !ShopManager.isLoockUpgrade)   //ŁĄczenie jednostek!!!
+                    if(pole.unit.GetComponent<Unit>().Name == potencialPole.unit.GetComponent<Unit>().Name 
+                    && potencialPole.unit.GetComponent<Unit>() && pole != potencialPole && !ShopManager.isLoockUpgrade)   //ŁĄczenie jednostek!!!
                     {
-                        if(pole.GetComponent<Pole>().unit.GetComponent<Unit>().Health > potencialPole.GetComponent<Pole>().unit.GetComponent<Unit>().Health)
+                        if(pole.unit.GetComponent<Unit>().Health > potencialPole.unit.GetComponent<Unit>().Health)
                         {
-                            bool helper = pole.GetComponent<Pole>().unit.GetComponent<Heros>().Evolution;
-                            pole.GetComponent<Pole>().unit.GetComponent<Heros>().UpgradeHeros(potencialPole.GetComponent<Pole>().unit.GetComponent<Unit>());
-                            if(helper == pole.GetComponent<Pole>().unit.GetComponent<Heros>().Evolution)
+                            bool helper = pole.unit.GetComponent<Heros>().Evolution;
+                            pole.unit.GetComponent<Heros>().UpgradeHeros(potencialPole.unit.GetComponent<Unit>());
+                            if(helper == pole.unit.GetComponent<Heros>().Evolution)
                             {
-                                pole.GetComponent<Pole>().unit = null;
-                                pole.GetComponent<Pole>().potencialUnit = null;
+                                pole.unit = null;
+                                pole.potencialUnit = null;
                             }
                             Debug.Log("potencialPole.name");
                             //potencialPole.GetComponent<Pole>().unit = pole.GetComponent<Pole>().unit.gameObject;
                         }
                         else
                         {
-                            potencialPole.GetComponent<Pole>().unit.GetComponent<Heros>().UpgradeHeros(pole.GetComponent<Pole>().unit.GetComponent<Unit>());
+                            potencialPole.unit.GetComponent<Heros>().UpgradeHeros(pole.unit.GetComponent<Unit>());
                             return;
                             // Destroy(gameObject);
                             // Debug.Log(pole.name + " " + gameObject.name);
@@ -70,20 +70,20 @@ public class DragObject : MonoBehaviour
                     else
                     {
                     //GameObject temp = potencialPole.GetComponent<Pole>().unit;
-                        pole.GetComponent<Pole>().unit = potencialPole.GetComponent<Pole>().unit;
-                        pole.GetComponent<Pole>().unit.GetComponent<DragObject>().pole = pole;
+                        pole.unit = potencialPole.unit;
+                        pole.unit.GetComponent<DragObject>().pole = pole;
                         Vector3 noway = pole.transform.position;
                         noway.z -= 2f;
-                        pole.GetComponent<Pole>().unit.transform.position = noway;  
+                        pole.unit.transform.position = noway;  
                     }   
                 }
                 else
                 if(pole != null)
                 {
-                    pole.GetComponent<Pole>().unit = null;
+                    pole.unit = null;
                 }
                 pole = potencialPole;
-                pole.GetComponent<Pole>().unit = this.gameObject;
+                pole.unit = this.gameObject;
             }
         }
         if(pole != null)

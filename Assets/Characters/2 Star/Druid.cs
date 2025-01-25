@@ -11,8 +11,8 @@ public class Druid : Heros
         Heros newUnit = newUnitObject.GetComponent<Heros>();
         newUnit.Enemy = Enemy;
 
-        GetComponent<DragObject>().pole.GetComponent<Pole>().unit = newUnitObject;
-        GetComponent<DragObject>().pole.GetComponent<Pole>().Start();
+        GetComponent<DragObject>().pole.unit = newUnitObject;
+        GetComponent<DragObject>().pole.Start();
         Destroy(gameObject);
         yield return null;
     }

@@ -177,9 +177,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd58259e5add7c41bddd5d954785fda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 40
   Name: "Namiot Rekr\xF3t\xF3w "
-  Cost: 8
+  Cost: 6
   Star: 2
   Initiative: 20
   MaxHealth: 30
@@ -209,6 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f04f45a69a1be43a87e0c826dc87c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shop: {fileID: 0}
 --- !u!114 &6985540666553226679
 MonoBehaviour:
   m_ObjectHideFlags: 0

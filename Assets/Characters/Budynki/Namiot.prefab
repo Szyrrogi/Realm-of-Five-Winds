@@ -176,9 +176,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f5d1bf0ae8ff6e418a67e4f610d64e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 41
   Name: Namiot Leczniczy
-  Cost: 8
+  Cost: 6
   Star: 2
   Initiative: 35
   MaxHealth: 30
@@ -192,7 +192,9 @@ MonoBehaviour:
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
+  RealCost: 0
   PopUp: {fileID: 0}
+  BoskaTarcza: 0
   HealthText: {fileID: 3501279418940951141}
 --- !u!114 &6985540666553226679
 MonoBehaviour:

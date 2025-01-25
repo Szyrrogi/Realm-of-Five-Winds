@@ -6,7 +6,7 @@ public class Jaskolka : Heros
 {
     public override IEnumerator OnBattleStart()
     {
-        foreach(Pole pole in GetComponent<DragObject>().pole.GetComponent<Pole>().line.GetComponent<Linia>().pola)
+        foreach(Pole pole in GetComponent<DragObject>().pole.line.pola)
         {
             if(pole.unit != null)
             {
@@ -25,8 +25,8 @@ public class Jaskolka : Heros
 
         newUnit.Evolution = true;
 
-        GetComponent<DragObject>().pole.GetComponent<Pole>().unit = newUnitObject;
-        GetComponent<DragObject>().pole.GetComponent<Pole>().Start();
+        GetComponent<DragObject>().pole.unit = newUnitObject;
+        GetComponent<DragObject>().pole.Start();
         Destroy(gameObject);
         
     }

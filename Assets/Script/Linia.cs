@@ -33,7 +33,7 @@ public class Linia : MonoBehaviour
         for (int i = 0; i < pola.Count; i++)
         {
             pola[i].GetComponent<Pole>().nr = i;
-            pola[i].GetComponent<Pole>().line = this.gameObject;
+            pola[i].GetComponent<Pole>().line = this;
             pola[i].GetComponent<Pole>().Start();
         }
     }

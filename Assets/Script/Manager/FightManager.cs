@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.SceneManagement;
+//using System.Diagnostics;
+using UnityEngine.UI;
 
 public class FightManager : MonoBehaviour
 {
@@ -16,6 +18,7 @@ public class FightManager : MonoBehaviour
     public static List<Vector2> Tomb = new List<Vector2>();
 
     public GameObject[] EndScreen;
+    public static int Turn;
 
     public void ActiveBattle()
     {
@@ -35,7 +38,7 @@ public class FightManager : MonoBehaviour
     {
         if(nr == 3)
         {
-            yield return ShowEndScreen(2);
+            yield return new WaitForSeconds(2);
         }
         EndScreen[nr].SetActive(true);
         yield return new WaitForSeconds(2);
@@ -62,12 +65,15 @@ public class FightManager : MonoBehaviour
                 yield return unit.StartCoroutine(unit.OnBattleStart());
                 unit.gameObject.transform.localScale -= new Vector3(0.02f, 0.02f, 0.02f);
             }
-
+        Turn = 0;
         while (!czyWygrana(new int[] { 2, 5 }) || 
        !czyWygrana(new int[] { 0, 3 }) || 
        !czyWygrana(new int[] { 1, 4 }))
         {
-            //Debug.Log("WALKA");
+            Turn++;
+            bool zmienyKoloru = !czyWygrana(new int[] { 2, 5 });
+            zmienyKoloru = !czyWygrana(new int[] { 0, 3 }); 
+            zmienyKoloru = !czyWygrana(new int[] { 1, 4 });
             foreach (var unit in units)
             {
                 if(unit != null)
@@ -139,7 +145,7 @@ public class FightManager : MonoBehaviour
         if (graczWin > enemyWin)
         {
             StartCoroutine(ShowEndScreen(0));
-            Debug.Log("WYGRANKO");
+            //Debug.Log("WYGRANKO");
             StatsManager.win++;
             if(StatsManager.win == 10)
             {
@@ -154,12 +160,12 @@ public class FightManager : MonoBehaviour
             {
                 SceneManager.LoadScene(1);
             }
-            Debug.Log("PRZEGRANA");
+           // Debug.Log("PRZEGRANA");
         }
         else
         {
             StartCoroutine(ShowEndScreen(2));
-            Debug.Log("REMIS");
+            //Debug.Log("REMIS");
         }
     }
 
@@ -167,7 +173,6 @@ public class FightManager : MonoBehaviour
     bool czyWygrana(int[] indeksyLinii)
     {
         int wygrywa = 0;
-        
         foreach (int indeks in indeksyLinii)
         {
             foreach (Pole pole in linie[indeks].pola)
@@ -187,6 +192,35 @@ public class FightManager : MonoBehaviour
                 }
             }
         }
+        switch(wygrywa)
+        {
+            case 0: 
+            foreach (int indeks in indeksyLinii)
+            {
+                linie[indeks].gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+            }
+            break;
+            case 1: 
+            foreach (int indeks in indeksyLinii)
+            {
+                linie[indeks].gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+            }
+            break;
+            case 2: 
+            foreach (int indeks in indeksyLinii)
+            {
+                linie[indeks].gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+            }
+            break;
+        }
+        foreach (int indeks in indeksyLinii)
+            {
+                foreach(Pole pole in linie[indeks].pola)
+                {
+                    if(pole.unit != null)
+                        units.Remove(pole.unit.GetComponent<Unit>());
+                }
+            }
         return true;
     }
 
@@ -228,7 +262,8 @@ public class FightManager : MonoBehaviour
 
             yield return null; // Poczekaj do następnej klatki
         }
-
+        foreach(Linia linia in linie)
+            linia.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
         // Ustawienie końcowych wartości
         mainCamera.transform.position = endPosition;
         mainCamera.orthographicSize = endSize;

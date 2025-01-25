@@ -69,7 +69,7 @@ public class Heros : Unit
         Cost += (int)(newUnit.Cost - 1);
         Initiative += (int)(newUnit.Initiative * 0.1f);
         UpgradeLevel += newUnit.UpgradeLevel;
-        GetComponent<DragObject>().pole.GetComponent<Pole>().unit = gameObject;
+        GetComponent<DragObject>().pole.unit = gameObject;
 
         Destroy(newUnit.gameObject);
 
@@ -104,8 +104,8 @@ public class Heros : Unit
         newUnit.UpgradeNeed = 0;
         newUnit.Evolution = true;
 
-        GetComponent<DragObject>().pole.GetComponent<Pole>().unit = newUnitObject;
-        GetComponent<DragObject>().pole.GetComponent<Pole>().Start();
+        GetComponent<DragObject>().pole.unit = newUnitObject;
+        GetComponent<DragObject>().pole.Start();
         Destroy(gameObject);
         
     }
@@ -132,7 +132,7 @@ public class Heros : Unit
 
     public GameObject findPole()
     {
-        return findPole(GetComponent<DragObject>().pole.GetComponent<Pole>());
+        return findPole(GetComponent<DragObject>().pole);
     }
 
     public GameObject findPole(Pole pole)
@@ -185,8 +185,8 @@ public class Heros : Unit
             }
 
             transform.position = targetPosition; // Upewniamy się, że obiekt jest na końcowej pozycji
-            GetComponent<DragObject>().pole.GetComponent<Pole>().unit = null;
-            GetComponent<DragObject>().pole = pole;
+            GetComponent<DragObject>().pole.unit = null;
+            GetComponent<DragObject>().pole = pole.GetComponent<Pole>();
             pole.GetComponent<Pole>().unit = gameObject;
         }
     }

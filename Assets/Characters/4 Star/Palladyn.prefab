@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2355a6b0e87f81c45b4864b70deede8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 36
   Name: Palladyn
   Cost: 9
   Star: 4
@@ -125,7 +125,7 @@ MonoBehaviour:
   EvolveHeroes: {fileID: 1819705648667262722, guid: db47ea833111872438a0af7f3d5c9abb, type: 3}
   Evolution: 0
   attackAP: 0
-  turyNiesmiertlenosci: 2
+  turyNiesmiertlenosci: 1
 --- !u!114 &6699983802921889276
 MonoBehaviour:
   m_ObjectHideFlags: 0

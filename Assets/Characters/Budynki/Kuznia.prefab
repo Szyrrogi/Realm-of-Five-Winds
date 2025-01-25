@@ -179,7 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 38
   Name: Koszary
-  Cost: 6
+  Cost: 5
   Star: 1
   Initiative: 20
   MaxHealth: 40

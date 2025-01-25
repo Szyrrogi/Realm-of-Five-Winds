@@ -6,7 +6,7 @@ public class Gryf : Heros
 {
     public override IEnumerator OnBattleStart()
     {
-        foreach(Pole pole in GetComponent<DragObject>().pole.GetComponent<Pole>().line.GetComponent<Linia>().pola)
+        foreach(Pole pole in GetComponent<DragObject>().pole.line.pola)
         {
             if(pole.unit != null)
             {

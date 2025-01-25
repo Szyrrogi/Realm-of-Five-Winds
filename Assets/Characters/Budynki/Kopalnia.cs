@@ -9,7 +9,7 @@ public class Kopalnia : ShopVisitor
     public GameObject zloto;
     void Update()
     {
-        if(GetComponent<DragObject>().pole.GetComponent<Pole>().line != null)
+        if(GetComponent<DragObject>().pole.line != null)
         {
             if(!EventSystem.eventSystem.GetComponent<ShopManager>().shopVisitors.Contains(this))
                 ShowZloto = true;
