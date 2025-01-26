@@ -11,6 +11,7 @@ public class CharacterManager : MonoBehaviour
         int i = 0;
         foreach(GameObject character in characters)
         {
+            Debug.Log(character.name);
             character.GetComponent<Unit>().Id = i;
             i++;
         }

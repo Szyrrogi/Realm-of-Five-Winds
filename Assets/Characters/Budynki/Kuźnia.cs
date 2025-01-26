@@ -19,8 +19,10 @@ public class Kuźnia : Building
                         pole.unit.GetComponent<Unit>().Health += 20;
                         pole.unit.GetComponent<Unit>().MaxHealth += 20;
                         pole.unit.GetComponent<Unit>().Attack += 20;
-                        GameObject pop = Instantiate(PopUp, unit.gameObject.transform.position, Quaternion.identity);
-                        pop.GetComponent<PopUp>().SetText("+20/20", Color.green);
+
+
+                        
+                        pole.unit.GetComponent<Unit>().ShowPopUp("+20/20", Color.green);
                         yield return new WaitForSeconds(0.7f);
                     }
                 } 

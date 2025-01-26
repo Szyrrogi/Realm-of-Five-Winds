@@ -186,6 +186,12 @@ public class Unit : MonoBehaviour
         return damage;
     }
 
+    public void ShowPopUp(string text, Color color)
+    {
+        GameObject pop = Instantiate(PopUp, gameObject.transform.position, Quaternion.identity);
+        pop.GetComponent<PopUp>().SetText(text, color);
+    }
+
     public virtual IEnumerator OnBattleStart()
     {
         yield return null;
