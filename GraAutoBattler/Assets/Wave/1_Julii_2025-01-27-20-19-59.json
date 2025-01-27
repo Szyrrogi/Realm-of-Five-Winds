@@ -1,0 +1,58 @@
+{
+    "playerName": "Julii",
+    "number": 1,
+    "levelUp": 1,
+    "units": [
+        {
+            "Line": 0,
+            "Pole": 0,
+            "Id": 14,
+            "Name": "Wilk",
+            "Cost": 2,
+            "Initiative": 60,
+            "MaxHealth": 30,
+            "Health": 30,
+            "Attack": 15,
+            "Defense": 5,
+            "Range": 0,
+            "AP": 0,
+            "MagicResist": 0,
+            "Description": "Wilk otrzymuje 5 ataku za każdedo przyjaznego wilka na planszy",
+            "UpgradeLevel": 1
+        },
+        {
+            "Line": 0,
+            "Pole": 1,
+            "Id": 5,
+            "Name": "Łucznik",
+            "Cost": 3,
+            "Initiative": 30,
+            "MaxHealth": 20,
+            "Health": 20,
+            "Attack": 20,
+            "Defense": 5,
+            "Range": 1,
+            "AP": 0,
+            "MagicResist": 0,
+            "Description": "",
+            "UpgradeLevel": 1
+        },
+        {
+            "Line": 0,
+            "Pole": 2,
+            "Id": 44,
+            "Name": "Strzelnica",
+            "Cost": 5,
+            "Initiative": 20,
+            "MaxHealth": 40,
+            "Health": 40,
+            "Attack": 0,
+            "Defense": 0,
+            "Range": 0,
+            "AP": 0,
+            "MagicResist": 0,
+            "Description": "Zwiększa atak jednostką dystanoswym o 30",
+            "UpgradeLevel": 1
+        }
+    ]
+}
