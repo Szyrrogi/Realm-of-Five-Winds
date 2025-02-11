@@ -1,0 +1,24 @@
+{
+    "playerName": "Julii",
+    "number": 1,
+    "levelUp": 1,
+    "units": [
+        {
+            "Line": 1,
+            "Pole": 0,
+            "Id": 18,
+            "Name": "Druid",
+            "Cost": 5,
+            "Initiative": 55,
+            "MaxHealth": 80,
+            "Health": 80,
+            "Attack": 30,
+            "Defense": 5,
+            "Range": 1,
+            "AP": 30,
+            "MagicResist": 10,
+            "Description": "Po śmierci druid przemienia się w losowe zwierze",
+            "UpgradeLevel": 1
+        }
+    ]
+}

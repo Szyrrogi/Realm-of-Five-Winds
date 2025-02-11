@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 0
   Name: "Przywolanie Nied\u017Awiedzia"
-  Cost: 5
+  Cost: 4
   Star: 4
   Initiative: 0
   MaxHealth: 0
@@ -120,6 +120,8 @@ MonoBehaviour:
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
+  unit: {fileID: 0}
+  OffensifSpell: 0
   spellType: 0
   suumonObject: {fileID: 1819705648667262722, guid: a71e642b909e4904db3dcb9f093b9a3d, type: 3}
   suumonEvolutionObject: {fileID: 1819705648667262722, guid: a510b045dfeb5bf4d9f67837c9ee091f, type: 3}

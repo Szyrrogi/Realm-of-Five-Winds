@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using System.IO;
+using System.Data.SqlClient;
+using System.Linq; 
 
 public class SaveManager : MonoBehaviour
 {
@@ -26,6 +28,7 @@ public class SaveManager : MonoBehaviour
         public int Id;
         public string Name;
         public int Cost;
+        public int RealCost;
 
         public int Initiative;
         public int MaxHealth;
@@ -38,6 +41,8 @@ public class SaveManager : MonoBehaviour
         public string Description;
 
         public int UpgradeLevel;
+
+        public int SpellId;
     }
 
     public static void Save(string playerName, int number, int levelUp)
@@ -76,6 +81,7 @@ public class SaveManager : MonoBehaviour
                             Id = unit.Id,
                             Name = unit.Name,
                             Cost = unit.Cost,
+                            RealCost = unit.RealCost,
                             Initiative = unit.Initiative,
                             MaxHealth = unit.MaxHealth,
                             Health = unit.Health,
@@ -88,13 +94,19 @@ public class SaveManager : MonoBehaviour
                             UpgradeLevel = unit.UpgradeLevel
                         };
 
+                        Wizard wizard = unit.gameObject.GetComponent<Wizard>();
+                        if (wizard != null)
+                        {
+                            unitData.SpellId = wizard.spell.Id;
+                        }
+
                         // Dodajemy jednostkę do listy w SaveData
                         data.units.Add(unitData);
                     }
                 }
             }
         }
-        Debug.Log("TO: " +  Application.dataPath);
+        //Debug.Log("TO: " +  Application.dataPath);
         
         string json = JsonUtility.ToJson(data, true);
         File.WriteAllText(customPath, json);
@@ -106,24 +118,24 @@ public class SaveManager : MonoBehaviour
         // string secondPath = Path.Combine(Application.dataPath, "Wave", name + ".json");
         
 
-        try
-        {
-            string fileName = $"{StatsManager.Round}_Julii_{DateTime.Now:yyyy-MM-dd-HH-mm-ss}.json";
-           //string fileName = "Wave.json";
-            string filePath = Path.Combine(Application.dataPath, "NewWave", fileName); 
-            Directory.CreateDirectory(Path.GetDirectoryName(filePath)); 
+        // try
+        // {
+        //     string fileName = $"{StatsManager.Round}_Julii_{DateTime.Now:yyyy-MM-dd-HH-mm-ss}.json";
+        //    //string fileName = "Wave.json";
+        //     string filePath = Path.Combine(Application.dataPath, "NewWave", fileName); 
+        //     Directory.CreateDirectory(Path.GetDirectoryName(filePath)); 
 
-            File.WriteAllText(filePath, json);
-            Debug.Log($"Dane zapisane w: {filePath}");
-        }
-        catch (IOException ex)
-        {
-            Debug.LogError("Błąd zapisu pliku: " + ex.Message); 
-        }
-        catch (Exception ex)
-        {
-            Debug.LogError("Błąd podczas zapisu danych: " + ex.Message); 
-        }
+        //     File.WriteAllText(filePath, json);
+        //     Debug.Log($"Dane zapisane w: {filePath}");
+        // }
+        // catch (IOException ex)
+        // {
+        //     Debug.LogError("Błąd zapisu pliku: " + ex.Message); 
+        // }
+        // catch (Exception ex)
+        // {
+        //     Debug.LogError("Błąd podczas zapisu danych: " + ex.Message); 
+        // }
     }
 
     public void Clear()
@@ -154,6 +166,9 @@ public class SaveManager : MonoBehaviour
     public void LoadActive()
     {
         Clear();
+
+        
+
         SaveManager.SaveData loadedData = SaveManager.Load();
         if (loadedData != null)
         {
@@ -164,7 +179,24 @@ public class SaveManager : MonoBehaviour
     public void LoadActive(bool isEnemy)
     {
         Clear(isEnemy);
-        SaveManager.SaveData loadedData = SaveManager.Load(isEnemy);
+
+
+        //  List<FightManager.AutoBattlerGameViewModel> lista = FightManager.LoadFeaturedGamesFromDatabase();
+
+        // var filteredList = lista
+        //     .Where(game => game.Round == StatsManager.Round) 
+        //     .Where(game => game.Name != PlayerManager.Name) 
+        //     .Where(game => game.Version == PlayerManager.Version)
+        //     .ToList();
+
+
+        //     var randomGame = filteredList[UnityEngine.Random.Range(0, filteredList.Count)];
+
+        //     Debug.Log($"Wylosowana kompozycja (Comp): {randomGame.Comp}");
+
+        // SaveManager.SaveData loadedData = SaveManager.Load(isEnemy, randomGame.Comp);
+        StatsManager.life++;
+        SaveManager.SaveData loadedData = SaveManager.Load(isEnemy); // TESTY
         if (loadedData != null)
         {
             SaveManager.InstantiateUnits(loadedData, isEnemy);
@@ -207,7 +239,7 @@ public class SaveManager : MonoBehaviour
             {
                 // Losowanie jednego z pasujących plików
                 string selectedFile = matchingFiles[UnityEngine.Random.Range(0, matchingFiles.Count)];
-                Debug.Log($"Wylosowano plik: {selectedFile}");
+                //Debug.Log($"Wylosowano plik: {selectedFile}");
                 return selectedFile;
             }
             else
@@ -220,6 +252,30 @@ public class SaveManager : MonoBehaviour
             Debug.LogError($"Folder nie istnieje: {folderPath}");
         }
         return Application.dataPath + "/Wave/Wave1.json";
+    }
+
+    public static SaveData Load(bool isEnemy, string jsonPath)
+    {
+
+            string json = jsonPath;
+
+            SaveData data = JsonUtility.FromJson<SaveData>(json);
+
+            if(isEnemy)
+            {
+                EventSystem.eventSystem.GetComponent<EnemyManager>().SetPlayer(data.playerName, data.number);
+            }
+
+            if(!isEnemy)
+                ShopManager.levelUp = data.levelUp;
+            for(int i = 0; i <= data.levelUp-1; i++)
+            {
+                for(int j = 0; j < 3; j++)
+                    EventSystem.eventSystem.GetComponent<FightManager>().linie[j + 3].Upgrade(i == 3 ? 1 : i);
+            }
+
+            return data;
+
     }
 
     public static SaveData Load(bool isEnemy)
@@ -300,6 +356,7 @@ public class SaveManager : MonoBehaviour
                 unitComponent.Id = unitData.Id;
                 unitComponent.Name = unitData.Name;
                 unitComponent.Cost = unitData.Cost;
+                unitComponent.RealCost = unitData.RealCost;
                 unitComponent.Initiative = unitData.Initiative;
                 unitComponent.Health = unitData.Health;
                 unitComponent.MaxHealth = unitData.MaxHealth;
@@ -314,6 +371,11 @@ public class SaveManager : MonoBehaviour
                 {
                     unitComponent.Enemy = true;
                     unitObject.GetComponent<SpriteRenderer>().flipX = !unitObject.GetComponent<SpriteRenderer>().flipX;
+                }
+                Wizard wizzard = unitObject.GetComponent<Wizard>();
+                if(wizzard != null)
+                {
+                    wizzard.AddSpell(unitData.SpellId);
                 }
             }
         }

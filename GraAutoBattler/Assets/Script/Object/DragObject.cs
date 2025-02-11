@@ -43,7 +43,8 @@ public class DragObject : MonoBehaviour
             float distanceY = Mathf.Sqrt(Mathf.Pow(potencialPole.transform.position.y - transform.position.y, 2));
             float distance = distanceX + distanceY;
 
-            if(distance < 0.8f && (!GetComponent<Spell>() || potencialPole.line == null || (GetComponent<Spell>() && potencialPole.unit != null && potencialPole.unit.GetComponent<Wizard>())))
+            if(distance < 0.8f && (!GetComponent<Spell>() || potencialPole.line == null || (GetComponent<Spell>() && potencialPole.unit != null 
+            && potencialPole.unit.GetComponent<Wizard>() && potencialPole.unit.GetComponent<Wizard>().spellCanLearn.Contains(GetComponent<Spell>().spellType))))
             {
                 if(potencialPole.unit != null && pole != null)
                 {
@@ -51,12 +52,17 @@ public class DragObject : MonoBehaviour
                     {
                         Debug.Log("NAUCZYL SIE");
                         potencialPole.unit.GetComponent<Wizard>().AddSpell(GetComponent<Spell>());
-                        Destroy(this.gameObject);
+                        pole.unit = null;
+                        pole = null;
+                        potencialPole = null;
+                        transform.position = new Vector3(90f,90f,90f);
+                        //Destroy(this.gameObject);
+                        return;
                     }
                     else
                     {
                         if(pole.unit.GetComponent<Unit>().Name == potencialPole.unit.GetComponent<Unit>().Name 
-                        && potencialPole.unit.GetComponent<Unit>() && pole != potencialPole && !ShopManager.isLoockUpgrade)   //ŁĄczenie jednostek!!!
+                        && potencialPole.unit.GetComponent<Unit>() && pole != potencialPole && !ShopManager.isLoockUpgrade && pole.unit.GetComponent<Heros>())   //ŁĄczenie jednostek!!!
                         {
                             if(pole.unit.GetComponent<Unit>().Health > potencialPole.unit.GetComponent<Unit>().Health)
                             {
@@ -70,7 +76,7 @@ public class DragObject : MonoBehaviour
                             }
                             else
                             {
-                                potencialPole.unit.GetComponent<Heros>().UpgradeHeros(pole.unit.GetComponent<Unit>());
+                                potencialPole.unit.GetComponent<Heros>().UpgradeHeros(pole.unit.GetComponent<Unit>());  //???
                                 return;
                             }
                         }
@@ -89,6 +95,7 @@ public class DragObject : MonoBehaviour
                 {
                     pole.unit = null;
                 }
+                
                 pole = potencialPole;
                 pole.unit = this.gameObject;
             }

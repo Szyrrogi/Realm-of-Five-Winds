@@ -27,11 +27,14 @@ public class Unit : MonoBehaviour
     public int UpgradeLevel;
     public int UpgradeNeed;
     public bool Enemy;
+    public Fraction.fractionType fraction;
     
     public int RealCost;
     [HideInInspector]
     public GameObject PopUp;
     public bool BoskaTarcza;
+
+    public bool attackAP;
 
     void Awake()
     {
@@ -39,7 +42,7 @@ public class Unit : MonoBehaviour
     }
     
 
-    void Start()
+    public virtual void Start()
     {
         PopUp = EventSystem.eventSystem.GetComponent<ObjectManager>().PopUp;
         if(UpgradeLevel == 0)
@@ -112,6 +115,21 @@ public class Unit : MonoBehaviour
         return damage;
     }
 
+    public virtual string DescriptionEdit()
+    {
+        return Description;
+    }
+
+    public virtual void AfterBuy()
+    {
+
+    }
+
+    public virtual void AfterBattle()
+    {
+        Debug.Log(Name + " fight");
+    }
+
     public virtual IEnumerator Heal(int heal)
     {
         if(heal + Health > MaxHealth)
@@ -124,31 +142,14 @@ public class Unit : MonoBehaviour
         yield return new WaitForSeconds(0.7f / FightManager.GameSpeed);
     }
 
-    public virtual IEnumerator TakeDamageMagic(Unit enemyUnit, int damageStart)
-    {
-        if(BoskaTarcza)
-        {
-            BoskaTarcza = false;
-            GameObject pop = Instantiate(PopUp, gameObject.transform.position, Quaternion.identity);
-            pop.GetComponent<PopUp>().SetText("0", new Color(0.5f, 0f, 1f));
-            yield return new WaitForSeconds(0.7f / FightManager.GameSpeed);
-        }
-        else
-        {
-            int damage = ReducedDamageMagic(damageStart);
-            Health -= damage;
-            GameObject pop = Instantiate(PopUp, gameObject.transform.position, Quaternion.identity);
-            pop.GetComponent<PopUp>().SetText(damage.ToString(), new Color(0.5f, 0f, 1f));
-            yield return new WaitForSeconds(0.7f / FightManager.GameSpeed);
-            if(Health <= 0)
-            {
-                StartCoroutine(Death());
-                yield break;
-            }
-        }
-    }
 
     public virtual IEnumerator TakeDamage(Unit enemyUnit, int damageStart)
+    {
+        TypeDamage.typeDamage damageType = TypeDamage.typeDamage.Phisical;
+        yield return StartCoroutine(TakeDamage(enemyUnit, damageStart, damageType));
+    }
+
+    public virtual IEnumerator TakeDamage(Unit enemyUnit, int damageStart, TypeDamage.typeDamage typeDamage)
     {
         if(BoskaTarcza)
         {
@@ -159,25 +160,90 @@ public class Unit : MonoBehaviour
         }
         else
         {
-            int damage = ReducedDamage(damageStart);
-            Health -= damage;
-            GameObject pop = Instantiate(PopUp, gameObject.transform.position, Quaternion.identity);
-            pop.GetComponent<PopUp>().SetText(damage.ToString(), Color.red);
-            yield return new WaitForSeconds(0.7f / FightManager.GameSpeed);
+            if(typeDamage == TypeDamage.typeDamage.Phisical)
+            {
+                int damage = ReducedDamage(damageStart);
+                Health -= damage;
+                GameObject pop = Instantiate(PopUp, gameObject.transform.position, Quaternion.identity);
+                pop.GetComponent<PopUp>().SetText(damage.ToString(), Color.red);
+                yield return new WaitForSeconds(0.7f / FightManager.GameSpeed);
+            }
+            if(typeDamage == TypeDamage.typeDamage.TrueDamage)
+            {
+                int damage = damageStart;
+                Health -= damage;
+                GameObject pop = Instantiate(PopUp, gameObject.transform.position, Quaternion.identity);
+                pop.GetComponent<PopUp>().SetText(damage.ToString(), Color.white);
+                yield return new WaitForSeconds(0.7f / FightManager.GameSpeed);
+            }
+            if(typeDamage == TypeDamage.typeDamage.Magic)
+            {
+                int damage = ReducedDamageMagic(damageStart);
+                Health -= damage;
+                GameObject pop = Instantiate(PopUp, gameObject.transform.position, Quaternion.identity);
+                pop.GetComponent<PopUp>().SetText(damage.ToString(), new Color(0.5f, 0f, 1f));
+                yield return new WaitForSeconds(0.7f / FightManager.GameSpeed);
+            }
             if(Health <= 0)
             {
                 StartCoroutine(Death());
                 yield break;
             }
         }
+        yield break;
     }
 
     public virtual IEnumerator Death()
     {
-        FightManager.Tomb.Add(new Vector2(Id, (Enemy ? 1 : 0)));
-        Debug.Log(FightManager.Tomb[0]);
-        Destroy(this.gameObject);
-        yield return null;
+        int archaniol = Archaniol.IsArchaniol(this);
+        if(archaniol == 0)
+        {
+            FightManager.Tomb.Add(new Vector2(Id, (Enemy ? 1 : 0)));
+            Destroy(this.gameObject);
+            yield return null;
+        }
+        else
+        {
+            ShowPopUp(archaniol.ToString(), Color.green);
+            Health = archaniol;
+        }
+    }
+
+    public GameObject findPole()
+    {
+        return findPole(GetComponent<DragObject>().pole);
+    }
+
+    public GameObject findPole(Pole pole)
+    {
+        if(Enemy == pole.line.enemyLine)
+        {
+            if(pole.nr > 0)
+                return pole.line.pola[pole.nr - 1].gameObject;
+            else
+            {
+                if(pole.nr == 0)
+                {
+                    int nrLini = pole.line.nr;
+                    Linia linia;
+                    if(nrLini < 3)
+                    {
+                        linia = EventSystem.eventSystem.GetComponent<FightManager>().linie[nrLini + 3];
+                    }
+                    else
+                    {
+                        linia = EventSystem.eventSystem.GetComponent<FightManager>().linie[nrLini - 3];
+                    }
+                    return linia.pola[0].gameObject;
+                }
+            }
+        }
+        else
+        {
+            if(pole.nr != pole.line.pola.Count - 1) //&& (pole.line.pola[pole.nr + 1].unit == null || pole != GetComponent<DragObject>().pole))
+                return pole.line.pola[pole.nr + 1].gameObject;
+        }
+        return null;
     }
 
     private bool showOpis;

@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 0
   Name: "Przywolanie Jask\xF3\u0142ki"
-  Cost: 2
+  Cost: 1
   Star: 1
   Initiative: 0
   MaxHealth: 0
@@ -120,9 +120,11 @@ MonoBehaviour:
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
+  unit: {fileID: 0}
+  OffensifSpell: 0
   spellType: 0
-  suumonObject: {fileID: 1819705648667262722, guid: 5c8ef6e31b67af24297238c0343b1e3a, type: 3}
-  suumonEvolutionObject: {fileID: 1819705648667262722, guid: eec9f32742501534cb7435faaf840e87, type: 3}
+  suumonObject: {fileID: 1819705648667262722, guid: 7ef3355652854824da3f4934c6720b90, type: 3}
+  suumonEvolutionObject: {fileID: 1819705648667262722, guid: 7ef3355652854824da3f4934c6720b90, type: 3}
 --- !u!114 &8731495660794391217
 MonoBehaviour:
   m_ObjectHideFlags: 0

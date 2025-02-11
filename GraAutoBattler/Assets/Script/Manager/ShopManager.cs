@@ -35,10 +35,16 @@ public class ShopManager : MonoBehaviour
 
     public TextMeshProUGUI sellText;
     public TextMeshProUGUI FreeRollText;
+    public GameObject Chochil;
+    public static int nizka;
 
     void Update()
     {
-        LevelUpText.text = LevelUpCost.ToString();
+        if(nizka > LevelUpCost)
+        {
+            nizka = LevelUpCost;
+        }
+        LevelUpText.text = (LevelUpCost - nizka).ToString();
         FreeRollText.text = FreeRoll == 0  ? "" : "Darmowe odświerzenia: " + FreeRoll.ToString();
         RollCostText.text = (FreeRoll == 0 ? RollCost.ToString() : "0");
         if(DragObject.moveObject == null)
@@ -100,8 +106,10 @@ public class ShopManager : MonoBehaviour
             {
                 filteredObjects = obj.Filter(filteredObjects);
             }
-            if(filteredObjects.Count != 0)
+            if(filteredObjects.Count == 0)
             {
+                filteredObjects.Add(Chochil);
+            }
 
             for(int i = 0; i < 5; i++)
             {
@@ -123,7 +131,7 @@ public class ShopManager : MonoBehaviour
                 (filteredObjects[rng].GetComponent<Unit>().RealCost == 0 ? filteredObjects[rng].GetComponent<Unit>().Cost.ToString() : filteredObjects[rng].GetComponent<Unit>().RealCost.ToString());
                 
 
-            }
+            
             }
             
             foreach(ShopVisitor obj in shopVisitors)
@@ -140,7 +148,8 @@ public class ShopManager : MonoBehaviour
         {
             Heros hero = obj.GetComponent<Heros>();
 
-            if ((!hero || !hero.Evolution) && obj.GetComponent<Unit>().Star <= (StatsManager.Round / 3) + 1 && (obj.GetComponent<Unit>().Star != 0))
+            if ((!hero || !hero.Evolution) && obj.GetComponent<Unit>().Star <= (StatsManager.Round / 3) + 1 && (obj.GetComponent<Unit>().Star != 0) 
+            && (Fraction.fractionList == null || Fraction.fractionList.Contains(obj.GetComponent<Unit>().fraction)))
             {
                 result.Add(obj);
             }
@@ -150,25 +159,28 @@ public class ShopManager : MonoBehaviour
     }
     public void LevelUp()
     {
-        if(MoneyManager.money >= LevelUpCost && levelUp < 4)
+        if(MoneyManager.money >= LevelUpCost - nizka && levelUp < 4)
         {
-            MoneyManager.money -= LevelUpCost;
+            MoneyManager.money -= LevelUpCost - nizka;
             for(int i = 0; i < 3; i++)
             {
                 EventSystem.eventSystem.GetComponent<FightManager>().linie[i].Upgrade(levelUp == 3 ? 1 : levelUp);
             }
+            nizka = 0;
+            LevelUpCost++;
             levelUp++;
             if(levelUp == 4)
             {
                 LevelUpCost = 0;
             }
+            
         }
 
     }
 
     void Start()
     {
-        FreeRoll += 3;
+        FreeRoll += Fraction.fractionList == null ? 3 : Fraction.fractionList.Count + 1;
         Roll();
     }
 }

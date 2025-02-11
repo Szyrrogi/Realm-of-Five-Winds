@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Spell : Unit
 {
+    public Unit unit;
+    public bool OffensifSpell;
     public enum SpellType
     {
         Summon,

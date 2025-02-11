@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 0
   Name: Przywolanie Gryfa
-  Cost: 4
+  Cost: 3
   Star: 3
   Initiative: 0
   MaxHealth: 0
@@ -120,6 +120,8 @@ MonoBehaviour:
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
+  unit: {fileID: 0}
+  OffensifSpell: 0
   spellType: 0
   suumonObject: {fileID: 1819705648667262722, guid: 3de65f5049200f74f812cfea9e2bbec1, type: 3}
   suumonEvolutionObject: {fileID: 1819705648667262722, guid: d7800e3b6a527014d8122e2d713c5452, type: 3}

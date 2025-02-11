@@ -14,13 +14,13 @@ public class MoneyManager : MonoBehaviour
     void Start()
     {
         money = 5;
-        income = 5;
+        income = 6;
     }
 
     void Update()
     {
         moneyText.text = money.ToString();
-        incomeText.text = income.ToString();
+        incomeText.text = "+" + income.ToString();
     }
 
     public static void ActiveIncom()

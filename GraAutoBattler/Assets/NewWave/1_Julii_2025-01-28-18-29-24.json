@@ -1,0 +1,24 @@
+{
+    "playerName": "Julii",
+    "number": 1,
+    "levelUp": 1,
+    "units": [
+        {
+            "Line": 1,
+            "Pole": 1,
+            "Id": 0,
+            "Name": "Pyroman",
+            "Cost": 5,
+            "Initiative": 55,
+            "MaxHealth": 60,
+            "Health": 60,
+            "Attack": 20,
+            "Defense": 5,
+            "Range": 1,
+            "AP": 25,
+            "MagicResist": 10,
+            "Description": "Włada zakleciami ognia",
+            "UpgradeLevel": 1
+        }
+    ]
+}

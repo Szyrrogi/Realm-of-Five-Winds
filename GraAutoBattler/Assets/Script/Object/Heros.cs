@@ -10,7 +10,7 @@ public class Heros : Unit
 
     public GameObject EvolveHeroes;
     public bool Evolution;
-    public bool attackAP;
+    
     Image attackRamka;
 
     public virtual void Update()
@@ -36,7 +36,7 @@ public class Heros : Unit
             if(!attackAP)
                 yield return StartCoroutine(enemyUnit.TakeDamage(this, enemyUnit.BeforDamage(gameObject, BeforAttack(enemyUnit.gameObject, Attack))));
             else
-                yield return StartCoroutine(enemyUnit.TakeDamageMagic(this, enemyUnit.BeforDamage(gameObject, BeforAttack(enemyUnit.gameObject, AP))));
+                yield return StartCoroutine(enemyUnit.TakeDamage(this, enemyUnit.BeforDamage(gameObject, BeforAttack(enemyUnit.gameObject, AP)),TypeDamage.typeDamage.Magic));
         }
         else
         {
@@ -48,7 +48,11 @@ public class Heros : Unit
                     if(findPole(pole.GetComponent<Pole>()) != null && findPole(pole.GetComponent<Pole>()).GetComponent<Pole>().unit != null && Enemy != findPole(pole.GetComponent<Pole>()).GetComponent<Pole>().unit.GetComponent<Unit>().Enemy)
                     {
                         Unit enemyUnit = findPole(pole.GetComponent<Pole>()).GetComponent<Pole>().unit.GetComponent<Unit>();
-                        yield return StartCoroutine(enemyUnit.TakeDamage(this, enemyUnit.BeforDamage(gameObject ,BeforAttack(enemyUnit.gameObject, Attack))));
+                        if(!attackAP)
+                            yield return StartCoroutine(enemyUnit.TakeDamage(this, enemyUnit.BeforDamage(gameObject, BeforAttack(enemyUnit.gameObject, Attack))));
+                        else
+                            yield return StartCoroutine(enemyUnit.TakeDamage(this, enemyUnit.BeforDamage(gameObject, BeforAttack(enemyUnit.gameObject, AP)),TypeDamage.typeDamage.Magic));
+                        //yield return StartCoroutine(enemyUnit.TakeDamage(this, enemyUnit.BeforDamage(gameObject ,BeforAttack(enemyUnit.gameObject, Attack))));
                     }
                 }
             }
@@ -63,10 +67,10 @@ public class Heros : Unit
 
     public virtual void UpgradeHeros(Unit newUnit)
     {
-        Health += (int)(newUnit.Health * 0.3f);
-        MaxHealth += (int)(newUnit.MaxHealth * 0.3f);
-        Attack += (int)(newUnit.Attack * 0.3f);
-        AP += (int)(newUnit.AP * 0.3f);
+        Health += (int)(newUnit.Health * 0.4f);
+        MaxHealth += (int)(newUnit.MaxHealth * 0.4f);
+        Attack += (int)(newUnit.Attack * 0.4f);
+        AP += (int)(newUnit.AP * 0.4f);
         Cost += (int)(newUnit.Cost);
         Initiative += (int)(newUnit.Initiative * 0.1f);
         UpgradeLevel += newUnit.UpgradeLevel;
@@ -95,20 +99,20 @@ public class Heros : Unit
 
         newUnit.Initiative = Initiative;
         newUnit.Health = Health;
+        newUnit.MaxHealth = MaxHealth;
         newUnit.Attack = Attack;
         newUnit.Defense = Defense;
-        newUnit.Range = Range;
         newUnit.AP = AP;
         newUnit.MagicResist = MagicResist;
 
         newUnit.UpgradeLevel = 0;
         newUnit.UpgradeNeed = 0;
+        newUnit.RealCost = 0;
         newUnit.Evolution = true;
 
         GetComponent<DragObject>().pole.unit = newUnitObject;
         GetComponent<DragObject>().pole.Start();
         Destroy(gameObject);
-        
     }
 
     public override IEnumerator Move()
@@ -131,42 +135,7 @@ public class Heros : Unit
         yield return null;
     }
 
-    public GameObject findPole()
-    {
-        return findPole(GetComponent<DragObject>().pole);
-    }
-
-    public GameObject findPole(Pole pole)
-    {
-        if(Enemy == pole.line.GetComponent<Linia>().enemyLine)
-        {
-            if(pole.nr > 0)
-                return pole.line.GetComponent<Linia>().pola[pole.nr - 1].gameObject;
-            else
-            {
-                if(pole.nr == 0)
-                {
-                    int nrLini = pole.line.GetComponent<Linia>().nr;
-                    Linia linia;
-                    if(nrLini < 3)
-                    {
-                        linia = EventSystem.eventSystem.GetComponent<FightManager>().linie[nrLini + 3];
-                    }
-                    else
-                    {
-                        linia = EventSystem.eventSystem.GetComponent<FightManager>().linie[nrLini - 3];
-                    }
-                    return linia.pola[0].gameObject;
-                }
-            }
-        }
-        else
-        {
-            if(pole.nr != pole.line.GetComponent<Linia>().pola.Count - 1) //&& (pole.line.pola[pole.nr + 1].unit == null || pole != GetComponent<DragObject>().pole))
-                return pole.line.GetComponent<Linia>().pola[pole.nr + 1].gameObject;
-        }
-        return null;
-    }
+    
 
     public IEnumerator Jump(GameObject pole)
     {
