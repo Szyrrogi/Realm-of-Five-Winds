@@ -13,7 +13,7 @@ public class MrocznyOltarz : Building
                 pole.unit.GetComponent<Unit>().ShowPopUp(pole.unit.GetComponent<Unit>().MaxHealth.ToString(), Color.red);
                 pole.unit.GetComponent<Unit>().Health *= 2;
                 pole.unit.GetComponent<Unit>().MaxHealth *= 2;
-                yield return new WaitForSeconds (0.5f / FightManager.GameSpeed);
+                yield return new WaitForSeconds (0.5f);
                 break;
             }
         }
@@ -29,7 +29,7 @@ public class MrocznyOltarz : Building
                 pole.unit.GetComponent<Unit>().ShowPopUp("20", new Color(0.5f,0.25f,0.1f));
                 pole.unit.GetComponent<Unit>().Defense += 20;
                 pole.unit.GetComponent<Unit>().MagicResist += 20;
-                yield return new WaitForSeconds (0.5f / FightManager.GameSpeed);
+                yield return new WaitForSeconds (0.5f);
                 break;
             }
         }

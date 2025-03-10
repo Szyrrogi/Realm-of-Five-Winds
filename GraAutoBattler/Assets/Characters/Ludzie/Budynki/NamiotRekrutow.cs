@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NamiotRekrutow : ShopVisitor
+public class NamiotRekrutow : Building
 {
-    public override void FirstRoll()
+    public override void AfterBattle()
     {
-        shop.FreeRoll += 2;
+        EventSystem.eventSystem.GetComponent<ShopManager>().FreeRoll += 2;
     }
+
+    
 }

@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 960ae61018fe0e045bbd0b9712b66466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 10
   Name: Wzmocnienie Runiczne
   Cost: 4
   Star: 3
@@ -112,15 +112,17 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "Zwi\u0119ksza Moc umiej\u0119tno\u015Bci wszstkim w rz\u0119dzie
-    co tur\u0119"
+  Description: "<b>Akcja: </b>Zwi\u0119ksza Moc Zakl\u0119\u0107 wszstkim w rz\u0119dzie"
   CPU: 0
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
+  fraction: 0
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
+  attackAP: 0
+  Skip: 0
   unit: {fileID: 0}
   OffensifSpell: 0
   spellType: 2

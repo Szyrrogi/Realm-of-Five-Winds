@@ -22,7 +22,7 @@ public class Grabaż : Heros
         }
         Vector3 pos = poleDocelowe.gameObject.transform.position;
         pos.z -= 2f;
-        GameObject newUnit = Instantiate(trupy[Random.Range(0,trupy.Count - 1)], pos, Quaternion.identity);
+        GameObject newUnit = Instantiate(trupy[Random.Range(0,trupy.Count)], pos, Quaternion.identity);
         poleDocelowe.unit = newUnit; // Przypisanie jednostki do pola
         newUnit.GetComponent<DragObject>().pole = poleDocelowe;
         newUnit.GetComponent<Unit>().Cost = 1;

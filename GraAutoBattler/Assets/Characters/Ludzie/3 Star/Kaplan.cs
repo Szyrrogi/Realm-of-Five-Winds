@@ -15,16 +15,9 @@ public class Kaplan : Heros
                     pole.unit.GetComponent<Unit>().BoskaTarcza = true;
                 }
             }
-
         }
         else
         {
-            // FightManager fight = EventSystem.eventSystem.GetComponent<FightManager>();
-            // Debug.Log("aaaa" + GetComponent<DragObject>().pole.line.nr);
-            // if(fight.GetPole(GetComponent<DragObject>().pole.line.nr, 0).unit != null)
-            // {
-            //     fight.GetPole(GetComponent<DragObject>().pole.line.nr, 0).unit.GetComponent<Unit>().BoskaTarcza = true;
-            // }
             if(findPole().GetComponent<Pole>().unit != null)
             {
                 findPole().GetComponent<Pole>().unit.GetComponent<Unit>().BoskaTarcza = true;

@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4508bdbd5cc901e4aa1a3940f590b3aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 33
   Name: "Anio\u0142"
   Cost: 8
   Star: 4
@@ -112,18 +112,21 @@ MonoBehaviour:
   Range: 0
   AP: 40
   MagicResist: 10
-  Description: Wykonuje trzy ataki, magiczny i fizyczny
+  Description: Wykonuje trzy ataki, magiczny, fizyczny oraz losowy
+  CPU: 0
   UpgradeLevel: 1
   UpgradeNeed: 0
   Enemy: 0
+  fraction: 0
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
+  attackAP: 0
+  Skip: 0
   AttackText: {fileID: 5187295522447798132}
   HealthText: {fileID: 6430296136860862158}
   EvolveHeroes: {fileID: 0}
   Evolution: 1
-  attackAP: 0
 --- !u!114 &6699983802921889276
 MonoBehaviour:
   m_ObjectHideFlags: 0

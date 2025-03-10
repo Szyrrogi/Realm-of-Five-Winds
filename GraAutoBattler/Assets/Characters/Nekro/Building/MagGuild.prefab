@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dcfb11ef0b30d14c9ea9e4a49d9c3dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 95
   Name: "Gildia Mag\xF3w"
   Cost: 5
   Star: 2
@@ -188,7 +188,8 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "Zapewnia wszysckim jednostk\u0105 w rz\u0119dzie 15 Mocy Zakl\u0119\u0107"
+  Description: "<b>Poczatek Walki: </b>Zapewnia wszysckim jednostk\u0105 w rz\u0119dzie
+    15 Mocy Zakl\u0119\u0107"
   CPU: 0
   UpgradeLevel: 0
   UpgradeNeed: 0
@@ -198,6 +199,7 @@ MonoBehaviour:
   PopUp: {fileID: 0}
   BoskaTarcza: 0
   attackAP: 0
+  Skip: 0
   HealthText: {fileID: 3501279418940951141}
 --- !u!114 &6985540666553226679
 MonoBehaviour:

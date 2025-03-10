@@ -12,7 +12,7 @@ public class Oltarz : Building
             {
                 pole.unit.GetComponent<Unit>().ShowPopUp(pole.unit.GetComponent<Unit>().Attack.ToString(), new Color(1f, 0.66f, 0f));
                 pole.unit.GetComponent<Unit>().Attack *= 2;
-                yield return new WaitForSeconds (0.5f / FightManager.GameSpeed);
+                yield return new WaitForSeconds (0.5f);
                 break;
             }
         }

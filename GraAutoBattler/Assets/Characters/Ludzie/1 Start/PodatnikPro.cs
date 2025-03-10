@@ -12,6 +12,6 @@ public class PodatnikPro : Heros
         }
         GameObject pop = Instantiate(PopUp, gameObject.transform.position, Quaternion.identity);
         pop.GetComponent<PopUp>().SetText("1", Color.yellow);
-        yield return new WaitForSeconds(0.7f / FightManager.GameSpeed);
+        yield return new WaitForSeconds(0.7f);
     }
 }

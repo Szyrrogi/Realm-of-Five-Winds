@@ -67,7 +67,7 @@ public class Synergy : MonoBehaviour
     IEnumerator WaitDescription()
     {
         // Czekaj przez określony czas
-        yield return new WaitForSeconds(0.1f / FightManager.GameSpeed);
+        yield return new WaitForSeconds(0.1f);
 
         if (showOpis)
         {

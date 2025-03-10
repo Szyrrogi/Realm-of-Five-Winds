@@ -188,7 +188,7 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "Na poczatku walki, podwaja zdrowie pierwszej osoby w rz\u0119dzie"
+  Description: "<b>Poczatek Walki: </b> Podwaja zdrowie pierwszej osoby w rz\u0119dzie"
   CPU: 0
   UpgradeLevel: 0
   UpgradeNeed: 0
@@ -198,6 +198,7 @@ MonoBehaviour:
   PopUp: {fileID: 0}
   BoskaTarcza: 0
   attackAP: 0
+  Skip: 0
   HealthText: {fileID: 3501279418940951141}
 --- !u!114 &6985540666553226679
 MonoBehaviour:

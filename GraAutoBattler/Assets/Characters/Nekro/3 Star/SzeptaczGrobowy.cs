@@ -10,9 +10,9 @@ public class SzeptaczGrobowy : Heros
         {
             if(pole.unit == null)
             {
-                yield return new WaitForSeconds(0.4f / FightManager.GameSpeed);
-                int buff = Evolution ? 40 : 20;
-                ShowPopUp(Evolution ? "+40/40" : "+20/20", Color.green);
+                yield return new WaitForSeconds(0.4f );
+                int buff = Evolution ? 35 : 15;
+                ShowPopUp(Evolution ? "+35/35" : "+15/15", Color.green);
                 Attack += buff;
                 Health += buff;
                 MaxHealth += buff;

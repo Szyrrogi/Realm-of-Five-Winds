@@ -112,19 +112,21 @@ MonoBehaviour:
   Range: 1
   AP: 25
   MagicResist: 20
-  Description: "Na poczatku rozgrywki daj jednostce przed sob\u0105 tarcz\u0119"
+  Description: "<b>Pocz\u0105tek Walki:</b> Daj jednostce przed sob\u0105 <b>Ochron\u0119</b>"
   CPU: 0
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0
+  fraction: 0
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
+  attackAP: 1
+  Skip: 0
   AttackText: {fileID: 5187295522447798132}
   HealthText: {fileID: 6430296136860862158}
   EvolveHeroes: {fileID: 1819705648667262722, guid: 822a6f0af33319d4f88a42aa60387107, type: 3}
   Evolution: 0
-  attackAP: 1
 --- !u!114 &6699983802921889276
 MonoBehaviour:
   m_ObjectHideFlags: 0

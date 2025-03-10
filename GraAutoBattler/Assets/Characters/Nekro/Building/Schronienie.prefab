@@ -176,9 +176,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5884da60c0958ec488c39be894a22c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 38
+  Id: 94
   Name: Schronienie
-  Cost: 5
+  Cost: 4
   Star: 2
   Initiative: 20
   MaxHealth: 40
@@ -188,7 +188,7 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "Zwi\u0119ksz atak oraz zdrowie o 20 dla Wampir\xF3w"
+  Description: "<b>Poczatek Walki: </b>Zwi\u0119ksz atak oraz zdrowie o 20 dla Wampir\xF3w"
   CPU: 0
   UpgradeLevel: 0
   UpgradeNeed: 0
@@ -198,6 +198,7 @@ MonoBehaviour:
   PopUp: {fileID: 0}
   BoskaTarcza: 0
   attackAP: 0
+  Skip: 0
   HealthText: {fileID: 3501279418940951141}
   pattern:
   - {fileID: 1329609480966861234, guid: c2be478055c028546aa2e4983735a60e, type: 3}

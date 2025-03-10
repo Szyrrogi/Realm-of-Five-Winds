@@ -188,14 +188,17 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "Leczy wszyskich sojusznik\xF3w w rz\u0119dzie o 5"
+  Description: "<b>Akcja: </b>Leczy wszyskich sojusznik\xF3w w rz\u0119dzie o 5"
   CPU: 0
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
+  fraction: 0
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
+  attackAP: 0
+  Skip: 0
   HealthText: {fileID: 3501279418940951141}
 --- !u!114 &6985540666553226679
 MonoBehaviour:

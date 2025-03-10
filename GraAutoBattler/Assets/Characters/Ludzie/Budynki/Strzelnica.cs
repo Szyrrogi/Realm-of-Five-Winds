@@ -15,7 +15,7 @@ public class Strzelnica : Building
                     pole.unit.GetComponent<Unit>().Attack += 30;
                     GameObject pop = Instantiate(PopUp, pole.unit.gameObject.transform.position, Quaternion.identity);
                     pop.GetComponent<PopUp>().SetText("+30", Color.green);
-                    yield return new WaitForSeconds(0.7f / FightManager.GameSpeed);
+                    yield return new WaitForSeconds(0.7f);
                 }
             }
         }

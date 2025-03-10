@@ -17,7 +17,7 @@ public class Medyk : Heros
     public override string DescriptionEdit()
     {
         if(Evolution)
-            return "Medyk leczy jednostkę przed sobą o <color=#B803FF>" + (10 + AP) + "</color> zdrowia"  ;
+            return "<b>Akcja: </b>Leczy jednostkę przed sobą o <color=#B803FF>" + (10 + AP) + "</color> zdrowia"  ;
         else
             return Description; 
     }

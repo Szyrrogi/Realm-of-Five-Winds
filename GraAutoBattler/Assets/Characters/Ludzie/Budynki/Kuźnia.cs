@@ -23,7 +23,7 @@ public class Kuźnia : Building
 
                         
                         pole.unit.GetComponent<Unit>().ShowPopUp("+20/20", Color.green);
-                        yield return new WaitForSeconds(0.7f / FightManager.GameSpeed);
+                        yield return new WaitForSeconds(0.7f);
                     }
                 } 
             }

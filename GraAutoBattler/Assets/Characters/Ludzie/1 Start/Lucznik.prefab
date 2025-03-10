@@ -115,16 +115,20 @@ MonoBehaviour:
   Description: 
   CPU: 0
   UpgradeLevel: 1
-  UpgradeNeed: 4
+  UpgradeNeed: 5
   Enemy: 0
+  fraction: 0
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
+  attackAP: 0
+  Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   AttackText: {fileID: 2333975298996084202}
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 1819705648667262722, guid: 20e72910640f4ff48bc3aa852a41bd74, type: 3}
   Evolution: 0
-  attackAP: 0
 --- !u!114 &8731495660794391217
 MonoBehaviour:
   m_ObjectHideFlags: 0

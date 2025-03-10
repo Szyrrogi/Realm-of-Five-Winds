@@ -188,8 +188,8 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "Zwi\u0119ksz atak oraz zdrowie o 20 dla Giermka, Rycerza, Opancerzonego
-    Rycerza i Genera\u0142a"
+  Description: "<b>Poczatek Walki: </b>Zwi\u0119ksz atak oraz zdrowie o 20 dla Giermka,
+    Rycerza, Opancerzonego Rycerza i Genera\u0142a"
   CPU: 0
   UpgradeLevel: 0
   UpgradeNeed: 0
@@ -199,6 +199,7 @@ MonoBehaviour:
   PopUp: {fileID: 0}
   BoskaTarcza: 0
   attackAP: 0
+  Skip: 0
   HealthText: {fileID: 3501279418940951141}
   pattern:
   - {fileID: 1561288366235784124, guid: 51a06cee5ac324043940709930fc96e9, type: 3}

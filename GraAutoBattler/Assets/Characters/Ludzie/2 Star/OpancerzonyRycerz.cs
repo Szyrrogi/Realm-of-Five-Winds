@@ -9,9 +9,6 @@ public class OpancerzonyRycerz : Heros
         enemy.GetComponent<Unit>().Health -= (Evolution ? 25 : 10);
         GameObject pop = Instantiate(PopUp, enemy.transform.position, Quaternion.identity);
         pop.GetComponent<PopUp>().SetText((Evolution ? 25 : 10).ToString(),  Color.red);
-
-        //Unit enemyUnit = enemy.GetComponent<Unit>();
-        //StartCoroutine(enemyUnit.TakeDamage(this, Evolution ? 25 : 10 ,TypeDamage.typeDamage.TrueDamage));
         
         return damage;
     }

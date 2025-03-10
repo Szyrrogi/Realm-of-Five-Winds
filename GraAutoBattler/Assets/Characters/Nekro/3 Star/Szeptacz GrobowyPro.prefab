@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ae808d602c4b94fb6b9400bc8ef210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 86
   Name: Szeptacz Grobowy
   Cost: 6
   Star: 3
@@ -187,7 +187,8 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 35
-  Description: "Na pocz\u0105tku bitwy otrzymuje +20/20 za ka\u017Cde puste pole"
+  Description: "<b>Pocz\u0105tek Walki:</b> otrzymuje +35/35 za ka\u017Cde puste
+    pole"
   CPU: 0
   UpgradeLevel: 1
   UpgradeNeed: 4
@@ -197,6 +198,7 @@ MonoBehaviour:
   PopUp: {fileID: 0}
   BoskaTarcza: 0
   attackAP: 0
+  Skip: 0
   AttackText: {fileID: 2333975298996084202}
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 0}

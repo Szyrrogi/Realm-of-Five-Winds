@@ -188,14 +188,20 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "Zwi\u0119ksza atak jednostk\u0105 dystanoswym o 30"
+  Description: "<b>Poczatek Walki: </b>Zwi\u0119ksza atak jednostk\u0105 dystanoswym
+    o 30 w rz\u0119dzie"
   CPU: 0
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
+  fraction: 0
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
+  attackAP: 0
+  Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   HealthText: {fileID: 3501279418940951141}
 --- !u!114 &6985540666553226679
 MonoBehaviour:

@@ -112,19 +112,21 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "Po walce, je\u017Celi jednostka prze\u017Cyje, zyskaj 1 z\u0142oto"
+  Description: "<b>Koniec Walki:</b> Zyskaj 1 z\u0142oto"
   CPU: 0
   UpgradeLevel: 0
   UpgradeNeed: 2
   Enemy: 0
+  fraction: 0
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
+  attackAP: 0
+  Skip: 0
   AttackText: {fileID: 2333975298996084202}
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 1819705648667262722, guid: 0f07fa0a3b92f00418152e0179ac67eb, type: 3}
   Evolution: 0
-  attackAP: 0
 --- !u!114 &8731495660794391217
 MonoBehaviour:
   m_ObjectHideFlags: 0

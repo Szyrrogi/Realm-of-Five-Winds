@@ -12,7 +12,7 @@ public class Jaskolka : Heros
             {
                 pole.unit.GetComponent<Unit>().AP += AP;
                 pole.unit.GetComponent<Unit>().ShowPopUp(AP.ToString(), new Color(0.5f, 0f, 1f));
-                yield return new WaitForSeconds(0.5f / FightManager.GameSpeed);
+                yield return new WaitForSeconds(0.5f );
             }
         }
         yield return null;
@@ -25,8 +25,6 @@ public class Jaskolka : Heros
 
         newUnit.Cost = Cost;
 
-        newUnit.Evolution = true;
-
         GetComponent<DragObject>().pole.unit = newUnitObject;
         GetComponent<DragObject>().pole.Start();
         Destroy(gameObject);
@@ -34,6 +32,6 @@ public class Jaskolka : Heros
 
     public override string DescriptionEdit()
     {
-        return "Na początku walki zwiększ Moc Zaklęć wszystkich w rzędzie o <color=#B803FF>" + AP + "</color>" ;
+        return "<b>Początek Walki:</b> Zwiększ Moc Zaklęć wszystkich w rzędzie o <color=#B803FF>" + AP + "</color>" ;
     }
 }

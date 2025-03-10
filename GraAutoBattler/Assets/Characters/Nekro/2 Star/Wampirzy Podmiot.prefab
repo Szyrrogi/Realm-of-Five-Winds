@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba02646ae6b0d4e4ebf2d2c3393690dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 77
   Name: Wampirzy Pomiot
   Cost: 4
   Star: 2
@@ -112,16 +112,17 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "Podczas ataku leczy si\u0119"
+  Description: "<b>Atak: </b>Leczy si\u0119 o 50% zadanych obra\u017Ce\u0144"
   CPU: 0
-  UpgradeLevel: 0
-  UpgradeNeed: 0
+  UpgradeLevel: 1
+  UpgradeNeed: 3
   Enemy: 0
   fraction: 1
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
   attackAP: 0
+  Skip: 0
   AttackText: {fileID: 2333975298996084202}
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 1819705648667262722, guid: 68e1adb34a8c3894c9484b0f8028a35a, type: 3}

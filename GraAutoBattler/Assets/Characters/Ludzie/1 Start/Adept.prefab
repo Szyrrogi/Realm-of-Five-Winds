@@ -112,15 +112,17 @@ MonoBehaviour:
   Range: 0
   AP: 25
   MagicResist: 15
-  Description: 
+  Description: <b>Ulepszenie:</b> Otrzymuje Atak z Dystansu
   CPU: 0
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0
+  fraction: 0
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
   attackAP: 1
+  Skip: 0
   AttackText: {fileID: 2333975298996084202}
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 1819705648667262722, guid: 66690a73e990da74fb67a8ae92cca4f2, type: 3}

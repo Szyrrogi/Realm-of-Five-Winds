@@ -24,7 +24,7 @@ public class Giermek : Heros
         Vector3 pos = poleDocelowe.gameObject.transform.position;
         pos.z -= 2f;
         GameObject newUnit = Instantiate(unit, pos, Quaternion.identity);
-        poleDocelowe.unit = newUnit; // Przypisanie jednostki do pola
+        poleDocelowe.unit = newUnit;
         newUnit.GetComponent<DragObject>().pole = poleDocelowe;
         base.Evolve();
     }

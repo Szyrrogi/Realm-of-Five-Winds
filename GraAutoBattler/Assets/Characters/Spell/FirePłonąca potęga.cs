@@ -11,7 +11,7 @@ public class FirePłonącapotęga : Spell
             Unit friendlyUnit = unit.findPole().GetComponent<Pole>().unit.GetComponent<Unit>();
             friendlyUnit.Attack += unit.AP;
             friendlyUnit.ShowPopUp(unit.AP.ToString(), new Color(0.5f, 0f, 1f));
-            yield return new WaitForSeconds(0.5f / FightManager.GameSpeed);
+            yield return new WaitForSeconds(0.5f);
         }
         yield return null;
     }

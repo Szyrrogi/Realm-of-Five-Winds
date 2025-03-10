@@ -19,7 +19,7 @@ public class ShowSpell : MonoBehaviour
 
     IEnumerator WaitDescription()
     {
-        yield return new WaitForSeconds(0.2f / FightManager.GameSpeed);
+        yield return new WaitForSeconds(0.2f);
         if(showOpis && DragObject.moveObject == null)
         {
             GameObject grandparent = transform.parent?.parent?.gameObject;

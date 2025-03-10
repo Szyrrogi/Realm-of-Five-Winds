@@ -13,9 +13,11 @@ public class Jajo : Heros
     {
         GameObject newUnitObject = Instantiate(EvolveHeroes, gameObject.transform.position, Quaternion.identity);
         Heros newUnit = newUnitObject.GetComponent<Heros>();
+        newUnit.Cost = 2;
 
         GetComponent<DragObject>().pole.unit = newUnitObject;
         GetComponent<DragObject>().pole.Start();
+
         Destroy(gameObject);
     }
 }

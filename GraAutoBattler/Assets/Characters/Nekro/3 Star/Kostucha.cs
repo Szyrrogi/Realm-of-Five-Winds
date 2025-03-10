@@ -36,4 +36,12 @@ public class Kostucha : Heros
             StartCoroutine(Death());
         }
     }
+
+    public override string DescriptionEdit()
+    {
+        if(Evolution)
+            return "<b>Atak: </b>Zadaje <color=#999999>" + (AP + Attack) + "</color> <b>Absolutnych Obrażeń</b>" ;
+        else
+            return "<b>Atak: </b>Zadaje <color=#999999>" + (Attack) + "</color> <b>Absolutnych Obrażeń</b>" ;
+    }
 }

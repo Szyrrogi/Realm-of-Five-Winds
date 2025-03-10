@@ -113,19 +113,22 @@ MonoBehaviour:
   Range: 1
   AP: 30
   MagicResist: 10
-  Description: "Po \u015Bmierci druid przemienia si\u0119 w losowe zwierze"
+  Description: "<b>Ostatni Oddech:</b> Druid przemienia si\u0119 w <b>ulepszone</b>
+    zwierze. <b>Wtasowuje</b> zakl\u0119cia przywo\u0142ania do <b>puli</b>"
   CPU: 0
   UpgradeLevel: 1
   UpgradeNeed: 0
   Enemy: 0
+  fraction: 0
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
+  attackAP: 1
+  Skip: 0
   AttackText: {fileID: 5187295522447798132}
   HealthText: {fileID: 6430296136860862158}
   EvolveHeroes: {fileID: 0}
   Evolution: 1
-  attackAP: 1
   zwierzeta:
   - {fileID: 1819705648667262722, guid: 3de65f5049200f74f812cfea9e2bbec1, type: 3}
 --- !u!114 &643730170814484252

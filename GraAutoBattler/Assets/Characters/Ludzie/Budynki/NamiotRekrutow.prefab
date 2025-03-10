@@ -86,7 +86,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6934024521668934397}
   - component: {fileID: 3712362837729000110}
-  - component: {fileID: -6892617005913496730}
   - component: {fileID: 2346841534071855489}
   - component: {fileID: 6985540666553226679}
   - component: {fileID: 8286433214309528574}
@@ -165,7 +164,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-6892617005913496730
+--- !u!114 &2346841534071855489
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,7 +173,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1819705648667262722}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dd58259e5add7c41bddd5d954785fda, type: 3}
+  m_Script: {fileID: 11500000, guid: 57f04f45a69a1be43a87e0c826dc87c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 40
@@ -189,28 +188,18 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "Zapewnia 2 darmowe od\u015Bwierzenia sklepu na pocz\u0105tku rundy"
+  Description: "<b>Po Walce: </b>Zapewnia 2 darmowe od\u015Bwierzenia sklepu"
   CPU: 0
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
+  fraction: 0
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
+  attackAP: 0
+  Skip: 0
   HealthText: {fileID: 3501279418940951141}
---- !u!114 &2346841534071855489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1819705648667262722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57f04f45a69a1be43a87e0c826dc87c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shop: {fileID: 0}
 --- !u!114 &6985540666553226679
 MonoBehaviour:
   m_ObjectHideFlags: 0

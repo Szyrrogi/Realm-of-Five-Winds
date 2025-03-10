@@ -102,17 +102,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 67
   Name: Zemsta
-  Cost: 3
+  Cost: 2
   Star: 1
   Initiative: 80
-  MaxHealth: 40
-  Health: 40
+  MaxHealth: 35
+  Health: 35
   Attack: 35
   Defense: 5
   Range: 0
   AP: 0
   MagicResist: 5
-  Description: "Z pocz\u0105tkiem ka\u017Cej tury traci 10 ataku i zdrowia na sta\u0142e"
+  Description: '<b>Po Walce: </b>Pernamentnie  traci 10 Ataku i Zdrowia'
   CPU: 0
   UpgradeLevel: 1
   UpgradeNeed: 3
@@ -122,6 +122,7 @@ MonoBehaviour:
   PopUp: {fileID: 0}
   BoskaTarcza: 0
   attackAP: 0
+  Skip: 0
   AttackText: {fileID: 2333975298996084202}
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 1819705648667262722, guid: d6cc17a6176eb8343b43544082457c29, type: 3}

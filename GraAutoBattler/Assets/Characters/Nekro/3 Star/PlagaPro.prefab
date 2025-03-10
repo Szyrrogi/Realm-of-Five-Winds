@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 283baa6e59d265442b9941cb3c8ee321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 84
   Name: Plaga
   Cost: 6
   Star: 3
@@ -187,7 +187,8 @@ MonoBehaviour:
   Range: 1
   AP: 50
   MagicResist: 0
-  Description: "Narzuca zatrucie na wszystkich przeciwnik\xF3w w rz\u0119dzie"
+  Description: "<b>Atak: </b>Narzuca silniejsze zatrucie na wszystkich przeciwnik\xF3w
+    w rz\u0119dzie"
   CPU: 0
   UpgradeLevel: 1
   UpgradeNeed: 3
@@ -197,6 +198,7 @@ MonoBehaviour:
   PopUp: {fileID: 0}
   BoskaTarcza: 0
   attackAP: 1
+  Skip: 0
   AttackText: {fileID: 2333975298996084202}
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 0}

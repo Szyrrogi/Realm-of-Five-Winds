@@ -103,11 +103,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 16
   Name: Budowlaniec
-  Cost: 5
+  Cost: 4
   Star: 2
   Initiative: 50
-  MaxHealth: 50
-  Health: 50
+  MaxHealth: 40
+  Health: 40
   Attack: 15
   Defense: 5
   Range: 0
@@ -118,14 +118,16 @@ MonoBehaviour:
   UpgradeLevel: 1
   UpgradeNeed: 2
   Enemy: 0
+  fraction: 0
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
+  attackAP: 0
+  Skip: 0
   AttackText: {fileID: 5187295522447798132}
   HealthText: {fileID: 6430296136860862158}
   EvolveHeroes: {fileID: 1819705648667262722, guid: 6177678ca8214e247b7fe32dc5ffa34d, type: 3}
   Evolution: 0
-  attackAP: 0
 --- !u!114 &1859712088605601590
 MonoBehaviour:
   m_ObjectHideFlags: 0

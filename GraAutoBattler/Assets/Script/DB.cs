@@ -10,7 +10,6 @@ using System.Text;
 public class DB : MonoBehaviour
 {
     public static string conStr = "Data Source=145.239.80.7;Initial Catalog=DB_SZYRROGI;User ID=szyrrogi;Password=szyrrogi;Connect Timeout=10;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-
     void Start()
     {
         // Zarejestruj dostawcę stron kodowych
@@ -19,6 +18,7 @@ public class DB : MonoBehaviour
         // Połącz się z bazą danych
         Connect(conStr);
     }
+
 
     public static SqlConnection Connect(string conStr)
     {
@@ -55,9 +55,27 @@ public class DB : MonoBehaviour
 
     public static DataSet selectSQL(SqlCommand cmd)
     {
-        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
         DataSet ds = new DataSet();
-        adapter.Fill(ds);
+        try
+        {
+            using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+            {
+                adapter.Fill(ds);
+            }
+        }
+        catch (SqlException ex)
+        {
+            // Obsługa wyjątku związanego z SQL (np. timeout, błąd połączenia)
+            Debug.LogError("PANUJEMY SQL Error: " + ex.Message);
+            // Możesz rzucić wyjątek dalej, jeśli chcesz, aby był obsłużony na wyższym poziomie
+            throw new Exception("Błąd podczas wykonywania zapytania SQL: " + ex.Message, ex);
+        }
+        catch (Exception ex)
+        {
+            // Obsługa innych wyjątków
+            Debug.LogError("PANUJEMY Error: " + ex.Message);
+            throw new Exception("Wystąpił nieoczekiwany błąd: " + ex.Message, ex);
+        }
         return ds;
     }
 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class Heros : Unit
 {
@@ -28,10 +29,8 @@ public class Heros : Unit
     }
     public override IEnumerator Fight()
     {
-        //Debug.Log("Klepa " + gameObject.name + " " + findPole().name);
         if(findPole() != null && findPole().GetComponent<Pole>().unit != null && Enemy != findPole().GetComponent<Pole>().unit.GetComponent<Unit>().Enemy)
         {
-            //Debug.Log("Doszło " + gameObject.name);
             Unit enemyUnit = findPole().GetComponent<Pole>().unit.GetComponent<Unit>();
             if(!attackAP)
                 yield return StartCoroutine(enemyUnit.TakeDamage(this, enemyUnit.BeforDamage(gameObject, BeforAttack(enemyUnit.gameObject, Attack))));
@@ -57,12 +56,75 @@ public class Heros : Unit
                 }
             }
         }
-
         yield return null;
-        if(Health <= 0)
+    }
+
+    public override void Morale()
+    {
+        ShowPopUp("MORALE", Color.green);
+        Attack += (int)(Attack * 0.2f);
+        AP += (int)(AP * 0.2f);
+        Health += (int)(Health * 0.2f);
+        MaxHealth += (int)(MaxHealth * 0.2f);
+    }
+
+    
+
+    public override IEnumerator Jump()
+    {
+        List<int> wolne = new List<int>();
+        FightManager fightManager = EventSystem.eventSystem.GetComponent<FightManager>();
+        wolne.Add(Enemy ? 3: 0);
+        wolne.Add(Enemy ? 4: 1);
+        wolne.Add(Enemy ? 5: 2);
+        int rng;
+        do{
+            rng = Random.Range(0, wolne.Count);
+            if(!fightManager.linie[wolne[rng]].EndBattle)
+            {
+                break;
+            }
+            else
+            {
+                wolne.RemoveAt(rng);
+            }
+        }while(wolne.Count != 0);
+        Debug.Log(wolne.Count + " SKOK");
+        if (wolne.Count != 0)
         {
-            StartCoroutine(Death());
+            Debug.Log("weszlo");
+            Linia line = fightManager.linie[wolne[rng]];
+            List<Pole> help = line.pola.ToList();
+
+            // Odwracamy kopię listy
+            help.Reverse();
+
+            // Przechodzimy przez odwróconą kopię
+            foreach (var pole in help)
+            {
+                if (pole.unit == null)
+                {
+                    yield return StartCoroutine(Jump(pole.gameObject));
+                    ReadyToJump = false;
+                    Debug.Log(pole.nr);
+                }
+                else
+                {
+                    if (pole.unit.GetComponent<Unit>().Enemy != Enemy)
+                    {
+                        break;
+                    }
+                }
+            }
+
+            Debug.Log("Jump " + Name + " " + wolne[rng]);
         }
+        else
+        {
+            Skip = true;
+        }
+        yield return null;
+            
     }
 
     public virtual void UpgradeHeros(Unit newUnit)
@@ -72,9 +134,21 @@ public class Heros : Unit
         Attack += (int)(newUnit.Attack * 0.4f);
         AP += (int)(newUnit.AP * 0.4f);
         Cost += (int)(newUnit.Cost);
+        RealCost += (int)(newUnit.RealCost);
         Initiative += (int)(newUnit.Initiative * 0.1f);
         UpgradeLevel += newUnit.UpgradeLevel;
         GetComponent<DragObject>().pole.unit = gameObject;
+
+        if(GetComponent<Wizard>())
+        {
+            if(newUnit.gameObject.GetComponent<Wizard>().spell.Cost > GetComponent<Wizard>().spell.Cost)
+            {
+                Debug.Log(GetComponent<Wizard>().spell.gameObject.name);
+                GetComponent<Wizard>().AddSpell(newUnit.gameObject.GetComponent<Wizard>().spell);
+                Debug.Log("podmianka");
+                Debug.Log(GetComponent<Wizard>().spell.gameObject.name);
+            }
+        }
 
         Destroy(newUnit.gameObject);
 
@@ -125,7 +199,6 @@ public class Heros : Unit
                 pole = findPole(pole.GetComponent<Pole>());
                 if(pole != null && (pole.GetComponent<Pole>().unit == null || Enemy == pole.GetComponent<Pole>().unit.GetComponent<Unit>().Enemy))
                 {
-                    Debug.Log(Name);
                     yield return StartCoroutine(Jump(findPole()));
                 }
             }
@@ -145,7 +218,7 @@ public class Heros : Unit
             Vector3 targetPosition = pole.transform.position; // Pozycja pola, do której zmierzamy
             targetPosition.z = -2;
             float elapsedTime = 0f;
-            float duration = 1f / FightManager.GameSpeed;
+            float duration = 1f;
 
             while (elapsedTime < duration)
             {

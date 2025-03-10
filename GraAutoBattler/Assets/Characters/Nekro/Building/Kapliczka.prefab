@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21ac2b830195f046827d6ba7d470027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 96
   Name: Kapliczka
   Cost: 8
   Star: 3
@@ -188,7 +188,7 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "Na ko\u0144cu walki zwi\u0119ksza proces ulepszenia pierwszej jednostki
+  Description: "<b>Po Walce: </b> zwi\u0119ksza proces ulepszenia pierwszej jednostki
     w rz\u0119dzie o 1"
   CPU: 0
   UpgradeLevel: 0
@@ -199,6 +199,9 @@ MonoBehaviour:
   PopUp: {fileID: 0}
   BoskaTarcza: 0
   attackAP: 0
+  Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   HealthText: {fileID: 3501279418940951141}
 --- !u!114 &6985540666553226679
 MonoBehaviour:

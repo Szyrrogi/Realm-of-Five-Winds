@@ -38,6 +38,18 @@ public class ShopManager : MonoBehaviour
     public GameObject Chochil;
     public static int nizka;
 
+
+    void Awake()
+    {
+        if(Fraction.fractionList == null)
+        {
+            Fraction.fractionList = new List<Fraction.fractionType>();
+        }
+        if(Fraction.fractionList.Count == 0)
+        {
+            Fraction.fractionList.Add(Fraction.fractionType.Ludzie);
+        }
+    }
     void Update()
     {
         if(nizka > LevelUpCost)
@@ -83,11 +95,13 @@ public class ShopManager : MonoBehaviour
 
     public void FirstRoll()
     {
+        
         FreeRoll++;
         Roll();
         foreach(ShopVisitor obj in shopVisitors)
         {
             obj.FirstRoll();
+            Debug.Log(obj.gameObject.name);
         } 
     }
     public List<GameObject> filteredObjects;
@@ -129,7 +143,10 @@ public class ShopManager : MonoBehaviour
                 character[i].name.text = filteredObjects[rng].GetComponent<Unit>().Name;
                 character[i].price.text = 
                 (filteredObjects[rng].GetComponent<Unit>().RealCost == 0 ? filteredObjects[rng].GetComponent<Unit>().Cost.ToString() : filteredObjects[rng].GetComponent<Unit>().RealCost.ToString());
-                
+                if(character[i].unit.GetComponent<Heros>())
+                    character[i].SetStats();
+                else
+                    character[i].stats.SetActive(false);
 
             
             }
@@ -172,15 +189,22 @@ public class ShopManager : MonoBehaviour
             if(levelUp == 4)
             {
                 LevelUpCost = 0;
-            }
-            
+            }   
         }
-
     }
 
     void Start()
     {
-        FreeRoll += Fraction.fractionList == null ? 3 : Fraction.fractionList.Count + 1;
+        if(PlayerManager.isSave)
+        {
+            FreeRoll = 1;
+            
+        }
+        else
+        {
+            levelUp = 1;
+            FreeRoll = Fraction.fractionList == null ? 3 : Fraction.fractionList.Count + 1;
+        }
         Roll();
     }
 }

@@ -13,7 +13,64 @@ public class ShopObject : MonoBehaviour
     public GameObject unit;
     public GameObject nullObject;
 
-    
+    public GameObject stats;
+
+    public TextMeshProUGUI atakText;
+    public TextMeshProUGUI healthText;
+    public Image atakImage;
+
+    public void SetLook()
+    {
+                image.sprite = unit.GetComponent<SpriteRenderer>().sprite;
+                name.text = unit.GetComponent<Unit>().Name;
+                price.text = 
+                (unit.GetComponent<Unit>().RealCost == 0 ? unit.GetComponent<Unit>().Cost.ToString() : unit.GetComponent<Unit>().RealCost.ToString());
+                if(unit.GetComponent<Heros>())
+                    SetStats();
+                else
+                    stats.SetActive(false);
+    }
+
+    //  private bool isHolding = false;
+    // private float holdTime = 0f;
+    // private float holdThreshold = 0.1f; 
+    // private bool holdActionTriggered = false;
+
+    //  void Update()
+    // {
+    //     if (isHolding)
+    //     {
+    //         holdTime += Time.deltaTime;
+
+    //         // Sprawdź, czy czas przytrzymania przekroczył próg i czy akcja przytrzymania nie została jeszcze wywołana
+    //         if (holdTime >= holdThreshold && !holdActionTriggered)
+    //         {
+    //             HandleClick(true); // Wywołaj akcję przytrzymania
+    //             holdActionTriggered = true; // Ustaw flagę, aby uniknąć ponownego wywołania
+    //         }
+    //     }
+    // }
+
+    // void OnMouseDown()
+    // {
+    //     isHolding = true;
+    //     holdTime = 0f;
+    //     holdActionTriggered = false; // Zresetuj flagę przy nowym kliknięciu
+    // }
+
+    // void OnMouseUp()
+    // {
+    //     if (isHolding)
+    //     {
+    //         if (holdTime < holdThreshold)
+    //         {
+    //             // Krótkie kliknięcie
+    //             HandleClick(false);
+    //         }
+    //         // Jeśli przytrzymanie zostało już obsłużone w Update(), nie musimy nic robić
+    //         isHolding = false;
+    //     }
+    // }
 
     void OnMouseDown()
     {
@@ -48,6 +105,17 @@ public class ShopObject : MonoBehaviour
         image.sprite = nullObject.GetComponent<SpriteRenderer>().sprite;
         name.text = nullObject.GetComponent<Unit>().Name;
         price.text = nullObject.GetComponent<Unit>().RealCost.ToString();
+        stats.SetActive(false);
+        // if(trzyma)
+        //     newUnit.GetComponent<DragObject>().OnMouseDown();
+    }
+
+    public void SetStats()
+    {
+        stats.SetActive(true);
+        atakText.text = unit.GetComponent<Unit>().attackAP ? unit.GetComponent<Unit>().AP.ToString() : unit.GetComponent<Unit>().Attack.ToString();
+        healthText.text = unit.GetComponent<Unit>().Health.ToString();
+        atakImage.color = unit.GetComponent<Unit>().attackAP ? new Color(0.5f, 0, 1f) : Color.yellow;
     }
 
     bool czyKupic()
@@ -83,7 +151,7 @@ public class ShopObject : MonoBehaviour
 
     IEnumerator WaitDescription()
     {
-        yield return new WaitForSeconds(0.2f / FightManager.GameSpeed);
+        yield return new WaitForSeconds(0.2f);
         if(showOpis && unit != nullObject)
         {
             DescriptionManager.opis.SetActive(true);

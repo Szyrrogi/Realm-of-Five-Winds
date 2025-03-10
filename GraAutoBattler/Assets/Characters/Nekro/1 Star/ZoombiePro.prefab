@@ -100,19 +100,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419f2c1242666a64380b274e22b2911c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 70
   Name: Zombie
   Cost: 3
   Star: 1
   Initiative: 40
-  MaxHealth: 60
-  Health: 60
+  MaxHealth: 55
+  Health: 55
   Attack: 15
   Defense: 15
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "Po \u015Bmierci wraca z 1 zdrowia"
+  Description: "<b>Ostatni Oddech:</b> Przywr\xF3\u0107 te jednostk\u0119 z pe\u0142nym
+    zdrowiem"
   CPU: 0
   UpgradeLevel: 1
   UpgradeNeed: 3
@@ -122,10 +123,12 @@ MonoBehaviour:
   PopUp: {fileID: 0}
   BoskaTarcza: 0
   attackAP: 0
+  Skip: 0
   AttackText: {fileID: 2333975298996084202}
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 0}
   Evolution: 1
+  ult: 1
 --- !u!114 &8731495660794391217
 MonoBehaviour:
   m_ObjectHideFlags: 0

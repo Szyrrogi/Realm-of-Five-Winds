@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32feb510adc697646b8ff48d7140cab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 90
   Name: "Mroczny Je\u017Adziec"
   Cost: 8
   Star: 4
@@ -187,7 +187,7 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "Po ataku zmniejsza przeciwnik\u0105 pancerz o 5"
+  Description: "<b>Pocz\u0105tek Walki:</b> usuwa Obron\u0119 z przeciwnik\xF3w"
   CPU: 0
   UpgradeLevel: 1
   UpgradeNeed: 3
@@ -197,6 +197,7 @@ MonoBehaviour:
   PopUp: {fileID: 0}
   BoskaTarcza: 0
   attackAP: 0
+  Skip: 0
   AttackText: {fileID: 2333975298996084202}
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 0}

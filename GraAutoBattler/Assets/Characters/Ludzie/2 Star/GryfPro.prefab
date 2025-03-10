@@ -112,19 +112,22 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "Zwi\u0119ksza iniciatywe wszystkim jednostkom w rzedzie o 30"
+  Description: "<b>Poczatek Walki:</b> Zwi\u0119ksza iniciatywe wszystkim jednostkom
+    w rz\u0119dzie o 30"
   CPU: 0
   UpgradeLevel: 1
   UpgradeNeed: 6
   Enemy: 0
+  fraction: 0
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
+  attackAP: 0
+  Skip: 0
   AttackText: {fileID: 5187295522447798132}
   HealthText: {fileID: 6430296136860862158}
   EvolveHeroes: {fileID: 0}
   Evolution: 1
-  attackAP: 0
 --- !u!114 &6699983802921889276
 MonoBehaviour:
   m_ObjectHideFlags: 0

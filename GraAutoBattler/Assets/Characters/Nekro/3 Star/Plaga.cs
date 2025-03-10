@@ -11,7 +11,7 @@ public class Plaga : Heros
             if(pole.unit != null && pole.unit.GetComponent<Unit>().Enemy != Enemy)
             {
                 Unit enemyUnit = pole.unit.GetComponent<Unit>();
-                yield return StartCoroutine(enemyUnit.TakeDamage(this, enemyUnit.BeforDamage(gameObject, BeforAttack(enemyUnit.gameObject, (int)(AP / (Evolution ? 7 :  10)) * (FightManager.Turn))), TypeDamage.typeDamage.Magic));
+                yield return StartCoroutine(enemyUnit.TakeDamage(this, enemyUnit.BeforDamage(gameObject, BeforAttack(enemyUnit.gameObject, (int)(AP / (Evolution ? 5 :  10)) * (FightManager.Turn))), TypeDamage.typeDamage.Magic));
             }
         }
 
@@ -20,13 +20,9 @@ public class Plaga : Heros
             if(pole.unit != null && pole.unit.GetComponent<Unit>().Enemy != Enemy)
             {
                 Unit enemyUnit = pole.unit.GetComponent<Unit>();
-                yield return StartCoroutine(enemyUnit.TakeDamage(this, enemyUnit.BeforDamage(gameObject, BeforAttack(enemyUnit.gameObject, (int)(AP / (Evolution ? 7 : 10)) * (FightManager.Turn))), TypeDamage.typeDamage.Magic));
+                yield return StartCoroutine(enemyUnit.TakeDamage(this, enemyUnit.BeforDamage(gameObject, BeforAttack(enemyUnit.gameObject, (int)(AP / (Evolution ? 5 : 10)) * (FightManager.Turn))), TypeDamage.typeDamage.Magic));
             }
         }
         yield return null;
-        if(Health <= 0)
-        {
-            StartCoroutine(Death());
-        }
     }
 }

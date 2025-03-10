@@ -43,7 +43,7 @@ public class SynergyMiecz : Synergy
         {
             if (pole.unit != null && pole.unit.GetComponent<Unit>().Name == units[0].Name)
             {
-                yield return new WaitForSeconds(0.3f / FightManager.GameSpeed);
+                yield return new WaitForSeconds(0.3f);
                 pole.unit.GetComponent<Heros>().attackAP = true;
                 pole.unit.GetComponent<Unit>().AP += pole.unit.GetComponent<Unit>().Attack + 5;
                 pole.unit.GetComponent<Unit>().ShowPopUp((pole.unit.GetComponent<Unit>().Attack + 5).ToString(), Color.blue);

@@ -194,9 +194,12 @@ MonoBehaviour:
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
+  fraction: 0
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
+  attackAP: 0
+  Skip: 0
   HealthText: {fileID: 3501279418940951141}
 --- !u!114 &827349473763045422
 MonoBehaviour:

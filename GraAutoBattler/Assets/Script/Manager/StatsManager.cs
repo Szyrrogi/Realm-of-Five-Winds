@@ -7,7 +7,7 @@ using TMPro;
 public class StatsManager : MonoBehaviour
 {
     public static int life;
-    public static int win;
+    public static int win = 9;
     public static int Round;
 
     public TextMeshProUGUI lifeText;

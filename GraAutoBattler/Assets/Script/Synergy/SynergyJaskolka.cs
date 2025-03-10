@@ -43,7 +43,7 @@ public class SynergyJaskolka : Synergy
         {
             if (pole.unit != null && pole.unit.GetComponent<Unit>().Name == units[0].Name)
             {
-                yield return new WaitForSeconds(0.3f / FightManager.GameSpeed);
+                yield return new WaitForSeconds(0.3f);
                 pole.unit.GetComponent<Unit>().Initiative += 100;
                 pole.unit.GetComponent<Unit>().ShowPopUp("100", Color.blue);
                 

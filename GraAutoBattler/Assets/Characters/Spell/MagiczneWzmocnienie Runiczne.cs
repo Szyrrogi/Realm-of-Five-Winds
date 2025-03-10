@@ -23,7 +23,7 @@ public class MagiczneWzmocnienieRuniczne : Spell
                 pole.unit.GetComponent<Unit>().ShowPopUp(((int)(AP/10)).ToString(), new Color(0.5f, 0f, 1f));
             }
         }
-        yield return new WaitForSeconds(0.7f / FightManager.GameSpeed);
+        yield return new WaitForSeconds(0.7f);
         yield return null;
     }
 }

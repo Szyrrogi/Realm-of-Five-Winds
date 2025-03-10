@@ -179,7 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 51
   Name: "Tawerna Rekrut\xF3w"
-  Cost: 5
+  Cost: 3
   Star: 3
   Initiative: 20
   MaxHealth: 30
@@ -195,9 +195,12 @@ MonoBehaviour:
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
+  fraction: 0
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
+  attackAP: 0
+  Skip: 0
   HealthText: {fileID: 3501279418940951141}
 --- !u!114 &6985540666553226679
 MonoBehaviour:

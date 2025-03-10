@@ -176,9 +176,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 945efd653317a514591e927798def226, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 93
   Name: Samotnia
-  Cost: 5
+  Cost: 6
   Star: 2
   Initiative: 21
   MaxHealth: 20
@@ -188,8 +188,8 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "Zapewnia 10/10 pierwszej jednostce w rzedzie za ka\u017Cde puste
-    pole"
+  Description: "<b>Poczatek Walki: </b>Zapewnia 10/10 pierwszej jednostce w rzedzie
+    za ka\u017Cde puste pole"
   CPU: 0
   UpgradeLevel: 0
   UpgradeNeed: 0
@@ -199,6 +199,7 @@ MonoBehaviour:
   PopUp: {fileID: 0}
   BoskaTarcza: 0
   attackAP: 0
+  Skip: 0
   HealthText: {fileID: 3501279418940951141}
 --- !u!114 &6985540666553226679
 MonoBehaviour:

@@ -44,7 +44,7 @@ namespace TMPro.Examples
                 // If No Characters then just yield and wait for some text to be added
                 if (characterCount == 0)
                 {
-                    yield return new WaitForSeconds(0.25f / FightManager.GameSpeed);
+                    yield return new WaitForSeconds(0.25f);
                     continue;
                 }
 
@@ -76,7 +76,7 @@ namespace TMPro.Examples
 
                 currentCharacter = (currentCharacter + 1) % characterCount;
 
-                yield return new WaitForSeconds(0.05f / FightManager.GameSpeed);
+                yield return new WaitForSeconds(0.05f);
             }
         }
 

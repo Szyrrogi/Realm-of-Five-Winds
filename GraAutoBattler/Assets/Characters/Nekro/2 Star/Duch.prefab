@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93e284ea94cedb743b3f9d182985a17f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 71
   Name: Duch
   Cost: 4
   Star: 2
@@ -115,13 +115,16 @@ MonoBehaviour:
   Description: "Odporno\u015B\u0107 na ataki dystansowe"
   CPU: 0
   UpgradeLevel: 1
-  UpgradeNeed: 4
+  UpgradeNeed: 3
   Enemy: 0
   fraction: 1
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
   attackAP: 1
+  Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   AttackText: {fileID: 2333975298996084202}
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 1819705648667262722, guid: 70b28288a7593f5448aa2eb9acd79aa7, type: 3}

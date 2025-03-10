@@ -45,7 +45,7 @@ public class SynWampirKaplan : Synergy
             if (pole.unit != null && pole.unit.GetComponent<Unit>().Name == units[0].Name)
             {
                 Debug.Log("WESZLO");
-                yield return new WaitForSeconds(0.3f / FightManager.GameSpeed);
+                yield return new WaitForSeconds(0.3f);
                 pole.unit.GetComponent<Unit>().BoskaTarcza = false;
                 yield return StartCoroutine(pole.unit.GetComponent<Unit>().TakeDamage(pole.unit.GetComponent<Unit>(), 50));                
             }

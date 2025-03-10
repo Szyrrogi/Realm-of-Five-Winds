@@ -188,7 +188,8 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "Zwi\u0119ksz zwierz\u0119tom atak oraz zdrowie o 20"
+  Description: "<b>Poczatek Walki: </b>Zwi\u0119ksz zwierz\u0119tom w rz\u0119dzie
+    atak oraz zdrowie o 20"
   CPU: 0
   UpgradeLevel: 0
   UpgradeNeed: 0
@@ -198,6 +199,9 @@ MonoBehaviour:
   PopUp: {fileID: 0}
   BoskaTarcza: 0
   attackAP: 0
+  Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   HealthText: {fileID: 3501279418940951141}
   pattern:
   - {fileID: -575962143696892864, guid: 7ef3355652854824da3f4934c6720b90, type: 3}
@@ -206,6 +210,7 @@ MonoBehaviour:
   - {fileID: 315450212694563472, guid: ab33b86453120754a9d6a11d64bf37bb, type: 3}
   - {fileID: 4410281751850155844, guid: 04200a186c3ed9f439f5b2ef6a73532c, type: 3}
   - {fileID: 6755485281205651035, guid: fa2bc5898d79af54298c9f9b54b303e4, type: 3}
+  - {fileID: 2104466836513729136, guid: 3ba1a528f55cb4c448164ce8032b6113, type: 3}
 --- !u!114 &6985540666553226679
 MonoBehaviour:
   m_ObjectHideFlags: 0

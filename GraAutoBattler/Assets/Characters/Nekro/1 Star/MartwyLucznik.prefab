@@ -112,7 +112,7 @@ MonoBehaviour:
   Range: 1
   AP: 0
   MagicResist: 0
-  Description: Po ulepszeniu otrzymuje 30 Ataku
+  Description: <b>Ulepszenie:</b> otrzymuje 30 Ataku
   CPU: 0
   UpgradeLevel: 1
   UpgradeNeed: 4
@@ -122,6 +122,7 @@ MonoBehaviour:
   PopUp: {fileID: 0}
   BoskaTarcza: 0
   attackAP: 0
+  Skip: 0
   AttackText: {fileID: 2333975298996084202}
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 1819705648667262722, guid: 515343f3376b99f409d7ac95874818d7, type: 3}

@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System;
 using System.IO;
 using System.Data;
+using TMPro;
 
 
 public class FightManager : MonoBehaviour
@@ -19,43 +20,50 @@ public class FightManager : MonoBehaviour
     public List<Linia> linie;
 
     public GameObject shop;
+    public GameObject fightUI;
     public static List<Vector2> Tomb = new List<Vector2>();
 
     public GameObject[] EndScreen;
     public static int Turn;
     public static float GameSpeed = 1f;
     public static bool IsFight;
+    public TextMeshProUGUI GameSpeedText;
+
+    public static bool isPaused;
+
+    public TextMeshProUGUI waitingText;
+
+    public EventObject fatyga;
+
 
     public void ChangeSpeed(int speed)
     {
-        Debug.Log(GameSpeed);
         switch (speed)
         {
             case 0:
-                GameSpeed = 1f;
+                 isPaused = !isPaused;
+                if (isPaused)
+                {
+                    Time.timeScale = 0; // Zatrzymaj czas
+                }
+                else
+                {
+                    Time.timeScale = GameSpeed; // Wznów czas
+                }
                 break;
             case 1:
-                GameSpeed *= 2f;
+                if(GameSpeed < 10)
+                    GameSpeed *= 2f;
+                Time.timeScale = GameSpeed;
                 break;
             case 2:
                 if(GameSpeed > 0.3f)
                     GameSpeed /= 2f;
+                Time.timeScale = GameSpeed;
                 break;
         }
+        GameSpeedText.text = Time.timeScale == 0 ? "0" : "x" + GameSpeed;
     }
-
-    // void Update()
-    // {
-    //     foreach(Unit jednostka in units)
-    //     {
-    //         if(jednostka == null)
-    //         {
-    //             units.Remove(jednostka);
-    //             break;
-    //         }
-    //     }
-    // }
-
 
     public void Test()
     {
@@ -63,7 +71,7 @@ public class FightManager : MonoBehaviour
         ActiveBattle();
     }
 
-
+    
     public class AutoBattlerGameViewModel
     {
         public int Id { get; set; }
@@ -108,19 +116,29 @@ public class FightManager : MonoBehaviour
 
     public void ActiveBattle()
     {
-        StatsManager.Round--;
+        //StatsManager.Round--;
         //////  TEST
-        // List<AutoBattlerGameViewModel> lista = LoadFeaturedGamesFromDatabase();
-        // foreach (var game in lista)
-        // {
-        //     Debug.Log($"ID: {game.Id}, Version: {game.Version}, Name: {game.Name}, FaceId: {game.FaceId}, Date: {game.Date}, LP: {game.LP}, PlayerId: {game.PlayerId}, Comp: {game.Comp}, Round: {game.Round}");
-        // }
 
-        //////
-        Tomb = new List<Vector2>();
+        if(IsFight == false)
+        {
+            waitingText.text = "Poszukiwanie oponenta ...";
+            Debug.Log("Poszukiwanie oponenta ...");
+
+            Tomb = new List<Vector2>();
+            StartCoroutine(ActiveBattle2());
+        }
+    }
+
+    public IEnumerator ActiveBattle2()
+    {
+        yield return new WaitForSeconds(0.03f);
         SaveManager.Save(PlayerManager.Name, PlayerManager.PlayerFaceId, ShopManager.levelUp);
+        
         EventSystem.eventSystem.GetComponent<SaveManager>().LoadActive(true);
+
+        waitingText.text = "";
         StartCoroutine(StartBattle());
+        yield return null;
     }
 
     public Pole GetPole(int lineId, int poleId)
@@ -148,28 +166,55 @@ public class FightManager : MonoBehaviour
         {
             EventSystem.eventSystem.GetComponent<ShopManager>().FreeRoll = 0;
             shop.SetActive(false);
+            fightUI.SetActive(true);
+
+            if(!ShopManager.isLoock)
+            {
+                EventSystem.eventSystem.GetComponent<ShopManager>().FirstRoll();
+            }
+            else
+            {
+                GetComponent<ShopManager>().ChangeLoock();
+            }
 
             yield return StartCoroutine(MoveAndZoomCamera(targetPosition.position, mainCamera.orthographicSize + 1f));
             setList();
             SortUnits();
             yield return (StartCoroutine(Battle()));
-        }
-        foreach (var kvp in EventSystem.eventSystem.GetComponent<SynergyManager>().ActiveSynergyObjects)
-        {
-            GameObject gameObject = kvp.Value; // Get the GameObject from the dictionary
-            Synergy synergy = gameObject.GetComponent<Synergy>(); // Get the Synergy component
-            synergy.AfterBattle(); // Start the coroutine
-        }
-        for(int i = 0; i < 3; i++)
-        {
-            foreach(Pole pole in linie[i].pola)
+
+            foreach (var kvp in EventSystem.eventSystem.GetComponent<SynergyManager>().ActiveSynergyObjects)
             {
-                if(pole.unit != null)
+                GameObject gameObject = kvp.Value; // Get the GameObject from the dictionary
+                Synergy synergy = gameObject.GetComponent<Synergy>(); // Get the Synergy component
+                synergy.AfterBattle(); // Start the coroutine
+            }
+            for(int i = 0; i < 3; i++)
+            {
+                foreach(Pole pole in linie[i].pola)
                 {
-                    pole.unit.GetComponent<Unit>().AfterBattle();
+                    if(pole.unit != null)
+                    {
+                        pole.unit.GetComponent<Unit>().AfterBattle();
+                    }
                 }
             }
+            // if(!ShopManager.isLoock)
+            // {
+            //     EventSystem.eventSystem.GetComponent<ShopManager>().FirstRoll();
+            // }
+            // else
+            // {
+            //     GetComponent<ShopManager>().ChangeLoock();
+            // }
+            SaveManager.Save(PlayerManager.Name, PlayerManager.PlayerFaceId, ShopManager.levelUp);
         }
+        
+    }
+
+    public void Poddymka()
+    {
+        RankedManager.Poddymka = true;
+        IsFight = false;
     }
 
     bool[] FirstBuffLine = new bool[3];
@@ -196,52 +241,51 @@ public class FightManager : MonoBehaviour
         }
 
         foreach (var unit in units)
-            if(unit != null)
+            if(unit != null && !unit.Skip)
             {
                 unit.gameObject.transform.localScale += new Vector3(0.02f, 0.02f, 0.02f);
                 yield return unit.StartCoroutine(unit.OnBattleStart());
                 unit.gameObject.transform.localScale -= new Vector3(0.02f, 0.02f, 0.02f);
             }
         Turn = 0;
-        while (!czyWygrana(new int[] { 2, 5 }) || 
-       !czyWygrana(new int[] { 0, 3 }) || 
-       !czyWygrana(new int[] { 1, 4 }))
+    //     while (!czyWygrana(new int[] { 2, 5 }) || 
+    //    !czyWygrana(new int[] { 0, 3 }) || 
+    //    !czyWygrana(new int[] { 1, 4 }))
+        while(!linie[0].EndBattle || !linie[1].EndBattle || !linie[2].EndBattle)
         {
             SortUnits();
             Turn++;
-            bool zmienyKoloru = !czyWygrana(new int[] { 2, 5 });
-            zmienyKoloru = !czyWygrana(new int[] { 0, 3 }); 
-            zmienyKoloru = !czyWygrana(new int[] { 1, 4 });
+            if(Turn > 10)
+                EventSystem.eventSystem.GetComponent<EventManager>().SetEvent(fatyga.sprite, fatyga.description + (Turn - 10 ) + " obrażeń!");
             foreach (var unit in units)
             {
-                Debug.Log("1");
-
-
-
-                // Debug.Log("2");
-
-                // if (unit == null || unit.gameObject == null || unit.Equals(null)) // Nowe sprawdzenie
-                //     continue;
-
-                Debug.Log("3");
-
-                if(unit != null)
+                StartCoroutine(czyWygrana(new int[] { 2, 5 }));
+                StartCoroutine(czyWygrana(new int[] { 0, 3 })); 
+                StartCoroutine(czyWygrana(new int[] { 1, 4 }));
+                yield return new WaitForSeconds(0.1f);
+                if(unit != null && !unit.Skip && unit.gameObject != null)
                 {
-                    Debug.Log("4");
                     unit.gameObject.transform.localScale += new Vector3(0.02f, 0.02f, 0.02f);
+                    if(unit.ReadyToJump)
+                        yield return unit.StartCoroutine(unit.Jump());
                     yield return unit.StartCoroutine(unit.PreAction());
                     yield return unit.StartCoroutine(unit.Move());
                     yield return unit.StartCoroutine(unit.Action());
                     yield return unit.StartCoroutine(unit.Fight());
                     unit.gameObject.transform.localScale -= new Vector3(0.02f, 0.02f, 0.02f);
+                    if (unit != null && Turn > 10)
+                        yield return StartCoroutine(unit.TakeDamage(unit, Turn - 10, TypeDamage.typeDamage.TrueDamage));
+                    if(unit.Health <= 0)
+                    {
+                        StartCoroutine(unit.Death());
+                    }
                 }
-
-                if (unit != null && Turn > 10)
-                    yield return StartCoroutine(unit.TakeDamage(unit, Turn - 10, TypeDamage.typeDamage.TrueDamage));
-
-                Debug.Log("5");
+                
             }
+            yield return new WaitForSeconds(0.1f);
+            
         }
+        yield return new WaitForSeconds(0.5f);
         StatsManager.Round++;
         setList();
         foreach (var unit in units)
@@ -258,88 +302,146 @@ public class FightManager : MonoBehaviour
             new int[] { 2, 5 }
         };
         sprawdzKtoWygralWParach(paryLinii);
-
         EndBattle();
         EventSystem.eventSystem.GetComponent<SaveManager>().LoadActive();
-        
         yield return null;
     }
 
     void AddToBase()    //TEST
     {
-        // SqlCommand cmd = new SqlCommand(@"
-        // INSERT INTO AutoBattlerGame (Version, Name, FaceId, Date, LP, PlayerId, Comp, Round)  
-        // VALUES (@Version, @Name, @PlayerFaceId, @DataNow, 100, 1, @Team, @Round);
-        // ", DB.con);
+        if(Login.zalogowano)
+        {
+            try{
+                SqlCommand cmd = new SqlCommand(@"
+                INSERT INTO AutoBattlerGame (Version, Name, FaceId, Date, LP, PlayerId, Comp, Round)  
+                VALUES (@Version, @Name, @PlayerFaceId, @DataNow, @LP, @Id, @Team, @Round);
+                ", DB.con);
 
-        // cmd.Parameters.AddWithValue("Version", PlayerManager.Version);
-        // cmd.Parameters.AddWithValue("Name", PlayerManager.Name);
-        // cmd.Parameters.AddWithValue("PlayerFaceId", PlayerManager.PlayerFaceId);
-        // cmd.Parameters.AddWithValue("DataNow", DateTime.Now);
-        // cmd.Parameters.AddWithValue("Round", StatsManager.Round - 1);
+                cmd.Parameters.AddWithValue("Version", PlayerManager.Version);
+                cmd.Parameters.AddWithValue("Name", PlayerManager.Name);
+                cmd.Parameters.AddWithValue("PlayerFaceId", PlayerManager.PlayerFaceId);
+                cmd.Parameters.AddWithValue("DataNow", DateTime.Now);
+                cmd.Parameters.AddWithValue("Round", StatsManager.Round - 1);
+                if(RankedManager.Ranked)
+                    cmd.Parameters.AddWithValue("LP", PlayerManager.LP);
+                else
+                    cmd.Parameters.AddWithValue("LP", 0);
+                cmd.Parameters.AddWithValue("Id", PlayerManager.Id);
 
-        // string filePath = Application.dataPath + "/Save/Zapis.json";
-        // string jsonContent = File.ReadAllText(filePath);
+                string filePath = Application.dataPath + "/Save/Zapis.json";
+                if(RankedManager.Ranked)
+                {
+                    filePath = Application.dataPath + "/Save/ZapisR.json";
+                }
+                string jsonContent = File.ReadAllText(filePath);
 
-        // cmd.Parameters.AddWithValue("Team", jsonContent);
-    
-        // DB.execSQL(cmd);
+                cmd.Parameters.AddWithValue("Team", jsonContent);
+            
+                DB.execSQL(cmd);
+            }
+            catch(Exception ex)
+            {
+                Debug.Log(ex.Message);
+            }
+        }
     }
 
    void sprawdzKtoWygralWParach(int[][] paryLinii)
     {
         int graczWin = 0;
         int enemyWin = 0;
-        foreach (int[] para in paryLinii)
+        for(int i = 0; i < 3; i++)
         {
-            int graczJednostki = 0;
-            int enemyJednostki = 0;
-
-            foreach (int indeks in para)
-            {
-                foreach (Pole pole in linie[indeks].pola)
-                {
-                    if (pole.unit != null && pole.unit.GetComponent<Heros>())
-                    {
-                        if (pole.unit.GetComponent<Unit>().Enemy)
-                            enemyJednostki++;
-                        else
-                            graczJednostki++;
-                    }
-                }
-            }
-
-            // Sprawdź wynik dla danej pary linii
-            if (graczJednostki > 0 && enemyJednostki == 0)
-            {
-                graczWin++;
-            }
-            else if (enemyJednostki > 0 && graczJednostki == 0)
-            {
+            if(linie[i].KtoWygral == 1)
+                graczWin++; 
+            if(linie[i].KtoWygral == 2)
                 enemyWin++;
-            }
         }
+        // foreach (int[] para in paryLinii)
+        // {
+        //     int graczJednostki = 0;
+        //     int enemyJednostki = 0;
+
+        //     foreach (int indeks in para)
+        //     {
+        //         foreach (Pole pole in linie[indeks].pola)
+        //         {
+        //             if (pole.unit != null && pole.unit.GetComponent<Heros>())
+        //             {
+        //                 if (pole.unit.GetComponent<Unit>().Enemy)
+        //                     enemyJednostki++;
+        //                 else
+        //                     graczJednostki++;
+        //             }
+        //         }
+        //     }
+
+        //     // Sprawdź wynik dla danej pary linii
+        //     if (graczJednostki > 0 && enemyJednostki == 0)
+        //     {
+        //         graczWin++;
+        //     }
+        //     else if (enemyJednostki > 0 && graczJednostki == 0)
+        //     {
+        //         enemyWin++;
+        //     }
+        // }
         if (graczWin > enemyWin)
         {
-            StartCoroutine(ShowEndScreen(0));
+            if(StatsManager.win != 10)
+                StartCoroutine(ShowEndScreen(0));
             AddToBase();
             //Debug.Log("WYGRANKO");
             StatsManager.win++;
-            if(StatsManager.win == 10)
+            if((StatsManager.win == 10 && !RankedManager.Poddymka) || StatsManager.win == 12)
             {
-                SceneManager.LoadScene(2);
+                ZapiszwWynil(true);
+                if(!RankedManager.Ranked)
+                {
+                    SceneManager.LoadScene(2);
+                    string savePath2 = Application.dataPath + "/Save/Save2.json";
+                    if (File.Exists(savePath2))
+                    {
+                        File.Delete(savePath2);
+                        Debug.Log("Plik Save2.json został usunięty.");
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Plik Save2.json nie istnieje.");
+                    }
+                }
+                else
+                    EventSystem.eventSystem.GetComponent<RankedManager>().StartRank();
             }
         }
         else if (graczWin < enemyWin)
         {
-            StartCoroutine(ShowEndScreen(1));
+            if(StatsManager.life != 0)
+                StartCoroutine(ShowEndScreen(1));
             StatsManager.life--;
             if(StatsManager.life == 0)
             {
-                SceneManager.LoadScene(1);
+                ZapiszwWynil(false);
+                if(!RankedManager.Ranked)
+                {
+                    SceneManager.LoadScene(1);
+                    string savePath2 = Application.dataPath + "/Save/Save2.json";
+                    if (File.Exists(savePath2))
+                    {
+                        File.Delete(savePath2);
+                        Debug.Log("Plik Save2.json został usunięty.");
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Plik Save2.json nie istnieje.");
+                    }
+                }
+                else
+                    EventSystem.eventSystem.GetComponent<RankedManager>().StartRank();
+                
             }
-            if(StatsManager.Round > 4)
-                AddToBase();
+            
+            AddToBase();
            // Debug.Log("PRZEGRANA");
         }
         else
@@ -350,8 +452,68 @@ public class FightManager : MonoBehaviour
         }
     }
 
+    void ZapiszwWynil(bool isWinning)
+    {
+        try
+        {
+            using (SqlConnection con = DB.Connect(DB.conStr))
+            {
+                string query = "INSERT INTO Stats (PlayerId, Round, IsWin, Comp, Win, Lose, Fraction) VALUES (@PlayerId, @Round, @IsWin, @Comp, @Win, @Lose, @fraction)";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@PlayerId", PlayerManager.Id);
+                cmd.Parameters.AddWithValue("@Round", StatsManager.Round);
+                cmd.Parameters.AddWithValue("@IsWin", isWinning);
+                cmd.Parameters.AddWithValue("@Win", StatsManager.win);
+                cmd.Parameters.AddWithValue("@Lose", StatsManager.life);
 
-    bool czyWygrana(int[] indeksyLinii)
+                string frakcja = "";
+
+                // Iteracja przez wszystkie wartości enuma
+                foreach (Fraction.fractionType type in Enum.GetValues(typeof(Fraction.fractionType)))
+                {
+                    if (Fraction.fractionList.Contains(type))
+                    {
+                        frakcja += "1";
+                    }
+                    else
+                    {
+                        frakcja += "0";
+                    }
+                }
+                cmd.Parameters.AddWithValue("@Fraction", frakcja);
+
+                string filePath = Application.dataPath + "/Save/Zapis.json";
+                if(RankedManager.Ranked)
+                {
+                    filePath = Application.dataPath + "/Save/ZapisR.json";
+                }
+                string jsonContent = File.ReadAllText(filePath);
+
+                cmd.Parameters.AddWithValue("@Comp", jsonContent);
+
+                int result = cmd.ExecuteNonQuery();
+
+                if (result > 0)
+                {
+                    Debug.Log("Rejestracja zakończona pomyślnie!");
+                }
+                else
+                {
+                    Debug.Log("Wystąpił błąd podczas rejestracji.");
+                }
+            }
+        }
+        catch (SqlException ex)
+        {
+            Debug.Log("Błąd bazy danych: " + ex.Message);
+        }
+        catch (System.Exception ex)
+        {
+            Debug.Log("Wystąpił nieoczekiwany błąd: " + ex.Message);
+        }
+    }
+
+    IEnumerator czyWygrana(int[] indeksyLinii)
     {
         int wygrywa = 0;
         foreach (int indeks in indeksyLinii)
@@ -363,106 +525,107 @@ public class FightManager : MonoBehaviour
                     if (wygrywa == 0)
                     {
                         wygrywa = pole.unit.GetComponent<Unit>().Enemy ? 2 : 1;
+                        linie[indeksyLinii[0]].KtoWygral = wygrywa;
                     }
                     else
                     {
                         bool jestEnemy = pole.unit.GetComponent<Unit>().Enemy;
                         if ((jestEnemy && wygrywa == 1) || (!jestEnemy && wygrywa == 2))
-                            return false;
+                            yield break;
                     }
                 }
             }
         }
-
-        switch(wygrywa)
+        if(linie[indeksyLinii[0]].EndBattle == false)
         {
-            case 0: 
-            foreach (int indeks in indeksyLinii)
+            switch(wygrywa)
             {
-                linie[indeks].gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
-            }
-            break;
-            case 1: 
-            foreach (int indeks in indeksyLinii)
-            {
-                linie[indeks].gameObject.GetComponent<SpriteRenderer>().color = Color.green;
-                if(FirstBuffLine[indeksyLinii[0]] == false)
+                case 0: 
+                foreach (int indeks in indeksyLinii)
                 {
-                    FirstBuffLine[indeksyLinii[0]] = true;
-                    foreach(Linia line in linie)
+                    linie[indeks].gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+                    linie[indeks].EndBattle = true;
+                }
+                break;
+                case 1: 
+                foreach (int indeks in indeksyLinii)
+                {
+                    linie[indeks].gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+                    linie[indeks].EndBattle = true;
+                    if(FirstBuffLine[indeksyLinii[0]] == false)
                     {
-                        if(!indeksyLinii.Contains(line.nr))
+                        FirstBuffLine[indeksyLinii[0]] = true;
+                        foreach(Linia line in linie)
                         {
-                            foreach(Pole pole in line.pola)
+                            if(!indeksyLinii.Contains(line.nr))
                             {
-                                if(pole.unit != null && !pole.unit.GetComponent<Unit>().Enemy)
+                                foreach(Pole pole in line.pola)
                                 {
-                                    pole.unit.GetComponent<Unit>().ShowPopUp("MORALE", Color.green);
-                                    pole.unit.GetComponent<Unit>().Attack += (int)(pole.unit.GetComponent<Unit>().Attack * 0.2f);
-                                    pole.unit.GetComponent<Unit>().AP += (int)(pole.unit.GetComponent<Unit>().AP * 0.2f);
-                                    pole.unit.GetComponent<Unit>().Health += (int)(pole.unit.GetComponent<Unit>().Health * 0.2f);
-                                    pole.unit.GetComponent<Unit>().MaxHealth += (int)(pole.unit.GetComponent<Unit>().MaxHealth * 0.2f);
+                                    if(pole.unit != null && !pole.unit.GetComponent<Unit>().Enemy)
+                                    {
+                                        pole.unit.GetComponent<Unit>().Morale();
+                                    }
                                 }
                             }
                         }
                     }
                 }
-            }
-            break;
-            case 2: 
-            foreach (int indeks in indeksyLinii)
-            {
-                linie[indeks].gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-                if(FirstBuffLine[indeksyLinii[0]] == false)
+                break;
+                case 2: 
+                foreach (int indeks in indeksyLinii)
                 {
-                    FirstBuffLine[indeksyLinii[0]] = true;
-                    foreach(Linia line in linie)
+                    linie[indeks].gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+                    linie[indeks].EndBattle = true;
+                    if(FirstBuffLine[indeksyLinii[0]] == false)
                     {
-                        if(!indeksyLinii.Contains(line.nr))
+                        FirstBuffLine[indeksyLinii[0]] = true;
+                        foreach(Linia line in linie)
                         {
-                            foreach(Pole pole in line.pola)
+                            if(!indeksyLinii.Contains(line.nr))
                             {
-                                if(pole.unit != null && pole.unit.GetComponent<Unit>().Enemy)
+                                foreach(Pole pole in line.pola)
                                 {
-                                    pole.unit.GetComponent<Unit>().ShowPopUp("MORALE", Color.green);
-                                    pole.unit.GetComponent<Unit>().Attack += (int)(pole.unit.GetComponent<Unit>().Attack * 0.2f);
-                                    pole.unit.GetComponent<Unit>().AP += (int)(pole.unit.GetComponent<Unit>().AP * 0.2f);
-                                    pole.unit.GetComponent<Unit>().Health += (int)(pole.unit.GetComponent<Unit>().Health * 0.2f);
-                                    pole.unit.GetComponent<Unit>().MaxHealth += (int)(pole.unit.GetComponent<Unit>().MaxHealth * 0.2f);
+                                    if(pole.unit != null && pole.unit.GetComponent<Unit>().Enemy)
+                                    {
+                                        pole.unit.GetComponent<Unit>().Morale();
+                                    }
                                 }
                             }
                         }
                     }
                 }
+                break;
             }
-            break;
         }
         foreach (int indeks in indeksyLinii)
             {
                 foreach(Pole pole in linie[indeks].pola)
                 {
                     if(pole.unit != null)
-                        units.Remove(pole.unit.GetComponent<Unit>());
+                    {
+                        if(pole.unit.GetComponent<Unit>().CanJump != true)
+                            pole.unit.GetComponent<Unit>().Skip = true;
+                        else
+                            pole.unit.GetComponent<Unit>().ReadyToJump = true;
+                    }
+                    
+                        //units.Remove(pole.unit.GetComponent<Unit>());
                 }
             }
-        return true;
+        yield return null;
     }
 
     public void EndBattle()
     {
         GameSpeed = 1f;
+        GameSpeedText.text = "x" + GameSpeed;
+        Time.timeScale = GameSpeed;
         MoneyManager.ActiveIncom();
         shop.SetActive(true);
+        fightUI.SetActive(false);
         StartCoroutine(MoveAndZoomCamera(new Vector3(0, 0, -20f), mainCamera.orthographicSize - 1f));
         EventSystem.eventSystem.GetComponent<SynergyManager>().ClearEnemySynergies();
-        if(!ShopManager.isLoock)
-        {
-            EventSystem.eventSystem.GetComponent<ShopManager>().FirstRoll();
-        }
-        else
-        {
-            GetComponent<ShopManager>().ChangeLoock();
-        }
+        
         if(StatsManager.Round == 2 && StatsManager.life != 3)
         {
             StartCoroutine(ShowEndScreen(3));
@@ -489,7 +652,10 @@ public class FightManager : MonoBehaviour
             yield return null; // Poczekaj do następnej klatki
         }
         foreach(Linia linia in linie)
+        {
             linia.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+            linia.EndBattle = false;
+        }
         // Ustawienie końcowych wartości
         mainCamera.transform.position = endPosition;
         mainCamera.orthographicSize = endSize;
@@ -520,5 +686,6 @@ public class FightManager : MonoBehaviour
                 }
             }
         }
+        
     }
 }

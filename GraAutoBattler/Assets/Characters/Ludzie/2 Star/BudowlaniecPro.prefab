@@ -103,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 0
   Name: Budowlaniec
-  Cost: 5
+  Cost: 4
   Star: 2
   Initiative: 50
   MaxHealth: 50
@@ -115,17 +115,20 @@ MonoBehaviour:
   MagicResist: 0
   Description: "Zmniejsza koszt budynk\xF3w o 2. Ponadto zwi\u0119ksza szans\u0119
     na pojawienie si\u0119 budynku w sklepie"
+  CPU: 0
   UpgradeLevel: 1
   UpgradeNeed: 0
   Enemy: 0
+  fraction: 0
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 1
+  attackAP: 0
+  Skip: 0
   AttackText: {fileID: 5187295522447798132}
   HealthText: {fileID: 6430296136860862158}
   EvolveHeroes: {fileID: 0}
   Evolution: 1
-  attackAP: 0
 --- !u!114 &8997874733093956129
 MonoBehaviour:
   m_ObjectHideFlags: 0

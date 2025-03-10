@@ -8,6 +8,8 @@ public class Linia : MonoBehaviour
     public List<Pole> pola;
     public bool enemyLine;
     public int nr;
+    public bool EndBattle;
+    public int KtoWygral;
 
     public Linia LineNext;
     public GameObject[] poleType;

@@ -45,7 +45,7 @@ public class SynergMadzy : Synergy
             {
                 if (pole.unit != null && pole.unit.GetComponent<Unit>().Name == units[i].Name)
                 {
-                    yield return new WaitForSeconds(0.3f / FightManager.GameSpeed);
+                    yield return new WaitForSeconds(0.3f);
                     pole.unit.GetComponent<Unit>().AP += 20;
                     pole.unit.GetComponent<Unit>().ShowPopUp("20", new Color(0.5f, 0, 1f));
                 }

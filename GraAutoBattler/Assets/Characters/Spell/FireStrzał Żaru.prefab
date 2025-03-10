@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 260700e080d24ff49aea106d0955b99e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 6
   Name: "Strza\u0142a \u017Baru"
   Cost: 2
   Star: 2
@@ -112,14 +112,17 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "Zadaje zawsze 50 obra\u017Cen"
+  Description: "<b>Atak: </b>Zadaje zawsze 50 obra\u017Cen"
   CPU: 0
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
+  fraction: 0
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
+  attackAP: 0
+  Skip: 0
   unit: {fileID: 0}
   OffensifSpell: 1
   spellType: 1

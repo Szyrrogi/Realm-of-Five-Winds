@@ -17,7 +17,6 @@ public class Wizard : Shuffle
     public void AddSpell(Spell newSpell)
     {
         spellImage.sprite = newSpell.gameObject.GetComponent<SpriteRenderer>().sprite;
-        Debug.Log(newSpell.Id);
         spell = newSpell;//EventSystem.eventSystem.GetComponent<CharacterManager>().Spells[newSpell.Id].GetComponent<Spell>();
         spell.unit = GetComponent<Unit>();
     }

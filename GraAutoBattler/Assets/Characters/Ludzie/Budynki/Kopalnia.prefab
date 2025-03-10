@@ -189,14 +189,17 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "Masz mo\u017Cliwo\u015B\u0107 znalezienia w sklepie z\u0142ota"
+  Description: "<b>Wtasowuje</b> z\u0142oto do <b>puli</b>"
   CPU: 0
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
+  fraction: 0
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
+  attackAP: 0
+  Skip: 0
   HealthText: {fileID: 3501279418940951141}
 --- !u!114 &1146666903618366804
 MonoBehaviour:

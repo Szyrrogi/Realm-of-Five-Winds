@@ -15,7 +15,7 @@ public class Samotnia : Building
                 {
                     if(pole.unit == null)
                     {
-                        yield return new WaitForSeconds(0.4f / FightManager.GameSpeed);
+                        yield return new WaitForSeconds(0.4f);
                         int buff = 10;
                         unit.ShowPopUp("10/10", Color.green);
                         unit.Attack += buff;

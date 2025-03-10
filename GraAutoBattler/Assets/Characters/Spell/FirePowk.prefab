@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17887fda688e9034baa2e2e6e8ddf782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 4
   Name: Iskra
   Cost: 1
   Star: 1
@@ -112,14 +112,17 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "Zadaje obra\u017Cenia r\xF3wne AP"
+  Description: "<b>Atak: </b>Zadaje obra\u017Cenia r\xF3wne Mocy Zakl\u0119\u0107"
   CPU: 0
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
+  fraction: 0
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
+  attackAP: 0
+  Skip: 0
   unit: {fileID: 0}
   OffensifSpell: 1
   spellType: 1

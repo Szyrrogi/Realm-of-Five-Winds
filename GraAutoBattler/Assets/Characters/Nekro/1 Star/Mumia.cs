@@ -13,7 +13,7 @@ public class Mumia : Heros
     public override string DescriptionEdit()
     {
         if(Evolution)
-            return "Co ture odnawia sobie <color=#B803FF>" + (AP) + "</color> zdrowia"  ;
+            return "<b>Akcja: </b>Odnawia <color=#B803FF>" + (AP) + "</color> zdrowia"  ;
         else
             return Description; 
     }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6934024521668934397}
   - component: {fileID: 3712362837729000110}
-  - component: {fileID: 76561568034174374}
+  - component: {fileID: 1370224317884544972}
   - component: {fileID: 8731495660794391217}
   - component: {fileID: 3378486895949687731}
   m_Layer: 0
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &76561568034174374
+--- !u!114 &1370224317884544972
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,33 +97,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 1819705648667262722}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e86cf9c12dc709f42a588a0a0b51465a, type: 3}
+  m_Script: {fileID: 11500000, guid: 5dd58259e5add7c41bddd5d954785fda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 101
   Name: 
   Cost: 0
-  Star: 1
-  Initiative: 50
-  MaxHealth: 40
-  Health: 40
-  Attack: 5
-  Defense: 5
+  Star: 0
+  Initiative: 0
+  MaxHealth: 0
+  Health: 0
+  Attack: 0
+  Defense: 0
   Range: 0
-  AP: 20
-  MagicResist: 15
-  Description: "Adept podczas ataku, zadaje obra\u017Cenia magiczne"
-  UpgradeLevel: 1
-  UpgradeNeed: 4
+  AP: 0
+  MagicResist: 0
+  Description: 
+  CPU: 0
+  UpgradeLevel: 0
+  UpgradeNeed: 0
   Enemy: 0
+  fraction: 4
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
-  AttackText: {fileID: 2333975298996084202}
+  attackAP: 0
+  Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   HealthText: {fileID: 7890684635397795595}
-  EvolveHeroes: {fileID: 1819705648667262722}
-  Evolution: 0
-  attackAP: 1
 --- !u!114 &8731495660794391217
 MonoBehaviour:
   m_ObjectHideFlags: 0

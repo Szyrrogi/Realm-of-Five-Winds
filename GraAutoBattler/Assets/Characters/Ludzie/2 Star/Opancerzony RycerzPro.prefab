@@ -187,16 +187,18 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 20
-  Description: "Gdy zostanie zaatakowany, przeciwnik otrzymuje <color=#999999>25</color>
+  Description: "<b>Gdy zostanie zaatakowany:</b> przeciwnik otrzymuje <color=#999999>25</color>
     obra\u017Ce\u0144"
   CPU: 0
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
+  fraction: 0
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
   attackAP: 0
+  Skip: 0
   AttackText: {fileID: 5187295522447798132}
   HealthText: {fileID: 6430296136860862158}
   EvolveHeroes: {fileID: 0}

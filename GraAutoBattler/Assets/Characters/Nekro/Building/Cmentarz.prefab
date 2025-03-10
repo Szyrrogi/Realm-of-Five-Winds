@@ -176,9 +176,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5884da60c0958ec488c39be894a22c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 38
+  Id: 98
   Name: Cmentarz
-  Cost: 5
+  Cost: 4
   Star: 1
   Initiative: 20
   MaxHealth: 40
@@ -188,7 +188,7 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "Zwi\u0119ksz atak oraz zdrowie o 20 dla Szkielet\xF3w"
+  Description: "<b>Poczatek Walki: </b>Zwi\u0119ksz atak oraz zdrowie o 20 dla Szkielet\xF3w"
   CPU: 0
   UpgradeLevel: 0
   UpgradeNeed: 0
@@ -198,6 +198,7 @@ MonoBehaviour:
   PopUp: {fileID: 0}
   BoskaTarcza: 0
   attackAP: 0
+  Skip: 0
   HealthText: {fileID: 3501279418940951141}
   pattern:
   - {fileID: 8321991079516897562, guid: 2c4d34b28a1472b489de8202e5a1f1ca, type: 3}

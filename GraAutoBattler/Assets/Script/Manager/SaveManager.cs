@@ -10,12 +10,43 @@ public class SaveManager : MonoBehaviour
 {
     private static string customPath;
 
+
+    public void Start()
+    {
+        if (PlayerManager.isSave)
+        {  
+            StartCoroutine(DelayedLoad2());
+        }
+    }
+
+    private IEnumerator DelayedLoad2()
+    {
+        yield return new WaitForSeconds(0.5f);
+        LoadActive();
+        Load2();
+    }
+
+
     [System.Serializable]
     public class SaveData
     {
         public string playerName;
         public int number;
         public int levelUp;
+        public List<SaveUnit> units = new List<SaveUnit>();
+    }
+    [System.Serializable]
+    public class SaveData2
+    {
+        public int playerId;
+        public int money;
+        public int incom;
+        public int win;
+        public string fractions;
+        public int lose;
+        public int round;
+        public List<int> shop;
+        public string nextFight;
         public List<SaveUnit> units = new List<SaveUnit>();
     }
 
@@ -47,27 +78,77 @@ public class SaveManager : MonoBehaviour
 
     public static void Save(string playerName, int number, int levelUp)
     {
-        // Upewnij się, że folder istnieje
-        customPath = Application.dataPath + "/Save/Zapis.json";
-        string directory = Path.GetDirectoryName(customPath);
+        string savePath1 = Application.dataPath + "/Save/Zapis.json";
+        string savePath2 = Application.dataPath + "/Save/Save2.json";
+        Debug.Log(RankedManager.Ranked);
+        Debug.Log(RankedManager.Ranked);
+        Debug.Log(RankedManager.Ranked);
+        if(RankedManager.Ranked)
+        {
+            savePath1 = Application.dataPath + "/Save/ZapisR.json";
+            savePath2 = Application.dataPath + "/Save/Save2R.json";
+        }
+        
+        string directory = Path.GetDirectoryName(savePath1);
         if (!Directory.Exists(directory))
         {
             Directory.CreateDirectory(directory);
         }
 
-        // Tworzymy dane do zapisu
-        SaveData data = new SaveData
+        // Tworzenie danych do pierwszego zapisu
+        SaveData data1 = new SaveData
         {
             playerName = playerName,
             number = number,
             levelUp = levelUp
         };
+        
+        // Tworzenie danych do drugiego zapisu (losowe wartości)
+        string frakcja = "";
 
-        // Pobieramy dane jednostek z planszy
+        // Iteracja przez wszystkie wartości enuma
+        if(Fraction.fractionList == null)
+        {
+            Fraction.fractionList = new List<Fraction.fractionType>();
+        }
+        foreach (Fraction.fractionType type in Enum.GetValues(typeof(Fraction.fractionType)))
+        {
+            if (Fraction.fractionList.Contains(type))
+            {
+                frakcja += "1";
+            }
+            else
+            {
+                frakcja += "0";
+            }
+        }
+
+        System.Random rand = new System.Random();
+        SaveData2 data2 = new SaveData2
+        {
+            playerId = PlayerManager.Id,
+            money = MoneyManager.money,
+            incom = MoneyManager.income,
+            fractions = frakcja,
+            win = StatsManager.win,
+            round = StatsManager.Round,
+            lose = StatsManager.life,
+            nextFight = EventSystem.eventSystem.GetComponent<EnemyManager>().Comps[StatsManager.Round],
+            shop = new List<int>()
+        };
+        for(int i = 0; i < 5; i++)
+        {
+            if(EventSystem.eventSystem.GetComponent<ShopManager>().character[i].unit != null)
+                data2.shop.Add(EventSystem.eventSystem.GetComponent<ShopManager>().character[i].unit.GetComponent<Unit>().Id);
+            else
+                data2.shop.Add(-1);
+        }
+
+        // Pobieranie jednostek
         FightManager fightManager = EventSystem.eventSystem.GetComponent<FightManager>();
         foreach (Linia linia in fightManager.linie)
         {
-            if(linia.nr < 3)
+            if (linia.nr < 3)
             {
                 foreach (Pole pole in linia.pola)
                 {
@@ -99,43 +180,53 @@ public class SaveManager : MonoBehaviour
                         {
                             unitData.SpellId = wizard.spell.Id;
                         }
-
-                        // Dodajemy jednostkę do listy w SaveData
-                        data.units.Add(unitData);
+                        
+                        data1.units.Add(unitData);
+                        //data2.units.Add(unitData);
                     }
                 }
             }
         }
-        //Debug.Log("TO: " +  Application.dataPath);
         
-        string json = JsonUtility.ToJson(data, true);
-        File.WriteAllText(customPath, json);
-        // Sprawdzenie, czy pierwszy plik istnieje i utworzenie go, jeśli nie
+        foreach (Pole pole in EventSystem.eventSystem.GetComponent<ShopManager>().lawka)
+        {
+            if (pole.unit != null)
+            {
+                Unit unit = pole.unit.GetComponent<Unit>();
+                SaveUnit unitData = new SaveUnit
+                {
+                    Line = -1,
+                    Pole = pole.nr,
+                    Id = unit.Id,
+                    Name = unit.Name,
+                    Cost = unit.Cost,
+                    RealCost = unit.RealCost,
+                    Initiative = unit.Initiative,
+                    MaxHealth = unit.MaxHealth,
+                    Health = unit.Health,
+                    Attack = unit.Attack,
+                    Defense = unit.Defense,
+                    Range = unit.Range,
+                    AP = unit.AP,
+                    MagicResist = unit.MagicResist,
+                    Description = unit.Description,
+                    UpgradeLevel = unit.UpgradeLevel
+                };
 
-
-        // Drugi zapis do folderu Wave z unikalną nazwą
-        // string name = StatsManager.Round + "_Owca_" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-        // string secondPath = Path.Combine(Application.dataPath, "Wave", name + ".json");
-        
-
-        // try
-        // {
-        //     string fileName = $"{StatsManager.Round}_Julii_{DateTime.Now:yyyy-MM-dd-HH-mm-ss}.json";
-        //    //string fileName = "Wave.json";
-        //     string filePath = Path.Combine(Application.dataPath, "NewWave", fileName); 
-        //     Directory.CreateDirectory(Path.GetDirectoryName(filePath)); 
-
-        //     File.WriteAllText(filePath, json);
-        //     Debug.Log($"Dane zapisane w: {filePath}");
-        // }
-        // catch (IOException ex)
-        // {
-        //     Debug.LogError("Błąd zapisu pliku: " + ex.Message); 
-        // }
-        // catch (Exception ex)
-        // {
-        //     Debug.LogError("Błąd podczas zapisu danych: " + ex.Message); 
-        // }
+                Wizard wizard = unit.gameObject.GetComponent<Wizard>();
+                if (wizard != null)
+                {
+                    unitData.SpellId = wizard.spell.Id;
+                }
+                
+                //data1.units.Add(unitData);
+                data2.units.Add(unitData);
+            }
+        }
+    
+        // Zapis do plików
+        File.WriteAllText(savePath1, JsonUtility.ToJson(data1, true));
+        File.WriteAllText(savePath2, JsonUtility.ToJson(data2, true));
     }
 
     public void Clear()
@@ -167,8 +258,6 @@ public class SaveManager : MonoBehaviour
     {
         Clear();
 
-        
-
         SaveManager.SaveData loadedData = SaveManager.Load();
         if (loadedData != null)
         {
@@ -179,24 +268,19 @@ public class SaveManager : MonoBehaviour
     public void LoadActive(bool isEnemy)
     {
         Clear(isEnemy);
-
-
-        //  List<FightManager.AutoBattlerGameViewModel> lista = FightManager.LoadFeaturedGamesFromDatabase();
+    //TEST
+        // List<FightManager.AutoBattlerGameViewModel> lista = FightManager.LoadFeaturedGamesFromDatabase();
 
         // var filteredList = lista
         //     .Where(game => game.Round == StatsManager.Round) 
         //     .Where(game => game.Name != PlayerManager.Name) 
+        //     .Where(game => game.PlayerId != PlayerManager.Id) 
         //     .Where(game => game.Version == PlayerManager.Version)
         //     .ToList();
 
+        // var randomGame = filteredList[UnityEngine.Random.Range(0, filteredList.Count)];
 
-        //     var randomGame = filteredList[UnityEngine.Random.Range(0, filteredList.Count)];
-
-        //     Debug.Log($"Wylosowana kompozycja (Comp): {randomGame.Comp}");
-
-        // SaveManager.SaveData loadedData = SaveManager.Load(isEnemy, randomGame.Comp);
-        StatsManager.life++;
-        SaveManager.SaveData loadedData = SaveManager.Load(isEnemy); // TESTY
+        SaveManager.SaveData loadedData = SaveManager.Load(isEnemy, EventSystem.eventSystem.GetComponent<EnemyManager>().Comps[StatsManager.Round]);
         if (loadedData != null)
         {
             SaveManager.InstantiateUnits(loadedData, isEnemy);
@@ -210,7 +294,6 @@ public class SaveManager : MonoBehaviour
 
     public static string findEnemy()
     {
-
         string folderPath = Application.dataPath + "/Wave";
 
         if (Directory.Exists(folderPath))
@@ -239,7 +322,6 @@ public class SaveManager : MonoBehaviour
             {
                 // Losowanie jednego z pasujących plików
                 string selectedFile = matchingFiles[UnityEngine.Random.Range(0, matchingFiles.Count)];
-                //Debug.Log($"Wylosowano plik: {selectedFile}");
                 return selectedFile;
             }
             else
@@ -256,38 +338,41 @@ public class SaveManager : MonoBehaviour
 
     public static SaveData Load(bool isEnemy, string jsonPath)
     {
+        string json = jsonPath;
 
-            string json = jsonPath;
+        SaveData data = JsonUtility.FromJson<SaveData>(json);
 
-            SaveData data = JsonUtility.FromJson<SaveData>(json);
+        if(isEnemy)
+        {
+            EventSystem.eventSystem.GetComponent<EnemyManager>().SetPlayer(data.playerName, data.number);
+        }
 
-            if(isEnemy)
-            {
-                EventSystem.eventSystem.GetComponent<EnemyManager>().SetPlayer(data.playerName, data.number);
-            }
+        if(!isEnemy)
+            ShopManager.levelUp = data.levelUp;
+        for(int i = 0; i <= data.levelUp-1; i++)
+        {
+            for(int j = 0; j < 3; j++)
+                EventSystem.eventSystem.GetComponent<FightManager>().linie[j + 3].Upgrade(i == 3 ? 1 : i);
+        }
 
-            if(!isEnemy)
-                ShopManager.levelUp = data.levelUp;
-            for(int i = 0; i <= data.levelUp-1; i++)
-            {
-                for(int j = 0; j < 3; j++)
-                    EventSystem.eventSystem.GetComponent<FightManager>().linie[j + 3].Upgrade(i == 3 ? 1 : i);
-            }
-
-            return data;
-
+        return data;
     }
 
     public static SaveData Load(bool isEnemy)
     {
         int modyfikator = 0;
-        //customPath = @"D:\OneDrive\Pulpit\SzyrGameStudio\Do Boju!\Assets\Save\Zapis.json";
         customPath = Application.dataPath + "/Save/Zapis.json";
+        Debug.Log(RankedManager.Ranked);
+        Debug.Log(RankedManager.Ranked);
+        Debug.Log(RankedManager.Ranked);
+        if(RankedManager.Ranked)
+        {
+            customPath = Application.dataPath + "/Save/ZapisR.json";
+        }
 
         if(isEnemy)
         {
             customPath = findEnemy();
-            //customPath = Application.dataPath + "/Wave/Wave1.json";
             modyfikator = 3;
         }
         if (File.Exists(customPath))
@@ -298,6 +383,7 @@ public class SaveManager : MonoBehaviour
 
             if(isEnemy)
             {
+                Debug.Log("esia");
                 EventSystem.eventSystem.GetComponent<EnemyManager>().SetPlayer(data.playerName, data.number);
             }
 
@@ -316,6 +402,66 @@ public class SaveManager : MonoBehaviour
             return null;
         }
     }
+
+    public static SaveData2 Load2()
+    {
+        string savePath2 = Application.dataPath + "/Save/Save2.json";
+        if(RankedManager.Ranked)
+        {
+            savePath2 = Application.dataPath + "/Save/Save2R.json";
+        }
+        if (File.Exists(savePath2))
+        {
+            string json = File.ReadAllText(savePath2);
+            SaveData2 data = JsonUtility.FromJson<SaveData2>(json);
+            
+            StatsManager.life = data.lose;
+            StatsManager.Round = data.round;
+            StatsManager.win = data.win;
+            MoneyManager.income = data.incom;
+            MoneyManager.money = data.money;
+            PlayerManager.Id = data.playerId;
+            EventSystem.eventSystem.GetComponent<EnemyManager>().Comps[data.round] = data.nextFight;
+            for(int i = 0; i < 5; i++)
+            {
+                EventSystem.eventSystem.GetComponent<ShopManager>().character[i].unit = EventSystem.eventSystem.GetComponent<CharacterManager>().characters[data.shop[i]];
+                EventSystem.eventSystem.GetComponent<ShopManager>().character[i].SetLook();
+            }
+            string frakcja = data.fractions;
+            for (int i = 0; i < frakcja.Length; i++)
+            {
+                // Pobierz wartość enuma na podstawie indeksu
+                Fraction.fractionType type = (Fraction.fractionType)i;
+
+                // Jeśli znak to '1', dodaj frakcję do listy
+                if (frakcja[i] == '1')
+                {
+                    if (!Fraction.fractionList.Contains(type))
+                    {
+                        Fraction.fractionList.Add(type);
+                    }
+                }
+                else
+                {
+                    if (Fraction.fractionList.Contains(type))
+                    {
+                        Fraction.fractionList.Remove(type);
+                    }
+                }
+            }
+            
+            InstantiateShopUnits(data);
+            
+            
+            return data;
+        }
+        else
+        {
+            Debug.LogWarning("Plik Save2.json nie istnieje.");
+            return null;
+        }
+    }
+
     public static void InstantiateUnits(SaveData data)
     {
         InstantiateUnits(data, false);
@@ -382,4 +528,42 @@ public class SaveManager : MonoBehaviour
 
         Debug.Log("Wszystkie jednostki zostały odtworzone.");
     }
+    public static void InstantiateShopUnits(SaveData2 data)
+    {
+        if (data == null || data.units == null || data.units.Count == 0)
+        {
+            return;
+        }
+        
+        ShopManager shopManager = EventSystem.eventSystem.GetComponent<ShopManager>();
+        
+        foreach (var unitData in data.units)
+        {
+            GameObject unitObject = Instantiate(EventSystem.eventSystem.GetComponent<CharacterManager>().characters[unitData.Id]);
+            
+            shopManager.lawka[unitData.Pole].unit = unitObject ; // Dodaj jednostkę do ławeczki
+            shopManager.lawka[unitData.Pole].Start(); // Uruchom jednostkę
+
+            Unit unitComponent = unitObject.GetComponent<Unit>();
+            if (unitComponent != null)
+            {
+                unitComponent.Id = unitData.Id;
+                unitComponent.Name = unitData.Name;
+                unitComponent.Cost = unitData.Cost;
+                unitComponent.RealCost = unitData.RealCost;
+                unitComponent.Initiative = unitData.Initiative;
+                unitComponent.Health = unitData.Health;
+                unitComponent.MaxHealth = unitData.MaxHealth;
+                unitComponent.Attack = unitData.Attack;
+                unitComponent.Defense = unitData.Defense;
+                unitComponent.Range = unitData.Range;
+                unitComponent.AP = unitData.AP;
+                unitComponent.MagicResist = unitData.MagicResist;
+                unitComponent.Description = unitData.Description;
+                unitComponent.UpgradeLevel = unitData.UpgradeLevel;
+            }
+        }
+        Debug.Log("Wszystkie jednostki zostały dodane do sklepu.");
+    }
+
 }

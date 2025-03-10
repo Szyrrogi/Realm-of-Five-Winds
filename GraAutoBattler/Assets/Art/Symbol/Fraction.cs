@@ -15,9 +15,9 @@ public class Fraction : MonoBehaviour
     {
         Ludzie,
         Nekro,
-        Woda,
+        Nomadzi,
         Elfy,
-        Demony
+        Krasnoludy
     }
 
      // Funkcja przyjmująca parametr typu int
@@ -35,7 +35,6 @@ public class Fraction : MonoBehaviour
                 // Jeśli zawiera, usuń go
                 fractionList.Remove(fraction);
                 UstawFrakcje();
-                Debug.Log("Usunięto frakcję: " + fraction);
                 przyciski[nr].color = Color.white;
             }
             else
@@ -43,16 +42,28 @@ public class Fraction : MonoBehaviour
                 // Jeśli nie zawiera, dodaj go
                 fractionList.Add(fraction);
                 UstawFrakcje();
-                Debug.Log("Dodano frakcję: " + fraction);
                 przyciski[nr].color = Color.gray;
             }
 
-            // Opcjonalnie: Wyświetl zawartość listy po modyfikacji
-            Debug.Log("Aktualna lista: " + string.Join(", ", fractionList));
         }
-        else
+    }
+
+    public void Rester()
+    {
+        for(int i = 0; i < 5; i ++)
+        if (System.Enum.IsDefined(typeof(fractionType), i))
         {
-            Debug.LogWarning("Nieprawidłowy numer frakcji: " + nr);
+            // Konwertuj int na fractionType
+            fractionType fraction = (fractionType)i;
+
+            // Sprawdź, czy lista zawiera podany element
+            if (fractionList.Contains(fraction))
+            {
+                // Jeśli zawiera, usuń go
+                fractionList.Remove(fraction);
+                UstawFrakcje();
+                przyciski[i].color = Color.white;
+            }
         }
     }
 
@@ -73,7 +84,6 @@ public class Fraction : MonoBehaviour
                 // Sprawdź, czy lista zawiera podany element
                 if (fractionList.Contains(fraction))
                 {
-                    Debug.Log(i);
                     UstawWycinek(wycinek[i], 0f, j / (float)ilosc);
                     j++;
                 }

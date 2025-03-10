@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 977c997b988c6da4c896ce6f2b0eda35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 31
   Name: Kawalerzysta
   Cost: 7
   Star: 3
@@ -112,20 +112,22 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 10
-  Description: "Nieograniczony ruch. Zwi\u0119ksza obra\u017Cenia 1.5 krotnie za
-    ka\u017Cde dodatkowe pole, kt\xF3re przejedzie"
+  Description: "<b>Nieograniczony ruch:</b> Zwi\u0119ksza obra\u017Cenia 2 krotnie
+    za ka\u017Cde dodatkowe pole, kt\xF3re przejedzie"
   CPU: 0
   UpgradeLevel: 1
   UpgradeNeed: 0
   Enemy: 0
+  fraction: 0
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
+  attackAP: 0
+  Skip: 0
   AttackText: {fileID: 5187295522447798132}
   HealthText: {fileID: 6430296136860862158}
   EvolveHeroes: {fileID: 0}
   Evolution: 1
-  attackAP: 0
 --- !u!114 &6699983802921889276
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -137,7 +137,7 @@ namespace TMPro.Examples
                 // Upload the mesh with the revised information
                 m_TextComponent.UpdateVertexData();
 
-                yield return new WaitForSeconds(0.025f / FightManager.GameSpeed);
+                yield return new WaitForSeconds(0.025f);
             }
         }
     }

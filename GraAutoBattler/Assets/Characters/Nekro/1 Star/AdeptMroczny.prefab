@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7888f370240c034b95bf229f43d7ed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 54
   Name: Mroczny Adept
   Cost: 3
   Star: 1
@@ -112,7 +112,7 @@ MonoBehaviour:
   Range: 0
   AP: 20
   MagicResist: 10
-  Description: "Przy ataku kradnie Obron\u0119 magiczn\u0105 z przeciwnika"
+  Description: "<b>Atak: </b>zmniejsz Obrone Magiczn\u0105 przeciwnika o 5"
   CPU: 0
   UpgradeLevel: 1
   UpgradeNeed: 4
@@ -122,6 +122,7 @@ MonoBehaviour:
   PopUp: {fileID: 0}
   BoskaTarcza: 0
   attackAP: 1
+  Skip: 0
   AttackText: {fileID: 2333975298996084202}
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 1819705648667262722, guid: 24cdd573de0b0124b8254aef19ea315f, type: 3}
