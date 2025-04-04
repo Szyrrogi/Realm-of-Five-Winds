@@ -35,9 +35,9 @@ public class ElfiDowódca : Heros
 
     public override string DescriptionEdit()
     {
-        if(Evolution)
-            return "<b>Początek Walki: </b>Zwiększ atak jednsotką dystansowym w tym rzędzie o <color=#B803FF>" + (AP) + "</color>"  ;
+        if(!Evolution)
+            return "<b>Początek Walki: </b>Zwiększ atak jednsotkom dystansowym w tym rzędzie o <color=#B803FF>" + (AP) + "</color>"  ;
         else
-            return "<b>Początek Walki: </b>Zwiększ atak jednsotką dystansowym na arenie o <color=#B803FF>" + (AP) + "</color>"; 
+            return "<b>Początek Walki: </b>Zwiększ atak jednsotkom dystansowym na arenie o <color=#B803FF>" + (AP) + "</color>"; 
     }
 }

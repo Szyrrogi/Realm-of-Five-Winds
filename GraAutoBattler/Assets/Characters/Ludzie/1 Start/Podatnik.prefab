@@ -115,7 +115,7 @@ MonoBehaviour:
   Description: "<b>Koniec Walki:</b> Zyskaj 1 z\u0142oto"
   CPU: 0
   UpgradeLevel: 0
-  UpgradeNeed: 2
+  UpgradeNeed: 3
   Enemy: 0
   fraction: 0
   RealCost: 0
@@ -123,6 +123,8 @@ MonoBehaviour:
   BoskaTarcza: 0
   attackAP: 0
   Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   AttackText: {fileID: 2333975298996084202}
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 1819705648667262722, guid: 0f07fa0a3b92f00418152e0179ac67eb, type: 3}

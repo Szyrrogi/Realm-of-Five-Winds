@@ -41,6 +41,7 @@ public class SaveManager : MonoBehaviour
         public int playerId;
         public int money;
         public int incom;
+        public bool poddymka;
         public int win;
         public string fractions;
         public int lose;
@@ -79,10 +80,15 @@ public class SaveManager : MonoBehaviour
     public static void Save(string playerName, int number, int levelUp)
     {
         string savePath1 = Application.dataPath + "/Save/Zapis.json";
+        if(Multi.multi)
+        {
+            savePath1 = Application.dataPath + "/Save/Zapis3.json";
+        }
+        if(Tutorial.tutorial)
+        {
+            savePath1 = Application.dataPath + "/Save/Zapis4.json";
+        }
         string savePath2 = Application.dataPath + "/Save/Save2.json";
-        Debug.Log(RankedManager.Ranked);
-        Debug.Log(RankedManager.Ranked);
-        Debug.Log(RankedManager.Ranked);
         if(RankedManager.Ranked)
         {
             savePath1 = Application.dataPath + "/Save/ZapisR.json";
@@ -129,6 +135,7 @@ public class SaveManager : MonoBehaviour
             playerId = PlayerManager.Id,
             money = MoneyManager.money,
             incom = MoneyManager.income,
+            poddymka = RankedManager.Poddymka,
             fractions = frakcja,
             win = StatsManager.win,
             round = StatsManager.Round,
@@ -224,9 +231,11 @@ public class SaveManager : MonoBehaviour
             }
         }
     
-        // Zapis do plików
+
         File.WriteAllText(savePath1, JsonUtility.ToJson(data1, true));
-        File.WriteAllText(savePath2, JsonUtility.ToJson(data2, true));
+        if(!Multi.multi && !Tutorial.tutorial)
+            File.WriteAllText(savePath2, JsonUtility.ToJson(data2, true));
+
     }
 
     public void Clear()
@@ -279,7 +288,6 @@ public class SaveManager : MonoBehaviour
         //     .ToList();
 
         // var randomGame = filteredList[UnityEngine.Random.Range(0, filteredList.Count)];
-
         SaveManager.SaveData loadedData = SaveManager.Load(isEnemy, EventSystem.eventSystem.GetComponent<EnemyManager>().Comps[StatsManager.Round]);
         if (loadedData != null)
         {
@@ -342,9 +350,10 @@ public class SaveManager : MonoBehaviour
 
         SaveData data = JsonUtility.FromJson<SaveData>(json);
 
-        if(isEnemy)
+        if(isEnemy && !Tutorial.tutorial)
         {
-            EventSystem.eventSystem.GetComponent<EnemyManager>().SetPlayer(data.playerName, data.number);
+            int newLP = EventSystem.eventSystem.GetComponent<EnemyManager>().LP[StatsManager.Round];
+            EventSystem.eventSystem.GetComponent<EnemyManager>().SetPlayer(data.playerName, data.number, newLP);
         }
 
         if(!isEnemy)
@@ -362,9 +371,18 @@ public class SaveManager : MonoBehaviour
     {
         int modyfikator = 0;
         customPath = Application.dataPath + "/Save/Zapis.json";
-        Debug.Log(RankedManager.Ranked);
-        Debug.Log(RankedManager.Ranked);
-        Debug.Log(RankedManager.Ranked);
+        if(Multi.multi)
+        {
+            customPath = Application.dataPath + "/Save/Zapis3.json";
+        }
+        if(Tutorial.tutorial)
+        {
+            customPath = Application.dataPath + "/Save/Zapis4.json";
+        }
+        if(Tutorial.tutorial)
+        {
+            customPath = Application.dataPath + "/Save/Zapis4.json";
+        }
         if(RankedManager.Ranked)
         {
             customPath = Application.dataPath + "/Save/ZapisR.json";
@@ -383,8 +401,8 @@ public class SaveManager : MonoBehaviour
 
             if(isEnemy)
             {
-                Debug.Log("esia");
-                EventSystem.eventSystem.GetComponent<EnemyManager>().SetPlayer(data.playerName, data.number);
+                int newLP = EventSystem.eventSystem.GetComponent<EnemyManager>().LP[StatsManager.Round];
+                EventSystem.eventSystem.GetComponent<EnemyManager>().SetPlayer(data.playerName, data.number, newLP);
             }
 
             if(!isEnemy)
@@ -419,6 +437,7 @@ public class SaveManager : MonoBehaviour
             StatsManager.Round = data.round;
             StatsManager.win = data.win;
             MoneyManager.income = data.incom;
+            RankedManager.Poddymka = data.poddymka;
             MoneyManager.money = data.money;
             PlayerManager.Id = data.playerId;
             EventSystem.eventSystem.GetComponent<EnemyManager>().Comps[data.round] = data.nextFight;
@@ -525,8 +544,6 @@ public class SaveManager : MonoBehaviour
                 }
             }
         }
-
-        Debug.Log("Wszystkie jednostki zostały odtworzone.");
     }
     public static void InstantiateShopUnits(SaveData2 data)
     {
@@ -563,7 +580,6 @@ public class SaveManager : MonoBehaviour
                 unitComponent.UpgradeLevel = unitData.UpgradeLevel;
             }
         }
-        Debug.Log("Wszystkie jednostki zostały dodane do sklepu.");
     }
 
 }

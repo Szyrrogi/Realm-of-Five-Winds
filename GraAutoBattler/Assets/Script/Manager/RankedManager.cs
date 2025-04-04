@@ -69,7 +69,7 @@ public class RankedManager : MonoBehaviour
             StartCoroutine(PopEffect(newObj));
 
             // Czekaj 0.7 sekundy przed stworzeniem kolejnego obiektu
-            yield return new WaitForSeconds(0.7f);
+            yield return new WaitForSeconds(0.4f);
         }
     }
 
@@ -90,7 +90,7 @@ public class RankedManager : MonoBehaviour
             for (int i = 0; i <= sum; i++)
             {
                 NewLp.text = "+" + i;
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.05f);
             }
         }
         else
@@ -98,7 +98,7 @@ public class RankedManager : MonoBehaviour
             for (int i = 0; i >= sum; i--)
             {
                 NewLp.text = i.ToString();
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.05f);
             }
         }
         if(StatsManager.win != 10 || Poddymka)
@@ -113,7 +113,7 @@ public class RankedManager : MonoBehaviour
                     NewLp.text = "+" + (sum - i);
                     PlayerManager.LP++;
                     SetRange(PlayerManager.LP);
-                    yield return new WaitForSeconds(0.1f);
+                    yield return new WaitForSeconds(0.05f);
                 }
             }
             else
@@ -128,7 +128,7 @@ public class RankedManager : MonoBehaviour
                         NewLp.text = (sum - i).ToString();
                         PlayerManager.LP--;
                         SetRange(PlayerManager.LP);
-                        yield return new WaitForSeconds(0.1f);
+                        yield return new WaitForSeconds(0.05f);
                     }
                 }
             }
@@ -212,6 +212,10 @@ public class RankedManager : MonoBehaviour
     int sumPoint()
     {
         int modyfikator = PlayerManager.LP / 300 + 2;
+        if(modyfikator > 4)
+        {
+            modyfikator = 4;
+        }
         float zwrot = 0;
         int puchary = win;
         if(puchary > 10)
@@ -236,6 +240,22 @@ public class RankedManager : MonoBehaviour
         if(zwrot > 0)
         {
             zwrot += zwrot / 30 * Fraction.fractionList.Count;
+        }
+        if(PlayerManager.LP > 900 && zwrot > 0)
+        {
+            zwrot *= 0.9f;
+        }
+        if(PlayerManager.LP > 900 && zwrot < 0)
+        {
+            zwrot *= 1.1f;
+        }
+        if(PlayerManager.LP > 1200 && zwrot > 0)
+        {
+            zwrot *= 0.9f;
+        }
+        if(PlayerManager.LP > 1200 && zwrot < 0)
+        {
+            zwrot *= 1.1f;
         }
         return (int)zwrot;
     }

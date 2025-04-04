@@ -4,10 +4,13 @@ using UnityEngine;
 using System.Data.SqlClient; // Obsługa SQL Server
 using System; // Konwersja typów (Convert)
 using System.Threading.Tasks; // Do obsługi asynchroniczności
+using TMPro;
 
 public class Ranking : MonoBehaviour
 {
     public Rekord[] rekordy;
+    public TextMeshProUGUI najlepszy;
+    public static int MaxRound;
 
     public async void Start()
     {
@@ -114,6 +117,28 @@ public class Ranking : MonoBehaviour
                 {
                     rekordy[0].gameObject.SetActive(false);
                 }
+                     // 4. Pobierz najnowszą rundę i nazwę z tabeli AutoBattlerGame
+                string queryLatestGame = @"
+                    SELECT TOP 1 Name, Round 
+                    FROM AutoBattlerGame
+                    ORDER BY Round DESC;
+                ";
+
+                SqlCommand cmdLatestGame = new SqlCommand(queryLatestGame, con);
+                SqlDataReader gameReader = await cmdLatestGame.ExecuteReaderAsync(); // Asynchroniczne wykonanie zapytania
+
+                if (await gameReader.ReadAsync())
+                {
+                    string name = gameReader.GetString(0); // Odczytaj nazwę
+                    MaxRound = gameReader.GetInt32(1); // Odczytaj rundę
+                    najlepszy.text = "Najlepszy gracz: " + name + "\nRunda: " + MaxRound;
+                }
+                else
+                {
+                    Debug.Log("Brak danych w tabeli AutoBattlerGame.");
+                }
+
+                gameReader.Close();
             }
         }
         catch (SqlException ex)

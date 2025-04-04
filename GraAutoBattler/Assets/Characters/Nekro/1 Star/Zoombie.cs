@@ -9,7 +9,10 @@ public class Zoombie : Heros
     {
         
         if(ult)
+        {
+            Ghul.IsGhul(this);
             Health = Evolution ? MaxHealth : 1;
+        }
         else
             StartCoroutine(base.Death());
         ult = false;

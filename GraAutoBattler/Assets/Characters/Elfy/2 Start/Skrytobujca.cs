@@ -23,7 +23,11 @@ public class Skrytobujca : Heros
                 }
             }
             if(potencial != null)
-                yield return StartCoroutine(potencial.TakeDamage(this, potencial.BeforDamage(gameObject, BeforAttack(potencial.gameObject, Attack))));
+            {
+                potencial.Health -= Attack;
+                GameObject pop = Instantiate(PopUp, potencial.gameObject.transform.position, Quaternion.identity);
+                pop.GetComponent<PopUp>().SetText(Attack.ToString(),  Color.red);
+            }
             yield return null;
         }
         

@@ -9,10 +9,10 @@ public class ElfyStrzelec : Heros
         int ile = Drzewo.IleDrzew(Enemy);
         int buff = Evolution ? 20 : 10;
         Attack += buff * ile;
-        Health += buff * ile;
-        MaxHealth += buff * ile;
+        Health += ((buff * ile)/2);
+        MaxHealth += ((buff * ile)/2);
         if(ile != 0)
-            ShowPopUp("+" + (buff * ile) + "/" + (buff * ile), Color.green);
+            ShowPopUp("+" + (buff * ile) + "/" + ((buff * ile)/2), Color.green);
         yield return null;
     }
 }

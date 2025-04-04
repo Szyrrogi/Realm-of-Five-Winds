@@ -112,9 +112,8 @@ MonoBehaviour:
   Range: 0
   AP: 10
   MagicResist: 10
-  Description: "<b>Pocz\u0105tek Walki :</b> Je\u017Celi znajduj\u0119 si\u0119 na
-    pocz\u0105tku rz\u0119du, otrzymuje 30 Zdrowia za ka\u017Cd\u0105 jednostk\u0119
-    w rz\u0119dzie"
+  Description: "<b>Pocz\u0105tek Walki :</b> Je\u017Celi jest pierwszy w rz\u0119dzie,
+    otrzymuje 30 Zdrowia za ka\u017Cd\u0105 jednostk\u0119 w rz\u0119dzie"
   CPU: 0
   UpgradeLevel: 1
   UpgradeNeed: 3

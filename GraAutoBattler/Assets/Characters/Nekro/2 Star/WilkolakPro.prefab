@@ -113,7 +113,7 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: "<b>Pocz\u0105tek Walki:</b>W przypadku parzystej ilo\u015Bci wygranych
-    wilko\u0142ak otrzymuje +20/20, w innym wypadku -20/20"
+    wilko\u0142ak otrzymuje +40/40"
   CPU: 0
   UpgradeLevel: 1
   UpgradeNeed: 3
@@ -124,6 +124,8 @@ MonoBehaviour:
   BoskaTarcza: 0
   attackAP: 0
   Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   AttackText: {fileID: 2333975298996084202}
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 0}

@@ -178,12 +178,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 188
   Name: Katapulta
-  Cost: 3
+  Cost: 4
   Star: 2
   Initiative: 30
   MaxHealth: 20
   Health: 20
-  Attack: 10
+  Attack: 30
   Defense: 0
   Range: 0
   AP: 0

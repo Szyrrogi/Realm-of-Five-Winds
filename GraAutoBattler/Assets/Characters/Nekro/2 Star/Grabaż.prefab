@@ -115,7 +115,7 @@ MonoBehaviour:
   Description: "<b>Po Walce:  </b>przywo\u0142uje szkieleta"
   CPU: 0
   UpgradeLevel: 1
-  UpgradeNeed: 5
+  UpgradeNeed: 3
   Enemy: 0
   fraction: 1
   RealCost: 0
@@ -123,6 +123,8 @@ MonoBehaviour:
   BoskaTarcza: 0
   attackAP: 0
   Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   AttackText: {fileID: 2333975298996084202}
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 1819705648667262722, guid: 0d498ac31b5185640bf7417f1a6676eb, type: 3}

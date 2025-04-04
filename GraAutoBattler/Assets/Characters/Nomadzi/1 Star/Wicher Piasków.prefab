@@ -105,14 +105,14 @@ MonoBehaviour:
   Cost: 2
   Star: 1
   Initiative: 80
-  MaxHealth: 20
-  Health: 20
-  Attack: 20
+  MaxHealth: 18
+  Health: 18
+  Attack: 18
   Defense: 7
   Range: 0
   AP: 0
   MagicResist: 10
-  Description: "<b>Skok, Pocz\u0105tek Walki: </b>Otrzymuje 7/7 je\u017Celi w s\u0105siaduj\u0105cych
+  Description: "<b>Skok, Pocz\u0105tek Walki: </b>Otrzymuje 5/5 je\u017Celi w s\u0105siaduj\u0105cych
     rz\u0119dach na tym samym polu znajduje si\u0119 Wiecher Piask\xF3w"
   CPU: 0
   UpgradeLevel: 1

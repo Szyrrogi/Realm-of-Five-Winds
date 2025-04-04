@@ -8,10 +8,10 @@ public class PodatnikPro : Heros
     {
         if(!Enemy)
         {
-            MoneyManager.money += 1;
+            MoneyManager.money += 2;
         }
         GameObject pop = Instantiate(PopUp, gameObject.transform.position, Quaternion.identity);
-        pop.GetComponent<PopUp>().SetText("1", Color.yellow);
+        pop.GetComponent<PopUp>().SetText("2", Color.yellow);
         yield return new WaitForSeconds(0.7f);
     }
 }

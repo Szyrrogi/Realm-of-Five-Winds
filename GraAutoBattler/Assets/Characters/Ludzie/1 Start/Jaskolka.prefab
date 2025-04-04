@@ -110,7 +110,7 @@ MonoBehaviour:
   Attack: 15
   Defense: 5
   Range: 0
-  AP: 10
+  AP: 15
   MagicResist: 0
   Description: "<b>Pocz\u0105tek Walki:</b> Zwi\u0119ksz Moc Zakl\u0119\u0107 wszystkich
     w rz\u0119dzie o warto\u015B\u0107 swojej <b>Mocy Zakl\u0119\u0107</b>"
@@ -124,6 +124,8 @@ MonoBehaviour:
   BoskaTarcza: 0
   attackAP: 0
   Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   AttackText: {fileID: 2333975298996084202}
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 1819705648667262722, guid: 42673a19c480d1246bdb834f75cf2997, type: 3}

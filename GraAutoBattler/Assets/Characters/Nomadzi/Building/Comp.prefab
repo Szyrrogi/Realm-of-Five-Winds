@@ -188,7 +188,7 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "<b>Poczatek Walki: </b>Daje 20/20 dla jednostek posiadaj\u0105cych
+  Description: "<b>Poczatek Walki: </b>Daje 18/18 dla jednostek posiadaj\u0105cych
     <b>Skok</b>"
   CPU: 0
   UpgradeLevel: 0

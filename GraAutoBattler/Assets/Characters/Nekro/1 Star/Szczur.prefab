@@ -104,7 +104,7 @@ MonoBehaviour:
   Name: Szczur
   Cost: 1
   Star: 1
-  Initiative: 30
+  Initiative: 100
   MaxHealth: 8
   Health: 8
   Attack: 8
@@ -115,7 +115,7 @@ MonoBehaviour:
   Description: 
   CPU: 0
   UpgradeLevel: 1
-  UpgradeNeed: 2
+  UpgradeNeed: 3
   Enemy: 0
   fraction: 1
   RealCost: 0
@@ -123,6 +123,8 @@ MonoBehaviour:
   BoskaTarcza: 0
   attackAP: 0
   Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   AttackText: {fileID: 2333975298996084202}
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 1819705648667262722, guid: f1aaf3247ca889049b9df9f73741c54b, type: 3}

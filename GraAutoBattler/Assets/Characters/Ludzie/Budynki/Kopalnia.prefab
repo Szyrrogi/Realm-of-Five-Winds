@@ -179,7 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 45
   Name: Kopalnia
-  Cost: 7
+  Cost: 6
   Star: 2
   Initiative: 20
   MaxHealth: 30
@@ -200,6 +200,8 @@ MonoBehaviour:
   BoskaTarcza: 0
   attackAP: 0
   Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   HealthText: {fileID: 3501279418940951141}
 --- !u!114 &1146666903618366804
 MonoBehaviour:

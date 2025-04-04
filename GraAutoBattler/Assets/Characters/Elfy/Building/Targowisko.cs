@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Targowisko : Building
 {
-    // Start is called before the first frame update
-    void Start()
+    public override IEnumerator OnBattleEnd()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if(GetComponent<DragObject>().pole.line.KtoWygral == 1)
+        {
+            if(!Enemy)
+            {
+                MoneyManager.money += 1;
+            }
+            GameObject pop = Instantiate(PopUp, gameObject.transform.position, Quaternion.identity);
+            pop.GetComponent<PopUp>().SetText("1", Color.yellow);
+            yield return new WaitForSeconds(0.7f );
+        }
     }
 }

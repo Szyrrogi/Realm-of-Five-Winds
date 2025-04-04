@@ -129,13 +129,16 @@ MonoBehaviour:
   Description: "Otrzymuje +5/5 za ka\u017Cdym razem gdy od\u015Bwierzysz sklep"
   CPU: 0
   UpgradeLevel: 1
-  UpgradeNeed: 3
+  UpgradeNeed: 2
   Enemy: 0
   fraction: 1
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
   attackAP: 0
+  Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   AttackText: {fileID: 2333975298996084202}
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 1819705648667262722, guid: 133496c238b72c640978842519678cb0, type: 3}

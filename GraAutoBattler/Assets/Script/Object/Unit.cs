@@ -130,7 +130,7 @@ public class Unit : MonoBehaviour
             if(pole == 0)
             {
                 line = (line + 3) % 6;
-                if(fightManager.GetPole(line, pole - 1) != null && fightManager.GetPole(line, pole - 1).unit != null)
+                if(fightManager.GetPole(line, pole) != null && fightManager.GetPole(line, pole).unit != null)
                 {
                     return fightManager.GetPole(line, 0).unit.GetComponent<Unit>();
                 }
@@ -256,7 +256,8 @@ public class Unit : MonoBehaviour
         {
             findPole().GetComponent<Pole>().unit.GetComponent<Czerw>().buff();
         }
-
+        Ghul.IsGhul(this);
+        Loch.FirstDeathCheck(this);
         if(archaniol == 0)
         {
             archaniol = Nekromanta.IsNekromanta(this);

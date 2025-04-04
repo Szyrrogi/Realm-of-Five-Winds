@@ -1,0 +1,45 @@
+{
+    "playerName": "SzyRRogi",
+    "number": 3,
+    "levelUp": 1,
+    "units": [
+        {
+            "Line": 1,
+            "Pole": 0,
+            "Id": 10,
+            "Name": "Podatnik",
+            "Cost": 2,
+            "RealCost": 2,
+            "Initiative": 20,
+            "MaxHealth": 20,
+            "Health": 1,
+            "Attack": 15,
+            "Defense": 5,
+            "Range": 0,
+            "AP": 0,
+            "MagicResist": 0,
+            "Description": "<b>Koniec Walki:</b> Zyskaj 1 złoto",
+            "UpgradeLevel": 1,
+            "SpellId": 0
+        },
+        {
+            "Line": 1,
+            "Pole": 1,
+            "Id": 10,
+            "Name": "Podatnik",
+            "Cost": 2,
+            "RealCost": 2,
+            "Initiative": 20,
+            "MaxHealth": 20,
+            "Health": 20,
+            "Attack": 15,
+            "Defense": 5,
+            "Range": 0,
+            "AP": 0,
+            "MagicResist": 0,
+            "Description": "<b>Koniec Walki:</b> Zyskaj 1 złoto",
+            "UpgradeLevel": 1,
+            "SpellId": 0
+        }
+    ]
+}

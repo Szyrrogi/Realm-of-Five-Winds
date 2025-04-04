@@ -17,8 +17,8 @@ public class PustynnyPrzewodnik : Heros
         if(i == 3)
         {
             yield return new WaitForSeconds(0.4f );
-            int buff = Evolution ? 60 : 30;
-            ShowPopUp(Evolution ? "+60/60" : "+30/30", Color.green);
+            int buff = Evolution ? 80 : 30;
+            ShowPopUp(Evolution ? "+80/60" : "+80/30", Color.green);
             Attack += buff;
             Health += buff;
             MaxHealth += buff;

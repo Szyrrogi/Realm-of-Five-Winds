@@ -110,7 +110,7 @@ MonoBehaviour:
   Attack: 15
   Defense: 5
   Range: 0
-  AP: 20
+  AP: 25
   MagicResist: 20
   Description: "Odporno\u015B\u0107 na ataki dystansowe"
   CPU: 0

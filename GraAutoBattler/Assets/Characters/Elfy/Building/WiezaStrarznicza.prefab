@@ -183,13 +183,13 @@ MonoBehaviour:
   Initiative: 20
   MaxHealth: 20
   Health: 20
-  Attack: 15
+  Attack: 27
   Defense: 5
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "<b>Akcja: </b>Atakuje wszystkie wrogie jednostki znajduj\u0105ce
-    si\u0119 w twoim rz\u0119dzie"
+  Description: "<b>Akcja: </b>Wystrze pocisk we wszystkich wrog\xF3w na twoim rzedzie
+    zadaj\u0105cy 27 obra\u017Ce\u0144"
   CPU: 0
   UpgradeLevel: 0
   UpgradeNeed: 0

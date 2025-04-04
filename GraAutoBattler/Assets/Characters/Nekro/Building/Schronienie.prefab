@@ -178,7 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 94
   Name: Schronienie
-  Cost: 4
+  Cost: 3
   Star: 2
   Initiative: 20
   MaxHealth: 40
@@ -199,6 +199,8 @@ MonoBehaviour:
   BoskaTarcza: 0
   attackAP: 0
   Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   HealthText: {fileID: 3501279418940951141}
   pattern:
   - {fileID: 1329609480966861234, guid: c2be478055c028546aa2e4983735a60e, type: 3}

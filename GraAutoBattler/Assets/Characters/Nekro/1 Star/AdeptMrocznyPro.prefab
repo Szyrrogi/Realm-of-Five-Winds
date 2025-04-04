@@ -110,7 +110,7 @@ MonoBehaviour:
   Attack: 5
   Defense: 5
   Range: 0
-  AP: 20
+  AP: 25
   MagicResist: 10
   Description: "<b>Pocz\u0105tek Walki:</b> usuwa Obron\u0119 Magiczn\u0105 z przeciwnik\xF3w"
   CPU: 0
@@ -123,6 +123,8 @@ MonoBehaviour:
   BoskaTarcza: 0
   attackAP: 1
   Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   AttackText: {fileID: 2333975298996084202}
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 0}

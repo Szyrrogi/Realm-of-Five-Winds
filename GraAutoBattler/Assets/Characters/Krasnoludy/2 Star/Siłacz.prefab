@@ -105,12 +105,12 @@ MonoBehaviour:
   Cost: 4
   Star: 2
   Initiative: 30
-  MaxHealth: 30
-  Health: 30
+  MaxHealth: 20
+  Health: 20
   Attack: 5
   Defense: 10
   Range: 0
-  AP: 70
+  AP: 60
   MagicResist: 0
   Description: '<b>Ulepszenie: </b> Otrzymuje 50 Zdrowia'
   CPU: 0

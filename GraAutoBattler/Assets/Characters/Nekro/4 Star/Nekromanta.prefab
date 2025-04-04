@@ -116,7 +116,7 @@ MonoBehaviour:
   Description: "Po \u015Bmierci sojusznika przywo\u0142uje zwierze"
   CPU: 0
   UpgradeLevel: 1
-  UpgradeNeed: 3
+  UpgradeNeed: 2
   Enemy: 0
   fraction: 1
   RealCost: 0
@@ -124,6 +124,8 @@ MonoBehaviour:
   BoskaTarcza: 0
   attackAP: 1
   Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   AttackText: {fileID: 2333975298996084202}
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 1819705648667262722, guid: 1489dd1492164bd42b03f6851672052d, type: 3}

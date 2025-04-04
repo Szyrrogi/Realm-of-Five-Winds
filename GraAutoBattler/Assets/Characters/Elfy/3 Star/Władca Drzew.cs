@@ -14,6 +14,16 @@ public class WładcaDrzew : Heros
                 yield return StartCoroutine(unit.Summon(summonMinion));
             }
         }
+        if(Evolution)
+        {
+            foreach(Unit unit in EventSystem.eventSystem.GetComponent<FightManager>().units)
+            {
+                if((unit.gameObject.GetComponent<Ent>()) && unit.Enemy == Enemy)
+                {
+                    unit.gameObject.GetComponent<Ent>().Defense += 15;
+                }
+            }
+        }
         yield return null;
     }
 }

@@ -258,6 +258,8 @@ MonoBehaviour:
   BoskaTarcza: 0
   attackAP: 1
   Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   AttackText: {fileID: 5187295522447798132}
   HealthText: {fileID: 6430296136860862158}
   EvolveHeroes: {fileID: 7934681543930097476}
@@ -276,9 +278,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shop: {fileID: 0}
   zaklecia:
-  - {fileID: 1819705648667262722, guid: 324b1e9775681fa4284d0fe834fc61cd, type: 3}
-  - {fileID: 1819705648667262722, guid: da15c3bf856461e458a3bc1fd1c42533, type: 3}
   - {fileID: 1819705648667262722, guid: c03c961374aec3b40936002ce3449313, type: 3}
+  - {fileID: 1819705648667262722, guid: da15c3bf856461e458a3bc1fd1c42533, type: 3}
   spellImage: {fileID: 1707886860019170237}
   spell: {fileID: 1110049109536221511, guid: 324b1e9775681fa4284d0fe834fc61cd, type: 3}
   spellCanLearn: 0100000002000000

@@ -11,7 +11,7 @@ using System.IO;
 
 public class PlayerManager : MonoBehaviour
 {
-    public static string Version = "0.3.0";
+    public static string Version = "0.5.1";
     public static int PlayerFaceId;
     public static string Name = "Player";
     public static int Id = 0;
@@ -23,6 +23,8 @@ public class PlayerManager : MonoBehaviour
     public TextMeshProUGUI[] textPlayer;
     public GameObject faces;
     public Ranking ranking;
+
+    
 
 
     public void ShowFace()
@@ -80,8 +82,31 @@ public class PlayerManager : MonoBehaviour
         ranking.Start();
     }
 
+    public Image RankImage;
+    public TextMeshProUGUI LPText;
+    public TextMeshProUGUI RankNumber;
+
     void Update()
     {
+        if(LPText != null)
+        {
+            if(!RankedManager.Ranked)
+            {
+                RankImage.gameObject.SetActive(false);
+                LPText.gameObject.SetActive(false);
+                RankNumber.gameObject.SetActive(false);
+            }
+            else
+            {
+                RankImage.gameObject.SetActive(true);
+                LPText.gameObject.SetActive(true);
+                RankNumber.gameObject.SetActive(true);
+                int sum = LP;
+                RankImage.sprite = EventSystem.eventSystem.GetComponent<RankedManager>().ranksSprite[(int)sum / 300];
+                RankNumber.text = (((int)sum % 300) / 100 + 1).ToString();
+                LPText.text = ((int)sum % 100) + " LP";
+            }
+        }
         for(int i = 0; i < face.Length; i++)
         {
         face[i].sprite = spriteFace[PlayerFaceId];
@@ -96,8 +121,36 @@ public class PlayerManager : MonoBehaviour
         if(Login.zalogowano || save)
         {
             RankedManager.Ranked = false; //TEST
-            SceneManager.LoadScene(4);
+            if(save || Fraction.fractionList.Count != 0)
+            {
+                Multi.multi = false;
+                Tutorial.tutorial = false;
+                SceneManager.LoadScene(4);
+            }
         }
+    }
+
+    public void ReadInputMulti()
+    {
+        if(Login.zalogowano)
+        {
+            RankedManager.Ranked = false; //TEST
+            if(Fraction.fractionList.Count != 0)
+            {
+                Multi.multi = true;
+                Tutorial.tutorial = false;
+                SceneManager.LoadScene(6);
+            }
+        }
+    }
+
+    public void StartTutorial()
+    {
+        Multi.multi = false;
+        RankedManager.Ranked = false;
+        Tutorial.tutorial = true;
+        SceneManager.LoadScene(5);
+
     }
     public void StartRanked()
     {
@@ -123,7 +176,12 @@ public class PlayerManager : MonoBehaviour
             {
                 isSave = false;
             }
-            SceneManager.LoadScene(4);
+            if(isSave || Fraction.fractionList.Count != 0)
+            {
+                Multi.multi = false;
+                Tutorial.tutorial = false;
+                SceneManager.LoadScene(4);
+            }
         }
     }
     

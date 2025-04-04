@@ -18,13 +18,22 @@ public class Obierzyświat : Heros
             }
         }
 
-        int buff = Evolution ? 30 : 15;
-        int ile = fractionList.Count - 1;
-        Attack += buff * ile;
-        Health += buff * ile;
-        MaxHealth += buff * ile;
+        int frakcja = fractionList.Count - 1;
+        int ile = 0;
+        if(frakcja == 1)
+        {
+            ile = 15;
+        }
+        if(frakcja >= 2)
+        {
+            ile = Evolution ? 75 : 30; 
+        }
+        
+        Attack += ile;
+        Health += ile;
+        MaxHealth += ile;
         if(ile != 0)
-            ShowPopUp("+" + (buff * ile) + "/" + (buff * ile), Color.green);
+            ShowPopUp("+" + (ile) + "/" + (ile), Color.green);
         yield return null;
         yield return null;
     }

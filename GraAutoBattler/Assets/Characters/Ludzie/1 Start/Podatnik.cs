@@ -6,7 +6,6 @@ public class Podatnik : Heros
 {
     public override IEnumerator OnBattleEnd()
     {
-        Debug.Log("EEE?");
         if(!Enemy)
         {
             MoneyManager.money += 1;

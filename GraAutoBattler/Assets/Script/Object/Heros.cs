@@ -181,7 +181,7 @@ public class Heros : Unit
 
         newUnit.UpgradeLevel = 0;
         newUnit.UpgradeNeed = 0;
-        newUnit.RealCost = 0;
+        newUnit.RealCost = Cost;
         newUnit.Evolution = true;
 
         GetComponent<DragObject>().pole.unit = newUnitObject;

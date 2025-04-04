@@ -6,26 +6,19 @@ public class WilkAlfa : Heros
 {
     public override IEnumerator OnBattleStart()
     {
-        Attack -= 12;
-        Health -= 12;
-        MaxHealth -= 12;
+        int buff = Evolution ? 24 : 15;
+        Attack -= buff;
+        Health -= buff;
+        MaxHealth -= buff;
         foreach(Unit unit in EventSystem.eventSystem.GetComponent<FightManager>().units)
         {
             if((unit.gameObject.GetComponent<Wilk>() || unit.gameObject.GetComponent<WilkAlfa>() || unit.gameObject.GetComponent<Wilkolak>()) && unit.Enemy == Enemy)
             {
-                if(Evolution)
-                {
-                    Health += 20;
-                    Attack += 20;
-                    MaxHealth += 20;
-                }
-                else
-                {
-                    Health += 12;
-                    Attack += 12;
-                    MaxHealth += 12;
-                }
-
+                
+                Health += buff;
+                Attack += buff;
+                MaxHealth += buff;
+                
             }
         }
         yield return null;

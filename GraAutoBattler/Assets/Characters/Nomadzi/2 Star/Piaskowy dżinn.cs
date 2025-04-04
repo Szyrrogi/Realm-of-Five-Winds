@@ -13,8 +13,8 @@ public class Piaskowydżinn : Heros
 
     public override void Evolve()
     {
-        Health += 30;
-        MaxHealth += 30;
+        Health += 50;
+        MaxHealth += 50;
         base.Evolve();
     }
 }

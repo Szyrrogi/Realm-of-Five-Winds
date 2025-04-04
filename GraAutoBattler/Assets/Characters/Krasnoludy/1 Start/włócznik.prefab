@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fe60ead2b6714f4993cfdbf3d181f59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 157
   Name: "W\u0142\xF3cznik"
   Cost: 3
   Star: 1
@@ -112,10 +112,10 @@ MonoBehaviour:
   Range: 1
   AP: 0
   MagicResist: 0
-  Description: "Nieograniczony zasi\u0119g"
+  Description: "Nieograniczony zasi\u0119g. Nie porusza si\u0119."
   CPU: 0
   UpgradeLevel: 1
-  UpgradeNeed: 10
+  UpgradeNeed: 3
   Enemy: 0
   fraction: 4
   RealCost: 0

@@ -11,6 +11,16 @@ public class SynergyManager : MonoBehaviour
     public GameObject parentObjectEnemy;
     public Dictionary<int, GameObject> ActiveSynergyObjectsEnemy = new Dictionary<int, GameObject>();
 
+    void Start()
+    {
+        int i = 0;
+        foreach(Synergy character in Synergie)
+        {
+            character.Id = i;
+            i++;
+        }
+    }
+
     void Update()
     {
         if(!FightManager.IsFight)

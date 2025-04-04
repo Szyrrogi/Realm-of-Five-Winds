@@ -14,12 +14,15 @@ public class Nauczyciel : Heros
             unitt.ShowPopUp("+Zasięg", Color.green);
             yield return new WaitForSeconds(0.3f);
         }
-        Unit unit = PrefUnit();
-        if(unit != null)
+        if(Evolution)
         {
-            unit.Range = 1;
-            unit.ShowPopUp("+Zasięg", Color.green);
-            yield return new WaitForSeconds(0.3f);
+            Unit unit = PrefUnit();
+            if(unit != null)
+            {
+                unit.Range = 1;
+                unit.ShowPopUp("+Zasięg", Color.green);
+                yield return new WaitForSeconds(0.3f);
+            }
         }
         yield return null;
     }

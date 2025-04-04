@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 0
   Name: Elfi Strzelec
-  Cost: 2
+  Cost: 3
   Star: 1
   Initiative: 80
   MaxHealth: 20
@@ -112,7 +112,7 @@ MonoBehaviour:
   Range: 1
   AP: 0
   MagicResist: 0
-  Description: "<b>Pocz\u0105tek Walki: </b>Otrzymuje +10/10 za ka\u017Cde drzewo
+  Description: "<b>Pocz\u0105tek Walki: </b>Otrzymuje +10/5 za ka\u017Cde drzewo
     na <b>arenie</b>"
   CPU: 0
   UpgradeLevel: 1

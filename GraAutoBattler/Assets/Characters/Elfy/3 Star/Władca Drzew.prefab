@@ -115,7 +115,7 @@ MonoBehaviour:
   Description: "<b>Pocz\u0105tek Walki: </b>Przemie\u0144 wszystkie drzewa w Enty"
   CPU: 0
   UpgradeLevel: 1
-  UpgradeNeed: 10
+  UpgradeNeed: 3
   Enemy: 0
   fraction: 3
   RealCost: 0

@@ -178,7 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 97
   Name: "Kana\u0142"
-  Cost: 3
+  Cost: 2
   Star: 1
   Initiative: 20
   MaxHealth: 40
@@ -199,9 +199,12 @@ MonoBehaviour:
   BoskaTarcza: 0
   attackAP: 0
   Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   HealthText: {fileID: 3501279418940951141}
   pattern:
   - {fileID: 6755485281205651035, guid: fa2bc5898d79af54298c9f9b54b303e4, type: 3}
+  - {fileID: 6613798158930643463, guid: 4af9dd8f17a7d394eabcb41856037675, type: 3}
 --- !u!114 &6985540666553226679
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ public class Linia : MonoBehaviour
     public Linia LineNext;
     public GameObject[] poleType;
 
-    void Start()
+    public void Start()
     {
         Porzadek();
     }

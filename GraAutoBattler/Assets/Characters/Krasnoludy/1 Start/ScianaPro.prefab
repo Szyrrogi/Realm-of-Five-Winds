@@ -100,19 +100,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9140fc83f3a46c54187fff8c14f8e1a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 152
   Name: "\u015Aciana"
   Cost: 2
   Star: 1
   Initiative: 0
-  MaxHealth: 60
-  Health: 60
+  MaxHealth: 90
+  Health: 90
   Attack: 0
   Defense: 10
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "<b>NIewra\u017Cliwo\u015B\u0107</b> podczas pierwszej tury. Nie porusza
+  Description: "<b>Niewra\u017Cliwo\u015B\u0107</b> podczas pierwszej tury. Nie porusza
     si\u0119 oraz nie atakuje"
   CPU: 0
   UpgradeLevel: 1
@@ -130,6 +130,7 @@ MonoBehaviour:
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 0}
   Evolution: 1
+  Synergia: 0
 --- !u!114 &8731495660794391217
 MonoBehaviour:
   m_ObjectHideFlags: 0

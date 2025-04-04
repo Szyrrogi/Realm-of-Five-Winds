@@ -10,8 +10,8 @@ public class SzamanPiasków : Heros
         {
             Unit friendlyUnit = findPole().GetComponent<Pole>().unit.GetComponent<Unit>();
             yield return new WaitForSeconds(0.4f );
-            int buff = Evolution ? 35 : 15;
-            friendlyUnit.ShowPopUp(Evolution ? "+35" : "+15", new Color(0.5f ,0 , 1f));
+            int buff = Evolution ? 45 : 20;
+            friendlyUnit.ShowPopUp(Evolution ? "+45" : "+20", new Color(0.5f ,0 , 1f));
             friendlyUnit.AP += buff;
         }
         yield return null;

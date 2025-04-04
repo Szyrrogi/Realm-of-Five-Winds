@@ -188,7 +188,7 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "<b>Poczatek Walki: </b>Zwi\u0119ksza atak jednostk\u0105 dystanoswym
+  Description: "<b>Pocz\u0105tek Walki: </b>Zwi\u0119ksza atak jednostkom dystansowym
     o 30 w rz\u0119dzie"
   CPU: 0
   UpgradeLevel: 0

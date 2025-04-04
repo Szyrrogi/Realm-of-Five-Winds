@@ -157,7 +157,7 @@ public class ShopManager : MonoBehaviour
             } 
         }
     }
-    List<GameObject> FilterObjects(List<GameObject> objects)
+    protected List<GameObject> FilterObjects(List<GameObject> objects)
     {
         List<GameObject> result = new List<GameObject>();
 

@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 6934024521668934397}
   - component: {fileID: 3712362837729000110}
   - component: {fileID: 6289908101606874651}
+  - component: {fileID: 1977150402854414428}
   - component: {fileID: 6985540666553226679}
   - component: {fileID: 8286433214309528574}
   m_Layer: 0
@@ -176,9 +177,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f78db2cee4d9f46b892c4117e3e928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 232
   Name: Las
-  Cost: 7
+  Cost: 2
   Star: 1
   Initiative: 20
   MaxHealth: 30
@@ -188,7 +189,7 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "<b>Koniec Walki: </b>Przywo\u0142aj drzewo"
+  Description: <b>Wtasowuje</b> drzewa do <b>puli</b>
   CPU: 0
   UpgradeLevel: 0
   UpgradeNeed: 0
@@ -202,7 +203,21 @@ MonoBehaviour:
   CanJump: 0
   ReadyToJump: 0
   HealthText: {fileID: 3501279418940951141}
-  unit: {fileID: 1819705648667262722, guid: 769ed002088caa4419bbd54a939c9e85, type: 3}
+--- !u!114 &1977150402854414428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819705648667262722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f332e89ce0599b44ba2cd071e729f564, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shop: {fileID: 0}
+  zloto: {fileID: 1819705648667262722, guid: 769ed002088caa4419bbd54a939c9e85, type: 3}
+  kopalnia: {fileID: 1819705648667262722}
 --- !u!114 &6985540666553226679
 MonoBehaviour:
   m_ObjectHideFlags: 0
