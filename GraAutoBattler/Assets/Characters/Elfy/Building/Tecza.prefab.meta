@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:GraAutoBattler/Assets/Characters/Elfy/Building/Tecza.prefab.meta
 guid: 5a2b61c06dba7a245854c73aa33d8033
+========
+guid: 9c25b6bfe9adbee45821c28171728f7d
+>>>>>>>> c3d90d152366c75a7021c227c7baff40f454f3e3:GraAutoBattler/Assets/Characters/Elfy/Building/Wilcza Jama.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

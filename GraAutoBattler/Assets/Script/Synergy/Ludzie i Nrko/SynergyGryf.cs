@@ -59,6 +59,7 @@ public class SynergyGryf : Synergy
                 newUnit.GetComponent<DragObject>().pole.unit = newUnit;
 
                 Destroy(old);
+                return;
             }
         }
     }
