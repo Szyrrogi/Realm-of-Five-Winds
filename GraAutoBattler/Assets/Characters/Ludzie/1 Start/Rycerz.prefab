@@ -114,17 +114,22 @@ MonoBehaviour:
   MagicResist: 0
   Description: "Zwi\u0119ksza obron\u0119 o 30 przy atakach z dystansu"
   CPU: 0
+  Typy: 03000000
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0
+  fraction: 0
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
+  attackAP: 0
+  Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   AttackText: {fileID: 5187295522447798132}
   HealthText: {fileID: 6430296136860862158}
   EvolveHeroes: {fileID: 1819705648667262722, guid: e23f021dac92c1743a7aef87940b20cc, type: 3}
   Evolution: 0
-  attackAP: 0
 --- !u!114 &6699983802921889276
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -113,17 +113,23 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: 
+  CPU: 0
+  Typy: 03000000
   UpgradeLevel: 1
   UpgradeNeed: 0
   Enemy: 0
+  fraction: 0
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
+  attackAP: 0
+  Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   AttackText: {fileID: 2333975298996084202}
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 0}
   Evolution: 1
-  attackAP: 0
   unit: {fileID: 1819705648667262722, guid: 0cf2958c8a37c034fbfac43188f1cc7f, type: 3}
 --- !u!114 &8731495660794391217
 MonoBehaviour:

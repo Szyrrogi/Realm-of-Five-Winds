@@ -605,6 +605,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4625d7cec4680a844944b247f57f44ee, type: 3}
   - {fileID: 21300000, guid: 5808043536dc06449a28d4b424a81d56, type: 3}
   - {fileID: 21300000, guid: 61a1e6d07f337dd4c8b3bf1237bc0a45, type: 3}
+  - {fileID: 21300000, guid: a65ad8ed6cab1194e88e6e345b9cb640, type: 3}
   RankNumber: {fileID: 2551354117546312706}
   LP: {fileID: 2653403414311860250}
   avr: {fileID: 1597264139505964836}

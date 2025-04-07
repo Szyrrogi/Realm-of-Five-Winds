@@ -30,7 +30,6 @@ public class DragObject : MonoBehaviour
 
     void OnMouseUp()
     {
-        Debug.Log("em");
         isDragging = false;
         moveObject = null;
         if(EventSystem.eventSystem.GetComponent<ShopManager>().dol.transform.position.x < gameObject.transform.position.x && 

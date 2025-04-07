@@ -190,6 +190,7 @@ MonoBehaviour:
   Description: "<b>Pocz\u0105tek Walki:</b> Otrzymuje 10 Ataku za ka\u017Cdedo przyjaznego
     wilka na Arenie"
   CPU: 0
+  Typy: 0000000001000000
   UpgradeLevel: 1
   UpgradeNeed: 0
   Enemy: 0

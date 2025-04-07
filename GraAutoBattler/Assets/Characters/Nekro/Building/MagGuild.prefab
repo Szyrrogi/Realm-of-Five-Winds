@@ -178,7 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 95
   Name: "Gildia Mag\xF3w"
-  Cost: 5
+  Cost: 3
   Star: 2
   Initiative: 23
   MaxHealth: 20
@@ -188,9 +188,10 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "<b>Poczatek Walki: </b>Zapewnia wszysckim jednostk\u0105 w rz\u0119dzie
-    15 Mocy Zakl\u0119\u0107"
+  Description: "<b>Poczatek Walki: </b>Zapewnia wszystkim jednostkom w rz\u0119dzie
+    20 Mocy Zakl\u0119\u0107"
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
@@ -200,6 +201,8 @@ MonoBehaviour:
   BoskaTarcza: 0
   attackAP: 0
   Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   HealthText: {fileID: 3501279418940951141}
 --- !u!114 &6985540666553226679
 MonoBehaviour:

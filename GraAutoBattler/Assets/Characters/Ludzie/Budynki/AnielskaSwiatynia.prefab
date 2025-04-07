@@ -191,6 +191,7 @@ MonoBehaviour:
   MagicResist: 0
   Description: "Zapewnia anio\u0142a w sklepie na poczatku ka\u017Cdej rundy"
   CPU: 0
+  Typy: 04000000
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
@@ -200,6 +201,8 @@ MonoBehaviour:
   BoskaTarcza: 0
   attackAP: 0
   Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   HealthText: {fileID: 3501279418940951141}
 --- !u!114 &827349473763045422
 MonoBehaviour:

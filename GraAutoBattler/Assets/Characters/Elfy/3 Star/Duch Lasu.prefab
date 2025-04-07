@@ -112,7 +112,7 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "<b>Pocz\u0105tek Walki: </b>Otrzymuje 5/5 za ka\u017Cd\u0105 jednostk\u0119
+  Description: "<b>Pocz\u0105tek Walki: </b>Otrzymuje 7/7 za ka\u017Cd\u0105 jednostk\u0119
     o warto\u015Bci mniejszej od Ducha Lasu na Arenie"
   CPU: 0
   UpgradeLevel: 1

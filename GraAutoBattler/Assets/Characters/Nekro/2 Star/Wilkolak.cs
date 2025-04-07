@@ -16,10 +16,13 @@ public class Wilkolak : Heros
         }
         else
         {
-            ShowPopUp(Evolution ? "-40/40" :"-20/20", Color.red);
-            Attack -= buff;
-            Health -= buff;
-            MaxHealth -= buff;
+            if(!Evolution)
+            {
+                ShowPopUp(Evolution ? "-40/40" :"-20/20", Color.red);
+                Attack -= buff;
+                Health -= buff;
+                MaxHealth -= buff;
+            }
         }
         yield return null;
     }

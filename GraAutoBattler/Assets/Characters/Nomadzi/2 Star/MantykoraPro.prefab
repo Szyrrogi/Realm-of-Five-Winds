@@ -115,6 +115,7 @@ MonoBehaviour:
   Description: "<b>Skok, Pocz\u0105tek Walki: </b>Otrzymuje 90/90 je\u017Celi w s\u0105siaduj\u0105cych
     rz\u0119dach na tym samym polu nie ma jednostek"
   CPU: 0
+  Typy: 00000000
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0

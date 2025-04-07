@@ -15,9 +15,13 @@ public class Włucznik : Heros
             List<Pole> help = line.pola.ToList();
             List<Pole> helpdwa = linedwa.pola.ToList();
 
+            
             help.Reverse();
 
             help.AddRange(helpdwa);
+
+            if(Evolution)
+                help.Reverse();
 
             foreach (var pole in help)
             {
@@ -33,5 +37,9 @@ public class Włucznik : Heros
         {
             yield return StartCoroutine(base.Fight());
         }
+    }
+    public override IEnumerator Move()
+    {
+        yield return new WaitForSeconds(0);
     }
 }

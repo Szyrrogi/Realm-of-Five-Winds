@@ -190,6 +190,7 @@ MonoBehaviour:
   Description: '<b>Gdy zostanie zaatakowany: </b>Otrzymuje 10 Obrony (Maksymalnie
     70)'
   CPU: 0
+  Typy: 05000000
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0

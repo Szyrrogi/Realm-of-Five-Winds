@@ -176,20 +176,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7fb4efce2a216245973ac5a4c905979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 229
   Name: Balista
-  Cost: 5
+  Cost: 4
   Star: 3
   Initiative: 40
   MaxHealth: 20
   Health: 20
-  Attack: 10
+  Attack: 20
   Defense: 0
-  Range: 0
+  Range: 1
   AP: 0
   MagicResist: 0
   Description: "<b>Akcja: </b>Wystrzel z nieograniczonym zasi\u0119giem pocisk zadaj\u0105cy
-    10 obra\u017Ce\u0144"
+    20 obra\u017Ce\u0144"
   CPU: 0
   UpgradeLevel: 0
   UpgradeNeed: 0

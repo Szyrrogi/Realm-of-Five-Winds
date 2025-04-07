@@ -10,7 +10,7 @@ public class Namiot : Building
         {
             if(pole.unit != null && pole.unit.GetComponent<Unit>().Enemy == Enemy)
             {
-                StartCoroutine(pole.unit.GetComponent<Unit>().Heal(5));
+                StartCoroutine(pole.unit.GetComponent<Unit>().Heal(10));
                 yield return new WaitForSeconds(0.5f);
             }
         }
@@ -18,7 +18,7 @@ public class Namiot : Building
         {
             if(pole.unit != null && pole.unit.GetComponent<Unit>().Enemy == Enemy)
             {
-                StartCoroutine(pole.unit.GetComponent<Unit>().Heal(5));
+                StartCoroutine(pole.unit.GetComponent<Unit>().Heal(10));
                 yield return new WaitForSeconds(0.5f);
             }
         }

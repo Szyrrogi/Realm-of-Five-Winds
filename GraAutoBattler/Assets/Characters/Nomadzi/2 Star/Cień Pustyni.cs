@@ -34,8 +34,8 @@ public class CieńPustyni : Heros
                 if(pole.unit != null)
                 {
                     yield return new WaitForSeconds(0.4f);
-                    int buff = Evolution ? 30 : 10;
-                    ShowPopUp(Evolution ? "+30" : "+10", Color.green);
+                    int buff = Evolution ? 25 : 10;
+                    ShowPopUp(Evolution ? "+25" : "+10", Color.green);
                     Attack += buff;
                 }
             }

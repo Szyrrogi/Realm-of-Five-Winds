@@ -1,18 +1,39 @@
 {
     "playerId": 2,
-    "money": 8,
-    "incom": 7,
+    "money": 2,
+    "incom": 6,
+    "poddymka": false,
     "win": 0,
     "fractions": "10000",
-    "lose": 2,
-    "round": 1,
+    "lose": 3,
+    "round": 0,
     "shop": [
-        4,
-        12,
-        4,
-        4,
-        44
+        38,
+        14,
+        0,
+        101,
+        0
     ],
-    "nextFight": "{\n    \"playerName\": \"Jullliii\",\n    \"number\": 5,\n    \"levelUp\": 1,\n    \"units\": [\n        {\n            \"Line\": 0,\n            \"Pole\": 0,\n            \"Id\": 12,\n            \"Name\": \"Rycerz\",\n            \"Cost\": 3,\n            \"RealCost\": 3,\n            \"Initiative\": 40,\n            \"MaxHealth\": 65,\n            \"Health\": 65,\n            \"Attack\": 20,\n            \"Defense\": 15,\n            \"Range\": 0,\n            \"AP\": 0,\n            \"MagicResist\": 0,\n            \"Description\": \"Zwiększa obronę o 30 przy atakach z dystansu\",\n            \"UpgradeLevel\": 1,\n            \"SpellId\": 0\n        },\n        {\n            \"Line\": 1,\n            \"Pole\": 0,\n            \"Id\": 14,\n            \"Name\": \"Wilk\",\n            \"Cost\": 2,\n            \"RealCost\": 2,\n            \"Initiative\": 60,\n            \"MaxHealth\": 30,\n            \"Health\": 30,\n            \"Attack\": 20,\n            \"Defense\": 5,\n            \"Range\": 0,\n            \"AP\": 0,\n            \"MagicResist\": 0,\n            \"Description\": \"<b>Początek Walki:</b> Otrzymuje 5 Ataku za każdedo przyjaznego wilka na Arenie\",\n            \"UpgradeLevel\": 1,\n            \"SpellId\": 0\n        },\n        {\n            \"Line\": 1,\n            \"Pole\": 1,\n            \"Id\": 14,\n            \"Name\": \"Wilk\",\n            \"Cost\": 2,\n            \"RealCost\": 2,\n            \"Initiative\": 60,\n            \"MaxHealth\": 30,\n            \"Health\": 30,\n            \"Attack\": 20,\n            \"Defense\": 5,\n            \"Range\": 0,\n            \"AP\": 0,\n            \"MagicResist\": 0,\n            \"Description\": \"<b>Początek Walki:</b> Otrzymuje 5 Ataku za każdedo przyjaznego wilka na Arenie\",\n            \"UpgradeLevel\": 1,\n            \"SpellId\": 0\n        },\n        {\n            \"Line\": 2,\n            \"Pole\": 0,\n            \"Id\": 14,\n            \"Name\": \"Wilk\",\n            \"Cost\": 2,\n            \"RealCost\": 2,\n            \"Initiative\": 60,\n            \"MaxHealth\": 30,\n            \"Health\": 30,\n            \"Attack\": 20,\n            \"Defense\": 5,\n            \"Range\": 0,\n            \"AP\": 0,\n            \"MagicResist\": 0,\n            \"Description\": \"<b>Początek Walki:</b> Otrzymuje 5 Ataku za każdedo przyjaznego wilka na Arenie\",\n            \"UpgradeLevel\": 1,\n            \"SpellId\": 0\n        }\n    ]\n}",
-    "units": []
+    "nextFight": "{\n    \"playerName\": \"FRogalskyy\",\n    \"number\": 6,\n    \"levelUp\": 1,\n    \"units\": [\n        {\n            \"Line\": 0,\n            \"Pole\": 1,\n            \"Id\": 5,\n            \"Name\": \"Łucznik\",\n            \"Cost\": 3,\n            \"RealCost\": 3,\n            \"Initiative\": 30,\n            \"MaxHealth\": 25,\n            \"Health\": 25,\n            \"Attack\": 25,\n            \"Defense\": 5,\n            \"Range\": 1,\n            \"AP\": 0,\n            \"MagicResist\": 0,\n            \"Description\": \"\",\n            \"UpgradeLevel\": 1,\n            \"SpellId\": 0\n        },\n        {\n            \"Line\": 2,\n            \"Pole\": 0,\n            \"Id\": 14,\n            \"Name\": \"Wilk\",\n            \"Cost\": 2,\n            \"RealCost\": 2,\n            \"Initiative\": 60,\n            \"MaxHealth\": 30,\n            \"Health\": 30,\n            \"Attack\": 20,\n            \"Defense\": 5,\n            \"Range\": 0,\n            \"AP\": 0,\n            \"MagicResist\": 0,\n            \"Description\": \"<b>Początek Walki:</b> Otrzymuje 5 Ataku za każdedo przyjaznego wilka na Arenie\",\n            \"UpgradeLevel\": 1,\n            \"SpellId\": 0\n        }\n    ]\n}",
+    "units": [
+        {
+            "Line": -1,
+            "Pole": 0,
+            "Id": 0,
+            "Name": "Adept",
+            "Cost": 3,
+            "RealCost": 3,
+            "Initiative": 50,
+            "MaxHealth": 45,
+            "Health": 45,
+            "Attack": 10,
+            "Defense": 5,
+            "Range": 0,
+            "AP": 25,
+            "MagicResist": 15,
+            "Description": "<b>Ulepszenie:</b> Otrzymuje Atak z Dystansu",
+            "UpgradeLevel": 1,
+            "SpellId": 0
+        }
+    ]
 }

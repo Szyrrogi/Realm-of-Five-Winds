@@ -5,10 +5,9 @@ using System.Linq;
 
 public class Balista : Building
 {
-    public override IEnumerator Fight()
+    public override IEnumerator Action()
     {
-        if(Range >= 1)
-        {   
+        
             FightManager fightManager = EventSystem.eventSystem.GetComponent<FightManager>();
             Linia line = fightManager.linie[GetComponent<DragObject>().pole.line.nr];
             Linia linedwa = line.LineNext;
@@ -28,6 +27,6 @@ public class Balista : Building
                     break;
                 }
             }
-        }
+        
     }
 }

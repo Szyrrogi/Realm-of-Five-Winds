@@ -19,6 +19,9 @@ public class ShopObject : MonoBehaviour
     public TextMeshProUGUI healthText;
     public Image atakImage;
 
+    public List<Image> Type;
+    public Sprite[] SpritesType;
+
     public void SetLook()
     {
                 image.sprite = unit.GetComponent<SpriteRenderer>().sprite;
@@ -29,48 +32,9 @@ public class ShopObject : MonoBehaviour
                     SetStats();
                 else
                     stats.SetActive(false);
+                
     }
 
-    //  private bool isHolding = false;
-    // private float holdTime = 0f;
-    // private float holdThreshold = 0.1f; 
-    // private bool holdActionTriggered = false;
-
-    //  void Update()
-    // {
-    //     if (isHolding)
-    //     {
-    //         holdTime += Time.deltaTime;
-
-    //         // Sprawdź, czy czas przytrzymania przekroczył próg i czy akcja przytrzymania nie została jeszcze wywołana
-    //         if (holdTime >= holdThreshold && !holdActionTriggered)
-    //         {
-    //             HandleClick(true); // Wywołaj akcję przytrzymania
-    //             holdActionTriggered = true; // Ustaw flagę, aby uniknąć ponownego wywołania
-    //         }
-    //     }
-    // }
-
-    // void OnMouseDown()
-    // {
-    //     isHolding = true;
-    //     holdTime = 0f;
-    //     holdActionTriggered = false; // Zresetuj flagę przy nowym kliknięciu
-    // }
-
-    // void OnMouseUp()
-    // {
-    //     if (isHolding)
-    //     {
-    //         if (holdTime < holdThreshold)
-    //         {
-    //             // Krótkie kliknięcie
-    //             HandleClick(false);
-    //         }
-    //         // Jeśli przytrzymanie zostało już obsłużone w Update(), nie musimy nic robić
-    //         isHolding = false;
-    //     }
-    // }
 
     void OnMouseDown()
     {
@@ -106,16 +70,75 @@ public class ShopObject : MonoBehaviour
         name.text = nullObject.GetComponent<Unit>().Name;
         price.text = nullObject.GetComponent<Unit>().RealCost.ToString();
         stats.SetActive(false);
+        UpdateType();
         // if(trzyma)
         //     newUnit.GetComponent<DragObject>().OnMouseDown();
     }
 
+    public void UpdateType()
+    {
+        Unit unitComponent = unit.GetComponent<Unit>();
+        for(int i = 0; i < Type.Count && i < 3; i++)
+        {
+            Type[i].gameObject.SetActive(true);
+        }
+
+        int typeDisplayIndex = 0;
+
+        // Handle ranged unit type (priority)
+        if (unitComponent.Range > 0 && typeDisplayIndex < Type.Count && SpritesType.Length > 0)
+        {
+            Type[typeDisplayIndex].sprite = SpritesType[0];
+            typeDisplayIndex++; 
+        }
+
+        // Handle creature types
+        if (unitComponent.Typy != null)
+        {
+            foreach (Unit.CreatureType type in unitComponent.Typy)
+            {
+                if (typeDisplayIndex >= 3) break; // Only show max 3 types
+                
+                int typeIndex = (int)type;
+                if (typeIndex >= 0 && typeIndex + 1 < SpritesType.Length)
+                {
+                    Type[typeDisplayIndex].sprite = SpritesType[typeIndex + 1]; // +1 to skip range sprite
+                    typeDisplayIndex++;
+                }
+            }
+        }
+        if(unitComponent.gameObject.GetComponent<Heros>() && unitComponent.gameObject.GetComponent<Heros>().Evolution  && typeDisplayIndex < 2)
+        {
+            Type[typeDisplayIndex].sprite = SpritesType[9]; // +1 to skip range sprite
+            typeDisplayIndex++;
+        }
+
+        // Deactivate unused type indicators
+        for(int i = typeDisplayIndex; i < 3 && i < Type.Count; i++)
+        {
+            Type[i].gameObject.SetActive(false);
+        }
+    }
+
     public void SetStats()
     {
+        // Cache the unit component
+        Unit unitComponent = unit.GetComponent<Unit>();
+        
+        // Activate stats panel
         stats.SetActive(true);
-        atakText.text = unit.GetComponent<Unit>().attackAP ? unit.GetComponent<Unit>().AP.ToString() : unit.GetComponent<Unit>().Attack.ToString();
-        healthText.text = unit.GetComponent<Unit>().Health.ToString();
-        atakImage.color = unit.GetComponent<Unit>().attackAP ? new Color(0.5f, 0, 1f) : Color.yellow;
+
+        // Set attack text and color
+        bool useAP = unitComponent.attackAP;
+        atakText.text = useAP ? unitComponent.AP.ToString() : unitComponent.Attack.ToString();
+        atakImage.color = useAP ? new Color(0.5f, 0, 1f) : Color.yellow;
+        
+        // Set health text
+        healthText.text = unitComponent.Health.ToString();
+
+        // Initialize type indicators
+        UpdateType();
+        
     }
 
     bool czyKupic()

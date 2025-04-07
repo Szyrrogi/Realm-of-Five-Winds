@@ -17,6 +17,15 @@ public class Archaniol : Heros
                 return pole.unit.GetComponent<Archaniol>().AP;
             }
         }
+        foreach(Pole pole in unit.gameObject.GetComponent<DragObject>().pole.line.LineNext.pola)
+        {
+            if(pole.unit != null && pole.unit.GetComponent<Archaniol>() && unit.Enemy == pole.unit.GetComponent<Unit>().Enemy && pole.unit.GetComponent<Archaniol>().healCount > 0)
+            {
+                Debug.Log("weszlo");
+                pole.unit.GetComponent<Archaniol>().healCount--;
+                return pole.unit.GetComponent<Archaniol>().AP;
+            }
+        }
         return 0;
     }
 

@@ -86,7 +86,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6934024521668934397}
   - component: {fileID: 3712362837729000110}
-  - component: {fileID: 1056119325801745502}
+  - component: {fileID: 6021770491881010871}
   - component: {fileID: 6985540666553226679}
   - component: {fileID: 8286433214309528574}
   m_Layer: 0
@@ -164,7 +164,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1056119325801745502
+--- !u!114 &6021770491881010871
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,12 +173,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1819705648667262722}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5884da60c0958ec488c39be894a22c66, type: 3}
+  m_Script: {fileID: 11500000, guid: a77012c8b7aed9c49a5b2e331cc870c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 97
   Name: "Kana\u0142"
-  Cost: 3
+  Cost: 2
   Star: 1
   Initiative: 20
   MaxHealth: 40
@@ -188,8 +188,9 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "<b>Poczatek Walki: </b>Zwi\u0119ksz atak oraz zdrowie o 20 dla szczur\xF3w"
+  Description: "<b>Poczatek Walki: </b>Zwi\u0119ksz atak oraz zdrowie o 15 dla szczur\xF3w"
   CPU: 0
+  Typy: 07000000
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
@@ -199,9 +200,11 @@ MonoBehaviour:
   BoskaTarcza: 0
   attackAP: 0
   Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   HealthText: {fileID: 3501279418940951141}
-  pattern:
-  - {fileID: 6755485281205651035, guid: fa2bc5898d79af54298c9f9b54b303e4, type: 3}
+  pattern: []
+  type: 7
 --- !u!114 &6985540666553226679
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,6 +11,16 @@ public class SynergyManager : MonoBehaviour
     public GameObject parentObjectEnemy;
     public Dictionary<int, GameObject> ActiveSynergyObjectsEnemy = new Dictionary<int, GameObject>();
 
+    void Start()
+    {
+        int i = 0;
+        foreach(Synergy character in Synergie)
+        {
+            character.Id = i;
+            i++;
+        }
+    }
+
     void Update()
     {
         if(!FightManager.IsFight)
@@ -18,7 +28,7 @@ public class SynergyManager : MonoBehaviour
             foreach (Synergy synergy in Synergie)
             {
                 int synergyId = synergy.Id; // Zakładam, że klasa Synergy ma pole Id
-
+                Debug.Log(synergy.name +  " " + synergyId);
                 if (synergy.CheckIsActive(0))
                 {
                     // Sprawdź, czy obiekt już istnieje

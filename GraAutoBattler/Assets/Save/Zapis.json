@@ -2,25 +2,5 @@
     "playerName": "SzyRRogi",
     "number": 3,
     "levelUp": 1,
-    "units": [
-        {
-            "Line": 1,
-            "Pole": 1,
-            "Id": 8,
-            "Name": "Medyk",
-            "Cost": 3,
-            "RealCost": 3,
-            "Initiative": 35,
-            "MaxHealth": 40,
-            "Health": 40,
-            "Attack": 10,
-            "Defense": 5,
-            "Range": 0,
-            "AP": 10,
-            "MagicResist": 10,
-            "Description": "<b>Akcja: </b>Leczy jednostkę przed sobą o 10 Zdrowia",
-            "UpgradeLevel": 1,
-            "SpellId": 0
-        }
-    ]
+    "units": []
 }

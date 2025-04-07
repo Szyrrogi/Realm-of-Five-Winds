@@ -57,7 +57,7 @@ public class ShopManager : MonoBehaviour
             nizka = LevelUpCost;
         }
         LevelUpText.text = (LevelUpCost - nizka).ToString();
-        FreeRollText.text = FreeRoll == 0  ? "" : "Darmowe odświerzenia: " + FreeRoll.ToString();
+        FreeRollText.text = FreeRoll == 0  ? "" : "Darmowe odświeżenia: " + FreeRoll.ToString();
         RollCostText.text = (FreeRoll == 0 ? RollCost.ToString() : "0");
         if(DragObject.moveObject == null)
         {
@@ -147,6 +147,7 @@ public class ShopManager : MonoBehaviour
                     character[i].SetStats();
                 else
                     character[i].stats.SetActive(false);
+                character[i].UpdateType();
 
             
             }
@@ -157,7 +158,7 @@ public class ShopManager : MonoBehaviour
             } 
         }
     }
-    List<GameObject> FilterObjects(List<GameObject> objects)
+    protected List<GameObject> FilterObjects(List<GameObject> objects)
     {
         List<GameObject> result = new List<GameObject>();
 

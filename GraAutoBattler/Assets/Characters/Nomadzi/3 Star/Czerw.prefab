@@ -114,6 +114,7 @@ MonoBehaviour:
   MagicResist: 0
   Description: <b>Skok</b> Po zabiciu przeciwnika otrzymuje 20/20
   CPU: 0
+  Typy: 00000000
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0

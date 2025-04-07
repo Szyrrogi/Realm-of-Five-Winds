@@ -102,11 +102,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 0
   Name: "\u015Aciana"
-  Cost: 2
+  Cost: 1
   Star: 1
   Initiative: 0
-  MaxHealth: 70
-  Health: 70
+  MaxHealth: 80
+  Health: 80
   Attack: 0
   Defense: 10
   Range: 0

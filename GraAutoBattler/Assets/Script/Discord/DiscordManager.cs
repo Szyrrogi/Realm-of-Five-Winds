@@ -107,7 +107,7 @@ public class DiscordManager : MonoBehaviour
 
         try
         {
-            discord = new Discord.Discord(1268613606937985056, (long)CreateFlags.Default);
+            discord = new Discord.Discord(1348712906253926491, (long)CreateFlags.Default);
             UpdateRichPresence(updateTimestamp: true);
         }
         catch (Exception ex)

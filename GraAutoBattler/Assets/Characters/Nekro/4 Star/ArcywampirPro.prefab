@@ -189,6 +189,7 @@ MonoBehaviour:
   MagicResist: 10
   Description: "<b>Atak: </b>Leczy si\u0119 o 70% zadanych obra\u017Ce\u0144"
   CPU: 0
+  Typy: 06000000
   UpgradeLevel: 1
   UpgradeNeed: 2
   Enemy: 0
@@ -198,6 +199,8 @@ MonoBehaviour:
   BoskaTarcza: 0
   attackAP: 0
   Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   AttackText: {fileID: 2333975298996084202}
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 0}

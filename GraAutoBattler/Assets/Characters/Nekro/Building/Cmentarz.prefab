@@ -190,6 +190,7 @@ MonoBehaviour:
   MagicResist: 0
   Description: "<b>Poczatek Walki: </b>Zwi\u0119ksz atak oraz zdrowie o 20 dla Szkielet\xF3w"
   CPU: 0
+  Typy: 02000000
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
@@ -199,11 +200,14 @@ MonoBehaviour:
   BoskaTarcza: 0
   attackAP: 0
   Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   HealthText: {fileID: 3501279418940951141}
   pattern:
   - {fileID: 8321991079516897562, guid: 2c4d34b28a1472b489de8202e5a1f1ca, type: 3}
   - {fileID: 1777585262293295343, guid: 4bde0d6a86f45634aa16e0ed4b8e0530, type: 3}
   - {fileID: 4494808679436028901, guid: 7b3e5a73f3be3954f9cc6800feaf09de, type: 3}
+  type: 2
 --- !u!114 &6985540666553226679
 MonoBehaviour:
   m_ObjectHideFlags: 0

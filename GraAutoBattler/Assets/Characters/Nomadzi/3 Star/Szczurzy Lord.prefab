@@ -111,12 +111,12 @@ MonoBehaviour:
   Attack: 40
   Defense: 10
   Range: 1
-  AP: 16
+  AP: 24
   MagicResist: 0
   Description: "<b>Pocz\u0105tek Walki: </b>Zape\u0142nij ca\u0142y rz\u0105d szczurami"
   CPU: 0
   UpgradeLevel: 1
-  UpgradeNeed: 3
+  UpgradeNeed: 2
   Enemy: 0
   fraction: 2
   RealCost: 0

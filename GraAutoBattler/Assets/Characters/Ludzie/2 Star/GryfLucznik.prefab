@@ -112,10 +112,12 @@ MonoBehaviour:
   Range: 1
   AP: 0
   MagicResist: 0
-  Description: "Zwi\u0119ksza iniciatywe wszystkim jednostkom w rzedzie o 10"
+  Description: "<b>Pocz\u0105tek Walki: </b>Zwi\u0119ksza iniciatywe wszystkim jednostkom
+    w rzedzie o 10"
   CPU: 0
+  Typy: 00000000
   UpgradeLevel: 1
-  UpgradeNeed: 0
+  UpgradeNeed: 4
   Enemy: 0
   fraction: 0
   RealCost: 0
@@ -127,8 +129,8 @@ MonoBehaviour:
   ReadyToJump: 0
   AttackText: {fileID: 5187295522447798132}
   HealthText: {fileID: 6430296136860862158}
-  EvolveHeroes: {fileID: 1819705648667262722, guid: d7800e3b6a527014d8122e2d713c5452, type: 3}
-  Evolution: 1
+  EvolveHeroes: {fileID: 1819705648667262722, guid: b6fa328967de7dc4f98c44fe7052413e, type: 3}
+  Evolution: 0
 --- !u!114 &6699983802921889276
 MonoBehaviour:
   m_ObjectHideFlags: 0

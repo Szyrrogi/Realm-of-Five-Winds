@@ -105,15 +105,16 @@ MonoBehaviour:
   Cost: 4
   Star: 2
   Initiative: 74
-  MaxHealth: 30
-  Health: 30
+  MaxHealth: 20
+  Health: 20
   Attack: 20
   Defense: 6
   Range: 1
   AP: 10
   MagicResist: 10
   Description: "<b>Pocz\u0105tek Walki :</b> Je\u017Celi znajduj\u0119 si\u0119 na
-    ko\u0144cu rz\u0119du, otrzymuje 30 Ataku za ka\u017Cd\u0105 jednos"
+    ko\u0144cu rz\u0119du, otrzymuje 25 Ataku za ka\u017Cd\u0105 jednos (Budynki
+    r\xF3wnie\u017C blokuj\u0105 umiej\u0119tno\u015B\u0107)"
   CPU: 0
   UpgradeLevel: 1
   UpgradeNeed: 3

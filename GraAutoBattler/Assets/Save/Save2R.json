@@ -1,0 +1,39 @@
+{
+    "playerId": 0,
+    "money": 3,
+    "incom": 6,
+    "poddymka": false,
+    "win": 0,
+    "fractions": "10000",
+    "lose": 3,
+    "round": 0,
+    "shop": [
+        14,
+        101,
+        0,
+        5,
+        4
+    ],
+    "nextFight": "{\n    \"playerName\": \"Knee gas\",\n    \"number\": 0,\n    \"levelUp\": 1,\n    \"units\": [\n        {\n            \"Line\": 0,\n            \"Pole\": 0,\n            \"Id\": 110,\n            \"Name\": \"Tragarz\",\n            \"Cost\": 2,\n            \"RealCost\": 2,\n            \"Initiative\": 40,\n            \"MaxHealth\": 20,\n            \"Health\": 20,\n            \"Attack\": 15,\n            \"Defense\": 5,\n            \"Range\": 0,\n            \"AP\": 0,\n            \"MagicResist\": 0,\n            \"Description\": \"<b>Zakup i Ulepszenie: </b> Otrzymujesz darmowe odświrzenie sklepu\",\n            \"UpgradeLevel\": 1,\n            \"SpellId\": 0\n        },\n        {\n            \"Line\": 1,\n            \"Pole\": 0,\n            \"Id\": 104,\n            \"Name\": \"Pustynny Sokół\",\n            \"Cost\": 3,\n            \"RealCost\": 3,\n            \"Initiative\": 80,\n            \"MaxHealth\": 18,\n            \"Health\": 18,\n            \"Attack\": 18,\n            \"Defense\": 7,\n            \"Range\": 1,\n            \"AP\": 0,\n            \"MagicResist\": 10,\n            \"Description\": \"<b>Skok, Początek Walki: </b>Otrzymuje 5 Atak jeżeli w sąsiadujących rzędach na tym samym polu znajduje się Pustynny Sokół\",\n            \"UpgradeLevel\": 1,\n            \"SpellId\": 0\n        }\n    ]\n}",
+    "units": [
+        {
+            "Line": -1,
+            "Pole": 0,
+            "Id": 4,
+            "Name": "Jaskółka",
+            "Cost": 2,
+            "RealCost": 2,
+            "Initiative": 100,
+            "MaxHealth": 15,
+            "Health": 15,
+            "Attack": 15,
+            "Defense": 5,
+            "Range": 0,
+            "AP": 15,
+            "MagicResist": 0,
+            "Description": "<b>Początek Walki:</b> Zwiększ Moc Zaklęć wszystkich w rzędzie o wartość swojej <b>Mocy Zaklęć</b>",
+            "UpgradeLevel": 1,
+            "SpellId": 0
+        }
+    ]
+}

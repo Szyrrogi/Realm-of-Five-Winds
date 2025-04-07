@@ -115,6 +115,7 @@ MonoBehaviour:
   Description: "<b>Ostatni Oddech:</b> Przywr\xF3\u0107 te jednostk\u0119 z pe\u0142nym
     zdrowiem"
   CPU: 0
+  Typy: 00000000
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0

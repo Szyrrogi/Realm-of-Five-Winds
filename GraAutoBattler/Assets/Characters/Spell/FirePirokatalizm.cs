@@ -13,7 +13,7 @@ public class FirePirokatalizm : Spell
             if(pole.unit != null && pole.unit.GetComponent<Unit>().Enemy != unit.Enemy)
             {
                 Unit enemyUnit = pole.unit.GetComponent<Unit>();
-                yield return StartCoroutine(enemyUnit.TakeDamage(this, enemyUnit.BeforDamage(gameObject, BeforAttack(enemyUnit.gameObject, (int)(AP / 3))), TypeDamage.typeDamage.Magic));
+                yield return StartCoroutine(enemyUnit.TakeDamage(this, enemyUnit.BeforDamage(gameObject, BeforAttack(enemyUnit.gameObject, (int)(AP / 2))), TypeDamage.typeDamage.Magic));
             }
         }
 
@@ -22,7 +22,7 @@ public class FirePirokatalizm : Spell
             if(pole.unit != null && pole.unit.GetComponent<Unit>().Enemy != unit.Enemy)
             {
                 Unit enemyUnit = pole.unit.GetComponent<Unit>();
-                yield return StartCoroutine(enemyUnit.TakeDamage(this, enemyUnit.BeforDamage(gameObject, BeforAttack(enemyUnit.gameObject, (int)(AP / 3))), TypeDamage.typeDamage.Magic));
+                yield return StartCoroutine(enemyUnit.TakeDamage(this, enemyUnit.BeforDamage(gameObject, BeforAttack(enemyUnit.gameObject, (int)(AP / 2))), TypeDamage.typeDamage.Magic));
             }
         }
         yield return null;

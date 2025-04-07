@@ -163,7 +163,6 @@ public class Login : MonoBehaviour
 
         // Zapisz JSON do pliku
         File.WriteAllText(savePath, json);
-        Debug.Log(Application.persistentDataPath);
     }
 
     // Metoda do automatycznego logowania

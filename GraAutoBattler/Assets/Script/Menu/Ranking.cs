@@ -4,10 +4,35 @@ using UnityEngine;
 using System.Data.SqlClient; // Obsługa SQL Server
 using System; // Konwersja typów (Convert)
 using System.Threading.Tasks; // Do obsługi asynchroniczności
+using TMPro;
 
 public class Ranking : MonoBehaviour
 {
     public Rekord[] rekordy;
+    public TextMeshProUGUI najlepszy;
+    public static int MaxRound;
+
+    public static int pageSize = 0;
+
+    public GameObject[] prevNext;
+
+    public async void NextSize()
+    {
+        if(pageSize < 13)
+        {
+            pageSize += 5;
+            await SprawdzStatystyki();
+        }
+    }
+
+    public async void PrevSize()
+    {
+        if(pageSize != 0)
+        {
+            pageSize -= 5;
+            await SprawdzStatystyki();
+        }
+    }
 
     public async void Start()
     {
@@ -16,6 +41,14 @@ public class Ranking : MonoBehaviour
 
     async Task SprawdzStatystyki()
     {
+        if(pageSize == 0)
+            prevNext[0].SetActive(false);
+        else
+            prevNext[0].SetActive(true);
+        if(pageSize == 15)
+            prevNext[1].SetActive(false);
+        else
+            prevNext[1].SetActive(true);
         try
         {
             using (SqlConnection con = new SqlConnection(DB.conStr))
@@ -28,10 +61,12 @@ public class Ranking : MonoBehaviour
                         Id AS PlayerId, 
                         LP
                     FROM Players
-                    ORDER BY LP DESC;
+                    ORDER BY LP DESC
+                    OFFSET @PageSize ROWS;
                 ";
 
                 SqlCommand cmdSort = new SqlCommand(querySort, con);
+                cmdSort.Parameters.AddWithValue("@PageSize", pageSize);
                 SqlDataReader reader = await cmdSort.ExecuteReaderAsync(); // Asynchroniczne wykonanie zapytania
 
                 // 2. Wyświetlenie PlayerId na pierwszym, drugim i trzecim miejscu
@@ -114,6 +149,29 @@ public class Ranking : MonoBehaviour
                 {
                     rekordy[0].gameObject.SetActive(false);
                 }
+                     // 4. Pobierz najnowszą rundę i nazwę z tabeli AutoBattlerGame
+                string queryLatestGame = @"
+                    SELECT TOP 1  p.Name, s.Win
+                    FROM Stats s
+                    JOIN Players p ON s.PlayerId = p.Id
+                    ORDER BY s.Round DESC;
+                ";
+
+                SqlCommand cmdLatestGame = new SqlCommand(queryLatestGame, con);
+                SqlDataReader gameReader = await cmdLatestGame.ExecuteReaderAsync(); // Asynchroniczne wykonanie zapytania
+
+                if (await gameReader.ReadAsync())
+                {
+                    string name = gameReader.GetString(0); // Odczytaj nazwę
+                    MaxRound = gameReader.GetInt32(1); // Odczytaj rundę
+                    najlepszy.text = "Najlepszy gracz: " + name + "\nRunda: " + MaxRound;
+                }
+                else
+                {
+                    Debug.Log("Brak danych w tabeli AutoBattlerGame.");
+                }
+
+                gameReader.Close();
             }
         }
         catch (SqlException ex)

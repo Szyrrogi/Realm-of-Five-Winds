@@ -185,12 +185,13 @@ MonoBehaviour:
   Health: 40
   Attack: 0
   Defense: 0
-  Range: 0
+  Range: 1
   AP: 0
   MagicResist: 0
-  Description: "<b>Poczatek Walki: </b>Zwi\u0119ksza atak jednostk\u0105 dystanoswym
-    o 30 w rz\u0119dzie"
+  Description: "<b>Pocz\u0105tek Walki: </b>Zwi\u0119ksza atak jednostkom dystansowym
+    o 25 w rz\u0119dzie"
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0

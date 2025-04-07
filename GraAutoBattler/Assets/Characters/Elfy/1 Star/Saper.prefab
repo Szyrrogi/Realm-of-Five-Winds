@@ -103,7 +103,7 @@ MonoBehaviour:
   Id: 0
   Name: Saper
   Cost: 3
-  Star: 0
+  Star: 1
   Initiative: 50
   MaxHealth: 30
   Health: 30
@@ -112,7 +112,8 @@ MonoBehaviour:
   Range: 0
   AP: 20
   MagicResist: 0
-  Description: 
+  Description: "Podczas <b>\u0142\u0105czenia</b>, zysuje 100% Mocy zakl\u0119\u0107.
+    <b>Kupno i Ulepszenie :</b>Przywo\u0142aj Mine"
   CPU: 0
   UpgradeLevel: 1
   UpgradeNeed: 3
@@ -129,6 +130,7 @@ MonoBehaviour:
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 1819705648667262722, guid: d317b07675332ae428784b4acaad3a39, type: 3}
   Evolution: 0
+  unit: {fileID: 1819705648667262722, guid: 865335cfab04f584d8c935d662d104c3, type: 3}
 --- !u!114 &8731495660794391217
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42dcf7668e879c04198c4c0aafeb0287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 113
   Name: "Wicher Piask\xF3w"
   Cost: 2
   Star: 1
@@ -187,7 +187,7 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 10
-  Description: "<b>Skok, Pocz\u0105tek Walki: </b>Otrzymuje 15/15 je\u017Celi w s\u0105siaduj\u0105cych
+  Description: "<b>Skok, Pocz\u0105tek Walki: </b>Otrzymuje 12/12 je\u017Celi w s\u0105siaduj\u0105cych
     rz\u0119dach na tym samym polu znajduje si\u0119 Wiecher Piask\xF3w"
   CPU: 0
   UpgradeLevel: 1

@@ -110,7 +110,7 @@ MonoBehaviour:
   Attack: 40
   Defense: 5
   Range: 0
-  AP: 10
+  AP: 12
   MagicResist: 0
   Description: .
   CPU: 0

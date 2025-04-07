@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5042bc7d39e10347ba44fb572760807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 227
   Name: Drzewo
   Cost: 1
   Star: 0
@@ -112,10 +112,12 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "<b>Sprzedaz: </b>Otrzymujesz darmowe od\u015Bwirzenie sklepu"
+  Description: "Nie porusza si\u0119. <b>Sprzedaz: </b>Otrzymujesz darmowe od\u015Bwierzenie
+    sklepu"
   CPU: 0
+  Typy: 05000000
   UpgradeLevel: 1
-  UpgradeNeed: 6
+  UpgradeNeed: 3
   Enemy: 0
   fraction: 3
   RealCost: 0
@@ -127,7 +129,7 @@ MonoBehaviour:
   ReadyToJump: 0
   AttackText: {fileID: 2333975298996084202}
   HealthText: {fileID: 7890684635397795595}
-  EvolveHeroes: {fileID: 1819705648667262722, guid: b7091d65a83b29e4bb4c4add78faa86e, type: 3}
+  EvolveHeroes: {fileID: 1819705648667262722, guid: a4a85127d61c2b74a913e5bcc9a6b275, type: 3}
   Evolution: 0
 --- !u!114 &8731495660794391217
 MonoBehaviour:

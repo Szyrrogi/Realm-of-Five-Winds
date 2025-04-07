@@ -12,9 +12,9 @@ public class Strzelnica : Building
             {
                 if(pole.unit.GetComponent<Unit>().Range > 0)
                 {
-                    pole.unit.GetComponent<Unit>().Attack += 30;
+                    pole.unit.GetComponent<Unit>().Attack += 25;
                     GameObject pop = Instantiate(PopUp, pole.unit.gameObject.transform.position, Quaternion.identity);
-                    pop.GetComponent<PopUp>().SetText("+30", Color.green);
+                    pop.GetComponent<PopUp>().SetText("+25", Color.green);
                     yield return new WaitForSeconds(0.7f);
                 }
             }

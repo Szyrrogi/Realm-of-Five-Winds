@@ -112,7 +112,7 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "<b>Pocz\u0105tek Walki :</b>Otrzymuje 60/60 je\u017Celi w rz\u0119dzie
+  Description: "<b>Pocz\u0105tek Walki :</b>Otrzymuje 80/80 je\u017Celi w rz\u0119dzie
     znajduje si\u0119 dok\u0142adnie trzech Pustynnych Przewodnik\xF3w"
   CPU: 0
   UpgradeLevel: 1

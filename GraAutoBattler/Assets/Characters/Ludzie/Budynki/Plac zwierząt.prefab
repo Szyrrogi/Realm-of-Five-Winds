@@ -178,7 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 43
   Name: "Plac zwierz\u0105t"
-  Cost: 5
+  Cost: 4
   Star: 1
   Initiative: 20
   MaxHealth: 40
@@ -191,6 +191,7 @@ MonoBehaviour:
   Description: "<b>Poczatek Walki: </b>Zwi\u0119ksz zwierz\u0119tom w rz\u0119dzie
     atak oraz zdrowie o 20"
   CPU: 0
+  Typy: 00000000
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
@@ -211,6 +212,7 @@ MonoBehaviour:
   - {fileID: 4410281751850155844, guid: 04200a186c3ed9f439f5b2ef6a73532c, type: 3}
   - {fileID: 6755485281205651035, guid: fa2bc5898d79af54298c9f9b54b303e4, type: 3}
   - {fileID: 2104466836513729136, guid: 3ba1a528f55cb4c448164ce8032b6113, type: 3}
+  type: 0
 --- !u!114 &6985540666553226679
 MonoBehaviour:
   m_ObjectHideFlags: 0

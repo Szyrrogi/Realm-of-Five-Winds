@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f6933ecfd76b25458d9fe0726ac3c5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 102
   Name: Pustynny Przwodnik
   Cost: 2
   Star: 1

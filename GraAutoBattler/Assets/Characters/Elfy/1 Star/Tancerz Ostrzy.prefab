@@ -104,7 +104,7 @@ MonoBehaviour:
   Name: Tancerz Ostrzy
   Cost: 3
   Star: 1
-  Initiative: 80
+  Initiative: 67
   MaxHealth: 28
   Health: 28
   Attack: 15

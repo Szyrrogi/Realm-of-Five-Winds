@@ -20,4 +20,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Load.unity
     guid: f9568ca5b91b98c4eb85e8f0800d83f3
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: daae1a4c9dc42414bb4fe49ffc4fc58e
+  - enabled: 1
+    path: Assets/Scenes/LoadMulti.unity
+    guid: 92e8426cd9a8c7341b0d66b7302ce4cf
+  - enabled: 1
+    path: Assets/Scenes/HostJoin.unity
+    guid: 7cd5d0e5634a25f46a698e70932b57d8
+  - enabled: 1
+    path: Assets/Scenes/Lobby.unity
+    guid: cdb02937878f05b4388fb9ea5fd86c88
   m_configObjects: {}

@@ -112,7 +112,7 @@ MonoBehaviour:
   Range: 1
   AP: 0
   MagicResist: 10
-  Description: "<b>Skok, Pocz\u0105tek Walki: </b>Otrzymuje 15 Atak je\u017Celi w
+  Description: "<b>Skok, Pocz\u0105tek Walki: </b>Otrzymuje 12 Atak je\u017Celi w
     s\u0105siaduj\u0105cych rz\u0119dach na tym samym polu znajduje si\u0119 Pustynny
     Sok\xF3\u0142"
   CPU: 0

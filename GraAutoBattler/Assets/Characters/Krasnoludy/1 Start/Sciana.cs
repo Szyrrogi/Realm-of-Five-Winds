@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Sciana : Heros
 {
+    public bool Synergia;
     public override IEnumerator Fight()
     {
+        if(Synergia)
+            yield return StartCoroutine(base.Fight());
         yield return new WaitForSeconds(0);
     }
     public override IEnumerator Move()

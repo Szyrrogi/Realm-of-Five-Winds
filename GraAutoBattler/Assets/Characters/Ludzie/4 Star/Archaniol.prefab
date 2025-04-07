@@ -114,6 +114,7 @@ MonoBehaviour:
   MagicResist: 35
   Description: "Pierwsza jednostka, kt\xF3ra zginie, zostaje <b>Wskrzeszona</b>"
   CPU: 0
+  Typy: 04000000
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0
@@ -123,6 +124,8 @@ MonoBehaviour:
   BoskaTarcza: 0
   attackAP: 0
   Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   AttackText: {fileID: 5187295522447798132}
   HealthText: {fileID: 6430296136860862158}
   EvolveHeroes: {fileID: 1819705648667262722, guid: 41b665e47ce167e46b8ecaf8b0e7aa85, type: 3}

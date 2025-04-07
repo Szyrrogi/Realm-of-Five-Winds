@@ -177,10 +177,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958367515c3cd044a94600c0b9005e4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 45
+  Id: 144
   Name: "Wie\u017Ca Mocy"
-  Cost: 4
-  Star: 3
+  Cost: 2
+  Star: 2
   Initiative: 20
   MaxHealth: 30
   Health: 30

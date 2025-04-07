@@ -8,6 +8,14 @@ using System.Threading.Tasks; // Do obsługi asynchroniczności
 using System; // Dodaj tę linię, aby użyć klasy Convert
 using System.Linq;
 
+/*
+SELECT Fraction, Count(*) AS 'count', ROUND(AVG(CAST(Win AS float)), 1) AS AvgWin  
+FROM Stats
+WHERE Round - win != 0 OR Lose = 3
+GROUP BY Fraction
+ORDER BY AvgWin   DESC
+
+*/
 public class Rekord : MonoBehaviour
 {
     public int Id;
@@ -26,10 +34,12 @@ public class Rekord : MonoBehaviour
     public Image[] wycinek;
     public PlayerManager playerManager;
 
+    public bool own;
+
     public async void SetStats(int Id)
     {
         this.Id = Id;
-        numberText.text = number.ToString();
+        numberText.text = own ? (number).ToString() : (number + Ranking.pageSize).ToString();
 
         try
         {
@@ -78,7 +88,8 @@ public class Rekord : MonoBehaviour
                     SELECT 
                         ROUND(AVG(CAST(Win AS float)), 1) AS AvgWin
                     FROM Stats
-                    WHERE PlayerId = @Id;
+                    WHERE PlayerId = @Id AND
+                    (Round - win != 0 OR Lose = 3);
                 ";
 
                 SqlCommand cmdStats = new SqlCommand(queryStats, con);
@@ -113,9 +124,18 @@ public class Rekord : MonoBehaviour
                     return; // Przerwij metodę, jeśli gracz nie został znaleziony
                 }
 
-                RankImage.sprite = ranksSprite[(int)sum / 300];
-                RankNumber.text = (((int)sum % 300) / 100 + 1).ToString();
-                LP.text = ((int)sum % 100) + " LP";
+                if(sum < 1500)
+                {
+                    RankImage.sprite = ranksSprite[(int)sum / 300];
+                    RankNumber.text = (((int)sum % 300) / 100 + 1).ToString();
+                    LP.text = ((int)sum % 100) + " LP";
+                }
+                else
+                {
+                    RankImage.sprite = ranksSprite[5];
+                    RankNumber.text = "";
+                    LP.text = (sum - 1500) + " LP";
+                }
 
                 // 4. Pobierz frakcje gracza z tabeli Stats
                 string queryFraction = @"

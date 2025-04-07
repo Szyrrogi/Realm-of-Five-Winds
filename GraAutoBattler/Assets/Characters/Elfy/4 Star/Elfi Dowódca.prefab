@@ -107,7 +107,7 @@ MonoBehaviour:
   Initiative: 65
   MaxHealth: 200
   Health: 200
-  Attack: 50
+  Attack: 20
   Defense: 5
   Range: 1
   AP: 30

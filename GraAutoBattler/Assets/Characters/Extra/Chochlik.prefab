@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 53
   Name: Chochlik
-  Cost: 2
+  Cost: 1
   Star: 0
   Initiative: 50
   MaxHealth: 40
@@ -123,6 +123,9 @@ MonoBehaviour:
   PopUp: {fileID: 0}
   BoskaTarcza: 0
   attackAP: 0
+  Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   AttackText: {fileID: 2333975298996084202}
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 1819705648667262722, guid: 66690a73e990da74fb67a8ae92cca4f2, type: 3}

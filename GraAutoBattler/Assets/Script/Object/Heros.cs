@@ -181,8 +181,15 @@ public class Heros : Unit
 
         newUnit.UpgradeLevel = 0;
         newUnit.UpgradeNeed = 0;
-        newUnit.RealCost = 0;
+        newUnit.RealCost = Cost;
         newUnit.Evolution = true;
+
+        if(newUnit.gameObject.GetComponent<Wizard>())
+        {
+            
+            newUnit.gameObject.GetComponent<Wizard>().AddSpell(GetComponent<Wizard>().spell);
+            
+        }
 
         GetComponent<DragObject>().pole.unit = newUnitObject;
         GetComponent<DragObject>().pole.Start();

@@ -12,5 +12,6 @@ public class BackToMenu : MonoBehaviour
         FightManager.IsFight = false;
         StatsManager.life = 3;
         RankedManager.Poddymka = false;
+        ShopManager.nizka = 0;            
     }
 }

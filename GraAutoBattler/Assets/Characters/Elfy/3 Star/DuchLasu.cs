@@ -11,7 +11,7 @@ public class DuchLasu : Heros
             if(unit.Cost < Cost && unit.Enemy == Enemy)
             {
 
-                int buff = Evolution ? 7 : 5;
+                int buff = Evolution ? 10 : 7;
                 Attack += buff;
                 Health += buff;
                 MaxHealth += buff;

@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System;
 using System.IO;
 using System.Data;
+using Photon.Pun;
 using TMPro;
 
 
@@ -34,7 +35,21 @@ public class FightManager : MonoBehaviour
     public TextMeshProUGUI waitingText;
 
     public EventObject fatyga;
+    public Music music;
+    private bool isBattleRunning = false;
 
+    public void Start()
+    {
+        StartCoroutine(Sztart());
+    }
+    public IEnumerator Sztart()
+    {
+        yield return new WaitForSeconds(1f);
+        SaveManager.Save(PlayerManager.Name, PlayerManager.PlayerFaceId, ShopManager.levelUp);
+            
+        EventSystem.eventSystem.GetComponent<SaveManager>().LoadActive(true);
+    }
+    
 
     public void ChangeSpeed(int speed)
     {
@@ -116,25 +131,33 @@ public class FightManager : MonoBehaviour
 
     public void ActiveBattle()
     {
-        //StatsManager.Round--;
-        //////  TEST
+        // Jeśli bitwa już trwa lub jesteśmy w trakcie walki, wyjdź
+        if (isBattleRunning || IsFight)
+            return;
 
-        if(IsFight == false)
+        isBattleRunning = true;
+        
+        try
         {
             waitingText.text = "Poszukiwanie oponenta ...";
-            Debug.Log("Poszukiwanie oponenta ...");
-
             Tomb = new List<Vector2>();
             StartCoroutine(ActiveBattle2());
+        }
+        finally
+        {
+            // Nie resetujemy tutaj isBattleRunning - powinno to zrobić się po zakończeniu ActiveBattle2
         }
     }
 
     public IEnumerator ActiveBattle2()
     {
         yield return new WaitForSeconds(0.03f);
-        SaveManager.Save(PlayerManager.Name, PlayerManager.PlayerFaceId, ShopManager.levelUp);
-        
-        EventSystem.eventSystem.GetComponent<SaveManager>().LoadActive(true);
+        if(!Multi.multi)
+        {
+            SaveManager.Save(PlayerManager.Name, PlayerManager.PlayerFaceId, ShopManager.levelUp);
+            
+            EventSystem.eventSystem.GetComponent<SaveManager>().LoadActive(true);
+        }
 
         waitingText.text = "";
         StartCoroutine(StartBattle());
@@ -164,6 +187,7 @@ public class FightManager : MonoBehaviour
     {
         if(IsFight == false)
         {
+            music.SetMusic(1);
             EventSystem.eventSystem.GetComponent<ShopManager>().FreeRoll = 0;
             shop.SetActive(false);
             fightUI.SetActive(true);
@@ -194,21 +218,21 @@ public class FightManager : MonoBehaviour
                 {
                     if(pole.unit != null)
                     {
-                        pole.unit.GetComponent<Unit>().AfterBattle();
+                        try{
+                            pole.unit.GetComponent<Unit>().AfterBattle();
+                        }
+                        catch(Exception e)
+                        {
+                            
+                        }
                     }
                 }
             }
-            // if(!ShopManager.isLoock)
-            // {
-            //     EventSystem.eventSystem.GetComponent<ShopManager>().FirstRoll();
-            // }
-            // else
-            // {
-            //     GetComponent<ShopManager>().ChangeLoock();
-            // }
+
+            music.SetMusic(0);
             SaveManager.Save(PlayerManager.Name, PlayerManager.PlayerFaceId, ShopManager.levelUp);
         }
-        
+        isBattleRunning = false;
     }
 
     public void Poddymka()
@@ -221,6 +245,7 @@ public class FightManager : MonoBehaviour
 
     public IEnumerator Battle()
     {
+        
         for(int i = 0; i < FirstBuffLine.Length; i++)
         {
             FirstBuffLine[i] = false;
@@ -280,10 +305,8 @@ public class FightManager : MonoBehaviour
                         StartCoroutine(unit.Death());
                     }
                 }
-                
             }
             yield return new WaitForSeconds(0.1f);
-            
         }
         yield return new WaitForSeconds(0.5f);
         StatsManager.Round++;
@@ -305,11 +328,13 @@ public class FightManager : MonoBehaviour
         EndBattle();
         EventSystem.eventSystem.GetComponent<SaveManager>().LoadActive();
         yield return null;
+        
     }
 
     void AddToBase()    //TEST
     {
-        if(Login.zalogowano)
+        int rng = UnityEngine.Random.Range(0, 10);
+        if(Login.zalogowano && Tutorial.tutorial == false && rng <= StatsManager.Round && !Multi.multi)
         {
             try{
                 SqlCommand cmd = new SqlCommand(@"
@@ -357,43 +382,15 @@ public class FightManager : MonoBehaviour
             if(linie[i].KtoWygral == 2)
                 enemyWin++;
         }
-        // foreach (int[] para in paryLinii)
-        // {
-        //     int graczJednostki = 0;
-        //     int enemyJednostki = 0;
 
-        //     foreach (int indeks in para)
-        //     {
-        //         foreach (Pole pole in linie[indeks].pola)
-        //         {
-        //             if (pole.unit != null && pole.unit.GetComponent<Heros>())
-        //             {
-        //                 if (pole.unit.GetComponent<Unit>().Enemy)
-        //                     enemyJednostki++;
-        //                 else
-        //                     graczJednostki++;
-        //             }
-        //         }
-        //     }
-
-        //     // Sprawdź wynik dla danej pary linii
-        //     if (graczJednostki > 0 && enemyJednostki == 0)
-        //     {
-        //         graczWin++;
-        //     }
-        //     else if (enemyJednostki > 0 && graczJednostki == 0)
-        //     {
-        //         enemyWin++;
-        //     }
-        // }
         if (graczWin > enemyWin)
         {
-            if(StatsManager.win != 10)
-                StartCoroutine(ShowEndScreen(0));
+            //if(StatsManager.win != 10)
+            StartCoroutine(ShowEndScreen(0));
             AddToBase();
             //Debug.Log("WYGRANKO");
             StatsManager.win++;
-            if((StatsManager.win == 10 && !RankedManager.Poddymka) || StatsManager.win == 12)
+            if(((StatsManager.win == 10 && !RankedManager.Poddymka) || StatsManager.win == 12) && RankedManager.Ranked && !Multi.multi)
             {
                 ZapiszwWynil(true);
                 if(!RankedManager.Ranked)
@@ -419,25 +416,34 @@ public class FightManager : MonoBehaviour
             if(StatsManager.life != 0)
                 StartCoroutine(ShowEndScreen(1));
             StatsManager.life--;
-            if(StatsManager.life == 0)
+            if(!RankedManager.Ranked)
+                StatsManager.win++;
+            if(StatsManager.life <= 0)
             {
-                ZapiszwWynil(false);
-                if(!RankedManager.Ranked)
+                if(Multi.multi)
                 {
-                    SceneManager.LoadScene(1);
-                    string savePath2 = Application.dataPath + "/Save/Save2.json";
-                    if (File.Exists(savePath2))
-                    {
-                        File.Delete(savePath2);
-                        Debug.Log("Plik Save2.json został usunięty.");
-                    }
-                    else
-                    {
-                        Debug.LogWarning("Plik Save2.json nie istnieje.");
-                    }
+                    GetComponent<PhotonView>().RPC("NotReady", RpcTarget.All, PhotonNetwork.LocalPlayer.ActorNumber-1);
                 }
                 else
-                    EventSystem.eventSystem.GetComponent<RankedManager>().StartRank();
+                {
+                    ZapiszwWynil(false);
+                    if(!RankedManager.Ranked)
+                    {
+                        SceneManager.LoadScene(1);
+                        string savePath2 = Application.dataPath + "/Save/Save2.json";
+                        if (File.Exists(savePath2))
+                        {
+                            File.Delete(savePath2);
+                            Debug.Log("Plik Save2.json został usunięty.");
+                        }
+                        else
+                        {
+                            Debug.LogWarning("Plik Save2.json nie istnieje.");
+                        }
+                    }
+                    else
+                        EventSystem.eventSystem.GetComponent<RankedManager>().StartRank();
+                }
                 
             }
             
@@ -447,9 +453,16 @@ public class FightManager : MonoBehaviour
         else
         {
             AddToBase();
+            if(!RankedManager.Ranked)
+                StatsManager.win++;
             StartCoroutine(ShowEndScreen(2));
             //Debug.Log("REMIS");
         }
+    }
+    [PunRPC]
+    void NotReady(int id)
+    {
+        Multi.Death[id] = true;
     }
 
     void ZapiszwWynil(bool isWinning)
@@ -626,7 +639,12 @@ public class FightManager : MonoBehaviour
         StartCoroutine(MoveAndZoomCamera(new Vector3(0, 0, -20f), mainCamera.orthographicSize - 1f));
         EventSystem.eventSystem.GetComponent<SynergyManager>().ClearEnemySynergies();
         
-        if(StatsManager.Round == 2 && StatsManager.life != 3)
+        if(StatsManager.Round == 2 && StatsManager.life != 3 && !Multi.multi)
+        {
+            StartCoroutine(ShowEndScreen(3));
+            StatsManager.life++;
+        }
+        if(StatsManager.Round == 2 && StatsManager.life != MultiOptions.Hearth && Multi.multi)
         {
             StartCoroutine(ShowEndScreen(3));
             StatsManager.life++;

@@ -12,11 +12,11 @@ public class Comp : Building
             {
                 if(pole.unit.GetComponent<Unit>().CanJump == true)
                 {
-                    pole.unit.GetComponent<Unit>().Attack += 20;
-                    pole.unit.GetComponent<Unit>().Health += 20;
-                    pole.unit.GetComponent<Unit>().MaxHealth += 20;
+                    pole.unit.GetComponent<Unit>().Attack += 18;
+                    pole.unit.GetComponent<Unit>().Health += 18;
+                    pole.unit.GetComponent<Unit>().MaxHealth += 18;
                     GameObject pop = Instantiate(PopUp, pole.unit.gameObject.transform.position, Quaternion.identity);
-                    pop.GetComponent<PopUp>().SetText("+20/20", Color.green);
+                    pop.GetComponent<PopUp>().SetText("+18/18", Color.green);
                     yield return new WaitForSeconds(0.7f);
                 }
             }

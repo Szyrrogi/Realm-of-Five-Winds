@@ -115,7 +115,7 @@ MonoBehaviour:
   Description: "Otrzymuje podw\xF3jn\u0105 premi\u0119 z <b>Morali</b>"
   CPU: 0
   UpgradeLevel: 1
-  UpgradeNeed: 4
+  UpgradeNeed: 3
   Enemy: 0
   fraction: 4
   RealCost: 0

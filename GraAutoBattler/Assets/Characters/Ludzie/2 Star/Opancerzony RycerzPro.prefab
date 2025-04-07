@@ -190,6 +190,7 @@ MonoBehaviour:
   Description: "<b>Gdy zostanie zaatakowany:</b> przeciwnik otrzymuje <color=#999999>25</color>
     obra\u017Ce\u0144"
   CPU: 0
+  Typy: 03000000
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
@@ -199,6 +200,8 @@ MonoBehaviour:
   BoskaTarcza: 0
   attackAP: 0
   Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   AttackText: {fileID: 5187295522447798132}
   HealthText: {fileID: 6430296136860862158}
   EvolveHeroes: {fileID: 0}

@@ -17,13 +17,13 @@ public class WicherPiasków : Heros
             {
                 yield return new WaitForSeconds(0.4f );
                 Debug.Log("dziala");
-                int buff = Evolution ? 15 : 7;
+                int buff = Evolution ? 12 : 5;
                 if(!strzela)
-                    ShowPopUp(Evolution ? "+15/15" : "+7/7", Color.green);
+                    ShowPopUp(Evolution ? "+12/12" : "+5/5", Color.green);
                 else
                 {
-                    buff = Evolution ? 15 : 7;
-                    ShowPopUp(Evolution ? "+15" : "+7", Color.green);
+                    buff = Evolution ? 15 : 6;
+                    ShowPopUp(Evolution ? "+12" : "+5", Color.green);
                 }
                 Attack += buff;
                 if(!strzela)

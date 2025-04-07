@@ -11,9 +11,9 @@ public class MagGuild : Building
             if(pole.unit != null)
             {
 
-                pole.unit.GetComponent<Unit>().AP += 15;
+                pole.unit.GetComponent<Unit>().AP += 20;
                         
-                pole.unit.GetComponent<Unit>().ShowPopUp("+15", new Color(0.5f, 0, 1f));
+                pole.unit.GetComponent<Unit>().ShowPopUp("+20", new Color(0.5f, 0, 1f));
                 yield return new WaitForSeconds(0.6f);
 
             }

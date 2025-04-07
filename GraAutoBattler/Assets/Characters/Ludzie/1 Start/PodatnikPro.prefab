@@ -187,7 +187,7 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "<b>Pocz\u0105tek Walki:</b> Zyskaj 1 z\u0142oto"
+  Description: "<b>Pocz\u0105tek Walki:</b> Zyskaj 2 z\u0142oto"
   CPU: 0
   UpgradeLevel: 0
   UpgradeNeed: 0
@@ -198,6 +198,8 @@ MonoBehaviour:
   BoskaTarcza: 0
   attackAP: 0
   Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   AttackText: {fileID: 2333975298996084202}
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 0}

@@ -105,14 +105,14 @@ MonoBehaviour:
   Cost: 3
   Star: 1
   Initiative: 80
-  MaxHealth: 20
-  Health: 20
-  Attack: 20
+  MaxHealth: 18
+  Health: 18
+  Attack: 18
   Defense: 7
   Range: 1
   AP: 0
   MagicResist: 10
-  Description: "<b>Skok, Pocz\u0105tek Walki: </b>Otrzymuje 7 Atak je\u017Celi w
+  Description: "<b>Skok, Pocz\u0105tek Walki: </b>Otrzymuje 5 Atak je\u017Celi w
     s\u0105siaduj\u0105cych rz\u0119dach na tym samym polu znajduje si\u0119 Pustynny
     Sok\xF3\u0142"
   CPU: 0

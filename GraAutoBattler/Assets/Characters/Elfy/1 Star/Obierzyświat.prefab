@@ -105,15 +105,16 @@ MonoBehaviour:
   Cost: 2
   Star: 1
   Initiative: 40
-  MaxHealth: 20
-  Health: 20
-  Attack: 20
+  MaxHealth: 25
+  Health: 25
+  Attack: 25
   Defense: 5
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "<b>Pocz\u0105tek Walki: </b>Otrzymuje +15/15 za ka\u017Cdy typ <b>frakcje</b>
-    jednoski na <b>arenie</b>"
+  Description: "<b>Pocz\u0105tek Walki: </b>Je\u017Celi na Arenie znajduje si\u0119
+    przyjazna jednostka z innej frakcji otrzymuje 15/15. Je\u017Celi z dw\xF3ch innych
+    frakcji zamiast tego 30/30"
   CPU: 0
   UpgradeLevel: 1
   UpgradeNeed: 3

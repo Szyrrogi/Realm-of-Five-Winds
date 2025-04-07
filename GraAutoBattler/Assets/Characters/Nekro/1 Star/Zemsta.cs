@@ -9,7 +9,6 @@ public class Zemsta : Heros
         
         if(!Evolution)
         {
-            Debug.Log("sialala");
             Attack -= 10;
             MaxHealth -= 10;
             if(MaxHealth <= 0)
@@ -17,7 +16,6 @@ public class Zemsta : Heros
                 MaxHealth = 1;
             }
             Health = MaxHealth;
-            Cost --;
         }
     }
 }
