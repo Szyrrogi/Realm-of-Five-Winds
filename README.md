@@ -1,3 +1,3 @@
 Link do pobrania gry
 
-https://sgsclient.m455yn.dev/api/shares/AutiBattlerGra/files/8c887d29-fc5e-4c2a-b3e3-6da56d73f5ec
+https://sgsclient.m455yn.dev/api/shares/AutiBattlerGra/files/29809337-e2fa-41e3-b668-dd79c94a7614
