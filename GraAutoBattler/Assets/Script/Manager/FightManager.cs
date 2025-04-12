@@ -35,7 +35,7 @@ public class FightManager : MonoBehaviour
     public TextMeshProUGUI waitingText;
 
     public EventObject fatyga;
-    public Music music;
+    //public Music music;
     private bool isBattleRunning = false;
 
     public void Start()
@@ -187,7 +187,7 @@ public class FightManager : MonoBehaviour
     {
         if(IsFight == false)
         {
-            music.SetMusic(1);
+            //music.SetMusic(1);
             EventSystem.eventSystem.GetComponent<ShopManager>().FreeRoll = 0;
             shop.SetActive(false);
             fightUI.SetActive(true);
@@ -205,7 +205,7 @@ public class FightManager : MonoBehaviour
             setList();
             SortUnits();
             yield return (StartCoroutine(Battle()));
-
+            Debug.Log("Zgery essa");
             foreach (var kvp in EventSystem.eventSystem.GetComponent<SynergyManager>().ActiveSynergyObjects)
             {
                 GameObject gameObject = kvp.Value; // Get the GameObject from the dictionary
@@ -229,7 +229,7 @@ public class FightManager : MonoBehaviour
                 }
             }
 
-            music.SetMusic(0);
+            //music.SetMusic(0);
             SaveManager.Save(PlayerManager.Name, PlayerManager.PlayerFaceId, ShopManager.levelUp);
         }
         isBattleRunning = false;
@@ -264,20 +264,34 @@ public class FightManager : MonoBehaviour
             Synergy synergy = gameObject.GetComponent<Synergy>(); // Get the Synergy component
             yield return synergy.StartCoroutine(synergy.BeforBattle()); // Start the coroutine
         }
-
+        // if(units.Count == 0)
+        // {
+        //     AddToBase();
+        //     if(!RankedManager.Ranked)
+        //         StatsManager.win++;
+        //     StartCoroutine(ShowEndScreen(2));
+        //     yield break;
+        // }
         foreach (var unit in units)
+        {
+            
             if(unit != null && !unit.Skip)
             {
                 unit.gameObject.transform.localScale += new Vector3(0.02f, 0.02f, 0.02f);
                 yield return unit.StartCoroutine(unit.OnBattleStart());
                 unit.gameObject.transform.localScale -= new Vector3(0.02f, 0.02f, 0.02f);
             }
+        }
         Turn = 0;
     //     while (!czyWygrana(new int[] { 2, 5 }) || 
     //    !czyWygrana(new int[] { 0, 3 }) || 
     //    !czyWygrana(new int[] { 1, 4 }))
         while(!linie[0].EndBattle || !linie[1].EndBattle || !linie[2].EndBattle)
         {
+            if(units.Count == 0)
+            {
+                break;
+            }
             SortUnits();
             Turn++;
             if(Turn > 10)
@@ -333,42 +347,42 @@ public class FightManager : MonoBehaviour
 
     void AddToBase()    //TEST
     {
-        int rng = UnityEngine.Random.Range(0, 10);
-        if(Login.zalogowano && Tutorial.tutorial == false && rng <= StatsManager.Round && !Multi.multi)
-        {
-            try{
-                SqlCommand cmd = new SqlCommand(@"
-                INSERT INTO AutoBattlerGame (Version, Name, FaceId, Date, LP, PlayerId, Comp, Round)  
-                VALUES (@Version, @Name, @PlayerFaceId, @DataNow, @LP, @Id, @Team, @Round);
-                ", DB.con);
+        // int rng = UnityEngine.Random.Range(0, 10);
+        // if(Login.zalogowano && Tutorial.tutorial == false && rng <= StatsManager.Round && !Multi.multi && !PlayerManager.SI)
+        // {
+        //     try{
+        //         SqlCommand cmd = new SqlCommand(@"
+        //         INSERT INTO AutoBattlerGame (Version, Name, FaceId, Date, LP, PlayerId, Comp, Round)  
+        //         VALUES (@Version, @Name, @PlayerFaceId, @DataNow, @LP, @Id, @Team, @Round);
+        //         ", DB.con);
 
-                cmd.Parameters.AddWithValue("Version", PlayerManager.Version);
-                cmd.Parameters.AddWithValue("Name", PlayerManager.Name);
-                cmd.Parameters.AddWithValue("PlayerFaceId", PlayerManager.PlayerFaceId);
-                cmd.Parameters.AddWithValue("DataNow", DateTime.Now);
-                cmd.Parameters.AddWithValue("Round", StatsManager.Round - 1);
-                if(RankedManager.Ranked)
-                    cmd.Parameters.AddWithValue("LP", PlayerManager.LP);
-                else
-                    cmd.Parameters.AddWithValue("LP", 0);
-                cmd.Parameters.AddWithValue("Id", PlayerManager.Id);
+        //         cmd.Parameters.AddWithValue("Version", PlayerManager.Version);
+        //         cmd.Parameters.AddWithValue("Name", PlayerManager.Name);
+        //         cmd.Parameters.AddWithValue("PlayerFaceId", PlayerManager.PlayerFaceId);
+        //         cmd.Parameters.AddWithValue("DataNow", DateTime.Now);
+        //         cmd.Parameters.AddWithValue("Round", StatsManager.Round - 1);
+        //         if(RankedManager.Ranked)
+        //             cmd.Parameters.AddWithValue("LP", PlayerManager.LP);
+        //         else
+        //             cmd.Parameters.AddWithValue("LP", 0);
+        //         cmd.Parameters.AddWithValue("Id", PlayerManager.Id);
 
-                string filePath = Application.dataPath + "/Save/Zapis.json";
-                if(RankedManager.Ranked)
-                {
-                    filePath = Application.dataPath + "/Save/ZapisR.json";
-                }
-                string jsonContent = File.ReadAllText(filePath);
+        //         string filePath = Application.dataPath + "/Save/Zapis.json";
+        //         if(RankedManager.Ranked)
+        //         {
+        //             filePath = Application.dataPath + "/Save/ZapisR.json";
+        //         }
+        //         string jsonContent = File.ReadAllText(filePath);
 
-                cmd.Parameters.AddWithValue("Team", jsonContent);
+        //         cmd.Parameters.AddWithValue("Team", jsonContent);
             
-                DB.execSQL(cmd);
-            }
-            catch(Exception ex)
-            {
-                Debug.Log(ex.Message);
-            }
-        }
+        //         DB.execSQL(cmd);
+        //     }
+        //     catch(Exception ex)
+        //     {
+        //         Debug.Log(ex.Message);
+        //     }
+        // }
     }
 
    void sprawdzKtoWygralWParach(int[][] paryLinii)
@@ -390,7 +404,11 @@ public class FightManager : MonoBehaviour
             AddToBase();
             //Debug.Log("WYGRANKO");
             StatsManager.win++;
-            if(((StatsManager.win == 10 && !RankedManager.Poddymka) || StatsManager.win == 12) && RankedManager.Ranked && !Multi.multi)
+            if(PlayerManager.SI && StatsManager.win == 12)
+            {
+                SceneManager.LoadScene(2);
+            }
+            if(((StatsManager.win == 10 && !RankedManager.Poddymka) || StatsManager.win == 12) && RankedManager.Ranked && !Multi.multi && !PlayerManager.SI)
             {
                 ZapiszwWynil(true);
                 if(!RankedManager.Ranked)

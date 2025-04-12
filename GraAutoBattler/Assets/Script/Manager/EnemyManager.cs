@@ -67,38 +67,51 @@ public class EnemyManager : MonoBehaviour
     {
         // if (!PlayerManager.isSave)
         // {
-        int roll = 16;
-        if(!RankedManager.Ranked)
-            roll = Ranking.MaxRound + 3;
-        for (int i = 0; i < roll; i++)
+        if(PlayerManager.SI)
+        {
+            Comps = SI.Official;
+            for(int i = 0; i < 13; i++)
             {
-                // Pobierz tylko gry spełniające warunki
-                List<FightManager.AutoBattlerGameViewModel> filteredList = LoadFeaturedGamesFromDatabase(
-                    round: i,
-                    playerName: PlayerManager.Name,
-                    playerId: PlayerManager.Id,
-                    version: PlayerManager.Version,
-                    LP: PlayerManager.LP
-                );
-                if (filteredList == null)
-                {
-                    // Dodaj wartości domyślne do list
-                    Names.Add("System");  // Domyślna nazwa
-                    Faces.Add(0);    // Domyślne FaceId
-                    Comps.Add(Zapasowy);  // Domyślny Comp
-                    LP.Add(1000);
-                }
-                else if (filteredList.Count > 0)
-                {
-                    var randomGame = filteredList[UnityEngine.Random.Range(0, filteredList.Count)];
-
-                    Names.Add(randomGame.Name);
-                    Faces.Add(randomGame.FaceId);
-                    Comps.Add(randomGame.Comp);
-                    LP.Add(randomGame.LP);
-                }
+                Faces.Add(0);    // Domyślne FaceId
+                LP.Add(1000);
+                Names.Add("System");
             }
+        }
+        if(!PlayerManager.SI && !Multi.multi)
+        {
+            int roll = 16;
+            if(!RankedManager.Ranked)
+                roll = Ranking.MaxRound + 3;
+            for (int i = 0; i < roll; i++)
+                {
+                    // Pobierz tylko gry spełniające warunki
+                    List<FightManager.AutoBattlerGameViewModel> filteredList = LoadFeaturedGamesFromDatabase(
+                        round: i,
+                        playerName: PlayerManager.Name,
+                        playerId: PlayerManager.Id,
+                        version: PlayerManager.Version,
+                        LP: PlayerManager.LP
+                    );
+                    if (filteredList == null)
+                    {
+                        // Dodaj wartości domyślne do list
+                        Names.Add("System");  // Domyślna nazwa
+                        Faces.Add(0);    // Domyślne FaceId
+                        Comps.Add(Zapasowy);  // Domyślny Comp
+                        LP.Add(1000);
+                    }
+                    else if (filteredList.Count > 0)
+                    {
+                        var randomGame = filteredList[UnityEngine.Random.Range(0, filteredList.Count)];
+
+                        Names.Add(randomGame.Name);
+                        Faces.Add(randomGame.FaceId);
+                        Comps.Add(randomGame.Comp);
+                        LP.Add(randomGame.LP);
+                    }
+                }
         // }
+        }
     }
     public static List<FightManager.AutoBattlerGameViewModel> LoadFeaturedGamesFromDatabase(int round, string playerName, int playerId, string version, int LP)
     {

@@ -26,16 +26,31 @@ public class Synergy : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
+            if (EventSystem.eventSystem == null || EventSystem.eventSystem.GetComponent<FightManager>() == null)
+                continue;
+
             Linia line = EventSystem.eventSystem.GetComponent<FightManager>().linie[i + modify];
+            if (line == null || line.pola == null)
+                continue;
+
             List<Unit> newUnits = new List<Unit>(units);
             foreach (var pole in line.pola)
             {
+                if (pole == null || pole.unit == null)
+                    continue;
+
+                Unit poleUnit = pole.unit.GetComponent<Unit>();
+                if (poleUnit == null)
+                    continue;
+
                 foreach (Unit unit in units)
                 {
-                    if (pole.unit != null && unit != null && unit.Name == pole.unit.GetComponent<Unit>().Name)
-                    {
-                        Unit unitToRemove = newUnits.Find(u => u.Name == pole.unit.GetComponent<Unit>().Name);
+                    if (unit == null)
+                        continue;
 
+                    if (unit.Name == poleUnit.Name)
+                    {
+                        Unit unitToRemove = newUnits.Find(u => u != null && u.Name == poleUnit.Name);
                         if (unitToRemove != null)
                         {
                             newUnits.Remove(unitToRemove);
@@ -48,7 +63,6 @@ public class Synergy : MonoBehaviour
                 }
             }
         }
-
         return false;
     }
 

@@ -108,12 +108,12 @@ MonoBehaviour:
   MaxHealth: 35
   Health: 35
   Attack: 20
-  Defense: 10
+  Defense: 15
   Range: 0
   AP: 0
   MagicResist: 0
   Description: "Mo\u017Ce zosta\u0107 ulepszony wielokrotnie. <b>Ulepszenie: </b>Otrzymuje
-    10 Obrony"
+    15 Obrony"
   CPU: 0
   Typy: 
   UpgradeLevel: 1

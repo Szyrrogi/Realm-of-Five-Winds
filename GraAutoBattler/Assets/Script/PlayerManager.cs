@@ -11,7 +11,7 @@ using System.IO;
 
 public class PlayerManager : MonoBehaviour
 {
-    public static string Version = "0.5.5";
+    public static string Version = "0.5.6";
     public static int PlayerFaceId;
     public static string Name = "Player";
     public static int Id = 0;
@@ -25,6 +25,7 @@ public class PlayerManager : MonoBehaviour
     public Ranking ranking;
 
     public TextMeshProUGUI Uwagi;
+    public static bool SI;
     
 
 
@@ -148,6 +149,15 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+    public void SIFight()
+    {
+        Multi.multi = false;
+        RankedManager.Ranked = false;
+        Tutorial.tutorial = false;
+        SI = true;
+        SceneManager.LoadScene(9);
+    }
+
     public void ReadInputMulti()
     {
         if(Login.zalogowano)
@@ -156,6 +166,7 @@ public class PlayerManager : MonoBehaviour
             if(Fraction.fractionList.Count != 0)
             {
                 Multi.multi = true;
+                SI = false;
                 Tutorial.tutorial = false;
                 SceneManager.LoadScene(6);
             }
@@ -174,9 +185,9 @@ public class PlayerManager : MonoBehaviour
     {
         Multi.multi = false;
         RankedManager.Ranked = false;
+        SI = false;
         Tutorial.tutorial = true;
         SceneManager.LoadScene(5);
-
     }
     public void StartRanked()
     {
@@ -206,6 +217,7 @@ public class PlayerManager : MonoBehaviour
             {
                 Multi.multi = false;
                 Tutorial.tutorial = false;
+                SI = false;
                 SceneManager.LoadScene(4);
             }
             else

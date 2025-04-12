@@ -15,7 +15,7 @@ public class WesołaBrygada : Heros
         newUnit.Health = Health;
         newUnit.MaxHealth = MaxHealth;
         newUnit.Attack = Attack;
-        newUnit.Defense = Defense + 10;
+        newUnit.Defense = Defense + 15;
         newUnit.AP = AP;
         newUnit.MagicResist = MagicResist;
 

@@ -84,6 +84,10 @@ public class SaveManager : MonoBehaviour
         {
             savePath1 = Application.dataPath + "/Save/Zapis3.json";
         }
+        if(PlayerManager.SI)
+        {
+            savePath1 = Application.dataPath + "/Save/Zapis5.json";
+        }
         if(Tutorial.tutorial)
         {
             savePath1 = Application.dataPath + "/Save/Zapis4.json";
@@ -233,7 +237,7 @@ public class SaveManager : MonoBehaviour
     
 
         File.WriteAllText(savePath1, JsonUtility.ToJson(data1, true));
-        if(!Multi.multi && !Tutorial.tutorial)
+        if(!Multi.multi && !Tutorial.tutorial && !PlayerManager.SI)
             File.WriteAllText(savePath2, JsonUtility.ToJson(data2, true));
 
     }
@@ -374,6 +378,10 @@ public class SaveManager : MonoBehaviour
         if(Multi.multi)
         {
             customPath = Application.dataPath + "/Save/Zapis3.json";
+        }
+        if(PlayerManager.SI)
+        {
+            customPath = Application.dataPath + "/Save/Zapis5.json";
         }
         if(Tutorial.tutorial)
         {

@@ -83,14 +83,14 @@ public class ShopManager : MonoBehaviour
     {
         isLoock =!isLoock;
         loock.sprite = loocks[isLoock? 1 : 0];
-        Debug.Log(isLoock);
+        //Debug.Log(isLoock);
     }
 
     public void ChangeUpgrade()
     {
         isLoockUpgrade =!isLoockUpgrade;
         loockUpgrade.sprite = loocks[isLoockUpgrade? 1 : 0];
-        Debug.Log(isLoockUpgrade);
+        //Debug.Log(isLoockUpgrade);
     }
 
     public void FirstRoll()
@@ -101,7 +101,7 @@ public class ShopManager : MonoBehaviour
         foreach(ShopVisitor obj in shopVisitors)
         {
             obj.FirstRoll();
-            Debug.Log(obj.gameObject.name);
+            //Debug.Log(obj.gameObject.name);
         } 
     }
     public List<GameObject> filteredObjects;

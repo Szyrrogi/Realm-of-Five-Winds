@@ -6,8 +6,8 @@ public class ZagadkowyDuch : Heros
 {
     public override void AfterBuy()
     {
-        Cost -= 2;
-        RealCost -= 2;
+        // Cost -= 2;
+        // RealCost -= 2;
         for(int i = 0; i < 5; i++)
             {
                 int rng = Random.Range(0, EventSystem.eventSystem.GetComponent<CharacterManager>().characters.Count);

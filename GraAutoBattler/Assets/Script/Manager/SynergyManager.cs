@@ -28,7 +28,7 @@ public class SynergyManager : MonoBehaviour
             foreach (Synergy synergy in Synergie)
             {
                 int synergyId = synergy.Id; // Zakładam, że klasa Synergy ma pole Id
-                Debug.Log(synergy.name +  " " + synergyId);
+                //Debug.Log(synergy.name +  " " + synergyId);
                 if (synergy.CheckIsActive(0))
                 {
                     // Sprawdź, czy obiekt już istnieje
@@ -65,7 +65,7 @@ public class SynergyManager : MonoBehaviour
         foreach (Synergy synergy in Synergie)
         {
             int synergyId = synergy.Id; // Zakładam, że klasa Synergy ma pole Id
-
+            
             if (synergy.CheckIsActive(3))
             {
                 // Sprawdź, czy obiekt już istnieje

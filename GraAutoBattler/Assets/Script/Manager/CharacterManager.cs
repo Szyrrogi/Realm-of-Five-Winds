@@ -15,6 +15,27 @@ public class CharacterManager : MonoBehaviour
         {
             character.GetComponent<Unit>().Id = i;
             i++;
+            // if(character.GetComponent<Heros>() && !character.GetComponent<Building>())
+            // {
+            //     Heros heros = character.GetComponent<Heros>();
+            //     if(heros.Star != 0 && !heros.Evolution && heros.EvolveHeroes.GetComponent<Heros>().Name == heros.Name)
+            //     {
+            //         Heros lepszy = heros.EvolveHeroes.GetComponent<Heros>();
+
+            //         Debug.Log((heros.UpgradeNeed -1) +" " + heros.Name);
+
+            //         for(int j = 0;  j< heros.UpgradeNeed -1; j++)
+            //         {
+            //             lepszy.MaxHealth += (int)(heros.MaxHealth * 0.4);
+            //             lepszy.Health += (int)(heros.Health * 0.4);
+
+            //             lepszy.Attack += (int)(heros.Attack * 0.4f);
+            //             lepszy.AP += (int)(heros.AP * 0.4f);
+            //             lepszy.Cost += (int)(heros.Cost);
+            //             lepszy.Initiative += (int)(heros.Initiative * 0.1f);
+            //         }
+            //     }
+            // }
         }
         i = 0;
         foreach(GameObject spell in Spells)
