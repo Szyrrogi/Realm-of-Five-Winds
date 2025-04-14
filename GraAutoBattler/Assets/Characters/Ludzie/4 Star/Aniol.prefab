@@ -113,6 +113,16 @@ MonoBehaviour:
   AP: 40
   MagicResist: 10
   Description: <b>Atak:</b> Wykonuje dwa ataki, magiczny i fizyczny
+  Lore: "Anio\u0142owie byli zwyk\u0142ymi obywatelami. zajmowali si\u0119 tworzeniem
+    miast w koronach drzew, upraw\u0105 ro\u015Blin, wytw\xF3rstwem narz\u0119dzi
+    i broni. Kiedy jednak ludzie zacz\u0119li interesowa\u0107 si\u0119 anio\u0142ami
+    ci objawili si\u0119 jako magiczni protektorzy drzew daj\u0105cych \u017Cycie.
+    Zyskali sobie w ten spos\xF3b status istot boskich. Od tego czasu przekazuj\u0105
+    ludziom list\u0119 swoich potrzeb w zamian za swoj\u0105 przychylno\u015B\u0107.
+    W zamian anio\u0142owie nauczyli ludzko\u015B\u0107 jak rozwija\u0107 cywilizacj\u0119.
+    Korzystaj\u0105c z ludzkiej naiwno\u015Bci anio\u0142owie wychowali sobie ludzi
+    od pocz\u0105tku ichniego istnienia, dlatego te\u017C ludzie s\u0105 \u015Blepo
+    wierni anio\u0142om i nawet nie my\u015Bl\u0105 o rebelii."
   CPU: 0
   Typy: 04000000
   UpgradeLevel: 1

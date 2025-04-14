@@ -183,14 +183,15 @@ MonoBehaviour:
   Initiative: 30
   MaxHealth: 20
   Health: 20
-  Attack: 30
+  Attack: 25
   Defense: 0
   Range: 0
   AP: 0
   MagicResist: 0
   Description: "<b>Poczatek Walki: </b>Zadaj wszystkim przecinikom w rz\u0119dzie
-    10 obra\u017Ce\u0144"
+    25 obra\u017Ce\u0144"
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0

@@ -189,7 +189,7 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: "<b>Pocz\u0105tek Walki: </b>Zwi\u0119ksza atak jednostkom dystansowym
-    o 25 w rz\u0119dzie"
+    o 20 w rz\u0119dzie"
   CPU: 0
   Typy: 
   UpgradeLevel: 0

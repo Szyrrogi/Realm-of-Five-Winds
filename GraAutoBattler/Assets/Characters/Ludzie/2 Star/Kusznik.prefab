@@ -113,7 +113,34 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: "Pierwszy atak zadaje podw\xF3jne obra\u017Cenia"
+  Lore: "Chocia\u017C zdecydowana wi\u0119kszo\u015B\u0107 technologii ludzi pochodzi
+    od anio\u0142\xF3w, kusza nie jest jednym z nich. Ludzie podczas eksperyment\xF3w
+    budowlanych zrozumieli, \u017Ce mo\u017Cna po\u0142\u0105czy\u0107 technologi\u0119
+    wyci\u0105gu i ci\u0119ciw\u0105 \u0142uku znacz\u0105co zwi\u0119kszaj\u0105c
+    si\u0142\u0119 jego wystrza\u0142u. Najt\u0119\u017Csze g\u0142owy po szeregu
+    eksperyment\xF3w opracowa\u0142y kusz\u0119. Jako, \u017Ce ten wynalazek nie
+    zosta\u0142 podarowany ludziom przez anio\u0142y, te patrz\u0105 na niego krzywo
+    i s\u0105 przeciwne jego zastosowaniu. Je\u015Bli inteligencja ludzi pozwoli
+    im na dalszy rozw\xF3j technologii by\u0107 mo\u017Ce zrozumiej\u0105, \u017Ce
+    dzie\u0142a anio\u0142\xF3w to nie magiczne relikty, a po prostu efekt z\u0142o\u017Conej
+    in\u017Cynierii. To mog\u0142oby podkopa\u0107 kult anielski w oczach ludzi,
+    co mog\u0142oby doprowadzi\u0107 do rebelii przeciwko uskrzydlonym, co jest absolutnie
+    niedopuszczalne. Taki rozw\xF3j wydarze\u0144 m\xF3g\u0142by doprowadzi\u0107
+    do kresu Srebrnego przymierza, kt\xF3re w wyniku wojny domowej sta\u0142oby si\u0119
+    podatne na ataki z zewn\u0105trz. Dlatego w\u0142a\u015Bnie wykorzystanie kuszy
+    jest zakazane. Nie ka\u017Cdy jednak si\u0119 stosuje do tego zakazu. Magowie,
+    kt\xF3rzy ju\u017C s\u0105 we wrogich relacjach z anio\u0142ami cz\u0119sto op\u0142acaj\u0105
+    prywatnych in\u017Cynier\xF3w do konstrukcji kusz, kt\xF3re nast\u0119pnie sprzedaj\u0105
+    za po\u015Brednictwem zaprzyja\u017Anionych handlarzy, aby nast\u0119pnie wyposa\u017Ca\u0107
+    w nie stra\u017Cnik\xF3w dwor\xF3w czarodziej\xF3w. Kiedy wi\u0119c zagro\u017Cenie
+    staje si\u0119 na tyle du\u017Ce, \u017Ce magowie udaj\u0105 si\u0119 do walki
+    w imieniu ojczyzny, cz\u0119sto dozbrajaj\u0105 ch\u0142op\xF3w w kusze, aby
+    ich szanse na zwyci\u0119stwo drastycznie wzros\u0142y. W przeciwie\u0144stwie
+    bowiem do \u0142uku, kusz\u0105 wystarczy jedynie wycelowa\u0107 i poci\u0105gn\u0105\u0107
+    za spust, wi\u0119c nawet niewyszkolony ch\u0142op zrobi du\u017Ce szkody na
+    polu bitwy."
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0

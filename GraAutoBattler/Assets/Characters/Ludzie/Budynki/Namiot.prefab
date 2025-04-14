@@ -178,7 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 41
   Name: Namiot Leczniczy
-  Cost: 4
+  Cost: 3
   Star: 2
   Initiative: 35
   MaxHealth: 30
@@ -190,6 +190,7 @@ MonoBehaviour:
   MagicResist: 0
   Description: "<b>Akcja: </b>Leczy wszyskich sojusznik\xF3w w rz\u0119dzie o 10"
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0

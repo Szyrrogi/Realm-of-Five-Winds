@@ -114,6 +114,11 @@ MonoBehaviour:
   MagicResist: 0
   Description: "<b>Pocz\u0105tek Walki:</b> Otrzymuje 5 Ataku za ka\u017Cdedo przyjaznego
     wilka na Arenie"
+  Lore: "W g\u0142\u0119bi las\xF3w Lanitaru us\u0142ysze\u0107 mo\u017Cna w nocy
+    dono\u015Bne wycie. Wydaj\u0105 je watahy wilk\xF3w zamieszkuj\u0105ce te tereny.
+    Wi\u0119kszo\u015B\u0107 z nich jest dzika i nastawiona na pod\u0105\u017Canie
+    za najwi\u0119kszym spo\u015Br\xF3d gromady, poluj\u0105c na wszystko co jest
+    zbudowane z mi\u0119sa."
   CPU: 0
   Typy: 0000000001000000
   UpgradeLevel: 1

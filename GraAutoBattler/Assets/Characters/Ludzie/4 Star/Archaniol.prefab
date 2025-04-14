@@ -113,6 +113,15 @@ MonoBehaviour:
   AP: 40
   MagicResist: 35
   Description: "Pierwsza jednostka, kt\xF3ra zginie, zostaje <b>Wskrzeszona</b>"
+  Lore: "Dusze ka\u017Cdego z anio\u0142\xF3w po \u015Bmierci przyjmuj\u0105 posta\u0107
+    jask\xF3\u0142ki. Zadaniem Archanio\u0142\xF3w jest ponowne ukszta\u0142towanie
+    jej w prawid\u0142ow\u0105 posta\u0107 aby Anio\u0142 m\xF3g\u0142 wr\xF3ci\u0107
+    do \u017Cycia. Nowi przedstawiciele tej rasy si\u0119 nigdy nie rodz\u0105, jednak
+    nie da si\u0119 te\u017C ich prawdziwie zabi\u0107. Anio\u0142owe s\u0105 najstarsz\u0105
+    ras\u0105 tego \u015Bwiata i zrodzeni z magii drzew jako ich obro\u0144cy. Potrafi\u0105
+    jednak wykorzystywa\u0107 moc kszta\u0142towania dusz do wskrzeszania innych
+    istot. Ca\u0142e \u017Cycie na planecie bowiem pochodzi od tych drzew i ich specyfika
+    odpowiada za to jakie rasy stworzy."
   CPU: 0
   Typy: 04000000
   UpgradeLevel: 1

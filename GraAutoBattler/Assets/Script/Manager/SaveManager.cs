@@ -86,6 +86,7 @@ public class SaveManager : MonoBehaviour
         }
         if(PlayerManager.SI)
         {
+            Debug.Log("KURWAAA");
             savePath1 = Application.dataPath + "/Save/Zapis5.json";
         }
         if(Tutorial.tutorial)
@@ -134,6 +135,11 @@ public class SaveManager : MonoBehaviour
         }
 
         System.Random rand = new System.Random();
+        string zapisWalki = "";
+        if(!Multi.multi)
+            zapisWalki = EventSystem.eventSystem.GetComponent<EnemyManager>().Comps[StatsManager.Round];
+        else
+            zapisWalki = " ";
         SaveData2 data2 = new SaveData2
         {
             playerId = PlayerManager.Id,
@@ -144,7 +150,7 @@ public class SaveManager : MonoBehaviour
             win = StatsManager.win,
             round = StatsManager.Round,
             lose = StatsManager.life,
-            nextFight = EventSystem.eventSystem.GetComponent<EnemyManager>().Comps[StatsManager.Round],
+            nextFight = zapisWalki,
             shop = new List<int>()
         };
         for(int i = 0; i < 5; i++)
@@ -292,11 +298,15 @@ public class SaveManager : MonoBehaviour
         //     .ToList();
 
         // var randomGame = filteredList[UnityEngine.Random.Range(0, filteredList.Count)];
-        SaveManager.SaveData loadedData = SaveManager.Load(isEnemy, EventSystem.eventSystem.GetComponent<EnemyManager>().Comps[StatsManager.Round]);
-        if (loadedData != null)
-        {
-            SaveManager.InstantiateUnits(loadedData, isEnemy);
-        }
+        
+        
+            SaveManager.SaveData loadedData = SaveManager.Load(isEnemy, EventSystem.eventSystem.GetComponent<EnemyManager>().Comps[StatsManager.Round]);
+
+            if (loadedData != null)
+            {
+                SaveManager.InstantiateUnits(loadedData, isEnemy);
+            }
+        
     }
 
     public static SaveData Load()
@@ -381,6 +391,7 @@ public class SaveManager : MonoBehaviour
         }
         if(PlayerManager.SI)
         {
+            Debug.Log("KURWAAA");
             customPath = Application.dataPath + "/Save/Zapis5.json";
         }
         if(Tutorial.tutorial)

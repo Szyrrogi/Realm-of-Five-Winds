@@ -20,6 +20,7 @@ public class Multi : MonoBehaviour
     PhotonView photonView;
     public bool[] Ready;
     public static bool[] Death;
+    public static int[] Health;
 
     void Start()
     {
@@ -28,6 +29,11 @@ public class Multi : MonoBehaviour
             photonView = GetComponent<PhotonView>();
             Ready = new bool[PhotonNetwork.CurrentRoom.PlayerCount];
             Death = new bool[PhotonNetwork.CurrentRoom.PlayerCount];
+            Health = new int[PhotonNetwork.CurrentRoom.PlayerCount];
+            for(int i = 0; i < PhotonNetwork.CurrentRoom.PlayerCount;i++)
+            {
+                Health[i] = MultiOptions.Hearth;
+            }
             StartGame.SetActive(false);
             timerText.gameObject.SetActive(true);
             ReadyButton.gameObject.SetActive(true);
@@ -98,17 +104,27 @@ public class Multi : MonoBehaviour
 
     public bool IsReady()
     {
+        int j = 0;
         for (int i = 0; i < Ready.Length; i++)
         {
             // Jeśli gracz jest żywy (Death[i] == false) i nie jest gotowy
-            if (!Death[i] && !Ready[i])
+            if (Ready[i])
             {
-                return false;
+                j++;
             }
             // Martwi gracze (Death[i] == true) są automatycznie uznawani za gotowych
         }
+
+        if(j >= PhotonNetwork.CurrentRoom.PlayerCount)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
         
-        return true;
+       // return true;
     }
 
 

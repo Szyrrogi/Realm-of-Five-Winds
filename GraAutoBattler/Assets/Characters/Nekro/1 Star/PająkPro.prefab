@@ -177,17 +177,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 64
   Name: "Paj\u0105k"
-  Cost: 3
+  Cost: 6
   Star: 1
-  Initiative: 0
-  MaxHealth: 40
-  Health: 40
-  Attack: 35
+  Initiative: 94
+  MaxHealth: 63
+  Health: 63
+  Attack: 49
   Defense: 10
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "<b>Kupno: </b>stra\u0107 2 z\u0142ota"
+  Description: 
+  Lore: 
   CPU: 0
   Typy: 00000000
   UpgradeLevel: 1

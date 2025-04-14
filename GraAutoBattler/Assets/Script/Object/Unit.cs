@@ -21,6 +21,7 @@ public class Unit : MonoBehaviour
     public int AP;
     public int MagicResist;
     public string Description;
+    public string Lore;
     public int CPU;
     public List<CreatureType> Typy;
 

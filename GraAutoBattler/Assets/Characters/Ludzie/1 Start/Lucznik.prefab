@@ -113,7 +113,39 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: 
+  Lore: "W zwi\u0105zku z tym, \u017Ce lasy Srebrnego przymierza s\u0105 domem dla
+    Druid\xF3w, a tak\u017Ce bogatymi terenami \u0142owieckimi, ksi\u0105\u017C\u0119ta
+    powo\u0142uj\u0105 elitarne grupy \u0142ucznicze. Ci brutalnie wyszkoleni \u0142owczy
+    znani s\u0105 jako Srebrni Strzelcy. Potrafi\u0105 oni porusza\u0107 si\u0119
+    bezg\u0142o\u015Bnie w lasach, oraz ustrzeli\u0107 cz\u0142owieka z 500 metr\xF3w
+    z wystarczaj\u0105c\u0105 si\u0142\u0105, by zabi\u0107. Ich \u0142uki wykonane
+    s\u0105 z drewna magicznych drzew, co sprawia, \u017Ce s\u0105 znacznie silniejsze
+    ni\u017C tradycyjne \u0142uki u\u017Cywane do polowania na zaj\u0105ce przez
+    ch\u0142op\xF3w. W\u0142a\u015Bnie przez kolor tej broni zyskali oni sw\xF3j
+    przydomek. Ta elitarna grupa \u0142owcza zajmuje si\u0119 tropieniem szpieg\xF3w
+    i wrog\xF3w narodu a nast\u0119pnie likwidowaniem ich bez \u015Bladu. Ilu dok\u0142adnie
+    jest srebrnych strzelc\xF3w nie wiadomo, jednak kiedy co\u015B zagra\u017Ca Srebrnemu
+    przymierzu ci staj\u0105 do walki na polach bitwy tworz\u0105c olbrzymi\u0105
+    przeszkod\u0119 dla wszystkich wrog\xF3w. Pe\u0142ni\u0105 oni r\xF3wnie\u017C
+    rol\u0119 \u0142owczych, kt\xF3rzy maj\u0105 prawo do polowania na wi\u0119ksze
+    zwierz\u0119ta, \u017Ceby zapewni\u0107 bezpiecze\u0144stwo ma\u0142ym osadom,
+    a tak\u017Ce wy\u017Cywi\u0107 je. Nie posiadaj\u0105 oni zwykle imion, ani nie
+    daj\u0105 si\u0119 zobaczy\u0107. Posiadaj\u0105 ukryte bazy gdzie\u015B w puszczach
+    na obrze\u017Cach ziem srebrnego przymierza, jednak nikt, kto odkry\u0142 ich
+    lokalizacj\u0119, nie prze\u017Cy\u0142. Je\u017Celi kt\xF3ry\u015B z nich zostanie
+    zauwa\u017Cony w mie\u015Bcie wiadomo, \u017Ce czyje\u015B \u017Cycie zbli\u017Ca
+    si\u0119 do ko\u0144ca. Dzi\u0119ki swojemu zaprzyja\u017Anieniu z natur\u0105
+    zdarza im si\u0119 szuka\u0107 wytchnienia w g\xF3rach w towarzystwie gryf\xF3w.
+    Ci \u0142owcy potrafi\u0105 zaprzyja\u017Ani\u0107 si\u0119 z tymi dzikimi bestiami
+    do tego stopnia, \u017Ce gryfy pozwalaj\u0105 im lata\u0107 na swoich grzbietach
+    w obliczu du\u017Cego zagro\u017Cenia, lub potrzeby przemierzenia szybko du\u017Cego
+    dystansu. Nie nast\u0119puje to jednak cz\u0119sto, bowiem te dumne bestie nie
+    s\u0105 wierzchowcami i nie zgadzaj\u0105 si\u0119 na osiod\u0142anie, Srebrni
+    strzelcy zatem lataj\u0105 na oklep. W zamian zap\u0142aty za lot Strzelcy dostarczaj\u0105
+    gryfom \u017Cywe owce i barany wraz z zio\u0142ami poprawiaj\u0105cymi kondycj\u0119
+    pi\xF3r i futra."
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 4
   Enemy: 0

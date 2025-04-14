@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0218504aee3da5c4fb7384bbb2c1b368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 167
   Name: "\u0141ajza"
   Cost: 5
   Star: 2
@@ -110,10 +110,12 @@ MonoBehaviour:
   Attack: 50
   Defense: 10
   Range: 0
-  AP: 5
+  AP: 3
   MagicResist: 5
   Description: "<b>Akcja: </b>Zaatakuje Magicznie jednostk\u0119 za sob\u0105"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0

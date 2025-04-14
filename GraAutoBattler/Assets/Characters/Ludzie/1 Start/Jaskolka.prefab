@@ -114,6 +114,13 @@ MonoBehaviour:
   MagicResist: 0
   Description: "<b>Pocz\u0105tek Walki:</b> Zwi\u0119ksz Moc Zakl\u0119\u0107 wszystkich
     w rz\u0119dzie o warto\u015B\u0107 swojej <b>Mocy Zakl\u0119\u0107</b>"
+  Lore: "W szczytach magicznych drzew znajduj\u0105 si\u0119 gniazda utworzone przez
+    drzewa i wy\u015Bcie\u0142ane li\u015B\u0107mi, w kt\xF3rych znajduj\u0105 si\u0119
+    kokony przypominaj\u0105ce jajka o pow\u0142oce twardej jak sama kora magicznego
+    drzewa. Drzewa rodz\u0105 te kokony co miesi\u0105c. Wype\u0142nione s\u0105
+    one czyst\u0105 magi\u0105. Archanio\u0142owie s\u0105 w stanie otworzy\u0107
+    ten kokon i wykorzysta\u0107 ich zawarto\u015B\u0107 do ukszta\u0142towania jask\xF3\u0142ki
+    na nowo w anio\u0142a."
   CPU: 0
   Typy: 00000000
   UpgradeLevel: 1

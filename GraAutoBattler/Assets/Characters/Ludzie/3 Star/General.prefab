@@ -113,6 +113,16 @@ MonoBehaviour:
   AP: 0
   MagicResist: 15
   Description: "<b>Ostatni Oddech:</b> Przywo\u0142aj Opancerzonego Rycerza"
+  Lore: "Kiedy lordowie posiadaj\u0105 zbyt wiele w\u0142o\u015Bci, lub armie zbyt
+    liczne, aby skutecznie nimi zarz\u0105dza\u0107, powo\u0142uj\u0105 genera\u0142\xF3w.
+    Ci dow\xF3dcy przejmuj\u0105 inicjatyw\u0119 dowodzenia mniejszymi oddzia\u0142ami
+    i zwykle s\u0105 najbardziej zaufanymi lud\u017Ami, lub bliskimi cz\u0142onkami
+    rodziny. Cechuj\u0105 si\u0119 oni olbrzymi\u0105 inteligencj\u0105 bojow\u0105
+    oraz charyzm\u0105, co sprawia, \u017Ce wielu posz\u0142oby za nimi w b\xF3j.
+    Oczywi\u015Bcie jak zawsze w przypadku nepotyzmu niekiedy trafiaj\u0105 si\u0119
+    ci, kt\xF3rzy otrzymali sw\xF3j urz\u0105d bez odpowiednich kompetencji, jednak
+    tych bardzo cz\u0119sto opuszczaj\u0105 ich oddzia\u0142y, lub w akcie niesubordynacji
+    pozbawiaj\u0105 \u017Cycia ryzykuj\u0105c gniew lorda"
   CPU: 0
   Typy: 03000000
   UpgradeLevel: 1

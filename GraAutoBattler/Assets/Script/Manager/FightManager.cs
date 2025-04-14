@@ -434,6 +434,10 @@ public class FightManager : MonoBehaviour
             if(StatsManager.life != 0)
                 StartCoroutine(ShowEndScreen(1));
             StatsManager.life--;
+            if(Multi.multi)
+            {
+                GetComponent<PhotonView>().RPC("ZmniejszZdrowie", RpcTarget.All, MultiHP.ID);
+            }
             if(!RankedManager.Ranked)
                 StatsManager.win++;
             if(StatsManager.life <= 0)
@@ -666,6 +670,10 @@ public class FightManager : MonoBehaviour
         {
             StartCoroutine(ShowEndScreen(3));
             StatsManager.life++;
+            if(Multi.multi)
+            {
+                GetComponent<PhotonView>().RPC("UpZdrowie", RpcTarget.All, MultiHP.ID);
+            }
         }
     }
 

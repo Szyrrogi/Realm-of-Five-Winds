@@ -248,7 +248,16 @@ MonoBehaviour:
   AP: 25
   MagicResist: 10
   Description: "<b>Wtasowuje</b> zakl\u0119cia ognia do <b>puli</b>"
+  Lore: "Piromanci to magowie, kt\xF3rzy wpadli w obsesj\u0119 spowodowan\u0105 w\u0142asn\u0105
+    pot\u0119g\u0105. S\u0105 oni skupieni na demonstracji swojej si\u0142y na wszystkie
+    strony dlatego te\u017C stali si\u0119 nie tylko wygna\u0144cami, ale tak\u017Ce
+    wrogami publicznymi. Gdy w Twojej okolicy pojawia si\u0119 ten mag, mo\u017Cesz
+    by\u0107 pewien, \u017Ce ca\u0142y Tw\xF3j dobytek p\xF3jdzie z dymem. Kiedy
+    jednak kto\u015B naje\u017Cd\u017Ca srebrnego przymierza ci szale\u0144cy s\u0105
+    pierwsi na linii frontu, \u017Ceby pokaza\u0107, \u017Ce przeciwnik nie doceni\u0142
+    pot\u0119gi rasy ludzkiej."
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0

@@ -115,7 +115,22 @@ MonoBehaviour:
   MagicResist: 0
   Description: "<b>Od\u015Bwie\u017Cenie: </b>Zmniejsza koszt budynk\xF3w w sklepie
     o 2"
+  Lore: "Ka\u017Cdy cz\u0142owiek musi mie\u0107 sw\xF3j dom. Tym w\u0142a\u015Bnie
+    zajmuj\u0105 si\u0119 budowniczowie. Gdy drwale pozyskaj\u0105 drewno, a kamieniarze
+    materia\u0142y budowlane przychodzi czas realizacji przedsi\u0119wzi\u0119\u0107.
+    Bankierzy pokrywaj\u0105 koszt robocizny i materia\u0142\xF3w, aby nast\u0119pnie
+    uzyska\u0107 prawa na wy\u0142\u0105czno\u015B\u0107 do uko\u0144czonych budowli.
+    Te s\u0105 nast\u0119pnie sprzedawane a % zysku jest przekazywany na konta obywateli,
+    reszta za\u015B na konta bankier\xF3w. Budowniczowie pracuj\u0105 z bardzo wysok\u0105
+    efektywno\u015Bci\u0105 i bez problemowo wykonuj\u0105 bardzo z\u0142o\u017Cone
+    projekty w terminie i zwykle bezb\u0142\u0119dnie. Niekiedy zdarza im si\u0119
+    przyjmowa\u0107 pieni\u0105dze od mag\xF3w, \u017Ceby budowa\u0107 dla nich,
+    cho\u0107 takie prace wykonywane s\u0105 potajemnie i jedynie przez specjaln\u0105
+    cz\u0119\u015B\u0107 budowniczych, kt\xF3rzy potrafi\u0105 dochowa\u0107 sekretu
+    i kt\xF3rym pieni\u0105dze nie \u015Bmierdz\u0105. Wi\u0119kszo\u015B\u0107 budowniczych
+    jednak za bardzo boi si\u0119 gniewu ksi\u0105\u017C\u0105t i anio\u0142\xF3w."
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 2
   Enemy: 0

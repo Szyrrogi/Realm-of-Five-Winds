@@ -112,7 +112,9 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "<b>Kupno: </b>stra\u0107 2 z\u0142ota"
+  Description: "<b>Kupno: </b>stra\u0107 2 z\u0142ota <b>Ulepszenie: </b> Przywo\u0142aj
+    Jajo"
+  Lore: 
   CPU: 0
   Typy: 00000000
   UpgradeLevel: 1

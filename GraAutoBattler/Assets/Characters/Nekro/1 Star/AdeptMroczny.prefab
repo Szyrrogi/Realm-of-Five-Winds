@@ -114,8 +114,9 @@ MonoBehaviour:
   MagicResist: 10
   Description: "<b>Atak: </b>zmniejsz Obrone Magiczn\u0105 przeciwnika o 5"
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
-  UpgradeNeed: 4
+  UpgradeNeed: 3
   Enemy: 0
   fraction: 1
   RealCost: 0

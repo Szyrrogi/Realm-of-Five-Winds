@@ -113,6 +113,19 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: "Zwi\u0119ksza obron\u0119 o 30 przy atakach z dystansu"
+  Lore: "Rycerze nie s\u0105 w stanie sami stawi\u0107 czo\u0142a armiom wroga na
+    polu bitwy. Dlatego te\u017C lordowie poszukuj\u0105 najemnik\xF3w ch\u0119tnych
+    do nadstawienia karku dla zarobku. Przychodz\u0105 oni z w\u0142asnym wyposa\u017Ceniem,
+    ci\u0119\u017Cko zrabowanym od tych, kt\xF3rzy im p\u0142ac\u0105. Nie jest to
+    jednak problemem kiedy z\u0142odzieje nadstawiaj\u0105 karku ku Twojej sprawie.
+    Wysy\u0142ani s\u0105 oni zwykle w pierwszej linii jako kara za napady i przewinienia.
+    Srebrne przymierze jednak posiada ciekawe prawo, kt\xF3re pozwala sp\u0142aci\u0107
+    niewielkie przest\u0119pstwa przez walk\u0119 na froncie dla jednego z lord\xF3w.
+    Z tej opcji korzysta wielu rozb\xF3jnik\xF3w, kt\xF3rzy doskonale wiedz\u0105,
+    \u017Ce je\u015Bli tylko prze\u017Cyj\u0105, b\u0119d\u0105 mogli u\u0142o\u017Cy\u0107
+    sobie \u017Cycie na nowo z pieni\u0119dzmi kt\xF3re zarobi\u0105 i odpuszczeniem
+    win. Wielu handlarzy kiedy\u015B by\u0142o ostrzami do wynaj\u0119cia. Czy bowiem
+    rozb\xF3j nie jest podobny do twardych negocjacji?"
   CPU: 0
   Typy: 03000000
   UpgradeLevel: 1

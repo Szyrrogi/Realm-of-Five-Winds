@@ -114,6 +114,33 @@ MonoBehaviour:
   MagicResist: 0
   Description: "<b>Poczatek Walki:</b> Zwi\u0119ksza iniciatywe wszystkim jednostkom
     w rz\u0119dzie o 10"
+  Lore: "W g\xF3rach na p\xF3\u0142nocy srebrnego przymierza nie pojawia si\u0119
+    zbyt wielu ludzi. Te tereny s\u0105 powszechnie uwa\u017Cane za bardzo niebezpieczne.
+    Poza ostrymi ska\u0142ami, cz\u0119stymi burzami i niespodziewanymi osuwiskami
+    czyhaj\u0105 w nich gryfy. Te dumne i inteligentne bestie maj\u0105 gniazda w\u015Br\xF3d
+    szczyt\xF3w g\xF3r. \u017Byj\u0105 tam, by unika\u0107 kontaktu z lud\u017Ami
+    i anio\u0142ami, a tak\u017Ce dlatego, \u017Ce trudne warunki atmosferycznie
+    utrudniaj\u0105 dostanie si\u0119 do gryfich jaj. Gdy te bestie s\u0105 g\u0142odne
+    oczekuj\u0105 na trudne warunki atmosferyczne, kt\xF3re gwarantuj\u0105 bezpiecze\u0144stwo
+    ich m\u0142odych, aby nast\u0119pnie pod ukryciem silnego deszczu atakowa\u0107
+    stada dzikich koni, owiec i baran\xF3w. Porywaj\u0105 je \u017Cywcem a nast\u0119pnie
+    przenosz\u0105 w g\xF3ry w trawiaste kotliny z kt\xF3rych porwane zwierz\u0119ta
+    nie uciekn\u0105. Tam gryfy trzymaj\u0105 zwierz\u0119ta a\u017C ich nie zamorduj\u0105,
+    \u017Ceby zje\u015B\u0107 je \u015Bwie\u017Co zabite. Zdarza si\u0119, \u017Ce
+    srebrni strzelcy dostarczaj\u0105 zwierz\u0119ta do tych kotlin, aby uzyska\u0107
+    audiencj\u0119 u gryf\xF3w. Dzi\u0119ki temu, \u017Ce jeden gryf \u017Cyje oko\u0142o
+    tysi\u0105ca lat pozyskuj\u0105 one wielk\u0105 wiedz\u0119 z obserwacji \u015Bwiata
+    z wysoko\u015Bci. S\u0105 one w stanie bez problemu widzie\u0107 co dzieje si\u0119
+    5 kilometr\xF3w od nich. Za op\u0142at\u0119 w postaci \u017Cywno\u015Bci s\u0105
+    gotowe przekaza\u0107 troch\u0119 swojej wiedzy tej elitarnej grupie strzelc\xF3w.
+    Gryfy maj\u0105 si\u0142\u0119, by podnie\u015B\u0107 oko\u0142o 500 jednostek,
+    czyli ekwiwalent 36 ludzi. Osi\u0105gaj\u0105 wysoko\u015B\u0107 4,5 metra i
+    12 metr\xF3w d\u0142ugo\u015Bci. Najstarszy gryf przewodzi ca\u0142emu plemieniu
+    \u017Cyj\u0105cego na danej g\xF3rze, za\u015B w r\xF3\u017Cnych g\xF3rach \u017Cyj\u0105
+    plemiona maj\u0105ce swoje w\u0142asne zasady pogl\u0105dy i charakter. Wi\u0119kszo\u015B\u0107
+    z nich unika ludzi, ale s\u0105 te\u017C plemiona jak krwawe gryfy, kt\xF3re
+    \u017Cywi\u0105 si\u0119 lud\u017Ami, a nawet niebia\u0144skie gryfy poluj\u0105ce
+    na anio\u0142\xF3w i zjadaj\u0105ce cia\u0142a opuszczone przez dusze."
   CPU: 0
   Typy: 00000000
   UpgradeLevel: 1

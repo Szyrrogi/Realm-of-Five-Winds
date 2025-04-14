@@ -77,6 +77,16 @@ public class EnemyManager : MonoBehaviour
                 Names.Add("System");
             }
         }
+        if(Multi.multi)
+        {
+            for(int i = 0; i < 13; i++)
+            {
+                Faces.Add(0);    // Domyślne FaceId
+                LP.Add(1000);
+                Names.Add("System");
+                Comps.Add(Zapasowy);
+            }
+        }
         if(!PlayerManager.SI && !Multi.multi)
         {
             int roll = 16;

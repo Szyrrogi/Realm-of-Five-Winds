@@ -249,7 +249,20 @@ MonoBehaviour:
   MagicResist: 10
   Description: "<b>Ostatni Oddech:</b> Druid przemienia si\u0119 w zwierze. <b>Wtasowuje</b>
     zakl\u0119cia przywo\u0142ania do <b>puli</b>"
+  Lore: "Druidzi s\u0105 specyficzn\u0105 grup\u0105 czarodziej\xF3w. Zamiast kszta\u0142towa\u0107
+    magi\u0119 z drzew na zewn\u0105trz ci splataj\u0105 j\u0105 z w\u0142asnym cia\u0142em,
+    aby nast\u0119pnie uformowa\u0107 je w inny kszta\u0142t. Pozwala im to pozyskiwa\u0107
+    si\u0142y istoty w kt\xF3r\u0105 si\u0119 przemieni\u0105. Z perspektywy anio\u0142\xF3w
+    jest to herezja, bowiem przypomina to ich moc, kt\xF3r\u0105 wykorzystuj\u0105
+    do reinkarnacji. Dlatego te\u017C druidzi s\u0105 wygna\u0144cami i \u017Cyj\u0105
+    na uboczach w chatach le\u015Bnych z dala od cywilizacji do\u0142\u0105czaj\u0105c
+    do boju jedynie wtedy, kiedy ich w\u0142o\u015Bci s\u0105 zagro\u017Cone. Po
+    sko\u0144czonej bitwie znikaj\u0105 tak szybko jak si\u0119 pojawili uciekaj\u0105c
+    w sk\xF3rze wilka tak, aby anio\u0142owie nie wszcz\u0119li walki. Dzi\u015B
+    zobaczenie druida jest rzadko\u015Bci\u0105, w wielu ruchliwych miastach uwa\u017Ca
+    si\u0119 ich jedynie za mit."
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0

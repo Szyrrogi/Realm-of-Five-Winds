@@ -114,6 +114,20 @@ MonoBehaviour:
   MagicResist: 20
   Description: "<b>Gdy zostanie zaatakowany:</b> przeciwnik otrzymuje <color=#999999>10</color>
     obra\u017Ce\u0144"
+  Lore: "Spo\u015Br\xF3d mieszka\u0144c\xF3w obszar\xF3w pozamiejskich srebrnego
+    przymiera niekt\xF3rzy potrafi\u0105 dorobi\u0107 si\u0119 nie ma\u0142ej fortuny.
+    Czy to za wykonywane us\u0142ugi, czy dobrej jako\u015Bci produkty. Takich ludzi
+    sta\u0107 na nauk\u0119 szermierki, jazdy konnej i sztuki. Boj\u0105c si\u0119
+    o swoje \u017Cycie w podr\xF3\u017Cy cz\u0119sto zaopatruj\u0105 si\u0119 w pancerz
+    i \u015Bwit\u0119, kt\xF3ra pozwala im prze\u017Cy\u0107 atak z zaskoczenia.
+    Gdy jednak dochodzi do konieczno\u015Bci bronienia ojczyzny s\u0105 oni werbowani
+    do walki za godziw\u0105 zap\u0142at\u0119. Niekt\xF3rzy z nich s\u0105 bardzo
+    niech\u0119tni, jednak wi\u0119kszo\u015B\u0107 rozumie, \u017Ce w obliczu wielkiego
+    zagro\u017Cenia dla ca\u0142ego kraju ludzi nale\u017Cy stan\u0105\u0107 do walki
+    na froncie, gdzie w zjednoczeniu szanse na zwyci\u0119stwo s\u0105 znacznie wy\u017Csze
+    ni\u017C gdyby po rozgromieniu armii mieli samotnie broni\u0107 swojego dworku.
+    Jakby nie by\u0142o g\u0142upcy nie zbiliby fortuny. Ci w\u0142a\u015Bnie bogaci
+    obywatele to Rycerze Srebrnego Przymierza."
   CPU: 0
   Typy: 03000000
   UpgradeLevel: 1

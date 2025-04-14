@@ -158,6 +158,15 @@ public class PlayerManager : MonoBehaviour
         SceneManager.LoadScene(9);
     }
 
+    public void Best()
+    {
+        Multi.multi = false;
+        RankedManager.Ranked = false;
+        Tutorial.tutorial = false;
+        SI = false;
+        SceneManager.LoadScene(10);
+    }
+
     public void ReadInputMulti()
     {
         if(Login.zalogowano)

@@ -113,6 +113,22 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: "<b>Ulepszenie:</b> Przywo\u0142aj Opancerzonego Rycerza"
+  Lore: "Rycerze podr\xF3\u017Cuj\u0105 z du\u017Cym wyposa\u017Ceniem, od zbroi
+    i broni po \u017Cywno\u015B\u0107. Skoro sta\u0107 ich na to wszystko to oczywistym
+    jest, \u017Ce mog\u0105 te\u017C op\u0142aci\u0107 kogo\u015B kto zajmie si\u0119
+    dla nich utrzymaniem wszystkiego w dobrej kondycji. Tymi lud\u017Ami s\u0105
+    w\u0142a\u015Bnie giermkowie. M\u0142odzie\u0144cy ch\u0119tni do s\u0142u\u017Cby
+    mo\u017Cnym w zamian za grosz, do\u015Bwiadczenie i rozpoznawalno\u015B\u0107
+    to w\u0142a\u015Bnie to, czego potrzeba rycerzom. w podr\xF3\u017Cy giermkowie
+    ostrz\u0105 miecze, poleruj\u0105 pancerze, karmi\u0105 i pilnuj\u0105 koni a
+    tak\u017Ce dbaj\u0105 o to, aby szczury nie dopad\u0142y zapas\xF3w \u017Cywno\u015Bci
+    a buk\u0142aki z wod\u0105 zawsze by\u0142y pe\u0142ne. Czasami pe\u0142ni\u0105
+    r\xF3wnie\u017C rol\u0119 sparingpartner\xF3w i walcz\u0105 ze swoimi lordami.
+    Tak\u0105 aktywno\u015B\u0107 giermkowie ceni\u0105 najbardziej, bowiem dostarcza
+    cennego do\u015Bwiadczenia w walce. Niestety taki sparing niekiedy ko\u0144czy
+    si\u0119 dla giermk\xF3w tragicznie, chocia\u017C jest to rzadko\u015B\u0107,
+    bowiem rycerze ceni\u0105 to, \u017Ce nie musz\u0105 sami dba\u0107 o spe\u0142nianie
+    swoich obowi\u0105zk\xF3w."
   CPU: 0
   Typy: 03000000
   UpgradeLevel: 1
