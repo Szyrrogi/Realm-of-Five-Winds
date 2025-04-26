@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shop: {fileID: 0}
+  maks: 4
 --- !u!114 &8878567590806941225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,8 +127,11 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "Otrzymuje +10/10 za ka\u017Cdym razem gdy od\u015Bwie\u017Casz sklep"
+  Description: "Otrzymuje +10/10 za ka\u017Cdym razem gdy od\u015Bwie\u017Casz sklep
+    (Maksymalnie 4 razy w rundzie)"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0

@@ -112,8 +112,10 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "<b>Po Walce:  </b>przywo\u0142uje<b> ulepszonego</b> szkieleta"
+  Description: "<b>Po Walce:  </b>przywo\u0142uje<b> Kostuche"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 5
   Enemy: 0
@@ -123,14 +125,14 @@ MonoBehaviour:
   BoskaTarcza: 0
   attackAP: 0
   Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   AttackText: {fileID: 2333975298996084202}
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 0}
   Evolution: 1
   trupy:
-  - {fileID: 1819705648667262722, guid: 4bde0d6a86f45634aa16e0ed4b8e0530, type: 3}
-  - {fileID: 1819705648667262722, guid: 7b3e5a73f3be3954f9cc6800feaf09de, type: 3}
-  - {fileID: 1819705648667262722, guid: 2c4d34b28a1472b489de8202e5a1f1ca, type: 3}
+  - {fileID: 1819705648667262722, guid: 52f3742c101baa54bb717e2714a92554, type: 3}
 --- !u!114 &8731495660794391217
 MonoBehaviour:
   m_ObjectHideFlags: 0

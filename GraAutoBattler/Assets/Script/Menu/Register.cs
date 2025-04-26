@@ -44,11 +44,13 @@ public class Register : MonoBehaviour
         {
             using (SqlConnection con = DB.Connect(DB.conStr))
             {
-                string query = "INSERT INTO Players (Name, Email, Password, LP, Face) VALUES (@Username, @Email, @Password, 0, 0)";
+                string query = "INSERT INTO Players (Name, Email, Password, LP, Face, Synergies, Achievements) VALUES (@Username, @Email, @Password, 0, 0, @Sy, @Ach)";
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@Username", username);
                 cmd.Parameters.AddWithValue("@Email", email);
                 cmd.Parameters.AddWithValue("@Password", password);
+                cmd.Parameters.AddWithValue("@Sy", "S");
+                cmd.Parameters.AddWithValue("@Ach", "S");
 
                 int result = cmd.ExecuteNonQuery();
 

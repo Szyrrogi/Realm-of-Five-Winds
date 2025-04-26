@@ -91,7 +91,7 @@ public class Login : MonoBehaviour
         {
             using (SqlConnection con = DB.Connect(DB.conStr))
             {
-                string query = "SELECT Id, Name, Email, Password, LP, Face FROM Players WHERE Name = @Username AND Password = @Password";
+                string query = "SELECT Id, Name, Email, Password, LP, Face, Synergies, Achievements FROM Players WHERE Name = @Username AND Password = @Password";
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@Username", username);
                 cmd.Parameters.AddWithValue("@Password", password);
@@ -109,6 +109,16 @@ public class Login : MonoBehaviour
                             PlayerManager.LP = reader.GetInt32(reader.GetOrdinal("LP"));
                             PlayerManager.PlayerFaceId = reader.GetInt32(reader.GetOrdinal("Face"));
                             PlayerManager.Id = reader.GetInt32(reader.GetOrdinal("Id"));
+                            string synergie = reader["Synergies"].ToString();
+                            string achievements = reader["Achievements"].ToString();
+
+                            string savePath1 = Application.dataPath + "/Save/Synergy.txt";
+
+                            File.WriteAllText(savePath1, synergie);
+
+                            savePath1 = Application.dataPath + "/Save/Achivments.txt";
+                            File.WriteAllText(savePath1, achievements);
+
 
                             // Zapisz dane logowania do pliku
                             SaveLoginData(username, password);

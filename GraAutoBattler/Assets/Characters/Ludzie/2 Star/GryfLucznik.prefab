@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6934024521668934397}
   - component: {fileID: 3712362837729000110}
-  - component: {fileID: 315450212694563472}
+  - component: {fileID: 3920234373655499564}
   - component: {fileID: 6699983802921889276}
   - component: {fileID: 8881084885156300679}
   m_Layer: 0
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &315450212694563472
+--- !u!114 &3920234373655499564
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1819705648667262722}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5035351ea66fbf44c8cb73041e3e16dd, type: 3}
+  m_Script: {fileID: 11500000, guid: 2572c2a7b4f77f241a8daadf0e600dde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 52
@@ -114,6 +114,7 @@ MonoBehaviour:
   MagicResist: 0
   Description: "<b>Pocz\u0105tek Walki: </b>Zwi\u0119ksza iniciatywe wszystkim jednostkom
     w rzedzie o 10"
+  Lore: 
   CPU: 0
   Typy: 00000000
   UpgradeLevel: 1

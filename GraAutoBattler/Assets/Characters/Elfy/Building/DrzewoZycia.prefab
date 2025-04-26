@@ -178,7 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 0
   Name: "Drzewo \u017Bycia"
-  Cost: 5
+  Cost: 3
   Star: 2
   Initiative: 20
   MaxHealth: 20
@@ -190,7 +190,9 @@ MonoBehaviour:
   MagicResist: 0
   Description: "<b>Pocz\u0105tek Walki: </b>Drzewa zapewniaj\u0105 jednostkom w rz\u0119dzie
     9 Zdrowia"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0

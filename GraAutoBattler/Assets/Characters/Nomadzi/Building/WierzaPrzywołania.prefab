@@ -190,7 +190,9 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: "<b>Wtasowuje</b> zakl\u0119cia Przywo\u0142ania <b>puli</b>"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
@@ -221,6 +223,8 @@ MonoBehaviour:
   - {fileID: 1819705648667262722, guid: c7dddf62aa43d124bbd9b0d734106ad3, type: 3}
   - {fileID: 1819705648667262722, guid: a9d3093e07a06284b965e54a8c914b92, type: 3}
   - {fileID: 1819705648667262722, guid: 85c178bf5818b9d4eaabfda2f072e18d, type: 3}
+  - {fileID: 1819705648667262722, guid: c2adda3f9491d484490a6141df597e4e, type: 3}
+  - {fileID: 1819705648667262722, guid: a8358ded1c86d564095a0701557511e0, type: 3}
   kopalnia: {fileID: 1819705648667262722}
 --- !u!114 &6985540666553226679
 MonoBehaviour:

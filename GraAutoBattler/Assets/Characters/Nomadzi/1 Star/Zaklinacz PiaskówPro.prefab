@@ -220,6 +220,7 @@ GameObject:
   - component: {fileID: 6934024521668934397}
   - component: {fileID: 3712362837729000110}
   - component: {fileID: 1866475100057738247}
+  - component: {fileID: -3241557954592329115}
   - component: {fileID: 7152690618922424433}
   - component: {fileID: 8731495660794391217}
   - component: {fileID: 3378486895949687731}
@@ -322,9 +323,11 @@ MonoBehaviour:
   Range: 0
   AP: 35
   MagicResist: 10
-  Description: "Mo\u017Ce uczy\u0107 si\u0119 zakl\u0119\u0107 mocy. <b>Wtasowuje</b>
-    do puli zakl\u0119cia mocy."
+  Description: "Mo\u017Ce uczy\u0107 si\u0119 zakl\u0119\u0107 mocy. <b>Od\u015Bwie\u017Cenie:
+    </b>Zakl\u0119cia w sklepie s\u0105 darmowe"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0
@@ -341,6 +344,19 @@ MonoBehaviour:
   EvolveHeroes: {fileID: 0}
   Evolution: 1
   strzela: 0
+--- !u!114 &-3241557954592329115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819705648667262722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 844c96f499ecd3447a426e91dc8acbb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shop: {fileID: 0}
 --- !u!114 &7152690618922424433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -354,9 +370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shop: {fileID: 0}
-  zaklecia:
-  - {fileID: 1819705648667262722, guid: 324b1e9775681fa4284d0fe834fc61cd, type: 3}
-  - {fileID: 1819705648667262722, guid: c03c961374aec3b40936002ce3449313, type: 3}
+  zaklecia: []
   spellImage: {fileID: 932906740726290747}
   spell: {fileID: 3357189703965992564, guid: 44b5a15fea7a7ab4e854f3643e72dfff, type: 3}
   spellCanLearn: 02000000

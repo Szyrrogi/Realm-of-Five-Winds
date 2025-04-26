@@ -181,16 +181,19 @@ MonoBehaviour:
   Cost: 6
   Star: 2
   Initiative: 20
-  MaxHealth: 20
-  Health: 20
+  MaxHealth: 1
+  Health: 1
   Attack: 0
   Defense: 0
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "<b>Poczatek Walki: </b> Otrzymujesz z\u0142oto r\xF3wne 25% obecnego
-    z\u0142ota"
+  Description: "<b>Kupno: </b> Zmniejsz warto\u015B\u0107 Banku o 4 <b>Poczatek Walki:
+    </b> Otrzymujesz z\u0142oto ilo\u015Bci zdrowia Banku. <b>Koniec Walki: </b>Zwi\u0119ksz
+    zdrowie Banku o 1 (Maks 4))"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0

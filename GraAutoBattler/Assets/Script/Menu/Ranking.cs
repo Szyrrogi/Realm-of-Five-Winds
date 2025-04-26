@@ -139,6 +139,12 @@ public class Ranking : MonoBehaviour
                         rekordy[0].gameObject.SetActive(true);
                         rekordy[0].number = position;
                         rekordy[0].SetStats(PlayerManager.Id);
+
+                        Debug.Log(position);
+                        if(position <= 5)
+                            Bestiariusz.AddAchivments(11);
+                        if(position == 1)
+                            Bestiariusz.AddAchivments(12);
                     }
                     else
                     {

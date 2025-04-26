@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 9
   Name: "Strza\u0142a Eteru"
-  Cost: 6
+  Cost: 4
   Star: 4
   Initiative: 0
   MaxHealth: 0
@@ -114,7 +114,9 @@ MonoBehaviour:
   MagicResist: 0
   Description: "<b>Atak: </b>Zadaje obra\u017Cenia r\xF3wne dwukrotno\u015Bci Mocy
     Zakle\u0107"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
@@ -124,6 +126,8 @@ MonoBehaviour:
   BoskaTarcza: 0
   attackAP: 0
   Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   unit: {fileID: 0}
   OffensifSpell: 1
   spellType: 2

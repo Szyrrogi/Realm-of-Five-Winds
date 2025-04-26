@@ -26,9 +26,5 @@ public class Grabaż : Heros
         poleDocelowe.unit = newUnit; // Przypisanie jednostki do pola
         newUnit.GetComponent<DragObject>().pole = poleDocelowe;
         newUnit.GetComponent<Unit>().Cost = 1;
-        if(Evolution)
-        {
-            newUnit.GetComponent<Heros>().Evolve();
-        }
     }
 }

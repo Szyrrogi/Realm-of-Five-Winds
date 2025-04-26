@@ -4,12 +4,17 @@ using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
 using TMPro;
+using System.IO;
+using System;
+using System.Data.SqlClient;
 
 
 public class Bestiariusz : MonoBehaviour
 {
     public CharacterManager characterManager;
+    public SynergyManager synergyManager;
     public List<GameObject> Show;
+    public List<Synergy> synergie;
     public int Page;
     public List<Image> Face;
     public List<DescriptionManager> Opisy;
@@ -20,6 +25,12 @@ public class Bestiariusz : MonoBehaviour
 
     public GameObject OpisSzczegolu;
     public TextMeshProUGUI OpisCaly;
+
+    public GameObject Synergie;
+    public GameObject Achievements;
+    public List<GameObject> Osiagniecia;
+    public Vector2[] transformY;
+
 
     public void ShowSzczegoly(int i)
     {
@@ -53,15 +64,144 @@ public class Bestiariusz : MonoBehaviour
 
     public void Start()
     {
+        Page = 0;
         Show = characterManager.characters;
         Show = Filter(Show);
         Complete();
+    }
+
+    public List<Synergy> SortSynergy(List<Synergy> prevSynergy, string napis)
+    {
+        return prevSynergy
+            .Where(s => 
+                napis.Contains($"S{s.Id}S")  // Sprawdza, czy napis zawiera np. "S4S" dla Id=4
+            )
+            .ToList();
+    }
+
+    public void ShowAchivmentsVoid()
+    {
+        Synergie.SetActive(false);
+        Achievements.SetActive(true);
+
+        string firstLine = "";
+        string savePath1 = Application.dataPath + "/Save/Achivments.txt";
+
+        // Sprawdź, czy plik istnieje
+        if (File.Exists(savePath1))
+        {
+            // Odczytaj wszystkie linie z pliku
+            string[] allLines = File.ReadAllLines(savePath1);
+            
+            // Jeśli plik nie jest pusty, weź pierwszą linię
+            if (allLines.Length > 0)
+            {
+                firstLine = allLines[0];
+                Debug.Log("Pierwsza linia: " + firstLine);
+            }
+            else
+            {
+                Debug.LogWarning("Plik jest pusty!");
+            }
+        }
+        else
+        {
+            Debug.LogError("Plik nie istnieje: " + savePath1);
+        }
+        int j = 0;
+        foreach(GameObject New in Osiagniecia)
+        { 
+            Debug.Log("weszło");
+            GameObject newSynergy = Instantiate(New, Achievements.transform); // Parent od razu
+            newSynergy.SetActive(true);
+            if(!firstLine.Contains($"S{j}S"))
+            {
+                newSynergy.GetComponent<Image>().color = Color.gray;
+            }
+            RectTransform rectTransform = newSynergy.GetComponent<RectTransform>();
+            if (rectTransform != null)
+            {
+                //rectTransform.anchoredPosition = transformY[0]; // Jeśli transformY[0] to Vector2
+                rectTransform.localPosition = new Vector3(transformY[j/4].x, transformY[j%4].y, 0);
+            }
+            j++;
+        }
+    }
+
+    public void ShowSynergyVoid()
+    {
+        Synergie.SetActive(true);
+        Achievements.SetActive(false);
+
+        string firstLine = "";
+        string savePath1 = Application.dataPath + "/Save/Synergy.txt";
+
+        // Sprawdź, czy plik istnieje
+        if (File.Exists(savePath1))
+        {
+            // Odczytaj wszystkie linie z pliku
+            string[] allLines = File.ReadAllLines(savePath1);
+            
+            // Jeśli plik nie jest pusty, weź pierwszą linię
+            if (allLines.Length > 0)
+            {
+                firstLine = allLines[0];
+                Debug.Log("Pierwsza linia: " + firstLine);
+            }
+            else
+            {
+                Debug.LogWarning("Plik jest pusty!");
+            }
+        }
+        else
+        {
+            Debug.LogError("Plik nie istnieje: " + savePath1);
+        }
+
+        List <Synergy> prevSynergy = synergyManager.Synergie;
+        prevSynergy = SortSynergy(prevSynergy, firstLine);
 
 
+        int ile = 13;
+        for(int j = 0; j < prevSynergy.Count; j++)
+        { 
+            GameObject newSynergy = Instantiate(prevSynergy[j].opis.gameObject, Synergie.transform); // Parent od razu
+            newSynergy.SetActive(true);
+            RectTransform rectTransform = newSynergy.GetComponent<RectTransform>();
+            if (rectTransform != null)
+            {
+                //rectTransform.anchoredPosition = transformY[0]; // Jeśli transformY[0] to Vector2
+                rectTransform.localPosition = new Vector3(transformY[j/4].x, transformY[j%4].y, 0);
+            }
+        }
     }
 
     public void Complete()
     {
+        foreach (Transform child in Synergie.transform)
+            {
+                Destroy(child.gameObject); // Niszczy każdy obiekt-dziecko
+            }
+     foreach (Transform child in Achievements.transform)
+            {
+                Destroy(child.gameObject); // Niszczy każdy obiekt-dziecko
+            }
+        if(type == 2)
+        {
+            ShowSynergyVoid();
+        }
+        else
+        {
+            if(type == 3)
+            {
+                ShowAchivmentsVoid();
+            }
+            else
+            {
+                Synergie.SetActive(false);
+                Achievements.SetActive(false);
+            }
+        }
         if (type == 0)
         {
             // Oryginalna logika dla type == 0 (4 elementy × 2 miejsca = 8 slotów)
@@ -124,7 +264,7 @@ public class Bestiariusz : MonoBehaviour
                 }
             }
         }
-        else // type == 1
+        if(type == 1) // type == 1
         {
             // Nowa logika dla type == 1 (8 elementów w 8 slotach, bez ewolucji i bez LORE)
             for (int i = 0; i < 8; i++)
@@ -192,4 +332,80 @@ public class Bestiariusz : MonoBehaviour
             // Możesz tutaj ustawić domyślną frakcję lub zignorować
         }
     }
+
+    public static void AddAchivments(int nr)
+    {
+        string savePath1 = Application.dataPath + "/Save/Achivments.txt";
+
+        if (File.Exists(savePath1))
+        {
+            string[] allLines = File.ReadAllLines(savePath1);
+            
+            if (allLines.Length > 0)
+            {
+                string firstLine = allLines[0];
+                Debug.Log("Pierwsza linia: " + firstLine);
+
+                if (!firstLine.Contains($"S{nr}S"))
+                {
+                    // Dopisz nowe osiągnięcie do pliku
+                    File.AppendAllText(savePath1, $"{nr}S");
+                    Debug.Log($"Dopisano S{nr}S do pliku");
+                    
+                    // Przekaż CAŁĄ zawartość pliku do funkcji aktualizującej bazę danych
+                    string allAchievements = File.ReadAllText(savePath1);
+                    UpdateDatabaseAchievement(allAchievements);
+                }
+            }
+            else
+            {
+                File.WriteAllText(savePath1, $"S{nr}S");
+                Debug.Log($"Utworzono plik z S{nr}S");
+                UpdateDatabaseAchievement($"S{nr}S");
+            }
+        }
+        else
+        {
+            Directory.CreateDirectory(Path.GetDirectoryName(savePath1));
+            File.WriteAllText(savePath1, $"S{nr}S");
+            Debug.Log($"Utworzono nowy plik z S{nr}S");
+            UpdateDatabaseAchievement($"S{nr}S");
+        }
+    }
+
+    private static void UpdateDatabaseAchievement(string achievementId)
+    {
+    try
+        {
+            using (SqlConnection con = DB.Connect(DB.conStr))
+            {
+                // Zapytanie SQL do aktualizacji FaceId dla gracza o danym Id
+                string query = "UPDATE Players SET Achievements = @new WHERE Id = @PlayerId";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@new", achievementId);
+                cmd.Parameters.AddWithValue("@PlayerId", PlayerManager.Id);
+                // Wykonaj zapytanie
+                int rowsAffected = cmd.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    Debug.Log("FaceId został pomyślnie zaktualizowany w bazie danych.");
+                }
+                else
+                {
+                    Debug.LogWarning("Nie znaleziono gracza o podanym Id.");
+                }
+            }
+        }
+        catch (SqlException ex)
+        {
+            Debug.LogError("Błąd bazy danych podczas aktualizacji FaceId: " + ex.Message);
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogError("Wystąpił nieoczekiwany błąd: " + ex.Message);
+        }
+    }
+
+  
 }

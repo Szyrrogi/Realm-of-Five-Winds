@@ -347,42 +347,78 @@ public class FightManager : MonoBehaviour
 
     void AddToBase()    //TEST
     {
-        // int rng = UnityEngine.Random.Range(0, 10);
-        // if(Login.zalogowano && Tutorial.tutorial == false && rng <= StatsManager.Round && !Multi.multi && !PlayerManager.SI)
-        // {
-        //     try{
-        //         SqlCommand cmd = new SqlCommand(@"
-        //         INSERT INTO AutoBattlerGame (Version, Name, FaceId, Date, LP, PlayerId, Comp, Round)  
-        //         VALUES (@Version, @Name, @PlayerFaceId, @DataNow, @LP, @Id, @Team, @Round);
-        //         ", DB.con);
+        int rng = UnityEngine.Random.Range(0, 10);
+        if(Login.zalogowano && Tutorial.tutorial == false && rng <= StatsManager.Round && !Multi.multi && !PlayerManager.SI)
+        {
+            rng = UnityEngine.Random.Range(0, 2);
+            if(rng == 0 || StatsManager.Round > 12)
+            {
+            try{
+                SqlCommand cmd = new SqlCommand(@"
+                INSERT INTO AutoBattlerGame (Version, Name, FaceId, Date, LP, PlayerId, Comp, Round)  
+                VALUES (@Version, @Name, @PlayerFaceId, @DataNow, @LP, @Id, @Team, @Round);
+                ", DB.con);
 
-        //         cmd.Parameters.AddWithValue("Version", PlayerManager.Version);
-        //         cmd.Parameters.AddWithValue("Name", PlayerManager.Name);
-        //         cmd.Parameters.AddWithValue("PlayerFaceId", PlayerManager.PlayerFaceId);
-        //         cmd.Parameters.AddWithValue("DataNow", DateTime.Now);
-        //         cmd.Parameters.AddWithValue("Round", StatsManager.Round - 1);
-        //         if(RankedManager.Ranked)
-        //             cmd.Parameters.AddWithValue("LP", PlayerManager.LP);
-        //         else
-        //             cmd.Parameters.AddWithValue("LP", 0);
-        //         cmd.Parameters.AddWithValue("Id", PlayerManager.Id);
+                cmd.Parameters.AddWithValue("Version", PlayerManager.Version);
+                cmd.Parameters.AddWithValue("Name", PlayerManager.Name);
+                cmd.Parameters.AddWithValue("PlayerFaceId", PlayerManager.PlayerFaceId);
+                cmd.Parameters.AddWithValue("DataNow", DateTime.Now);
+                cmd.Parameters.AddWithValue("Round", StatsManager.Round - 1);
+                if(RankedManager.Ranked)
+                    cmd.Parameters.AddWithValue("LP", PlayerManager.LP);
+                else
+                    cmd.Parameters.AddWithValue("LP", 0);
+                cmd.Parameters.AddWithValue("Id", PlayerManager.Id);
 
-        //         string filePath = Application.dataPath + "/Save/Zapis.json";
-        //         if(RankedManager.Ranked)
-        //         {
-        //             filePath = Application.dataPath + "/Save/ZapisR.json";
-        //         }
-        //         string jsonContent = File.ReadAllText(filePath);
+                string filePath = Application.dataPath + "/Save/Zapis.json";
+                if(RankedManager.Ranked)
+                {
+                    filePath = Application.dataPath + "/Save/ZapisR.json";
+                }
+                string jsonContent = File.ReadAllText(filePath);
 
-        //         cmd.Parameters.AddWithValue("Team", jsonContent);
+                cmd.Parameters.AddWithValue("Team", jsonContent);
             
-        //         DB.execSQL(cmd);
-        //     }
-        //     catch(Exception ex)
-        //     {
-        //         Debug.Log(ex.Message);
-        //     }
-        // }
+                DB.execSQL(cmd);
+            }
+            catch(Exception ex)
+            {
+                Debug.Log(ex.Message);
+            }
+            }
+        }
+    }
+
+    void CheckAchivment()
+    {
+        if(StatsManager.win == 12)
+        {
+            if(Fraction.fractionList.Count == 3)
+            {
+                Bestiariusz.AddAchivments(5);
+            }
+            if(Fraction.fractionList.Count == 4)
+            {
+                Bestiariusz.AddAchivments(6);
+            }
+            if(Fraction.fractionList.Count == 5)
+            {
+                Bestiariusz.AddAchivments(7);
+            }
+            if(Fraction.fractionList.Count == 1)
+            {
+                if(Fraction.fractionList.Contains(Fraction.fractionType.Ludzie))
+                    Bestiariusz.AddAchivments(0);
+                if(Fraction.fractionList.Contains(Fraction.fractionType.Nekro))
+                    Bestiariusz.AddAchivments(1);
+                if(Fraction.fractionList.Contains(Fraction.fractionType.Nomadzi))
+                    Bestiariusz.AddAchivments(2);
+                if(Fraction.fractionList.Contains(Fraction.fractionType.Krasnoludy))
+                    Bestiariusz.AddAchivments(3);
+                if(Fraction.fractionList.Contains(Fraction.fractionType.Elfy))
+                    Bestiariusz.AddAchivments(4);
+            }
+        }
     }
 
    void sprawdzKtoWygralWParach(int[][] paryLinii)
@@ -404,6 +440,7 @@ public class FightManager : MonoBehaviour
             AddToBase();
             //Debug.Log("WYGRANKO");
             StatsManager.win++;
+            CheckAchivment();
             if(PlayerManager.SI && StatsManager.win == 12)
             {
                 SceneManager.LoadScene(2);

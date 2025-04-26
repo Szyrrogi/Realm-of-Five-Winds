@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6934024521668934397}
   - component: {fileID: 3712362837729000110}
-  - component: {fileID: 76561568034174374}
+  - component: {fileID: -8146070362562934701}
   - component: {fileID: 8731495660794391217}
   - component: {fileID: 3378486895949687731}
   m_Layer: 0
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &76561568034174374
+--- !u!114 &-8146070362562934701
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1819705648667262722}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e86cf9c12dc709f42a588a0a0b51465a, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e77eefccba6c34439aac814177ac760, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 53
@@ -114,7 +114,9 @@ MonoBehaviour:
   MagicResist: 15
   Description: "Pojawia si\u0119 w sklepie, gdy nic innego nie mo\u017Ce si\u0119
     pojawi\u0107"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 0
   Enemy: 0
@@ -128,7 +130,7 @@ MonoBehaviour:
   ReadyToJump: 0
   AttackText: {fileID: 2333975298996084202}
   HealthText: {fileID: 7890684635397795595}
-  EvolveHeroes: {fileID: 1819705648667262722, guid: 66690a73e990da74fb67a8ae92cca4f2, type: 3}
+  EvolveHeroes: {fileID: 0}
   Evolution: 1
 --- !u!114 &8731495660794391217
 MonoBehaviour:

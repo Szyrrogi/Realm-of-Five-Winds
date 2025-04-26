@@ -87,7 +87,6 @@ GameObject:
   - component: {fileID: 6934024521668934397}
   - component: {fileID: 3712362837729000110}
   - component: {fileID: 4109624472066929426}
-  - component: {fileID: -5132592143303135331}
   - component: {fileID: 6985540666553226679}
   - component: {fileID: 8286433214309528574}
   m_Layer: 0
@@ -191,7 +190,9 @@ MonoBehaviour:
   MagicResist: 0
   Description: "<b>Pocz\u0105tek Walki: </b>Daj efekt <b>Morali</b> dla </b>Ulepszonych<b>
     jednostek w rz\u0119dzie"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
@@ -204,22 +205,6 @@ MonoBehaviour:
   CanJump: 0
   ReadyToJump: 0
   HealthText: {fileID: 3501279418940951141}
---- !u!114 &-5132592143303135331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1819705648667262722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d69fb893111c55a46b21abbb02b60af9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shop: {fileID: 0}
-  golem: {fileID: 1819705648667262722, guid: f4b96b437492cc742896b5da0f757692, type: 3}
-  DuzyGolem: {fileID: 1819705648667262722, guid: f4b96b437492cc742896b5da0f757692, type: 3}
-  kopalnia: {fileID: 1819705648667262722}
 --- !u!114 &6985540666553226679
 MonoBehaviour:
   m_ObjectHideFlags: 0

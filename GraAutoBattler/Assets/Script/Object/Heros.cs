@@ -14,8 +14,15 @@ public class Heros : Unit
     
     Image attackRamka;
 
+    public static bool SzescsetHP;
+
     public virtual void Update()
     {
+        if(Health >= 600 && !SzescsetHP)
+        {
+            SzescsetHP = true;
+            Bestiariusz.AddAchivments(10);
+        }
         if(attackAP)
         {
             attackRamka = AttackText.GetComponentInParent<Image>();
@@ -166,6 +173,7 @@ public class Heros : Unit
 
     public virtual void Evolve()
     {
+        Debug.Log("czesc");
         GameObject newUnitObject = Instantiate(EvolveHeroes, gameObject.transform.position, Quaternion.identity);
         Heros newUnit = newUnitObject.GetComponent<Heros>();
 

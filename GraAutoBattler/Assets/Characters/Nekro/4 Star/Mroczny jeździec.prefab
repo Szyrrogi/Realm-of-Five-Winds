@@ -112,8 +112,10 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: '<b>Atak: </b>zmniejsz Obrone przeciwnika o 5'
+  Description: '<b>Atak: </b>zmniejsz Obrone przeciwnika o 10'
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 2
   Enemy: 0

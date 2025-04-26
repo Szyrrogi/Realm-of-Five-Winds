@@ -41,6 +41,19 @@ public class MultiHP : MonoBehaviour
             int myPlayerID = PhotonNetwork.LocalPlayer.ActorNumber;
             photonView.RPC("UpdatePlayerJoin", RpcTarget.All, myPlayerID, 3, PlayerManager.Name, PlayerManager.PlayerFaceId);
         }
+        else
+        {
+            for(int i = 0; i < HealthPlayer.Count; i++)
+            {
+
+                HealthPlayer[i].gameObject.SetActive(false);
+            }
+            for(int i = 0; i < Gracze.Count; i++)
+            {
+
+                Gracze[i].gameObject.SetActive(false);
+            }
+        }
     }
     [PunRPC]
     public void UpdatePlayerJoin(int id, int hp, string name, int image)

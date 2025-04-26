@@ -86,7 +86,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6934024521668934397}
   - component: {fileID: 3712362837729000110}
-  - component: {fileID: -6892617005913496730}
+  - component: {fileID: 162693019756204639}
   - component: {fileID: 827349473763045422}
   - component: {fileID: 6985540666553226679}
   - component: {fileID: 8286433214309528574}
@@ -165,7 +165,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-6892617005913496730
+--- !u!114 &162693019756204639
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1819705648667262722}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dd58259e5add7c41bddd5d954785fda, type: 3}
+  m_Script: {fileID: 11500000, guid: 5884da60c0958ec488c39be894a22c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 7
@@ -189,7 +189,9 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "Zapewnia anio\u0142a w sklepie na poczatku ka\u017Cdej rundy"
+  Description: "Zapewnia anio\u0142a w sklepie na poczatku ka\u017Cdej rundy <b>Poczatek
+    Walki: </b>Zwi\u0119ksz atak oraz zdrowie o 20 dla Anio\u0142\xF3w"
+  Lore: 
   CPU: 0
   Typy: 04000000
   UpgradeLevel: 0
@@ -204,6 +206,8 @@ MonoBehaviour:
   CanJump: 0
   ReadyToJump: 0
   HealthText: {fileID: 3501279418940951141}
+  pattern: []
+  type: 4
 --- !u!114 &827349473763045422
 MonoBehaviour:
   m_ObjectHideFlags: 0

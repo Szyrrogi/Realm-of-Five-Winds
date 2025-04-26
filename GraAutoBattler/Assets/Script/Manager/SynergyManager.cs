@@ -8,6 +8,8 @@ public class SynergyManager : MonoBehaviour
     public GameObject parentObject;
     public Dictionary<int, GameObject> ActiveSynergyObjects = new Dictionary<int, GameObject>();
 
+    public static bool PiecAktywnych;
+
     public GameObject parentObjectEnemy;
     public Dictionary<int, GameObject> ActiveSynergyObjectsEnemy = new Dictionary<int, GameObject>();
 
@@ -23,6 +25,11 @@ public class SynergyManager : MonoBehaviour
 
     void Update()
     {
+        if(ActiveSynergyObjects.Count >= 5 && !PiecAktywnych)
+        {
+            PiecAktywnych = true;
+            Bestiariusz.AddAchivments(13);
+        }
         if(!FightManager.IsFight)
         {
             foreach (Synergy synergy in Synergie)

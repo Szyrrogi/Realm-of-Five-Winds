@@ -22,7 +22,7 @@ public class CharacterManager : MonoBehaviour
                 {
                     Heros lepszy = heros.EvolveHeroes.GetComponent<Heros>();
 
-                    Debug.Log((heros.UpgradeNeed -1) +" " + heros.Name);
+            
                     lepszy.MaxHealth = (int)(heros.MaxHealth);
                     lepszy.Health = (int)(heros.Health);
 

@@ -7,8 +7,8 @@ public class MrocznyJeździec : Heros
     public override int BeforAttack(GameObject enemy, int damage)
     {
         Unit unit = enemy.GetComponent<Unit>();
-        unit.Defense -= 5;
-        if(unit.MagicResist < 0)
+        unit.Defense -= 10;
+        if(unit.Defense < 0)
             unit.Defense = 0;
         return damage;
     }

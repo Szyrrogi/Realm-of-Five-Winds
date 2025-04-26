@@ -37,4 +37,11 @@ public class GryfLucznik : Heros
             yield return StartCoroutine(base.Fight());
         }
     }
+
+    public override void Evolve()
+    {
+        Debug.Log("siema");
+        Bestiariusz.AddAchivments(8);
+        base.Evolve();
+    }
 }
