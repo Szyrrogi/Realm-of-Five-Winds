@@ -76,7 +76,7 @@ public class PlayerManager : MonoBehaviour
 
     public void Logout()
     {
-        Login.zalogowano = false;
+        Login.loggedP = false;
         Name = "Player";
         Id = 0;
         LP = 0;
@@ -128,7 +128,7 @@ public class PlayerManager : MonoBehaviour
     public void ReadInput(bool save)
     {
         isSave = save;
-        if (Login.zalogowano || save)
+        if (Login.loggedP || save)
         {
             RankedManager.Ranked = false; //TEST
             if (save || Fraction.fractionList.Count != 0)
@@ -168,7 +168,7 @@ public class PlayerManager : MonoBehaviour
 
     public void ReadInputMulti()
     {
-        if (Login.zalogowano)
+        if (Login.loggedP)
         {
             RankedManager.Ranked = false; //TEST
             if (Fraction.fractionList.Count != 0)
@@ -199,7 +199,7 @@ public class PlayerManager : MonoBehaviour
     }
     public void StartRanked()
     {
-        if (Login.zalogowano)
+        if (Login.loggedP)
         {
             RankedManager.Ranked = true;
             string savePath2 = Application.dataPath + "/Save/Save2R.json";

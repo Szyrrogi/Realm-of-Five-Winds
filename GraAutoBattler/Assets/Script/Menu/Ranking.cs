@@ -114,7 +114,7 @@ public class Ranking : MonoBehaviour
                 reader.Close();
 
                 // 3. Znalezienie pozycji gracza o PlayerId = 2 (lub aktualnie zalogowanego gracza)
-                if (Login.zalogowano)
+                if (Login.loggedP)
                 {
                     string queryPosition = @"
                         WITH RankedPlayers AS (
