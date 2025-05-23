@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class SzamanPiasków : Heros
 {
+    public bool Synergy;
     public override IEnumerator OnBattleStart()
     {
         if(findPole() != null && findPole().GetComponent<Pole>().unit != null && Enemy == findPole().GetComponent<Pole>().unit.GetComponent<Unit>().Enemy)
         {
             Unit friendlyUnit = findPole().GetComponent<Pole>().unit.GetComponent<Unit>();
+            yield return new WaitForSeconds(0.4f );
+            int buff = Evolution ? 45 : 20;
+            friendlyUnit.ShowPopUp(Evolution ? "+45" : "+20", new Color(0.5f ,0 , 1f));
+            friendlyUnit.AP += buff;
+        }
+        if(PrefUnit() != null && Synergy)
+        {
+            Unit friendlyUnit = PrefUnit();
             yield return new WaitForSeconds(0.4f );
             int buff = Evolution ? 45 : 20;
             friendlyUnit.ShowPopUp(Evolution ? "+45" : "+20", new Color(0.5f ,0 , 1f));

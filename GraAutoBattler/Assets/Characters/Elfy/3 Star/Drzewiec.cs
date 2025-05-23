@@ -6,7 +6,7 @@ public class Drzewiec : Heros
 {
     public override int BeforDamage(GameObject enemy, int damage)
     {
-        int Buff = Evolution ? 10 : 5;
+        int Buff = Evolution ? 20 : 10;
         Defense += Buff;
         if(Defense > (Evolution ? 70 : 50))
         {

@@ -11,7 +11,7 @@ using System.IO;
 
 public class PlayerManager : MonoBehaviour
 {
-    public static string Version = "0.6.0";
+    public static string Version = "0.7.0";
     public static int PlayerFaceId;
     public static string Name = "Player";
     public static int Id = 0;

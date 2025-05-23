@@ -153,7 +153,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fe7ff51c0ebedbe4ea54e6721bf74129, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 20ab9bf212b1ec8438c5af57c15960b8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Oaza
+  Name: Punkt Mocy
   Cost: 5
   Star: 3
   Initiative: 20
@@ -188,9 +188,11 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "<b>Pocz\u0105tek Walki: </b>Daj pierwszej jednostce w rz\u0119dzie
-    <b>Skok</b>"
+  Description: "<b>Pocz\u0105tek Walki: </b>Zwi\u0119ksza Moc Zakl\u0119\u0107 Wszystkich
+    przyjaznych jednostek na polu o 15"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0

@@ -6,10 +6,8 @@ public class Kostucha : Heros
 {
     public override IEnumerator Fight()
     {
-        //Debug.Log("Klepa " + gameObject.name + " " + findPole().name);
         if(findPole() != null && findPole().GetComponent<Pole>().unit != null && Enemy != findPole().GetComponent<Pole>().unit.GetComponent<Unit>().Enemy)
         {
-            //Debug.Log("Doszło " + gameObject.name);
             Unit enemyUnit = findPole().GetComponent<Pole>().unit.GetComponent<Unit>();
             yield return StartCoroutine(enemyUnit.TakeDamage(this, enemyUnit.BeforDamage(gameObject, BeforAttack(enemyUnit.gameObject, Evolution ? Attack + AP : Attack)),TypeDamage.typeDamage.TrueDamage));
         }
@@ -24,7 +22,6 @@ public class Kostucha : Heros
                     {
                         Unit enemyUnit = findPole(pole.GetComponent<Pole>()).GetComponent<Pole>().unit.GetComponent<Unit>();
                         yield return StartCoroutine(enemyUnit.TakeDamage(this, enemyUnit.BeforDamage(gameObject, BeforAttack(enemyUnit.gameObject, Evolution ? Attack + AP: Attack)),TypeDamage.typeDamage.TrueDamage));
-                        //yield return StartCoroutine(enemyUnit.TakeDamage(this, enemyUnit.BeforDamage(gameObject ,BeforAttack(enemyUnit.gameObject, Attack))));
                     }
                 }
             }

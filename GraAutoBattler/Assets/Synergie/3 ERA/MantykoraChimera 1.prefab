@@ -1,80 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1846997656245107080
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5860915102674708842}
-  - component: {fileID: 6253237883279437392}
-  - component: {fileID: 2949144760334230854}
-  m_Layer: 5
-  m_Name: Postac1 (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &5860915102674708842
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1846997656245107080}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5130902345505670928}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 63.5632, y: 60.932114}
-  m_SizeDelta: {x: 45.4527, y: 45.4527}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &6253237883279437392
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1846997656245107080}
-  m_CullTransparentMesh: 1
---- !u!114 &2949144760334230854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1846997656245107080}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 42e2cf5c8207fa748883e56fee4d309a, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &4466520644940487269
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000025809, y: -24.165}
+  m_AnchoredPosition: {x: 0.5864, y: -31.3201}
   m_SizeDelta: {x: 198.8273, y: 125.013}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4565277256562051462
@@ -140,8 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u015Aciana otrzymuje obra\u017Cenia r\xF3wne zdrowiu, oraz mo\u017Cliwo\u015B\u0107
-    atakowania."
+  m_text: "Ghul i Czerw \u0142\u0105cz\u0105 si\u0119 w Martwego Czerwa"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -244,8 +168,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.0089035, y: 60.932114}
-  m_SizeDelta: {x: 45.4527, y: 45.4527}
+  m_AnchoredPosition: {x: 45.194923, y: 51.29269}
+  m_SizeDelta: {x: 67.1045, y: 67.1045}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7044108768073341116
 CanvasRenderer:
@@ -275,7 +199,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 030476a38c9668641be93039eff86f2e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0071486947c467f4d9a97876dec5c3c7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -296,10 +220,10 @@ GameObject:
   - component: {fileID: 292870131235885082}
   - component: {fileID: 3476337413133133026}
   - component: {fileID: 8249036796112440023}
-  - component: {fileID: 8773909805203249213}
+  - component: {fileID: 113255642492198537}
   - component: {fileID: 3381878301015555066}
   m_Layer: 5
-  m_Name: MurazSciana
+  m_Name: MantykoraChimera 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -353,7 +277,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 42e2cf5c8207fa748883e56fee4d309a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 289accee050b84440ba3ec11e0e6b474, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -363,7 +287,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8773909805203249213
+--- !u!114 &113255642492198537
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -372,17 +296,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 8357941094149452868}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 384d2c20d76cc7846891caa833bb3f7b, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c169fad6e5a8b0479f53780840be3ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   units:
-  - {fileID: -3614019358125691782, guid: 7898c5a34b0f3c44da944064c9a048cd, type: 3}
-  - {fileID: 7608446387815878273, guid: 2132e56eac42d5a4a842c365ba1e44a8, type: 3}
-  - {fileID: 618453208255360705, guid: 2e32773a792475e418af6d989965ffc4, type: 3}
+  - {fileID: 491914073299535612, guid: cfe23d6606579fb46ba7259628222191, type: 3}
+  - {fileID: 6214767176838185136, guid: a833c6b1ecdd1ae4385b0b7e6c8224b0, type: 3}
   Id: 0
   opis: {fileID: 8452588779678101426}
   showOpis: 0
   Enemy: 0
+  EvolutionObject: {fileID: 1819705648667262722, guid: 0022da2966400134894856cd10538615, type: 3}
 --- !u!114 &3381878301015555066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -400,7 +324,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 8773909805203249213}
+        - m_Target: {fileID: 113255642492198537}
           m_TargetAssemblyTypeName: Synergy, Assembly-CSharp
           m_MethodName: OnMouseEnter
           m_Mode: 1
@@ -416,7 +340,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 8773909805203249213}
+        - m_Target: {fileID: 113255642492198537}
           m_TargetAssemblyTypeName: Synergy, Assembly-CSharp
           m_MethodName: OnMouseExit
           m_Mode: 1
@@ -462,8 +386,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -57, y: 61}
-  m_SizeDelta: {x: 45.3175, y: 45.3175}
+  m_AnchoredPosition: {x: -43.4, y: 51.3928}
+  m_SizeDelta: {x: 66.905, y: 66.905}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &518408290047654329
 CanvasRenderer:
@@ -493,7 +417,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e15dadb457ede6a498f516f22df92e1c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 14550c5ec26974a4e8d55484b527a39d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -515,7 +439,7 @@ GameObject:
   - component: {fileID: 4162957269100422369}
   - component: {fileID: 1515748511690866059}
   m_Layer: 5
-  m_Name: Image
+  m_Name: GilgiaOgnia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -535,7 +459,6 @@ RectTransform:
   m_Children:
   - {fileID: 2731836154538236692}
   - {fileID: 8869937495663673343}
-  - {fileID: 5860915102674708842}
   - {fileID: 1317980698591522057}
   m_Father: {fileID: 292870131235885082}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

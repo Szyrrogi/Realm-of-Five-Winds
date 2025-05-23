@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Architekt podwaja zdrowie \u015Bciany"
+  m_text: "Rz\u0105gler otrzymuje 20 Si\u0142y"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -168,8 +168,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 45.194923, y: 51.29269}
-  m_SizeDelta: {x: 67.1045, y: 67.1045}
+  m_AnchoredPosition: {x: 42.49686, y: 49.6725}
+  m_SizeDelta: {x: 66.2727, y: 66.2727}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7044108768073341116
 CanvasRenderer:
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 030476a38c9668641be93039eff86f2e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3c1826f6dd127cf448b61fe8e9e8ec31, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -220,10 +220,10 @@ GameObject:
   - component: {fileID: 292870131235885082}
   - component: {fileID: 3476337413133133026}
   - component: {fileID: 8249036796112440023}
-  - component: {fileID: 8663922051927190636}
+  - component: {fileID: 5811439622190503248}
   - component: {fileID: 3381878301015555066}
   m_Layer: 5
-  m_Name: ArchitektSciana
+  m_Name: zanglerKamikaze
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -277,7 +277,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 865f9c0ba6fdd40479c621cbc4c6f68d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7723377017ea2c0458c9a4f24915ac12, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -287,7 +287,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8663922051927190636
+--- !u!114 &5811439622190503248
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -296,12 +296,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8357941094149452868}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2effb1503b673f74d877fdc6c894caf2, type: 3}
+  m_Script: {fileID: 11500000, guid: d489be5f3b23e4b47ac68b6145c05aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   units:
-  - {fileID: -3614019358125691782, guid: 7898c5a34b0f3c44da944064c9a048cd, type: 3}
-  - {fileID: 809259995063140656, guid: a3cb0b5748902fc47abf90cc250ad7bf, type: 3}
+  - {fileID: 5794688510251968745, guid: 906b066ef0c8a0c45bb013015e3a8430, type: 3}
+  - {fileID: -20797461227150916, guid: 4d86db7df57e3dd449d3630a0e810a53, type: 3}
   Id: 0
   opis: {fileID: 8452588779678101426}
   showOpis: 0
@@ -323,7 +323,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 8663922051927190636}
+        - m_Target: {fileID: 5811439622190503248}
           m_TargetAssemblyTypeName: Synergy, Assembly-CSharp
           m_MethodName: OnMouseEnter
           m_Mode: 1
@@ -339,7 +339,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 8663922051927190636}
+        - m_Target: {fileID: 5811439622190503248}
           m_TargetAssemblyTypeName: Synergy, Assembly-CSharp
           m_MethodName: OnMouseExit
           m_Mode: 1
@@ -385,8 +385,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -43.4, y: 51.3928}
-  m_SizeDelta: {x: 66.905, y: 66.905}
+  m_AnchoredPosition: {x: -45, y: 49.771507}
+  m_SizeDelta: {x: 66.0754, y: 66.0754}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &518408290047654329
 CanvasRenderer:
@@ -416,7 +416,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 865f9c0ba6fdd40479c621cbc4c6f68d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7723377017ea2c0458c9a4f24915ac12, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 4162957269100422369}
   - component: {fileID: 1515748511690866059}
   m_Layer: 5
-  m_Name: Image
+  m_Name: GilgiaOgnia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -16,9 +16,24 @@ public class Heros : Unit
 
     public static bool SzescsetHP;
 
+    GameObject ShildObject;
+
     public virtual void Update()
     {
-        if(Health >= 600 && !SzescsetHP)
+        if(ShildObject == null && BoskaTarcza)
+        {
+            ShildObject = Instantiate(
+                EventSystem.eventSystem.GetComponent<FightManager>().ShildObject, 
+                gameObject.transform.position, 
+                Quaternion.identity, 
+                AttackText.transform.parent.transform.parent
+            );
+        }
+        if(ShildObject != null && !BoskaTarcza)
+        {
+            Destroy(ShildObject);
+        }
+        if(Health >= 600 && !SzescsetHP && !Enemy)
         {
             SzescsetHP = true;
             Bestiariusz.AddAchivments(10);
@@ -58,7 +73,6 @@ public class Heros : Unit
                             yield return StartCoroutine(enemyUnit.TakeDamage(this, enemyUnit.BeforDamage(gameObject, BeforAttack(enemyUnit.gameObject, Attack))));
                         else
                             yield return StartCoroutine(enemyUnit.TakeDamage(this, enemyUnit.BeforDamage(gameObject, BeforAttack(enemyUnit.gameObject, AP)),TypeDamage.typeDamage.Magic));
-                        //yield return StartCoroutine(enemyUnit.TakeDamage(this, enemyUnit.BeforDamage(gameObject ,BeforAttack(enemyUnit.gameObject, Attack))));
                     }
                 }
             }
@@ -73,6 +87,15 @@ public class Heros : Unit
         AP += (int)(AP * 0.2f);
         Health += (int)(Health * 0.2f);
         MaxHealth += (int)(MaxHealth * 0.2f);
+    }
+
+    public override void Bezradnosc()
+    {
+        ShowPopUp("BEZRADNOŚĆ", Color.red);
+        Attack -= (int)(Attack * 0.2f);
+        AP -= (int)(AP * 0.2f);
+        Health -= (int)(Health * 0.2f);
+        MaxHealth -= (int)(MaxHealth * 0.2f);
     }
 
     

@@ -175,20 +175,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 160a45acb51024c468340db782544b85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 216
   Name: Drzewiec
-  Cost: 7
+  Cost: 21
   Star: 3
-  Initiative: 20
-  MaxHealth: 110
-  Health: 110
-  Attack: 40
+  Initiative: 24
+  MaxHealth: 198
+  Health: 198
+  Attack: 72
   Defense: 5
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: '<b>Gdy zostanie zaatakowany: </b>Otrzymuje 10 Obrony (Maksymalnie
+  Description: '<b>Gdy zostanie zaatakowany: </b>Otrzymuje 20 Obrony (Maksymalnie
     70)'
+  Lore: 
   CPU: 0
   Typy: 05000000
   UpgradeLevel: 1

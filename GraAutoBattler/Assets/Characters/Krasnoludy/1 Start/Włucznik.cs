@@ -5,6 +5,7 @@ using System.Linq;
 
 public class Włucznik : Heros
 {
+    public bool Synergy;
     public override IEnumerator Fight()
     {
         if(Range >= 1)
@@ -28,7 +29,11 @@ public class Włucznik : Heros
                 if (pole.unit != null && pole.unit.GetComponent<Unit>().Enemy != Enemy)
                 {
                     Unit enemyUnit = pole.unit.GetComponent<Unit>();
-                    yield return StartCoroutine(enemyUnit.TakeDamage(this, enemyUnit.BeforDamage(gameObject, BeforAttack(enemyUnit.gameObject, Attack))));
+                    if(Synergy)
+                        yield return StartCoroutine(enemyUnit.TakeDamage(this, enemyUnit.BeforDamage(gameObject, BeforAttack(enemyUnit.gameObject, Attack)),TypeDamage.typeDamage.TrueDamage));
+                    else
+                        yield return StartCoroutine(enemyUnit.TakeDamage(this, enemyUnit.BeforDamage(gameObject, BeforAttack(enemyUnit.gameObject, Attack))));
+                    
                     break;
                 }
             }

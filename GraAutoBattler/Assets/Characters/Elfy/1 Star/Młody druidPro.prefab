@@ -113,8 +113,10 @@ MonoBehaviour:
   AP: 15
   MagicResist: 0
   Description: "<b>Pocz\u0105tek Walki: </b>Otrzymuje 20 Mocy Zakl\u0119\u0107 za
-    ka\u017Cde drzewo na <b>arenie</b>"
+    ka\u017Cd\u0105 jednostke z typem drzewa na <b>arenie</b>"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0

@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce1d124cd2c8b3b4e93e2eaabf488688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 153
   Name: Sprzedawca
   Cost: 2
   Star: 1
@@ -112,8 +112,11 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "Mo\u017Ce zosta\u0107 sprzedany za pe\u0142n\u0105 cen\u0119"
+  Description: "Mo\u017Ce zosta\u0107 sprzedany za pe\u0142n\u0105 cen\u0119. <b>Ulepszenie:
+    </b>Zmniejsz koszt postaci w sklepie o 1"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0
@@ -129,6 +132,7 @@ MonoBehaviour:
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 1819705648667262722, guid: b84b3249ef091554f83c2291541b6fb4, type: 3}
   Evolution: 0
+  shop: {fileID: 0}
 --- !u!114 &8731495660794391217
 MonoBehaviour:
   m_ObjectHideFlags: 0

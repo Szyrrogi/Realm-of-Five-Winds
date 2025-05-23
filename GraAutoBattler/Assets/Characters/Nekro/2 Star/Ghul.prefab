@@ -112,8 +112,9 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "Gdy jaka\u015B jednostka zginie w tym rz\u0119dzie, Ghul otrzymuje
-    +12/12 "
+  Description: "Gdy jaka\u015B przyjazna jednostka zginie w tym rz\u0119dzie, Ghul
+    otrzymuje +12/12 "
+  Lore: 
   CPU: 0
   Typy: 
   UpgradeLevel: 1

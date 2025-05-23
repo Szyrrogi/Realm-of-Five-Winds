@@ -12,6 +12,7 @@ public class General : Heros
             findPole().GetComponent<Pole>().unit.GetComponent<Czerw>().buff();
         }
         Ghul.IsGhul(this);
+        MartwyCzerw.IsGhul(this);
         Loch.FirstDeathCheck(this);
         int archaniol = Archaniol.IsArchaniol(this);
         if(archaniol == 0)

@@ -9,7 +9,7 @@ public class Drzewo : Heros
         int ile = 0;
         foreach(Unit unit in EventSystem.eventSystem.GetComponent<FightManager>().units)
         {
-            if(unit.gameObject.GetComponent<Drzewo>() && unit.Enemy == isEnemy)
+            if(unit.Typy.Contains(CreatureType.Drzewo) && unit.Enemy == isEnemy)
             {
                 ile++;
             }
@@ -48,7 +48,7 @@ public class Drzewo : Heros
     {
         foreach(Pole pole in GetComponent<DragObject>().pole.line.pola)
         {
-            if(pole.unit != null && pole.unit.GetComponent<Unit>().Name != Name)
+            if(pole.unit != null)
             {
                 pole.unit.GetComponent<Unit>().AP += 7;
                 pole.unit.GetComponent<Unit>().ShowPopUp("+7", new Color(0.5f, 0f, 1f));
@@ -59,7 +59,7 @@ public class Drzewo : Heros
     {
         foreach(Pole pole in GetComponent<DragObject>().pole.line.pola)
         {
-            if(pole.unit != null && pole.unit.GetComponent<Unit>().Name != Name)
+            if(pole.unit != null )
             {
                 pole.unit.GetComponent<Unit>().Attack += 7;
                 pole.unit.GetComponent<Unit>().ShowPopUp("+7", Color.yellow);
@@ -70,7 +70,7 @@ public class Drzewo : Heros
     {
         foreach(Pole pole in GetComponent<DragObject>().pole.line.pola)
         {
-            if(pole.unit != null && pole.unit.GetComponent<Unit>().Name != Name)
+            if(pole.unit != null)
             {
                 pole.unit.GetComponent<Unit>().Health += 9;
                 pole.unit.GetComponent<Unit>().MaxHealth += 9;

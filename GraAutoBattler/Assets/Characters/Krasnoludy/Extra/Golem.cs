@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Golem : Heros
 {
+    public bool WielkiGolem;
+    public override void AfterBuy()
+    {
+        if(WielkiGolem)
+            Bestiariusz.AddAchivments(14);
+    }
     public override int BeforDamage(GameObject enemy, int damage)
     {
         enemy.GetComponent<Unit>().Health -= AP;

@@ -10,7 +10,7 @@ public class ElfiDowódca : Heros
         {
             foreach(Unit unit in EventSystem.eventSystem.GetComponent<FightManager>().units)
                 {
-                    if(unit != null && unit.Range > 0)
+                    if(unit != null && unit.Range > 0 && unit.Enemy == Enemy && unit.gameObject.GetComponent<Heros>())
                     {
                         unit.Attack += AP;
                         unit.ShowPopUp(AP.ToString(), Color.green);
@@ -22,7 +22,7 @@ public class ElfiDowódca : Heros
         {
             foreach(Pole pole in GetComponent<DragObject>().pole.line.pola)
             {
-                if(pole.unit != null && pole.unit.GetComponent<Unit>().Range > 0)
+                if(pole.unit != null && pole.unit.GetComponent<Unit>().Range > 0 && pole.unit.GetComponent<Unit>().Enemy == Enemy && pole.unit.GetComponent<Heros>())
                 {
                     pole.unit.GetComponent<Unit>().Attack += AP;
                     pole.unit.GetComponent<Unit>().ShowPopUp(AP.ToString(), Color.green);

@@ -35,6 +35,7 @@ public class FightManager : MonoBehaviour
     public TextMeshProUGUI waitingText;
 
     public EventObject fatyga;
+    public GameObject ShildObject;
     //public Music music;
     private bool isBattleRunning = false;
 
@@ -698,7 +699,7 @@ public class FightManager : MonoBehaviour
         StartCoroutine(MoveAndZoomCamera(new Vector3(0, 0, -20f), mainCamera.orthographicSize - 1f));
         EventSystem.eventSystem.GetComponent<SynergyManager>().ClearEnemySynergies();
         
-        if(StatsManager.Round == 2 && StatsManager.life != 3 && !Multi.multi)
+        if((StatsManager.Round == 2 || StatsManager.Round == 7) && StatsManager.life != 3 && !Multi.multi)
         {
             StartCoroutine(ShowEndScreen(3));
             StatsManager.life++;

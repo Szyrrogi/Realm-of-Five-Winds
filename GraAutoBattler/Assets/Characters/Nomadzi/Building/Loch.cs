@@ -12,6 +12,7 @@ public class Loch : Building
     void Start()
     {
         shop = EventSystem.eventSystem.GetComponent<ShopManager>();
+        base.Start();
     }
     public override IEnumerator OnBattleStart()
     {

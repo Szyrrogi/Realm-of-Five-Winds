@@ -14,6 +14,7 @@ public class Szczur : Heros
                 findPole().GetComponent<Pole>().unit.GetComponent<Czerw>().buff();
             }
             Ghul.IsGhul(this);
+            MartwyCzerw.IsGhul(this);
             yield return Summon(szczur); 
         }
         else

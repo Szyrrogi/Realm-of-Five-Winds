@@ -133,17 +133,32 @@ public class PauseMenu : MonoBehaviour
 
     public void SetMasterVolume(float volume)
     {
-        audioMixer.SetFloat("Master", Mathf.Log10(volume) * 20);
+        float newVolume = Mathf.Log10(volume) * 20;
+        if(volume == 0)
+        {
+            newVolume = -80f;
+        }
+        audioMixer.SetFloat("Master", newVolume);
     }
 
     public void SetMusicVolume(float volume)
     {
-        audioMixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20);
+        float newVolume = Mathf.Log10(volume) * 20;
+        if(volume == 0)
+        {
+            newVolume = -80f;
+        }
+        audioMixer.SetFloat("MusicVolume", newVolume);
     }
 
     public void SetSFXVolume(float volume)
     {
-        audioMixer.SetFloat("SFXVolume", Mathf.Log10(volume) * 20);
+        float newVolume = Mathf.Log10(volume) * 20;
+        if(volume == 0)
+        {
+            newVolume = -80f;
+        }
+        audioMixer.SetFloat("SFXVolume", newVolume);
     }
 
     public void SelectLanguage(string langCode)

@@ -11,6 +11,7 @@ public class Zoombie : Heros
         if(ult)
         {
             Ghul.IsGhul(this);
+            MartwyCzerw.IsGhul(this);
             if(findPole().GetComponent<Pole>().unit != null && findPole().GetComponent<Pole>().unit.GetComponent<Czerw>())
             {
                 findPole().GetComponent<Pole>().unit.GetComponent<Czerw>().buff();

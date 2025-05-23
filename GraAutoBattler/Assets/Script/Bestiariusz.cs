@@ -161,7 +161,7 @@ public class Bestiariusz : MonoBehaviour
         List <Synergy> prevSynergy = synergyManager.Synergie;
         prevSynergy = SortSynergy(prevSynergy, firstLine);
 
-
+        Debug.Log(prevSynergy.Count);
         int ile = 13;
         for(int j = 0; j < prevSynergy.Count; j++)
         { 

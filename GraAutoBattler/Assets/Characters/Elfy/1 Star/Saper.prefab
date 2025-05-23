@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 0
   Name: Saper
-  Cost: 3
+  Cost: 2
   Star: 1
   Initiative: 50
   MaxHealth: 30
@@ -114,7 +114,9 @@ MonoBehaviour:
   MagicResist: 0
   Description: "Podczas <b>\u0142\u0105czenia</b>, zysuje 100% Mocy zakl\u0119\u0107.
     <b>Kupno i Ulepszenie :</b>Przywo\u0142aj Mine"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0

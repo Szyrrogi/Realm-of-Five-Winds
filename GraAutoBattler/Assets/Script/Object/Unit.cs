@@ -52,6 +52,7 @@ public class Unit : MonoBehaviour
     public bool Skip;
     public bool CanJump;
     public bool ReadyToJump;
+    
 
     void Awake()
     {
@@ -70,7 +71,7 @@ public class Unit : MonoBehaviour
 
     public void Update()
     {
-
+        
     }
 
     public virtual IEnumerator Summon(GameObject summonMinion)
@@ -271,6 +272,7 @@ public class Unit : MonoBehaviour
             findPole().GetComponent<Pole>().unit.GetComponent<Czerw>().buff();
         }
         Ghul.IsGhul(this);
+        MartwyCzerw.IsGhul(this);
         Loch.FirstDeathCheck(this);
         if(archaniol == 0)
         {
@@ -356,6 +358,7 @@ public class Unit : MonoBehaviour
 
     public void ShowPopUp(string text, Color color)
     {
+        Debug.Log(gameObject.name);
         GameObject pop = Instantiate(PopUp, gameObject.transform.position, Quaternion.identity);
         pop.GetComponent<PopUp>().SetText(text, color);
     }
@@ -382,6 +385,11 @@ public class Unit : MonoBehaviour
     }
 
     public virtual void Morale()
+    {
+
+    }
+
+    public virtual void Bezradnosc()
     {
 
     }
