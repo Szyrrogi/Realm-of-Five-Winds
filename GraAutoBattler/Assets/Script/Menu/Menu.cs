@@ -12,7 +12,7 @@ public class Menu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Login.zalogowano)
+        if(Login.loggedP)
         {
             login.SetActive(true);
             logout.SetActive(false);

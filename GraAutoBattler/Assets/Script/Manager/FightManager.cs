@@ -1,21 +1,39 @@
+using Photon.Pun;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using System.Data;
+using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
+using System.Text;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System.Data.SqlClient;
-using System;
-using System.IO;
-using System.Data;
-using Photon.Pun;
-using TMPro;
 
 
 public class FightManager : MonoBehaviour
 {
-    public Transform targetPosition; 
-    public Camera mainCamera; 
+    #region LoginRequest
+    private static readonly string apiURL = "https://api.m455yn.dev/rofw/save-stats";
+
+    [Serializable]
+    public class SaveStatsRequest
+    {
+        public int PlayerId;
+        public int Round;
+        public bool IsWin;
+        public string Comp;
+        public int Win;
+        public int Lose;
+        public string Fraction;
+    }
+    #endregion
+
+    public Transform targetPosition;
+    public Camera mainCamera;
 
     public List<Unit> units;
     public List<Linia> linie;
@@ -47,17 +65,17 @@ public class FightManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         SaveManager.Save(PlayerManager.Name, PlayerManager.PlayerFaceId, ShopManager.levelUp);
-            
+
         EventSystem.eventSystem.GetComponent<SaveManager>().LoadActive(true);
     }
-    
+
 
     public void ChangeSpeed(int speed)
     {
         switch (speed)
         {
             case 0:
-                 isPaused = !isPaused;
+                isPaused = !isPaused;
                 if (isPaused)
                 {
                     Time.timeScale = 0; // Zatrzymaj czas
@@ -68,12 +86,12 @@ public class FightManager : MonoBehaviour
                 }
                 break;
             case 1:
-                if(GameSpeed < 10)
+                if (GameSpeed < 10)
                     GameSpeed *= 2f;
                 Time.timeScale = GameSpeed;
                 break;
             case 2:
-                if(GameSpeed > 0.3f)
+                if (GameSpeed > 0.3f)
                     GameSpeed /= 2f;
                 Time.timeScale = GameSpeed;
                 break;
@@ -87,7 +105,7 @@ public class FightManager : MonoBehaviour
         ActiveBattle();
     }
 
-    
+
     public class AutoBattlerGameViewModel
     {
         public int Id { get; set; }
@@ -137,7 +155,7 @@ public class FightManager : MonoBehaviour
             return;
 
         isBattleRunning = true;
-        
+
         try
         {
             waitingText.text = "Poszukiwanie oponenta ...";
@@ -153,10 +171,10 @@ public class FightManager : MonoBehaviour
     public IEnumerator ActiveBattle2()
     {
         yield return new WaitForSeconds(0.03f);
-        if(!Multi.multi)
+        if (!Multi.multi)
         {
             SaveManager.Save(PlayerManager.Name, PlayerManager.PlayerFaceId, ShopManager.levelUp);
-            
+
             EventSystem.eventSystem.GetComponent<SaveManager>().LoadActive(true);
         }
 
@@ -173,7 +191,7 @@ public class FightManager : MonoBehaviour
 
     public IEnumerator ShowEndScreen(int nr)
     {
-        if(nr == 3)
+        if (nr == 3)
         {
             yield return new WaitForSeconds(2);
         }
@@ -186,14 +204,14 @@ public class FightManager : MonoBehaviour
 
     public IEnumerator StartBattle()
     {
-        if(IsFight == false)
+        if (IsFight == false)
         {
             //music.SetMusic(1);
             EventSystem.eventSystem.GetComponent<ShopManager>().FreeRoll = 0;
             shop.SetActive(false);
             fightUI.SetActive(true);
 
-            if(!ShopManager.isLoock)
+            if (!ShopManager.isLoock)
             {
                 EventSystem.eventSystem.GetComponent<ShopManager>().FirstRoll();
             }
@@ -213,18 +231,19 @@ public class FightManager : MonoBehaviour
                 Synergy synergy = gameObject.GetComponent<Synergy>(); // Get the Synergy component
                 synergy.AfterBattle(); // Start the coroutine
             }
-            for(int i = 0; i < 3; i++)
+            for (int i = 0; i < 3; i++)
             {
-                foreach(Pole pole in linie[i].pola)
+                foreach (Pole pole in linie[i].pola)
                 {
-                    if(pole.unit != null)
+                    if (pole.unit != null)
                     {
-                        try{
+                        try
+                        {
                             pole.unit.GetComponent<Unit>().AfterBattle();
                         }
-                        catch(Exception e)
+                        catch (Exception e)
                         {
-                            
+
                         }
                     }
                 }
@@ -246,8 +265,8 @@ public class FightManager : MonoBehaviour
 
     public IEnumerator Battle()
     {
-        
-        for(int i = 0; i < FirstBuffLine.Length; i++)
+
+        for (int i = 0; i < FirstBuffLine.Length; i++)
         {
             FirstBuffLine[i] = false;
         }
@@ -275,8 +294,8 @@ public class FightManager : MonoBehaviour
         // }
         foreach (var unit in units)
         {
-            
-            if(unit != null && !unit.Skip)
+
+            if (unit != null && !unit.Skip)
             {
                 unit.gameObject.transform.localScale += new Vector3(0.02f, 0.02f, 0.02f);
                 yield return unit.StartCoroutine(unit.OnBattleStart());
@@ -284,29 +303,29 @@ public class FightManager : MonoBehaviour
             }
         }
         Turn = 0;
-    //     while (!czyWygrana(new int[] { 2, 5 }) || 
-    //    !czyWygrana(new int[] { 0, 3 }) || 
-    //    !czyWygrana(new int[] { 1, 4 }))
-        while(!linie[0].EndBattle || !linie[1].EndBattle || !linie[2].EndBattle)
+        //     while (!czyWygrana(new int[] { 2, 5 }) || 
+        //    !czyWygrana(new int[] { 0, 3 }) || 
+        //    !czyWygrana(new int[] { 1, 4 }))
+        while (!linie[0].EndBattle || !linie[1].EndBattle || !linie[2].EndBattle)
         {
-            if(units.Count == 0)
+            if (units.Count == 0)
             {
                 break;
             }
             SortUnits();
             Turn++;
-            if(Turn > 10)
-                EventSystem.eventSystem.GetComponent<EventManager>().SetEvent(fatyga.sprite, fatyga.description + (Turn - 10 ) + " obrażeń!");
+            if (Turn > 10)
+                EventSystem.eventSystem.GetComponent<EventManager>().SetEvent(fatyga.sprite, fatyga.description + (Turn - 10) + " obrażeń!");
             foreach (var unit in units)
             {
                 StartCoroutine(czyWygrana(new int[] { 2, 5 }));
-                StartCoroutine(czyWygrana(new int[] { 0, 3 })); 
+                StartCoroutine(czyWygrana(new int[] { 0, 3 }));
                 StartCoroutine(czyWygrana(new int[] { 1, 4 }));
                 yield return new WaitForSeconds(0.1f);
-                if(unit != null && !unit.Skip && unit.gameObject != null)
+                if (unit != null && !unit.Skip && unit.gameObject != null)
                 {
                     unit.gameObject.transform.localScale += new Vector3(0.02f, 0.02f, 0.02f);
-                    if(unit.ReadyToJump)
+                    if (unit.ReadyToJump)
                         yield return unit.StartCoroutine(unit.Jump());
                     yield return unit.StartCoroutine(unit.PreAction());
                     yield return unit.StartCoroutine(unit.Move());
@@ -315,7 +334,7 @@ public class FightManager : MonoBehaviour
                     unit.gameObject.transform.localScale -= new Vector3(0.02f, 0.02f, 0.02f);
                     if (unit != null && Turn > 10)
                         yield return StartCoroutine(unit.TakeDamage(unit, Turn - 10, TypeDamage.typeDamage.TrueDamage));
-                    if(unit.Health <= 0)
+                    if (unit.Health <= 0)
                     {
                         StartCoroutine(unit.Death());
                     }
@@ -327,7 +346,7 @@ public class FightManager : MonoBehaviour
         StatsManager.Round++;
         setList();
         foreach (var unit in units)
-            if(unit != null)
+            if (unit != null)
             {
                 unit.gameObject.transform.localScale += new Vector3(0.02f, 0.02f, 0.02f);
                 yield return unit.StartCoroutine(unit.OnBattleEnd());
@@ -343,94 +362,95 @@ public class FightManager : MonoBehaviour
         EndBattle();
         EventSystem.eventSystem.GetComponent<SaveManager>().LoadActive();
         yield return null;
-        
+
     }
 
     void AddToBase()    //TEST
     {
         int rng = UnityEngine.Random.Range(0, 10);
-        if(Login.zalogowano && Tutorial.tutorial == false && rng <= StatsManager.Round && !Multi.multi && !PlayerManager.SI)
+        if (Login.loggedP && Tutorial.tutorial == false && rng <= StatsManager.Round && !Multi.multi && !PlayerManager.SI)
         {
             rng = UnityEngine.Random.Range(0, 2);
-            if(rng == 0 || StatsManager.Round > 12)
+            if (rng == 0 || StatsManager.Round > 12)
             {
-            try{
-                SqlCommand cmd = new SqlCommand(@"
+                try
+                {
+                    SqlCommand cmd = new SqlCommand(@"
                 INSERT INTO AutoBattlerGame (Version, Name, FaceId, Date, LP, PlayerId, Comp, Round)  
                 VALUES (@Version, @Name, @PlayerFaceId, @DataNow, @LP, @Id, @Team, @Round);
                 ", DB.con);
 
-                cmd.Parameters.AddWithValue("Version", PlayerManager.Version);
-                cmd.Parameters.AddWithValue("Name", PlayerManager.Name);
-                cmd.Parameters.AddWithValue("PlayerFaceId", PlayerManager.PlayerFaceId);
-                cmd.Parameters.AddWithValue("DataNow", DateTime.Now);
-                cmd.Parameters.AddWithValue("Round", StatsManager.Round - 1);
-                if(RankedManager.Ranked)
-                    cmd.Parameters.AddWithValue("LP", PlayerManager.LP);
-                else
-                    cmd.Parameters.AddWithValue("LP", 0);
-                cmd.Parameters.AddWithValue("Id", PlayerManager.Id);
+                    cmd.Parameters.AddWithValue("Version", PlayerManager.Version);
+                    cmd.Parameters.AddWithValue("Name", PlayerManager.Name);
+                    cmd.Parameters.AddWithValue("PlayerFaceId", PlayerManager.PlayerFaceId);
+                    cmd.Parameters.AddWithValue("DataNow", DateTime.Now);
+                    cmd.Parameters.AddWithValue("Round", StatsManager.Round - 1);
+                    if (RankedManager.Ranked)
+                        cmd.Parameters.AddWithValue("LP", PlayerManager.LP);
+                    else
+                        cmd.Parameters.AddWithValue("LP", 0);
+                    cmd.Parameters.AddWithValue("Id", PlayerManager.Id);
 
-                string filePath = Application.dataPath + "/Save/Zapis.json";
-                if(RankedManager.Ranked)
-                {
-                    filePath = Application.dataPath + "/Save/ZapisR.json";
+                    string filePath = Application.dataPath + "/Save/Zapis.json";
+                    if (RankedManager.Ranked)
+                    {
+                        filePath = Application.dataPath + "/Save/ZapisR.json";
+                    }
+                    string jsonContent = File.ReadAllText(filePath);
+
+                    cmd.Parameters.AddWithValue("Team", jsonContent);
+
+                    DB.execSQL(cmd);
                 }
-                string jsonContent = File.ReadAllText(filePath);
-
-                cmd.Parameters.AddWithValue("Team", jsonContent);
-            
-                DB.execSQL(cmd);
-            }
-            catch(Exception ex)
-            {
-                Debug.Log(ex.Message);
-            }
+                catch (Exception ex)
+                {
+                    Debug.Log(ex.Message);
+                }
             }
         }
     }
 
     void CheckAchivment()
     {
-        if(StatsManager.win == 12)
+        if (StatsManager.win == 12)
         {
-            if(Fraction.fractionList.Count == 3)
+            if (Fraction.fractionList.Count == 3)
             {
                 Bestiariusz.AddAchivments(5);
             }
-            if(Fraction.fractionList.Count == 4)
+            if (Fraction.fractionList.Count == 4)
             {
                 Bestiariusz.AddAchivments(6);
             }
-            if(Fraction.fractionList.Count == 5)
+            if (Fraction.fractionList.Count == 5)
             {
                 Bestiariusz.AddAchivments(7);
             }
-            if(Fraction.fractionList.Count == 1)
+            if (Fraction.fractionList.Count == 1)
             {
-                if(Fraction.fractionList.Contains(Fraction.fractionType.Ludzie))
+                if (Fraction.fractionList.Contains(Fraction.fractionType.Ludzie))
                     Bestiariusz.AddAchivments(0);
-                if(Fraction.fractionList.Contains(Fraction.fractionType.Nekro))
+                if (Fraction.fractionList.Contains(Fraction.fractionType.Nekro))
                     Bestiariusz.AddAchivments(1);
-                if(Fraction.fractionList.Contains(Fraction.fractionType.Nomadzi))
+                if (Fraction.fractionList.Contains(Fraction.fractionType.Nomadzi))
                     Bestiariusz.AddAchivments(2);
-                if(Fraction.fractionList.Contains(Fraction.fractionType.Krasnoludy))
+                if (Fraction.fractionList.Contains(Fraction.fractionType.Krasnoludy))
                     Bestiariusz.AddAchivments(3);
-                if(Fraction.fractionList.Contains(Fraction.fractionType.Elfy))
+                if (Fraction.fractionList.Contains(Fraction.fractionType.Elfy))
                     Bestiariusz.AddAchivments(4);
             }
         }
     }
 
-   void sprawdzKtoWygralWParach(int[][] paryLinii)
+    void sprawdzKtoWygralWParach(int[][] paryLinii)
     {
         int graczWin = 0;
         int enemyWin = 0;
-        for(int i = 0; i < 3; i++)
+        for (int i = 0; i < 3; i++)
         {
-            if(linie[i].KtoWygral == 1)
-                graczWin++; 
-            if(linie[i].KtoWygral == 2)
+            if (linie[i].KtoWygral == 1)
+                graczWin++;
+            if (linie[i].KtoWygral == 2)
                 enemyWin++;
         }
 
@@ -442,14 +462,14 @@ public class FightManager : MonoBehaviour
             //Debug.Log("WYGRANKO");
             StatsManager.win++;
             CheckAchivment();
-            if(PlayerManager.SI && StatsManager.win == 12)
+            if (PlayerManager.SI && StatsManager.win == 12)
             {
                 SceneManager.LoadScene(2);
             }
-            if(((StatsManager.win == 10 && !RankedManager.Poddymka) || StatsManager.win == 12) && RankedManager.Ranked && !Multi.multi && !PlayerManager.SI)
+            if (((StatsManager.win == 10 && !RankedManager.Poddymka) || StatsManager.win == 12) && RankedManager.Ranked && !Multi.multi && !PlayerManager.SI)
             {
-                ZapiszwWynil(true);
-                if(!RankedManager.Ranked)
+                StartCoroutine(ZapiszwWynil(true));
+                if (!RankedManager.Ranked)
                 {
                     SceneManager.LoadScene(2);
                     string savePath2 = Application.dataPath + "/Save/Save2.json";
@@ -469,25 +489,25 @@ public class FightManager : MonoBehaviour
         }
         else if (graczWin < enemyWin)
         {
-            if(StatsManager.life != 0)
+            if (StatsManager.life != 0)
                 StartCoroutine(ShowEndScreen(1));
             StatsManager.life--;
-            if(Multi.multi)
+            if (Multi.multi)
             {
                 GetComponent<PhotonView>().RPC("ZmniejszZdrowie", RpcTarget.All, MultiHP.ID);
             }
-            if(!RankedManager.Ranked)
+            if (!RankedManager.Ranked)
                 StatsManager.win++;
-            if(StatsManager.life <= 0)
+            if (StatsManager.life <= 0)
             {
-                if(Multi.multi)
+                if (Multi.multi)
                 {
-                    GetComponent<PhotonView>().RPC("NotReady", RpcTarget.All, PhotonNetwork.LocalPlayer.ActorNumber-1);
+                    GetComponent<PhotonView>().RPC("NotReady", RpcTarget.All, PhotonNetwork.LocalPlayer.ActorNumber - 1);
                 }
                 else
                 {
-                    ZapiszwWynil(false);
-                    if(!RankedManager.Ranked)
+                    StartCoroutine(ZapiszwWynil(false));
+                    if (!RankedManager.Ranked)
                     {
                         SceneManager.LoadScene(1);
                         string savePath2 = Application.dataPath + "/Save/Save2.json";
@@ -504,16 +524,16 @@ public class FightManager : MonoBehaviour
                     else
                         EventSystem.eventSystem.GetComponent<RankedManager>().StartRank();
                 }
-                
+
             }
-            
+
             AddToBase();
-           // Debug.Log("PRZEGRANA");
+            // Debug.Log("PRZEGRANA");
         }
         else
         {
             AddToBase();
-            if(!RankedManager.Ranked)
+            if (!RankedManager.Ranked)
                 StatsManager.win++;
             StartCoroutine(ShowEndScreen(2));
             //Debug.Log("REMIS");
@@ -525,64 +545,52 @@ public class FightManager : MonoBehaviour
         Multi.Death[id] = true;
     }
 
-    void ZapiszwWynil(bool isWinning)
+    IEnumerator ZapiszwWynil(bool isWinning)
     {
-        try
+        string frakcja = "";
+
+        foreach (Fraction.fractionType type in Enum.GetValues(typeof(Fraction.fractionType)))
         {
-            using (SqlConnection con = DB.Connect(DB.conStr))
+            frakcja += Fraction.fractionList.Contains(type) ? "1" : "0";
+        }
+
+        string filePath = Application.dataPath + "/Save/Zapis.json";
+        if (RankedManager.Ranked)
+        {
+            filePath = Application.dataPath + "/Save/ZapisR.json";
+        }
+
+        string jsonContent = File.ReadAllText(filePath);
+
+        SaveStatsRequest request = new SaveStatsRequest
+        {
+            PlayerId = PlayerManager.Id,
+            Round = StatsManager.Round,
+            IsWin = isWinning,
+            Comp = jsonContent,
+            Win = StatsManager.win,
+            Lose = StatsManager.life,
+            Fraction = frakcja
+        };
+
+        string json = JsonUtility.ToJson(request);
+        using (UnityWebRequest www = new UnityWebRequest(apiURL, "POST"))
+        {
+            byte[] bodyRaw = Encoding.UTF8.GetBytes(json);
+            www.uploadHandler = new UploadHandlerRaw(bodyRaw);
+            www.downloadHandler = new DownloadHandlerBuffer();
+            www.SetRequestHeader("Content-Type", "application/json");
+
+            yield return www.SendWebRequest();
+
+            if (www.result != UnityWebRequest.Result.Success)
             {
-                string query = "INSERT INTO Stats (PlayerId, Round, IsWin, Comp, Win, Lose, Fraction) VALUES (@PlayerId, @Round, @IsWin, @Comp, @Win, @Lose, @fraction)";
-                SqlCommand cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@PlayerId", PlayerManager.Id);
-                cmd.Parameters.AddWithValue("@Round", StatsManager.Round);
-                cmd.Parameters.AddWithValue("@IsWin", isWinning);
-                cmd.Parameters.AddWithValue("@Win", StatsManager.win);
-                cmd.Parameters.AddWithValue("@Lose", StatsManager.life);
-
-                string frakcja = "";
-
-                // Iteracja przez wszystkie wartości enuma
-                foreach (Fraction.fractionType type in Enum.GetValues(typeof(Fraction.fractionType)))
-                {
-                    if (Fraction.fractionList.Contains(type))
-                    {
-                        frakcja += "1";
-                    }
-                    else
-                    {
-                        frakcja += "0";
-                    }
-                }
-                cmd.Parameters.AddWithValue("@Fraction", frakcja);
-
-                string filePath = Application.dataPath + "/Save/Zapis.json";
-                if(RankedManager.Ranked)
-                {
-                    filePath = Application.dataPath + "/Save/ZapisR.json";
-                }
-                string jsonContent = File.ReadAllText(filePath);
-
-                cmd.Parameters.AddWithValue("@Comp", jsonContent);
-
-                int result = cmd.ExecuteNonQuery();
-
-                if (result > 0)
-                {
-                    Debug.Log("Rejestracja zakończona pomyślnie!");
-                }
-                else
-                {
-                    Debug.Log("Wystąpił błąd podczas rejestracji.");
-                }
+                Debug.Log("Błąd wysyłania: " + www.error);
             }
-        }
-        catch (SqlException ex)
-        {
-            Debug.Log("Błąd bazy danych: " + ex.Message);
-        }
-        catch (System.Exception ex)
-        {
-            Debug.Log("Wystąpił nieoczekiwany błąd: " + ex.Message);
+            else
+            {
+                Debug.Log("Statystyki zapisane: " + www.downloadHandler.text);
+            }
         }
     }
 
@@ -609,82 +617,82 @@ public class FightManager : MonoBehaviour
                 }
             }
         }
-        if(linie[indeksyLinii[0]].EndBattle == false)
+        if (linie[indeksyLinii[0]].EndBattle == false)
         {
-            switch(wygrywa)
+            switch (wygrywa)
             {
-                case 0: 
-                foreach (int indeks in indeksyLinii)
-                {
-                    linie[indeks].gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
-                    linie[indeks].EndBattle = true;
-                }
-                break;
-                case 1: 
-                foreach (int indeks in indeksyLinii)
-                {
-                    linie[indeks].gameObject.GetComponent<SpriteRenderer>().color = Color.green;
-                    linie[indeks].EndBattle = true;
-                    if(FirstBuffLine[indeksyLinii[0]] == false)
+                case 0:
+                    foreach (int indeks in indeksyLinii)
                     {
-                        FirstBuffLine[indeksyLinii[0]] = true;
-                        foreach(Linia line in linie)
+                        linie[indeks].gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+                        linie[indeks].EndBattle = true;
+                    }
+                    break;
+                case 1:
+                    foreach (int indeks in indeksyLinii)
+                    {
+                        linie[indeks].gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+                        linie[indeks].EndBattle = true;
+                        if (FirstBuffLine[indeksyLinii[0]] == false)
                         {
-                            if(!indeksyLinii.Contains(line.nr))
+                            FirstBuffLine[indeksyLinii[0]] = true;
+                            foreach (Linia line in linie)
                             {
-                                foreach(Pole pole in line.pola)
+                                if (!indeksyLinii.Contains(line.nr))
                                 {
-                                    if(pole.unit != null && !pole.unit.GetComponent<Unit>().Enemy)
+                                    foreach (Pole pole in line.pola)
                                     {
-                                        pole.unit.GetComponent<Unit>().Morale();
+                                        if (pole.unit != null && !pole.unit.GetComponent<Unit>().Enemy)
+                                        {
+                                            pole.unit.GetComponent<Unit>().Morale();
+                                        }
                                     }
                                 }
                             }
                         }
                     }
-                }
-                break;
-                case 2: 
-                foreach (int indeks in indeksyLinii)
-                {
-                    linie[indeks].gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-                    linie[indeks].EndBattle = true;
-                    if(FirstBuffLine[indeksyLinii[0]] == false)
+                    break;
+                case 2:
+                    foreach (int indeks in indeksyLinii)
                     {
-                        FirstBuffLine[indeksyLinii[0]] = true;
-                        foreach(Linia line in linie)
+                        linie[indeks].gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+                        linie[indeks].EndBattle = true;
+                        if (FirstBuffLine[indeksyLinii[0]] == false)
                         {
-                            if(!indeksyLinii.Contains(line.nr))
+                            FirstBuffLine[indeksyLinii[0]] = true;
+                            foreach (Linia line in linie)
                             {
-                                foreach(Pole pole in line.pola)
+                                if (!indeksyLinii.Contains(line.nr))
                                 {
-                                    if(pole.unit != null && pole.unit.GetComponent<Unit>().Enemy)
+                                    foreach (Pole pole in line.pola)
                                     {
-                                        pole.unit.GetComponent<Unit>().Morale();
+                                        if (pole.unit != null && pole.unit.GetComponent<Unit>().Enemy)
+                                        {
+                                            pole.unit.GetComponent<Unit>().Morale();
+                                        }
                                     }
                                 }
                             }
                         }
                     }
-                }
-                break;
+                    break;
             }
         }
         foreach (int indeks in indeksyLinii)
+        {
+            foreach (Pole pole in linie[indeks].pola)
             {
-                foreach(Pole pole in linie[indeks].pola)
+                if (pole.unit != null)
                 {
-                    if(pole.unit != null)
-                    {
-                        if(pole.unit.GetComponent<Unit>().CanJump != true)
-                            pole.unit.GetComponent<Unit>().Skip = true;
-                        else
-                            pole.unit.GetComponent<Unit>().ReadyToJump = true;
-                    }
-                    
-                        //units.Remove(pole.unit.GetComponent<Unit>());
+                    if (pole.unit.GetComponent<Unit>().CanJump != true)
+                        pole.unit.GetComponent<Unit>().Skip = true;
+                    else
+                        pole.unit.GetComponent<Unit>().ReadyToJump = true;
                 }
+
+                //units.Remove(pole.unit.GetComponent<Unit>());
             }
+        }
         yield return null;
     }
 
@@ -704,11 +712,11 @@ public class FightManager : MonoBehaviour
             StartCoroutine(ShowEndScreen(3));
             StatsManager.life++;
         }
-        if(StatsManager.Round == 2 && StatsManager.life != MultiOptions.Hearth && Multi.multi)
+        if (StatsManager.Round == 2 && StatsManager.life != MultiOptions.Hearth && Multi.multi)
         {
             StartCoroutine(ShowEndScreen(3));
             StatsManager.life++;
-            if(Multi.multi)
+            if (Multi.multi)
             {
                 GetComponent<PhotonView>().RPC("UpZdrowie", RpcTarget.All, MultiHP.ID);
             }
@@ -733,7 +741,7 @@ public class FightManager : MonoBehaviour
 
             yield return null; // Poczekaj do następnej klatki
         }
-        foreach(Linia linia in linie)
+        foreach (Linia linia in linie)
         {
             linia.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
             linia.EndBattle = false;
@@ -758,16 +766,16 @@ public class FightManager : MonoBehaviour
     public void setList()
     {
         units = new List<Unit>();
-        foreach(Linia linia in linie)
+        foreach (Linia linia in linie)
         {
-            foreach(Pole pole in linia.pola)
+            foreach (Pole pole in linia.pola)
             {
-                if(pole.unit!= null)
+                if (pole.unit != null)
                 {
                     units.Add(pole.unit.GetComponent<Unit>());
                 }
             }
         }
-        
+
     }
 }

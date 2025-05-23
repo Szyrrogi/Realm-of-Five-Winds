@@ -1,17 +1,24 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
-using System.Data.SqlClient;
-using System.Data;
 using System;
 using System.IO;
+using UnityEngine.Networking;
 
 public class PlayerManager : MonoBehaviour
 {
-    public static string Version = "0.7.0";
+    [Serializable]
+    private class UpdateFaceRequest
+    {
+        public int PlayerId;
+        public int NewFaceId;
+    }
+
+    private static readonly string apiURL = "https://api.m455yn.dev/rofw/update-face";
+
+    public static string Version = "0.6.0";
     public static int PlayerFaceId;
     public static string Name = "Player";
     public static int Id = 0;
@@ -26,8 +33,6 @@ public class PlayerManager : MonoBehaviour
 
     public TextMeshProUGUI Uwagi;
     public static bool SI;
-    
-
 
     public void ShowFace()
     {
@@ -37,47 +42,41 @@ public class PlayerManager : MonoBehaviour
     public void SetPlayerFace(int player)
     {
         PlayerFaceId = player;
-        UpdateFaceIdInDatabase(Id, player);
+        StartCoroutine(UpdateFaceIdInDatabase(Id, player));
     }
 
-    private void UpdateFaceIdInDatabase(int playerId, int newFaceId)
+    private IEnumerator UpdateFaceIdInDatabase(int playerId, int newFaceId)
     {
-        try
+        string json = JsonUtility.ToJson(new UpdateFaceRequest
         {
-            using (SqlConnection con = DB.Connect(DB.conStr))
-            {
-                // Zapytanie SQL do aktualizacji FaceId dla gracza o danym Id
-                string query = "UPDATE Players SET Face = @NewFaceId WHERE Id = @PlayerId";
-                SqlCommand cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@NewFaceId", newFaceId);
-                cmd.Parameters.AddWithValue("@PlayerId", playerId);
+            PlayerId = playerId,
+            NewFaceId = newFaceId
+        });
 
-                // Wykonaj zapytanie
-                int rowsAffected = cmd.ExecuteNonQuery();
+        using UnityWebRequest request = new UnityWebRequest(apiURL, "POST")
+        {
+            uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(json)),
+            downloadHandler = new DownloadHandlerBuffer()
+        };
+        request.SetRequestHeader("Content-Type", "application/json");
 
-                if (rowsAffected > 0)
-                {
-                    Debug.Log("FaceId został pomyślnie zaktualizowany w bazie danych.");
-                }
-                else
-                {
-                    Debug.LogWarning("Nie znaleziono gracza o podanym Id.");
-                }
-            }
-        }
-        catch (SqlException ex)
+        yield return request.SendWebRequest();
+
+        switch (request.result)
         {
-            Debug.LogError("Błąd bazy danych podczas aktualizacji FaceId: " + ex.Message);
-        }
-        catch (System.Exception ex)
-        {
-            Debug.LogError("Wystąpił nieoczekiwany błąd: " + ex.Message);
+            case UnityWebRequest.Result.Success:
+                Debug.Log("FaceId został pomyślnie zaktualizowany przez API.");
+                break;
+            case UnityWebRequest.Result.ConnectionError:
+            case UnityWebRequest.Result.ProtocolError:
+                Debug.LogError($"Błąd API: {request.responseCode} - {request.error}");
+                break;
         }
     }
 
-    public void logout()
+    public void Logout()
     {
-        Login.zalogowano = false;
+        Login.loggedP = false;
         Name = "Player";
         Id = 0;
         LP = 0;
@@ -90,9 +89,9 @@ public class PlayerManager : MonoBehaviour
 
     void Update()
     {
-        if(LPText != null)
+        if (LPText != null)
         {
-            if(!RankedManager.Ranked)
+            if (!RankedManager.Ranked)
             {
                 RankImage.gameObject.SetActive(false);
                 LPText.gameObject.SetActive(false);
@@ -104,7 +103,7 @@ public class PlayerManager : MonoBehaviour
                 LPText.gameObject.SetActive(true);
                 RankNumber.gameObject.SetActive(true);
                 int sum = LP;
-                if(sum < 1500)
+                if (sum < 1500)
                 {
                     RankImage.sprite = EventSystem.eventSystem.GetComponent<RankedManager>().ranksSprite[(int)sum / 300];
                     RankNumber.text = (((int)sum % 300) / 100 + 1).ToString();
@@ -118,21 +117,21 @@ public class PlayerManager : MonoBehaviour
                 }
             }
         }
-        for(int i = 0; i < face.Length; i++)
+        for (int i = 0; i < face.Length; i++)
         {
-        face[i].sprite = spriteFace[PlayerFaceId];
-        if(textPlayer[i] != null)
-            textPlayer[i].text = Name;
+            face[i].sprite = spriteFace[PlayerFaceId];
+            if (textPlayer[i] != null)
+                textPlayer[i].text = Name;
         }
     }
     public static bool isSave;
     public void ReadInput(bool save)
     {
         isSave = save;
-        if(Login.zalogowano || save)
+        if (Login.loggedP || save)
         {
             RankedManager.Ranked = false; //TEST
-            if(save || Fraction.fractionList.Count != 0)
+            if (save || Fraction.fractionList.Count != 0)
             {
                 Multi.multi = false;
                 Tutorial.tutorial = false;
@@ -140,7 +139,7 @@ public class PlayerManager : MonoBehaviour
             }
             else
             {
-                Uwagi.text = "Kliknij na mapę aby wybrać frakcję"; 
+                Uwagi.text = "Kliknij na mapę aby wybrać frakcję";
             }
         }
         else
@@ -169,10 +168,10 @@ public class PlayerManager : MonoBehaviour
 
     public void ReadInputMulti()
     {
-        if(Login.zalogowano)
+        if (Login.loggedP)
         {
             RankedManager.Ranked = false; //TEST
-            if(Fraction.fractionList.Count != 0)
+            if (Fraction.fractionList.Count != 0)
             {
                 Multi.multi = true;
                 SI = false;
@@ -181,7 +180,7 @@ public class PlayerManager : MonoBehaviour
             }
             else
             {
-                Uwagi.text = "Kliknij na mapę aby wybrać frakcję"; 
+                Uwagi.text = "Kliknij na mapę aby wybrać frakcję";
             }
         }
         else
@@ -200,7 +199,7 @@ public class PlayerManager : MonoBehaviour
     }
     public void StartRanked()
     {
-        if(Login.zalogowano)
+        if (Login.loggedP)
         {
             RankedManager.Ranked = true;
             string savePath2 = Application.dataPath + "/Save/Save2R.json";
@@ -222,7 +221,7 @@ public class PlayerManager : MonoBehaviour
             {
                 isSave = false;
             }
-            if(isSave || Fraction.fractionList.Count != 0)
+            if (isSave || Fraction.fractionList.Count != 0)
             {
                 Multi.multi = false;
                 Tutorial.tutorial = false;
@@ -231,7 +230,7 @@ public class PlayerManager : MonoBehaviour
             }
             else
             {
-                Uwagi.text = "Kliknij na mapę aby wybrać frakcję"; 
+                Uwagi.text = "Kliknij na mapę aby wybrać frakcję";
             }
         }
         else
@@ -239,5 +238,5 @@ public class PlayerManager : MonoBehaviour
             Uwagi.text = "Zaloguj się";
         }
     }
-    
 }
+
