@@ -11,8 +11,8 @@ public class StrażnikZapasów : Heros
         {
             Unit friendlyUnit = findPole().GetComponent<Pole>().unit.GetComponent<Unit>();
             yield return new WaitForSeconds(0.4f );
-            int buff = Evolution ? 60 : 20;
-            friendlyUnit.ShowPopUp(Evolution ? "+60" : "+20", Color.red);
+            int buff = Evolution ? 70 : 25;
+            friendlyUnit.ShowPopUp(Evolution ? "+70" : "+25", Color.red);
             friendlyUnit.Health += buff;
             friendlyUnit.MaxHealth += buff;
         }
@@ -21,7 +21,7 @@ public class StrażnikZapasów : Heros
             Unit friendlyUnit = PrefUnit();
             yield return new WaitForSeconds(0.4f );
             int buff = Evolution ? 60 : 20;
-            friendlyUnit.ShowPopUp(Evolution ? "+60" : "+20", Color.red);
+            friendlyUnit.ShowPopUp(Evolution ? "+70" : "+25", Color.red);
             friendlyUnit.Health += buff;
             friendlyUnit.MaxHealth += buff;
         }

@@ -190,8 +190,10 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: "Wtasuj Wilki do <b>Puli</b> <b>Pocz\u0105tek Walki:</b>Zwi\u0119ksz
-    zdrowie wszystkim wilkom w rz\u0119dzie o 15"
+    zdrowie wszystkim wilkom w rz\u0119dzie o 25"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
@@ -222,6 +224,7 @@ MonoBehaviour:
   shop: {fileID: 0}
   zloto: {fileID: 1819705648667262722, guid: 5c8ef6e31b67af24297238c0343b1e3a, type: 3}
   kopalnia: {fileID: 0}
+  Extra: 1
 --- !u!114 &6985540666553226679
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -18,7 +18,7 @@ public class PlayerManager : MonoBehaviour
 
     private static readonly string apiURL = "https://api.m455yn.dev/rofw/update-face";
 
-    public static string Version = "0.6.0";
+    public static string Version = "0.7.3";
     public static int PlayerFaceId;
     public static string Name = "Player";
     public static int Id = 0;
@@ -65,11 +65,11 @@ public class PlayerManager : MonoBehaviour
         switch (request.result)
         {
             case UnityWebRequest.Result.Success:
-                Debug.Log("FaceId został pomyślnie zaktualizowany przez API.");
+                //Debug.Log("FaceId został pomyślnie zaktualizowany przez API.");
                 break;
             case UnityWebRequest.Result.ConnectionError:
             case UnityWebRequest.Result.ProtocolError:
-                Debug.LogError($"Błąd API: {request.responseCode} - {request.error}");
+              //  Debug.LogError($"Błąd API: {request.responseCode} - {request.error}");
                 break;
         }
     }

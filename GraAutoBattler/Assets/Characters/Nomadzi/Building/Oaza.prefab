@@ -180,7 +180,7 @@ MonoBehaviour:
   Name: Punkt Mocy
   Cost: 5
   Star: 3
-  Initiative: 20
+  Initiative: 80
   MaxHealth: 20
   Health: 20
   Attack: 0

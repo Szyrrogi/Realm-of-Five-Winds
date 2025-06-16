@@ -190,7 +190,9 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: <b>Wtasowuje</b> drzewa do <b>puli</b>
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
@@ -218,6 +220,7 @@ MonoBehaviour:
   shop: {fileID: 0}
   zloto: {fileID: 1819705648667262722, guid: 769ed002088caa4419bbd54a939c9e85, type: 3}
   kopalnia: {fileID: 1819705648667262722}
+  Extra: 1
 --- !u!114 &6985540666553226679
 MonoBehaviour:
   m_ObjectHideFlags: 0

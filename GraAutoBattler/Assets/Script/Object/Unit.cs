@@ -280,6 +280,7 @@ public class Unit : MonoBehaviour
             if(archaniol == 0)
             {
                 FightManager.Tomb.Add(new Vector2(Id, (Enemy ? 1 : 0)));
+                GetComponent<DragObject>().pole.unit = null;
                 Destroy(this.gameObject);
                 yield return null;
             }

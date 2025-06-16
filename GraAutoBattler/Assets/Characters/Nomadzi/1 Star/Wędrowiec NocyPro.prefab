@@ -100,21 +100,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 487e7446a85edfa49b04ab6f7479f0ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 115
   Name: "W\u0119drowiec Nocy"
-  Cost: 3
+  Cost: 9
   Star: 1
-  Initiative: 35
-  MaxHealth: 35
-  Health: 35
-  Attack: 25
+  Initiative: 41
+  MaxHealth: 63
+  Health: 63
+  Attack: 45
   Defense: 5
   Range: 0
   AP: 0
   MagicResist: 10
-  Description: "<b>Pocz\u0105tek Walki: </b>Otrzymuje 40/40 je\u017Celi znajduje
+  Description: "<b>Pocz\u0105tek Walki: </b>Otrzymuje 50/50 je\u017Celi znajduje
     si\u0119 mi\u0119dzy jednostk\u0105 magiczn\u0105 i nie magiczn\u0105"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0

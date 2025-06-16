@@ -10,9 +10,13 @@ public class Lider : Heros
         {
             foreach(Pole pole in GetComponent<DragObject>().pole.line.pola)
             {
-                if(pole.unit != null && pole.unit.GetComponent<Unit>().Name != Name)
+                if (pole.unit != null && pole.unit.gameObject != null)
                 {
-                    yield return StartCoroutine(pole.unit.GetComponent<Unit>().OnBattleStart());
+                    Unit unit = pole.unit.GetComponent<Unit>();
+                    if (unit != null && unit.Name != Name)
+                    {
+                        yield return StartCoroutine(unit.OnBattleStart());
+                    }
                 }
             }
         }

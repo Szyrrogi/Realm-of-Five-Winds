@@ -15482,6 +15482,8 @@ MonoBehaviour:
   - {fileID: 5546573823398617059, guid: 4ee09dbdeb519164793ef5003144e45e, type: 3}
   - {fileID: 3506125233062400643, guid: b5d03889d532e3f498743ba403e0126f, type: 3}
   - {fileID: 4534926203212154897, guid: 4e9387da01b484a44a9413c968859cd6, type: 3}
+  - {fileID: 5811439622190503248, guid: 1b342d6a828a69d428ce114d5daedfe9, type: 3}
+  - {fileID: 5612125143029434037, guid: 83c6d67d2cdbdbe4aaa66609bef50dc4, type: 3}
   parentObject: {fileID: 0}
   parentObjectEnemy: {fileID: 0}
 --- !u!1 &1563667995

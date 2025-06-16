@@ -13,11 +13,11 @@ public class WilczaJama : Building
             if(pole.unit != null && pole.unit.GetComponent<Unit>().Typy.Contains(CreatureType.Wilki))
             {
 
-                pole.unit.GetComponent<Unit>().Health += 15;
-                pole.unit.GetComponent<Unit>().MaxHealth += 15;
+                pole.unit.GetComponent<Unit>().Health += 25;
+                pole.unit.GetComponent<Unit>().MaxHealth += 25;
 
                         
-                pole.unit.GetComponent<Unit>().ShowPopUp("+15", Color.green);
+                pole.unit.GetComponent<Unit>().ShowPopUp("+25", Color.green);
                 yield return new WaitForSeconds(0.7f);
 
             }

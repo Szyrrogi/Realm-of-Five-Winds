@@ -15,8 +15,8 @@ public class WędrowiecNocy : Heros
                 if(fightManager.GetPole(line, pole - 1).unit.GetComponent<Unit>().attackAP != fightManager.GetPole(line, pole + 1).unit.GetComponent<Unit>().attackAP)
                 {
                     yield return new WaitForSeconds(0.4f );
-                    int buff = Evolution ? 40 : 20;
-                    ShowPopUp(Evolution ? "+40/40" : "+20/20", Color.green);
+                    int buff = Evolution ? 50 : 20;
+                    ShowPopUp(Evolution ? "+50/50" : "+20/20", Color.green);
                     Attack += buff;
                     Health += buff;
                     MaxHealth += buff;

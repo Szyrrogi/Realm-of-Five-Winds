@@ -21,8 +21,8 @@ public class Włucznik : Heros
 
             help.AddRange(helpdwa);
 
-            if(Evolution)
-                help.Reverse();
+            // if(Evolution)
+            //     help.Reverse();
 
             foreach (var pole in help)
             {
@@ -45,6 +45,24 @@ public class Włucznik : Heros
     }
     public override IEnumerator Move()
     {
+        if (!Evolution)
+        {
+                if(Range > 0)
+                {
+                    GameObject pole = findPole();
+                    if(pole != null && pole.GetComponent<Pole>().unit == null)
+                    {
+                        pole = findPole(pole.GetComponent<Pole>());
+                        if(pole != null && (pole.GetComponent<Pole>().unit == null || Enemy == pole.GetComponent<Pole>().unit.GetComponent<Unit>().Enemy))
+                        {
+                            yield return StartCoroutine(Jump(findPole()));
+                        }
+                    }
+                }
+                else
+                    yield return StartCoroutine(Jump(findPole()));
+                yield return null;
+        }
         yield return new WaitForSeconds(0);
     }
 }

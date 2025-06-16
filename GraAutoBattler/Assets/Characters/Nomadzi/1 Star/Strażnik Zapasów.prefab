@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd4befe473672044a28b209cd0a29e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 106
   Name: "Stra\u017Cnik Zapas\xF3w"
   Cost: 2
   Star: 1
@@ -113,7 +113,8 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: "<b>Pocz\u0105tek Walki: </b>Zwi\u0119ksz zdrowie jednostce przed
-    sob\u0105 o 20"
+    sob\u0105 o 25"
+  Lore: 
   CPU: 0
   Typy: 
   UpgradeLevel: 1
@@ -131,6 +132,7 @@ MonoBehaviour:
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 1819705648667262722, guid: 562d8873480a53e408bf8c758f37ff89, type: 3}
   Evolution: 0
+  Synergy: 0
 --- !u!114 &8731495660794391217
 MonoBehaviour:
   m_ObjectHideFlags: 0

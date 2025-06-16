@@ -25,7 +25,7 @@ public class Bank : Building
 
     public override void AfterBattle()
     {
-        if(Health < 5)
+        if(Health < 4)
         {
             Health += 1;
             MaxHealth += 1;

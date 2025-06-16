@@ -188,8 +188,10 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "<b>Po Walce: </b>Zapewnia 2 darmowe od\u015Bwierzenia sklepu"
+  Description: "<b>Po Walce: </b>Zapewnia 2 darmowe od\u015Bwie\u017Cenia sklepu"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
@@ -199,6 +201,8 @@ MonoBehaviour:
   BoskaTarcza: 0
   attackAP: 0
   Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   HealthText: {fileID: 3501279418940951141}
 --- !u!114 &6985540666553226679
 MonoBehaviour:

@@ -18,7 +18,8 @@ public class SynergyManager : MonoBehaviour
         int i = 0;
         foreach(Synergy character in Synergie)
         {
-            character.Id = i;
+            character.gameObject.GetComponent<Synergy>().Id = i;
+            Debug.Log(character.Id + " " + character.gameObject.name);
             i++;
         }
     }

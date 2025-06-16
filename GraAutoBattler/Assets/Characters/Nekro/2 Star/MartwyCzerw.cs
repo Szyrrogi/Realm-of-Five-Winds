@@ -33,7 +33,7 @@ public class MartwyCzerw : Heros
 
     public void GhulBuff()
     {
-        int buff = Evolution ? 20 : 10;
+        int buff = Evolution ? 40 : 20;
         Health += buff;
         MaxHealth += buff;
         Attack += buff;               

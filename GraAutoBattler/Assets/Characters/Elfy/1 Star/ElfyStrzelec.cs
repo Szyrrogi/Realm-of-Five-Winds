@@ -7,7 +7,7 @@ public class ElfyStrzelec : Heros
     public override IEnumerator OnBattleStart()
     {
         int ile = Drzewo.IleDrzew(Enemy);
-        int buff = Evolution ? 20 : 10;
+        int buff = Evolution ? 16 : 8;
         Attack += buff * ile;
         Health += ((buff * ile)/2);
         MaxHealth += ((buff * ile)/2);

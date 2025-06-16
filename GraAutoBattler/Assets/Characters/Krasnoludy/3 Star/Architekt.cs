@@ -10,11 +10,14 @@ public class Architekt : Heros
         {
             foreach(Unit unit in EventSystem.eventSystem.GetComponent<FightManager>().units)
             {
-                if(unit.gameObject.GetComponent<Building>() && unit.Enemy == Enemy)
+                if (unit != null && unit.gameObject != null)
                 {
-                    yield return StartCoroutine(unit.gameObject.GetComponent<Building>().OnBattleStart());
-                    yield return new WaitForSeconds(0.2f);
-
+                    Building building = unit.GetComponent<Building>();
+                    if (building != null && unit.Enemy == Enemy)
+                    {
+                        yield return StartCoroutine(building.OnBattleStart());
+                        yield return new WaitForSeconds(0.2f);
+                    }
                 }
             }
         }

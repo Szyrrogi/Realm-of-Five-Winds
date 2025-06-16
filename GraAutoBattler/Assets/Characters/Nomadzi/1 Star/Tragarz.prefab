@@ -112,9 +112,11 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "<b>Zakup i Ulepszenie: </b> Otrzymujesz darmowe od\u015Bwirzenie
+  Description: "<b>Zakup i Ulepszenie: </b> Otrzymujesz darmowe od\u015Bwie\u017Cenie
     sklepu"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 2
   Enemy: 0

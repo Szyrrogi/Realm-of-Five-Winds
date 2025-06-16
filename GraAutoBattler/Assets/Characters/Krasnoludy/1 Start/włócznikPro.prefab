@@ -102,19 +102,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 158
   Name: "W\u0142\xF3cznik"
-  Cost: 3
+  Cost: 6
   Star: 1
-  Initiative: 23
-  MaxHealth: 20
-  Health: 20
-  Attack: 15
+  Initiative: 25
+  MaxHealth: 28
+  Health: 28
+  Attack: 21
   Defense: 5
   Range: 1
   AP: 0
   MagicResist: 0
-  Description: "Nieograniczony zasi\u0119g. Atakuje najbardziej oddaln\u0105 jednostke.
-    Nie porusza si\u0119."
+  Description: "Nieograniczony zasi\u0119g. Nie porusza si\u0119."
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0
@@ -130,6 +131,7 @@ MonoBehaviour:
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 0}
   Evolution: 1
+  Synergy: 0
 --- !u!114 &8731495660794391217
 MonoBehaviour:
   m_ObjectHideFlags: 0

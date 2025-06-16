@@ -189,7 +189,8 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: "<b>Poczatek Walki: </b>Zwi\u0119ksz atak oraz zdrowie o 20 dla Odzia\u0142\xF3w
-    Lodr\xF3w"
+    Lord\xF3w"
+  Lore: 
   CPU: 0
   Typy: 03000000
   UpgradeLevel: 0
