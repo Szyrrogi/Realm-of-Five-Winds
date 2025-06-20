@@ -111,6 +111,7 @@ public class Login : MonoBehaviour
         };
 
         string json = JsonUtility.ToJson(loginRequest);
+        string saveFolder = Path.Combine(Application.persistentDataPath, "Save");
 
         using (UnityWebRequest request = new UnityWebRequest(apiURL, "POST"))
         {
@@ -141,10 +142,12 @@ public class Login : MonoBehaviour
                 PlayerManager.PlayerFaceId = response.face;
                 PlayerManager.Id = response.id;
 
-                string savePathSynergy = Application.dataPath + "/Save/Synergy.txt";
+                //string savePathSynergy = Application.dataPath + "/Save/Synergy.txt";
+                string savePathSynergy = Path.Combine(saveFolder, "Synergy.txt");
                 File.WriteAllText(savePathSynergy, response.synergies);
 
-                string savePathAchievements = Application.dataPath + "/Save/Achivments.txt";
+                //string savePathAchievements = Application.dataPath + "/Save/Achivments.txt";
+                string savePathAchievements = Path.Combine(saveFolder, "Achievements.txt");
                 File.WriteAllText(savePathAchievements, response.achievements);
 
                 SaveLoginData(username, password);
