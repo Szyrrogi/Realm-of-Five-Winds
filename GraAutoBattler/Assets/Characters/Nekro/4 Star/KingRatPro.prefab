@@ -188,7 +188,8 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: "<b>Pocz\u0105tek Walki: </b>Otrzymuje 10/10 za ka\u017Cdego przyjaznego
-    Szczura na mapie, oraz 20/20 za ka\u017Cdego ulepszonego przyjaznego szczura."
+    Szczura na mapie, oraz 20/20 za ka\u017Cdego przyjaznego ulepszonego szczura."
+  Lore: 
   CPU: 0
   Typy: 0000000007000000
   UpgradeLevel: 1

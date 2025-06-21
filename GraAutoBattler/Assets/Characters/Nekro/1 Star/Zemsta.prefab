@@ -105,14 +105,15 @@ MonoBehaviour:
   Cost: 2
   Star: 1
   Initiative: 80
-  MaxHealth: 35
-  Health: 35
-  Attack: 35
+  MaxHealth: 37
+  Health: 37
+  Attack: 37
   Defense: 5
   Range: 0
   AP: 0
   MagicResist: 5
   Description: '<b>Po Walce: </b>Pernamentnie  traci 10 Ataku i Zdrowia'
+  Lore: 
   CPU: 0
   Typy: 02000000
   UpgradeLevel: 1

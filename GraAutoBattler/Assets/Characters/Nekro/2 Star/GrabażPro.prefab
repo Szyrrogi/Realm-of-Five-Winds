@@ -104,7 +104,7 @@ MonoBehaviour:
   Name: "Graba\u017C"
   Cost: 6
   Star: 2
-  Initiative: 0
+  Initiative: 5
   MaxHealth: 60
   Health: 60
   Attack: 30
@@ -112,7 +112,7 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "<b>Po Walce:  </b>przywo\u0142uje<b> Kostuche"
+  Description: "<b>Po Walce:  </b>przywo\u0142uje<b> Kostuch\u0119"
   Lore: 
   CPU: 0
   Typy: 

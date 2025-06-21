@@ -1645,6 +1645,7 @@ RectTransform:
   - {fileID: 1857919550}
   - {fileID: 1477453416}
   - {fileID: 658343044}
+  - {fileID: 748613547}
   - {fileID: 912895114}
   - {fileID: 1563667996}
   - {fileID: 463455751}
@@ -7583,6 +7584,111 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 741121728}
+  m_CullTransparentMesh: 1
+--- !u!1 &748613546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 748613547}
+  - component: {fileID: 748613550}
+  - component: {fileID: 748613549}
+  - component: {fileID: 748613548}
+  m_Layer: 5
+  m_Name: Inne
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &748613547
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748613546}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 156825744}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -410.3, y: 499.9}
+  m_SizeDelta: {x: 66.2915, y: 66.2915}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &748613548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748613546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1553800688}
+          m_TargetAssemblyTypeName: Bestiariusz, Assembly-CSharp
+          m_MethodName: UstawFrakcja
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 5
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &748613549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748613546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: e905de10d4dfce548830e4c12086cea0, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &748613550
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748613546}
   m_CullTransparentMesh: 1
 --- !u!1 &751870411
 GameObject:
@@ -15394,6 +15500,8 @@ MonoBehaviour:
   - {fileID: 1819705648667262722, guid: b6fa328967de7dc4f98c44fe7052413e, type: 3}
   - {fileID: 1819705648667262722, guid: 77abf14b00f47c4409d1be5c7fa7364d, type: 3}
   - {fileID: 1819705648667262722, guid: 5a2b61c06dba7a245854c73aa33d8033, type: 3}
+  - {fileID: 1819705648667262722, guid: 0022da2966400134894856cd10538615, type: 3}
+  - {fileID: 1819705648667262722, guid: 726a10e0561d4e3408bdc27b140add25, type: 3}
   Spells:
   - {fileID: 1819705648667262722, guid: 056dd7a78b810654f98504cdbe1a2a7c, type: 3}
   - {fileID: 1819705648667262722, guid: c7dddf62aa43d124bbd9b0d734106ad3, type: 3}
@@ -15408,6 +15516,8 @@ MonoBehaviour:
   - {fileID: 1819705648667262722, guid: da15c3bf856461e458a3bc1fd1c42533, type: 3}
   - {fileID: 1819705648667262722, guid: ed543a7a9e578c14cba55de4f12ea0ce, type: 3}
   - {fileID: 1819705648667262722, guid: 44b5a15fea7a7ab4e854f3643e72dfff, type: 3}
+  - {fileID: 1819705648667262722, guid: c2adda3f9491d484490a6141df597e4e, type: 3}
+  - {fileID: 1819705648667262722, guid: a8358ded1c86d564095a0701557511e0, type: 3}
 --- !u!114 &1553800690
 MonoBehaviour:
   m_ObjectHideFlags: 0

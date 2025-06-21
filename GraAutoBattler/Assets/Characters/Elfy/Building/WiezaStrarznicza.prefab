@@ -188,9 +188,11 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "<b>Akcja: </b>Wystrze pocisk we wszystkich wrog\xF3w na twoim rzedzie
-    zadaj\u0105cy 27 obra\u017Ce\u0144"
+  Description: "<b>Akcja: </b>Atakuje wszystkich wrog\xF3w, znajduj\u0105cych si\u0119
+    na twoim rz\u0119dzie zadaj\u0105cy 27 obra\u017Ce\u0144  "
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0

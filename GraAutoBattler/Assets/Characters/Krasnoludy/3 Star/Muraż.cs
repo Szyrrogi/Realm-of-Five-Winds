@@ -10,9 +10,11 @@ public class Muraż : Heros
         {
             foreach(Unit unit in EventSystem.eventSystem.GetComponent<FightManager>().units)
             {
-                if(unit.gameObject.GetComponent<Building>() && unit.Enemy == Enemy)
+                if (unit.gameObject.GetComponent<Building>() && unit.Enemy == Enemy)
                 {
                     Attack += unit.Health;
+                    Health += unit.Health;
+                    MaxHealth += unit.Health;
                 }
             }
         }
@@ -23,6 +25,8 @@ public class Muraż : Heros
             if(pole.unit != null && pole.unit.GetComponent<Building>())
             {
                 Attack += pole.unit.GetComponent<Building>().Health;
+                Health += pole.unit.GetComponent<Building>().Health;
+                MaxHealth += pole.unit.GetComponent<Building>().Health;
                 yield return new WaitForSeconds(0.2f);
             }
         }

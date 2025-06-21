@@ -112,8 +112,11 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "<b>Ostatni Oddech:</b> Przywr\xF3\u0107 te jednostk\u0119 z 1 zdrowia"
+  Description: "<b>Ostatni Oddech:</b> Przywr\xF3\u0107 t\u0119 jednostk\u0119 z
+    1 zdrowia"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 4
   Enemy: 0

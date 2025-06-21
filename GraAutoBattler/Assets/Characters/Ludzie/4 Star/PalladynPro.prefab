@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 37
-  Name: Palladyn
+  Name: Paladyn
   Cost: 9
   Star: 4
   Initiative: 80
@@ -114,7 +114,9 @@ MonoBehaviour:
   MagicResist: 20
   Description: "Posiada niewra\u017Cliwo\u015B\u0107 na obra\u017Cenia przez pierwsze
     dwie tury"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 0
   Enemy: 0
@@ -124,6 +126,8 @@ MonoBehaviour:
   BoskaTarcza: 0
   attackAP: 0
   Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   AttackText: {fileID: 5187295522447798132}
   HealthText: {fileID: 6430296136860862158}
   EvolveHeroes: {fileID: 0}

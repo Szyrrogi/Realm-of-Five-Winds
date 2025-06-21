@@ -112,7 +112,8 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: <b>Ulepszenie:</b> otrzymuje 20 Obrony
+  Description: <b>Ulepszenie:</b> otrzymuje 50 Obrony
+  Lore: 
   CPU: 0
   Typy: 02000000
   UpgradeLevel: 1

@@ -46,19 +46,31 @@ public class Bestiariusz : MonoBehaviour
 
     public void Next()
     {
-        if(Page * 4 < Show.Count - 4)
+        if (type == -1 && Page * 8 < Show.Count - 8)
         {
             Page++;
-            Complete() ;
+            FillInterfaceWithoutEvolutions();
+        }
+        else
+        if (Page * 4 < Show.Count - 4)
+        {
+            Page++;
+            Complete();
         }
     }
 
     public void Prev()
     {
-        if(Page != 0)
+        if (type == -1 && Page != 0)
         {
             Page--;
-            Complete() ;
+            FillInterfaceWithoutEvolutions();
+        }
+        else
+        if (Page != 0)
+        {
+            Page--;
+            Complete();
         }
     }
 
@@ -295,6 +307,35 @@ public class Bestiariusz : MonoBehaviour
         }
     }
 
+    private void FillInterfaceWithoutEvolutions()
+    {
+        // 8 slotów bez ewolucji i bez LORE
+        for (int i = 0; i < 8; i++)
+        {
+            int index = i + Page * 8;
+            bool slotValid = index < Show.Count && Show[index] != null;
+
+            Face[i].gameObject.SetActive(slotValid);
+            Opisy[i].gameObject.SetActive(slotValid);
+
+            if (slotValid)
+            {
+                var spriteRenderer = Show[index].GetComponent<SpriteRenderer>();
+                var unitComponent = Show[index].GetComponent<Unit>();
+
+                Face[i].sprite = spriteRenderer?.sprite;
+                Opisy[i].unit = unitComponent;
+            }
+        }
+
+        // Wyczyść LORE
+        for (int i = 0; i < 4; i++)
+        {
+            Lore[i].text = "";
+        }
+    }
+
+
     public void SetType(int newType)
     {
         type = newType;
@@ -319,18 +360,59 @@ public class Bestiariusz : MonoBehaviour
     }
     public void UstawFrakcja(int frakcjaIndex)
     {
-        // Sprawdź czy indeks jest w zakresie dostępnych frakcji
-        if (System.Enum.IsDefined(typeof(Fraction.fractionType), frakcjaIndex))
+        if (frakcjaIndex == 5)
         {
-            Frakcja = (Fraction.fractionType)frakcjaIndex;
+            type = -1;
             Page = 0;
-            Start(); // Odśwież widok
+            Show = characterManager.characters;
+            Show = characterManager.characters
+            .Where(go => go.GetComponent<Heros>() != null 
+                  && go.GetComponent<Heros>().Star == 0)
+            .OrderBy(go => go.GetComponent<Heros>().Cost)
+            .ToList();
+
+            foreach (Transform child in Synergie.transform)
+                {
+                    Destroy(child.gameObject); // Niszczy każdy obiekt-dziecko
+                }
+        foreach (Transform child in Achievements.transform)
+                {
+                    Destroy(child.gameObject); // Niszczy każdy obiekt-dziecko
+                }
+
+            // Obsługa specjalnych typów
+            if (type == 2)
+            {
+                ShowSynergyVoid();
+                return;
+            }
+            else if (type == 3)
+            {
+                ShowAchivmentsVoid();
+                return;
+            }
+            else
+            {
+                Synergie.SetActive(false);
+                Achievements.SetActive(false);
+            }
+
+            FillInterfaceWithoutEvolutions();
+    
+        return;
         }
-        else
-        {
-            Debug.LogWarning($"Nieznany indeks frakcji: {frakcjaIndex}");
-            // Możesz tutaj ustawić domyślną frakcję lub zignorować
-        }
+        // Sprawdź czy indeks jest w zakresie dostępnych frakcji
+            if (System.Enum.IsDefined(typeof(Fraction.fractionType), frakcjaIndex))
+            {
+                Frakcja = (Fraction.fractionType)frakcjaIndex;
+                Page = 0;
+                Start(); // Odśwież widok
+            }
+            else
+            {
+                Debug.LogWarning($"Nieznany indeks frakcji: {frakcjaIndex}");
+                // Możesz tutaj ustawić domyślną frakcję lub zignorować
+            }
     }
 
     public static void AddAchivments(int nr)

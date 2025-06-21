@@ -112,7 +112,7 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: '<b>Atak: </b>zmniejsz Obrone przeciwnika o 10'
+  Description: "<b>Atak: </b>zmniejsz Obron\u0119 przeciwnika o 10"
   Lore: 
   CPU: 0
   Typy: 

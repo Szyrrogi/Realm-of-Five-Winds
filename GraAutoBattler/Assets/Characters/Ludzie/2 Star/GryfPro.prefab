@@ -112,8 +112,9 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "<b>Poczatek Walki:</b> Zwi\u0119ksza iniciatywe wszystkim jednostkom
+  Description: "<b>Poczatek Walki:</b> Zwi\u0119ksza iniciatyw\u0119 wszystkim jednostkom
     w rz\u0119dzie o 30"
+  Lore: 
   CPU: 0
   Typy: 00000000
   UpgradeLevel: 1

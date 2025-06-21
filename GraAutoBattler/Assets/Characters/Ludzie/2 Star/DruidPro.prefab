@@ -114,8 +114,10 @@ MonoBehaviour:
   AP: 30
   MagicResist: 10
   Description: "<b>Ostatni Oddech:</b> Druid przemienia si\u0119 w <b>ulepszone</b>
-    zwierze. <b>Wtasowuje</b> zakl\u0119cia przywo\u0142ania do <b>puli</b>"
+    zwierz\u0119. <b>Wtasowuje</b> zakl\u0119cia przywo\u0142ania do <b>puli</b>"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 0
   Enemy: 0

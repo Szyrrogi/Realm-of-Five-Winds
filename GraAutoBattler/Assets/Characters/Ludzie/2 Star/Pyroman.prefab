@@ -237,7 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 47
   Name: Pyromanta
-  Cost: 5
+  Cost: 4
   Star: 2
   Initiative: 55
   MaxHealth: 60

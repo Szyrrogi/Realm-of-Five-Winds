@@ -188,8 +188,10 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: "<b>Pocz\u0105tek Walki: </b>Aktywuj efekt <b>Pocz\u0105tek Walki
-    </b>wszystkim jesnotkom w rz\u0119dzie"
+    </b>wszystkim jednostkom w rz\u0119dzie"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 4
   Enemy: 0

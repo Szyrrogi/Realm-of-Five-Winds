@@ -188,8 +188,10 @@ MonoBehaviour:
   AP: 0
   MagicResist: 35
   Description: "<b>Pocz\u0105tek Walki:</b> otrzymuje +35/35 za ka\u017Cde puste
-    pole"
+    pole w rz\u0119dzie"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 4
   Enemy: 0
@@ -199,6 +201,8 @@ MonoBehaviour:
   BoskaTarcza: 0
   attackAP: 0
   Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   AttackText: {fileID: 2333975298996084202}
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 0}

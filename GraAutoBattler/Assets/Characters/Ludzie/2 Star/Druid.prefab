@@ -247,8 +247,8 @@ MonoBehaviour:
   Range: 1
   AP: 30
   MagicResist: 10
-  Description: "<b>Ostatni Oddech:</b> Druid przemienia si\u0119 w zwierze. <b>Wtasowuje</b>
-    zakl\u0119cia przywo\u0142ania do <b>puli</b>"
+  Description: "<b>Ostatni Oddech:</b> Druid przemienia si\u0119 w zwierz\u0119.
+    <b>Wtasowuje</b> zakl\u0119cia przywo\u0142ania do <b>puli</b>"
   Lore: "Druidzi s\u0105 specyficzn\u0105 grup\u0105 czarodziej\xF3w. Zamiast kszta\u0142towa\u0107
     magi\u0119 z drzew na zewn\u0105trz ci splataj\u0105 j\u0105 z w\u0142asnym cia\u0142em,
     aby nast\u0119pnie uformowa\u0107 je w inny kszta\u0142t. Pozwala im to pozyskiwa\u0107

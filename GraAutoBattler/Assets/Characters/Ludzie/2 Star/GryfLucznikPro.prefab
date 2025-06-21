@@ -112,8 +112,9 @@ MonoBehaviour:
   Range: 1
   AP: 0
   MagicResist: 0
-  Description: "Wykonuje dwa ataki <b>Pocz\u0105tek Walki: </b>Zwi\u0119ksza iniciatywe
+  Description: "Wykonuje dwa ataki <b>Pocz\u0105tek Walki: </b>Zwi\u0119ksza iniciatyw\u0119
     wszystkim jednostkom w rzedzie o 10"
+  Lore: 
   CPU: 0
   Typy: 00000000
   UpgradeLevel: 0

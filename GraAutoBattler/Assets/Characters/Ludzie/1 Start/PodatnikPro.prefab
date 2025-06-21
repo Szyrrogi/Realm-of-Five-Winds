@@ -187,8 +187,10 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "<b>Pocz\u0105tek Walki:</b> Zyskaj 2 z\u0142oto"
+  Description: "<b>Pocz\u0105tek Walki:</b> Zyskaj 2 sztuki z\u0142ota"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0

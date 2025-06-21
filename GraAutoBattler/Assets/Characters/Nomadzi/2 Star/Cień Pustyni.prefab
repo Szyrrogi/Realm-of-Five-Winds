@@ -113,9 +113,11 @@ MonoBehaviour:
   AP: 10
   MagicResist: 10
   Description: "<b>Pocz\u0105tek Walki :</b> Je\u017Celi znajduj\u0119 si\u0119 na
-    ko\u0144cu rz\u0119du, otrzymuje 10 Ataku za ka\u017Cd\u0105 jednostk\u0119.
-    (Budynki r\xF3wnie\u017C blokuj\u0105 umiej\u0119tno\u015B\u0107)"
+    ko\u0144cu rz\u0119du, otrzymuje 10 Ataku za ka\u017Cd\u0105 jednostk\u0119 w
+    rz\u0119dzie. (Budynki r\xF3wnie\u017C blokuj\u0105 umiej\u0119tno\u015B\u0107)"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0

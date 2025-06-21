@@ -112,8 +112,9 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "<b>Pocz\u0105rek Walki: </b>Otrzymuje tyle Ataku i Zdrowia, ile iniciatywy
-    ma jednostka przed ni\u0105"
+  Description: "<b>Pocz\u0105tek Walki: </b>Otrzymuje tyle Ataku i Zdrowia, ile inicjatywy
+    ma jednostka przed ni\u0105  "
+  Lore: 
   CPU: 0
   Typy: 00000000
   UpgradeLevel: 1

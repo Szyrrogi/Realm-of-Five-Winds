@@ -113,8 +113,10 @@ MonoBehaviour:
   AP: 0
   MagicResist: 10
   Description: "<b>Pocz\u0105tek Walki: </b>Otrzymuje 20/20 je\u017Celi znajduje
-    si\u0119 mi\u0119dzy jednostk\u0105 magiczn\u0105 i nie magiczn\u0105"
+    si\u0119 mi\u0119dzy jednostk\u0105 magiczn\u0105 i niemagiczn\u0105"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0

@@ -112,7 +112,7 @@ MonoBehaviour:
   Range: 1
   AP: 0
   MagicResist: 0
-  Description: "Atakuje jednocze\u015Bnie wszystkiem przeciwnik\xF3w"
+  Description: "Atakuje jednocze\u015Bnie wszystkich przeciwnik\xF3w"
   Lore: 
   CPU: 0
   Typy: 

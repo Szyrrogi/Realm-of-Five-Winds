@@ -112,9 +112,11 @@ MonoBehaviour:
   Range: 0
   AP: 25
   MagicResist: 20
-  Description: "<b>Poczatek Walki: </b>Przeciwnicy trac\u0105 mo\u017Cliwo\u015B\u0107
+  Description: "<b>Pocz\u0105tek Walki: </b>Przeciwnicy trac\u0105 mo\u017Cliwo\u015B\u0107
     atak\xF3w dystansowych"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 4
   Enemy: 0

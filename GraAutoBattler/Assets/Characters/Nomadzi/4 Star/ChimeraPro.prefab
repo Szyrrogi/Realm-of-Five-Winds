@@ -187,7 +187,9 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: ". Jednostka przed, r\xF3wnie\u017C otrzymuje te bonusy"
+  Description: "<b>Pocz\u0105tek Walki: </b>Otrzymuje tyle Ataku i Zdrowia, ile inicjatywy
+    ma jednostka przed ni\u0105. Ta jednostka r\xF3wnie\u017C otrzymuje Atak i Zdrowie"
+  Lore: 
   CPU: 0
   Typy: 00000000
   UpgradeLevel: 1

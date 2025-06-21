@@ -112,7 +112,7 @@ MonoBehaviour:
   Range: 1
   AP: 0
   MagicResist: 0
-  Description: "<b>Pocz\u0105tek Walki: </b>Otrzymuje +8/4 za ka\u017Cd\u0105 jednostke
+  Description: "<b>Pocz\u0105tek Walki: </b>Otrzymuje +8/4 za ka\u017Cd\u0105 jednostk\u0119
     z typem drzewa na <b>arenie</b>"
   Lore: 
   CPU: 0

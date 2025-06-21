@@ -112,9 +112,11 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 10
-  Description: "<b>Skok, Pocz\u0105tek Walki: </b>Otrzymuje 5/5 je\u017Celi w s\u0105siaduj\u0105cych
-    rz\u0119dach na tym samym polu znajduje si\u0119 Wiecher Piask\xF3w"
+  Description: "<b>Skok, Pocz\u0105tek Walki: </b>Otrzymuje 5/5 za ka\u017Cdego Wichra
+    Piasku w s\u0105siaduj\u0105cych rz\u0119dach na tym samym polu"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0

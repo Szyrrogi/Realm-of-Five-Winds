@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 36
-  Name: Palladyn
+  Name: Paladyn
   Cost: 9
   Star: 4
   Initiative: 80
@@ -113,8 +113,10 @@ MonoBehaviour:
   AP: 30
   MagicResist: 20
   Description: "Posiada niewra\u017Cliwo\u015B\u0107 na obra\u017Cenia na jedn\u0105
-    ture"
+    tur\u0119"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0

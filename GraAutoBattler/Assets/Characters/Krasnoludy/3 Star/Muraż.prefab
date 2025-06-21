@@ -105,16 +105,18 @@ MonoBehaviour:
   Cost: 7
   Star: 3
   Initiative: 20
-  MaxHealth: 90
-  Health: 90
+  MaxHealth: 30
+  Health: 30
   Attack: 30
   Defense: 15
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "<b>Pocz\u0105tek Walki: </b>Otrzymuje tyle Ataku, ile \u0142\u0105cznie
-    maj\u0105 zdrowia Budynki w rz\u0119dzie"
+  Description: "<b>Pocz\u0105tek Walki: </b>Otrzymuje tyle Ataku i Zdrowia, ile \u0142\u0105cznie
+    maj\u0105 zdrowia przyjazne Budynki w rz\u0119dzie"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 2
   Enemy: 0

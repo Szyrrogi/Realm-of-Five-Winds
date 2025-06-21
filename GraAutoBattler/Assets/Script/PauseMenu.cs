@@ -19,6 +19,7 @@ public class PauseMenu : MonoBehaviour
     public Slider musicVolumeSlider;
     public Slider sfxVolumeSlider;
     public Image[] languageFlags;
+    public static int language;
 
      [Header("Audio Mixers")]
     public AudioMixer  audioMixer;
@@ -161,10 +162,11 @@ public class PauseMenu : MonoBehaviour
         audioMixer.SetFloat("SFXVolume", newVolume);
     }
 
-    public void SelectLanguage(string langCode)
+    public void SelectLanguage(int newlanguage)
     {
-        Debug.Log("Language set to: " + langCode);
+        //Debug.Log("Language set to: " + langCode);
         // Tu możesz podpiąć system lokalizacji np. używając Localization package
+        language = newlanguage;
     }
 
     public void ReturnToMainMenu()

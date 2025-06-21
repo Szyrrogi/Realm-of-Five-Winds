@@ -188,7 +188,7 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "<b>Poczatek Walki: </b> Podwaja zdrowie pierwszej osoby w rz\u0119dzie"
+  Description: "<b>Poczatek Walki: </b> Podwaja zdrowie pierwszej jednostce w rz\u0119dzie"
   Lore: 
   CPU: 0
   Typy: 

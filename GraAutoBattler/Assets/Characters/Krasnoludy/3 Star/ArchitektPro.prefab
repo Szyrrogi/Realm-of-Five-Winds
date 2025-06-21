@@ -113,8 +113,10 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: "<b>Pocz\u0105tek Walki: </b>Aktywuje efekt <b>Pocz\u0105tek Walki
-    </b> wszyskim budynkom na Arenie"
+    </b> wszystkim przyjaznym budynkom na Arenie"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 4
   Enemy: 0

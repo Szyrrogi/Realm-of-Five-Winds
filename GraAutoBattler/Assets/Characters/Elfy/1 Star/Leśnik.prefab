@@ -113,7 +113,8 @@ MonoBehaviour:
   Range: 0
   AP: 20
   MagicResist: 0
-  Description: "<b>Pocz\u0105tek Walki: </b>Przywo\u0142aj Wilka przed soba"
+  Description: "<b>Pocz\u0105tek Walki: </b>Przywo\u0142aj Wilka na pustym polu przed
+    sob\u0105"
   Lore: 
   CPU: 0
   Typy: 
