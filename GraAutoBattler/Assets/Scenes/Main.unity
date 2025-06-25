@@ -15720,6 +15720,17 @@ MonoBehaviour:
   - {fileID: 1819705648667262722, guid: 5a2b61c06dba7a245854c73aa33d8033, type: 3}
   - {fileID: 1819705648667262722, guid: 0022da2966400134894856cd10538615, type: 3}
   - {fileID: 1819705648667262722, guid: 726a10e0561d4e3408bdc27b140add25, type: 3}
+  - {fileID: 1819705648667262722, guid: 12f05beee9952784e8d78a012a4efa70, type: 3}
+  - {fileID: 1819705648667262722, guid: 24ead2fdbdec7d941955be9d742786e5, type: 3}
+  - {fileID: 1819705648667262722, guid: 179638cb9bf01974ba7afe48e7f3d789, type: 3}
+  - {fileID: 1819705648667262722, guid: 237388f61cd506d4080266ed551eba9c, type: 3}
+  - {fileID: 1819705648667262722, guid: 604f370dbc01833438cd10b88be47e91, type: 3}
+  - {fileID: 1819705648667262722, guid: 0ee5c586423c42e48a9c300ce74c5916, type: 3}
+  - {fileID: 1819705648667262722, guid: 91e0c2dfbd957f2459b7bce395895523, type: 3}
+  - {fileID: 1819705648667262722, guid: 77fd0201995914a4d97f36ba80d4bccb, type: 3}
+  - {fileID: 1819705648667262722, guid: 4de15f9d9b1c1f04bb9643ac09d416f9, type: 3}
+  - {fileID: 1819705648667262722, guid: 27db02aeaf92edb47bbe6340f791c571, type: 3}
+  - {fileID: 1819705648667262722, guid: 8040e2aa2abda48418ae3db3a03351ee, type: 3}
   Spells:
   - {fileID: 1819705648667262722, guid: 056dd7a78b810654f98504cdbe1a2a7c, type: 3}
   - {fileID: 1819705648667262722, guid: c7dddf62aa43d124bbd9b0d734106ad3, type: 3}
@@ -15889,6 +15900,13 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2d2b60c541e64b24d9dc7cd69c8b9a79, type: 3}
   - {fileID: 21300000, guid: f485b83893e06314197f30d2afd19700, type: 3}
   - {fileID: 21300000, guid: ebb729ef4c876e74885d3cafca7fa2ca, type: 3}
+  - {fileID: 21300000, guid: 68001cdcbf16a7243b62ba153af2255e, type: 3}
+  - {fileID: 21300000, guid: 2c301eaadfe333e49878ca661155598a, type: 3}
+  - {fileID: 21300000, guid: b140e08fbff28a34190341bfbd1dde81, type: 3}
+  - {fileID: 21300000, guid: 3e1df84f4153fa34fb04ac5e086d8ccb, type: 3}
+  - {fileID: 21300000, guid: 76b0aa8b96ecbf945849ddb5204d4fcb, type: 3}
+  - {fileID: 21300000, guid: d6e370d4e8475c64193e087cfe202882, type: 3}
+  - {fileID: 21300000, guid: c59ae1f9a1fabe945beac2fe688d833d, type: 3}
   face:
   - {fileID: 263968645}
   - {fileID: 1096515536}
@@ -15966,6 +15984,13 @@ MonoBehaviour:
   - {fileID: 4534926203212154897, guid: 4e9387da01b484a44a9413c968859cd6, type: 3}
   - {fileID: 5811439622190503248, guid: 1b342d6a828a69d428ce114d5daedfe9, type: 3}
   - {fileID: 5612125143029434037, guid: 83c6d67d2cdbdbe4aaa66609bef50dc4, type: 3}
+  - {fileID: 113255642492198537, guid: ff867694cc447dc4ba286b2c8b4904bd, type: 3}
+  - {fileID: 8805099497603026014, guid: 2e4882eecc2f81b4eb2a8bd178920770, type: 3}
+  - {fileID: 1880187795980141115, guid: 32a1630ec8f560143aaaf1dde0dba39a, type: 3}
+  - {fileID: 6650308804919429896, guid: f7e7e5a37d8b4f542afc492cfb327c25, type: 3}
+  - {fileID: 7629865227499381617, guid: 1b0ad8ebab7e5214681e675a4fc2dfbe, type: 3}
+  - {fileID: 4590773550651513240, guid: f54342dbcd330054e942f1cbbdecda38, type: 3}
+  - {fileID: 2348910534372643921, guid: 0e37154c93603c44c92838c47c82ca57, type: 3}
   parentObject: {fileID: 6187021}
   parentObjectEnemy: {fileID: 1724024893}
 --- !u!114 &1465039184

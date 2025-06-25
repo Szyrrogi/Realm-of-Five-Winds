@@ -24,7 +24,7 @@ public class DescriptionManager : MonoBehaviour
     void Start()
     {
         opis = this.gameObject;
-        //gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     void Update()

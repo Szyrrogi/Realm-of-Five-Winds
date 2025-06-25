@@ -28,6 +28,7 @@ public class Bestiariusz : MonoBehaviour
 
     public GameObject Synergie;
     public GameObject Achievements;
+    public GameObject Zasady;
     public List<GameObject> Osiagniecia;
     public Vector2[] transformY;
 
@@ -91,10 +92,18 @@ public class Bestiariusz : MonoBehaviour
             .ToList();
     }
 
+    public void ShowZasadyVoid()
+    {
+        Synergie.SetActive(false);
+        Achievements.SetActive(false);
+        Zasady.SetActive(true);
+    }
+
     public void ShowAchivmentsVoid()
     {
         Synergie.SetActive(false);
         Achievements.SetActive(true);
+        Zasady.SetActive(false);
 
         string firstLine = "";
         string savePath1 = Application.dataPath + "/Save/Achivments.txt";
@@ -104,7 +113,7 @@ public class Bestiariusz : MonoBehaviour
         {
             // Odczytaj wszystkie linie z pliku
             string[] allLines = File.ReadAllLines(savePath1);
-            
+
             // Jeśli plik nie jest pusty, weź pierwszą linię
             if (allLines.Length > 0)
             {
@@ -121,12 +130,12 @@ public class Bestiariusz : MonoBehaviour
             Debug.LogError("Plik nie istnieje: " + savePath1);
         }
         int j = 0;
-        foreach(GameObject New in Osiagniecia)
-        { 
+        foreach (GameObject New in Osiagniecia)
+        {
             Debug.Log("weszło");
             GameObject newSynergy = Instantiate(New, Achievements.transform); // Parent od razu
             newSynergy.SetActive(true);
-            if(!firstLine.Contains($"S{j}S"))
+            if (!firstLine.Contains($"S{j}S"))
             {
                 newSynergy.GetComponent<Image>().color = Color.gray;
             }
@@ -134,7 +143,7 @@ public class Bestiariusz : MonoBehaviour
             if (rectTransform != null)
             {
                 //rectTransform.anchoredPosition = transformY[0]; // Jeśli transformY[0] to Vector2
-                rectTransform.localPosition = new Vector3(transformY[j/4].x, transformY[j%4].y, 0);
+                rectTransform.localPosition = new Vector3(transformY[j / 4].x, transformY[j % 4].y, 0);
             }
             j++;
         }
@@ -144,6 +153,7 @@ public class Bestiariusz : MonoBehaviour
     {
         Synergie.SetActive(true);
         Achievements.SetActive(false);
+        Zasady.SetActive(false);
 
         string firstLine = "";
         string savePath1 = Application.dataPath + "/Save/Synergy.txt";
@@ -204,7 +214,7 @@ public class Bestiariusz : MonoBehaviour
         }
         else
         {
-            if(type == 3)
+            if (type == 3)
             {
                 ShowAchivmentsVoid();
             }
@@ -212,6 +222,7 @@ public class Bestiariusz : MonoBehaviour
             {
                 Synergie.SetActive(false);
                 Achievements.SetActive(false);
+                Zasady.SetActive(false);
             }
         }
         if (type == 0)
@@ -395,6 +406,7 @@ public class Bestiariusz : MonoBehaviour
             {
                 Synergie.SetActive(false);
                 Achievements.SetActive(false);
+                Zasady.SetActive(false);
             }
 
             FillInterfaceWithoutEvolutions();

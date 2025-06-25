@@ -1,0 +1,19 @@
+{
+    "playerId": 2,
+    "money": 5,
+    "incom": 6,
+    "poddymka": false,
+    "win": 0,
+    "fractions": "10000",
+    "lose": 3,
+    "round": 0,
+    "shop": [
+        0,
+        2,
+        14,
+        12,
+        2
+    ],
+    "nextFight": "{\n    \"playerName\": \"Owca\",\n    \"number\": 4,\n    \"levelUp\": 1,\n    \"units\": [\n        {\n            \"Line\": 0,\n            \"Pole\": 0,\n            \"Id\": 69,\n            \"Name\": \"Zombie\",\n            \"Cost\": 3,\n            \"RealCost\": 3,\n            \"Initiative\": 40,\n            \"MaxHealth\": 55,\n            \"Health\": 55,\n            \"Attack\": 15,\n            \"Defense\": 15,\n            \"Range\": 0,\n            \"AP\": 0,\n            \"MagicResist\": 0,\n            \"Description\": \"<b>Ostatni Oddech:</b> Przywróć te jednostkę z 1 zdrowia\",\n            \"UpgradeLevel\": 1,\n            \"SpellId\": 0\n        }\n    ]\n}",
+    "units": []
+}

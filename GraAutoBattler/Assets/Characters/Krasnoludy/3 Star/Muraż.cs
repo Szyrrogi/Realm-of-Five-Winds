@@ -10,7 +10,7 @@ public class Muraż : Heros
         {
             foreach(Unit unit in EventSystem.eventSystem.GetComponent<FightManager>().units)
             {
-                if (unit.gameObject.GetComponent<Building>() && unit.Enemy == Enemy)
+                if (unit != null && unit.gameObject != null && unit.gameObject.GetComponent<Building>() && unit.Enemy == Enemy)
                 {
                     Attack += unit.Health;
                     Health += unit.Health;

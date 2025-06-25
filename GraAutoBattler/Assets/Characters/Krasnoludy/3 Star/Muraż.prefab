@@ -102,13 +102,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 0
   Name: "Mura\u017C"
-  Cost: 7
+  Cost: 6
   Star: 3
   Initiative: 20
-  MaxHealth: 30
-  Health: 30
-  Attack: 30
-  Defense: 15
+  MaxHealth: 50
+  Health: 50
+  Attack: 45
+  Defense: 20
   Range: 0
   AP: 0
   MagicResist: 0

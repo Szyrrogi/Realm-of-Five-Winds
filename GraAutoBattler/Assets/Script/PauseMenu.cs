@@ -45,7 +45,7 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
-        
+
 
         // Filtrowanie tylko rozdzielczości 16:9
         resolutions = Screen.resolutions
@@ -83,6 +83,17 @@ public class PauseMenu : MonoBehaviour
         // {
         //     currentResIndex = i;
         // }
+            float masterVol = PlayerPrefs.GetFloat("MasterVolume", 1f); // domyślnie 1.0
+            float musicVol = PlayerPrefs.GetFloat("MusicVolume", 1f);
+            float sfxVol = PlayerPrefs.GetFloat("SFXVolume", 1f);
+
+            masterVolumeSlider.value = masterVol;
+            musicVolumeSlider.value = musicVol;
+            sfxVolumeSlider.value = sfxVol;
+
+            SetMasterVolume(masterVol);
+            SetMusicVolume(musicVol);
+            SetSFXVolume(sfxVol);
     }
 
 
@@ -132,35 +143,30 @@ public class PauseMenu : MonoBehaviour
 
 
 
-    public void SetMasterVolume(float volume)
-    {
-        float newVolume = Mathf.Log10(volume) * 20;
-        if(volume == 0)
-        {
-            newVolume = -80f;
-        }
-        audioMixer.SetFloat("Master", newVolume);
-    }
+public void SetMasterVolume(float volume)
+{
+    float newVolume = (volume == 0) ? -80f : Mathf.Log10(volume) * 20;
+    audioMixer.SetFloat("Master", newVolume);
+    PlayerPrefs.SetFloat("MasterVolume", volume);
+    PlayerPrefs.Save();
+}
 
-    public void SetMusicVolume(float volume)
-    {
-        float newVolume = Mathf.Log10(volume) * 20;
-        if(volume == 0)
-        {
-            newVolume = -80f;
-        }
-        audioMixer.SetFloat("MusicVolume", newVolume);
-    }
+public void SetMusicVolume(float volume)
+{
+    float newVolume = (volume == 0) ? -80f : Mathf.Log10(volume) * 20;
+    audioMixer.SetFloat("MusicVolume", newVolume);
+    PlayerPrefs.SetFloat("MusicVolume", volume);
+    PlayerPrefs.Save();
+}
 
-    public void SetSFXVolume(float volume)
-    {
-        float newVolume = Mathf.Log10(volume) * 20;
-        if(volume == 0)
-        {
-            newVolume = -80f;
-        }
-        audioMixer.SetFloat("SFXVolume", newVolume);
-    }
+public void SetSFXVolume(float volume)
+{
+    float newVolume = (volume == 0) ? -80f : Mathf.Log10(volume) * 20;
+    audioMixer.SetFloat("SFXVolume", newVolume);
+    PlayerPrefs.SetFloat("SFXVolume", volume);
+    PlayerPrefs.Save();
+}
+
 
     public void SelectLanguage(int newlanguage)
     {

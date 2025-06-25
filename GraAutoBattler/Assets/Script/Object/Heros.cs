@@ -137,6 +137,7 @@ public class Heros : Unit
                     yield return StartCoroutine(Jump(pole.gameObject));
                     ReadyToJump = false;
                     Debug.Log(pole.nr);
+                    
                 }
                 else
                 {

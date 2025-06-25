@@ -4,6 +4,22 @@ using UnityEngine;
 
 public class Siłacz : Heros
 {
+
+    public bool afterFirstShoot;
+    public bool synergy;
+    public override int BeforAttack(GameObject enemy, int damage)
+    {
+        if (synergy)
+        {
+            if (!afterFirstShoot)
+            {
+                damage *= 3;
+                afterFirstShoot = true;
+            }
+        }
+        return damage;
+    }
+
     public override void Evolve()
     {
         GameObject newUnitObject = Instantiate(EvolveHeroes, gameObject.transform.position, Quaternion.identity);
@@ -14,7 +30,7 @@ public class Siłacz : Heros
         newUnit.Health = Health + 50;
         newUnit.MaxHealth = MaxHealth + 50;
         newUnit.Attack = Attack;
-        newUnit.Defense = Defense ;
+        newUnit.Defense = Defense;
         newUnit.AP = AP;
         newUnit.MagicResist = MagicResist;
 

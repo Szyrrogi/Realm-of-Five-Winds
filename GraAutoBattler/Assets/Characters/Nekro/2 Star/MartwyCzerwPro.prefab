@@ -100,20 +100,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a51e0c128254e349a2f9cd341546025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 251
   Name: Martwy Czerw
-  Cost: 12
+  Cost: 48
   Star: 0
-  Initiative: 50
-  MaxHealth: 80
-  Health: 80
-  Attack: 60
+  Initiative: 65
+  MaxHealth: 176
+  Health: 176
+  Attack: 132
   Defense: 8
   Range: 0
   AP: 0
   MagicResist: 0
   Description: "Gdy jaka\u015B jednostka zginie w tym rz\u0119dzie, Czerw otrzymuje
-    +20/20"
+    +40/40"
   Lore: 
   CPU: 0
   Typy: 

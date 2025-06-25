@@ -187,8 +187,9 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "<b>Pocz\u0105tek Walki: </b>Otrzymuje +24/24 za ka\u017Cdego przyjaznego
+  Description: "<b>Pocz\u0105tek Walki: </b>Otrzymuje +15/15 za ka\u017Cdego przyjaznego
     Wilka na <b>Arenie</b>"
+  Lore: 
   CPU: 0
   Typy: 0000000001000000
   UpgradeLevel: 1

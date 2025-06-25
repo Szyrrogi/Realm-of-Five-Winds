@@ -115,7 +115,7 @@ MonoBehaviour:
   Description: "<b>Atak: </b>zmniejsz Obron\u0119 przeciwnika o 10"
   Lore: 
   CPU: 0
-  Typy: 
+  Typy: 08000000
   UpgradeLevel: 1
   UpgradeNeed: 2
   Enemy: 0

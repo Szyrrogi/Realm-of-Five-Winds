@@ -30,11 +30,12 @@ public class Unit : MonoBehaviour
         Zwierzęta,
         Wilki,
         Szkielety,
-        OddziałyLordów, 
+        OddziałyLordów,
         Anioł,
         Drzewo,
         Wampir,
-        Szczur
+        Szczur,
+        Duch
     }
 
     [Space(10)]

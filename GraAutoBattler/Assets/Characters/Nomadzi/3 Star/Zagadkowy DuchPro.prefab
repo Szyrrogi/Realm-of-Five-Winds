@@ -113,7 +113,9 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: 
+  Lore: 
   CPU: 0
+  Typy: 08000000
   UpgradeLevel: 1
   UpgradeNeed: 2
   Enemy: 0

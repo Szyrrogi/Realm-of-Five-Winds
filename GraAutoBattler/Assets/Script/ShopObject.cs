@@ -109,7 +109,7 @@ public class ShopObject : MonoBehaviour
         }
         if(unitComponent.gameObject.GetComponent<Heros>() && unitComponent.gameObject.GetComponent<Heros>().Evolution  && typeDisplayIndex < 2)
         {
-            Type[typeDisplayIndex].sprite = SpritesType[9]; // +1 to skip range sprite
+            Type[typeDisplayIndex].sprite = SpritesType[10]; // +1 to skip range sprite
             typeDisplayIndex++;
         }
 

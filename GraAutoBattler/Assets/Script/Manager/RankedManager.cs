@@ -108,7 +108,7 @@ public class RankedManager : MonoBehaviour
             // Zmiana wartości LP w zależności od sum
             if (sum >= 0)
             {
-                for (int i = 0; i <= sum; i++)
+                for (int i = 0; i < sum; i++)
                 {
                     NewLp.text = "+" + (sum - i);
                     PlayerManager.LP++;
@@ -120,7 +120,7 @@ public class RankedManager : MonoBehaviour
             {
                 int min = PlayerManager.LP % 300;
                 min = PlayerManager.LP - min;
-                for (int i = 0; i >= sum; i--)
+                for (int i = 0; i > sum; i--)
                 {
                     Debug.Log(-sum + ">" + min);
                     if(PlayerManager.LP > min)

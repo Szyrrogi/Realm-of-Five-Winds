@@ -86,7 +86,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6934024521668934397}
   - component: {fileID: 3712362837729000110}
-  - component: {fileID: 1056119325801745502}
+  - component: {fileID: -4301989449697689893}
   - component: {fileID: 6985540666553226679}
   - component: {fileID: 8286433214309528574}
   m_Layer: 0
@@ -164,7 +164,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1056119325801745502
+--- !u!114 &-4301989449697689893
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,12 +173,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1819705648667262722}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5884da60c0958ec488c39be894a22c66, type: 3}
+  m_Script: {fileID: 11500000, guid: f438f64d44468744180624f2be281269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 94
   Name: Schronienie
-  Cost: 3
+  Cost: 4
   Star: 2
   Initiative: 20
   MaxHealth: 40
@@ -188,9 +188,11 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "<b>Poczatek Walki: </b>Zwi\u0119ksz atak oraz zdrowie o 20 dla Wampir\xF3w"
+  Description: "<b>Poczatek Walki: </b>Zwi\u0119ksz Si\u0142\u0119, Moc Zakle\u0107
+    oraz Zdrowie o 20 dla Wampir\xF3w i Duch\xF3w"
+  Lore: 
   CPU: 0
-  Typy: 06000000
+  Typy: 0600000008000000
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
@@ -203,10 +205,8 @@ MonoBehaviour:
   CanJump: 0
   ReadyToJump: 0
   HealthText: {fileID: 3501279418940951141}
-  pattern:
-  - {fileID: 1329609480966861234, guid: c2be478055c028546aa2e4983735a60e, type: 3}
-  - {fileID: 7077116957063720035, guid: cf3c6993735519a46a411e52ede536a9, type: 3}
   type: 6
+  type2: 8
 --- !u!114 &6985540666553226679
 MonoBehaviour:
   m_ObjectHideFlags: 0

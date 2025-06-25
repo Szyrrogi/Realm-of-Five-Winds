@@ -113,8 +113,9 @@ MonoBehaviour:
   AP: 30
   MagicResist: 0
   Description: "Zadaje obra\u017Cenia absolutne zale\u017Cne od ataku"
+  Lore: 
   CPU: 0
-  Typy: 02000000
+  Typy: 0200000008000000
   UpgradeLevel: 1
   UpgradeNeed: 4
   Enemy: 0

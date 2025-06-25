@@ -114,7 +114,9 @@ MonoBehaviour:
   MagicResist: 15
   Description: "Atak Piaskowego D\u017Cinna jest zawsze r\xF3wny zdrowiu. <b>Ulepszenie:
     </b> Otrzymuje 50 Zdrowia."
+  Lore: 
   CPU: 0
+  Typy: 08000000
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0

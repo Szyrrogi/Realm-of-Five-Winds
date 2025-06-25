@@ -115,7 +115,9 @@ MonoBehaviour:
   MagicResist: 20
   Description: "Mo\u017Ce uczy\u0107 si\u0119 wszystkich zakl\u0119\u0107 <b> Ulepszenie:
     </b>Otrzymuje 30 Mocy zakl\u0119\u0107"
+  Lore: 
   CPU: 0
+  Typy: 08000000
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0

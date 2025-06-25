@@ -45,8 +45,8 @@ public class SynergyMiecz : Synergy
             {
                 yield return new WaitForSeconds(0.3f);
                 pole.unit.GetComponent<Heros>().attackAP = true;
-                pole.unit.GetComponent<Unit>().AP += pole.unit.GetComponent<Unit>().Attack + 5;
-                pole.unit.GetComponent<Unit>().ShowPopUp((pole.unit.GetComponent<Unit>().Attack + 5).ToString(), Color.blue);
+                pole.unit.GetComponent<Unit>().AP += pole.unit.GetComponent<Unit>().Attack + 10;
+                pole.unit.GetComponent<Unit>().ShowPopUp((pole.unit.GetComponent<Unit>().Attack + 10).ToString(), Color.blue);
                 
             }
         }

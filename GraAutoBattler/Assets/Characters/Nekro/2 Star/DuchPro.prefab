@@ -116,7 +116,7 @@ MonoBehaviour:
     atak\xF3w dystansowych"
   Lore: 
   CPU: 0
-  Typy: 
+  Typy: 08000000
   UpgradeLevel: 1
   UpgradeNeed: 4
   Enemy: 0

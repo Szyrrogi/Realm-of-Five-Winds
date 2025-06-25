@@ -100,14 +100,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2572c2a7b4f77f241a8daadf0e600dde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 247
   Name: "Je\u017Adziec Gryfi"
-  Cost: 8
+  Cost: 32
   Star: 0
-  Initiative: 90
-  MaxHealth: 100
-  Health: 100
-  Attack: 40
+  Initiative: 117
+  MaxHealth: 220
+  Health: 220
+  Attack: 88
   Defense: 20
   Range: 1
   AP: 0

@@ -86,7 +86,7 @@ public class FightManager : MonoBehaviour
                 }
                 break;
             case 1:
-                if (GameSpeed < 10)
+                if (GameSpeed < 20)
                     GameSpeed *= 2f;
                 Time.timeScale = GameSpeed;
                 break;

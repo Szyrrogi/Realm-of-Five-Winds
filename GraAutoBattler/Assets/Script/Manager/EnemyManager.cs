@@ -127,9 +127,35 @@ public class EnemyManager : MonoBehaviour
     {
     List<FightManager.AutoBattlerGameViewModel> gamesList = new List<FightManager.AutoBattlerGameViewModel>();
 
-    // Zapytanie SQL z filtrami
-    string query = @"
-        SELECT TOP 1 * 
+    string query;
+    SqlCommand cmd;
+
+    if (!RankedManager.Ranked)
+    {
+        // Tryb nierankingowy - losowy gracz z LP = 0
+        query = @"
+            SELECT TOP 1 * 
+            FROM AutoBattlerGame 
+            WHERE Round = @Round 
+            AND Name != @PlayerName
+            AND PlayerId != @PlayerId 
+            AND LP = 0
+            ORDER BY NEWID()";
+        
+        cmd = new SqlCommand(query, DB.con);
+        cmd.Parameters.AddWithValue("@Round", round);
+        cmd.Parameters.AddWithValue("@PlayerName", playerName);
+        cmd.Parameters.AddWithValue("@PlayerId", playerId);
+    }
+    else
+    {
+        // Tryb rankingowy - dynamiczny przedział + wartości >1500
+        int rangeSize = 300;
+        int lowerBound = (int)(Math.Floor((double)LP / rangeSize) * rangeSize);
+        int upperBound = (int)(Math.Ceiling((double)LP / rangeSize) * rangeSize);
+        
+        query = @"
+            SELECT TOP 1 * 
             FROM (
                 SELECT TOP 15 *, ABS(LP - @LP) AS Diff
                 FROM AutoBattlerGame 
@@ -137,27 +163,25 @@ public class EnemyManager : MonoBehaviour
                 AND LP > 0
                 AND Name != @PlayerName
                 AND PlayerId != @PlayerId
+                AND (
+                    (LP BETWEEN @LowerBound AND @UpperBound) OR
+                    (LP > 1500)
+                )
                 ORDER BY ABS(LP - @LP)
             ) AS Top20Diff
-            ORDER BY NEWID();";
-    if(!RankedManager.Ranked)
-    {
-       query = @"
-        SELECT TOP 1 * 
-        FROM AutoBattlerGame 
-        WHERE Round = @Round 
-          AND Name != @PlayerName
-          AND PlayerId != @PlayerId 
-		  AND LP = 0
-          ORDER BY NEWID()"; 
+            ORDER BY NEWID()";
+        
+        cmd = new SqlCommand(query, DB.con);
+        cmd.Parameters.AddWithValue("@Round", round);
+        cmd.Parameters.AddWithValue("@PlayerName", playerName);
+        cmd.Parameters.AddWithValue("@PlayerId", playerId);
+        cmd.Parameters.AddWithValue("@LP", LP);
+        cmd.Parameters.AddWithValue("@LowerBound", lowerBound);
+        cmd.Parameters.AddWithValue("@UpperBound", upperBound);
     }
-        //   AND Version = @Version
-    SqlCommand cmd = new SqlCommand(query, DB.con);
-    cmd.Parameters.AddWithValue("@Round", round);
-    cmd.Parameters.AddWithValue("@PlayerName", playerName);
-    cmd.Parameters.AddWithValue("@PlayerId", playerId);
-    cmd.Parameters.AddWithValue("@Version", version);
-    cmd.Parameters.AddWithValue("@LP", LP);
+
+    // Dodaj parametr Version tylko jeśli jest używany w obu zapytaniach
+    // cmd.Parameters.AddWithValue("@Version", version);
 
     DataSet ds = DB.selectSQL(cmd);
 

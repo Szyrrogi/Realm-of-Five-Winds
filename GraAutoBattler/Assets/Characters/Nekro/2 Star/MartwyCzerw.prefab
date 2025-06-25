@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a51e0c128254e349a2f9cd341546025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 250
   Name: Martwy Czerw
   Cost: 12
   Star: 0

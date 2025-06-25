@@ -6,7 +6,7 @@ public class WilkAlfa : Heros
 {
     public override IEnumerator OnBattleStart()
     {
-        int buff = Evolution ? 24 : 15;
+        int buff = Evolution ? 15 : 8;
         Attack -= buff;
         Health -= buff;
         MaxHealth -= buff;
