@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 195
-  Name: Druidka
+  Name: "Wr\xF3\u017Cka"
   Cost: 2
   Star: 1
   Initiative: 40

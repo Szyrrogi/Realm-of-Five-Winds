@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 40
-  Name: "Namiot Rekrut\xF3w "
+  Name: Punkt Handlowy
   Cost: 5
   Star: 2
   Initiative: 20

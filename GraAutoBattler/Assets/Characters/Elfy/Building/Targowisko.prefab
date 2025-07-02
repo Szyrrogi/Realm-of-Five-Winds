@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Targowisko
+  Name: Port Handlowy
   Cost: 3
   Star: 2
   Initiative: 20
@@ -189,7 +189,9 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: "Otrzymujesz 1 z\u0142ota, je\u017Celi zwyci\u0119\u017Cysz ten rz\u0105d"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0

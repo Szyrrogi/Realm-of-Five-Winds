@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Ogrodnik
+  Name: Opiekun
   Cost: 2
   Star: 1
   Initiative: 15
@@ -113,7 +113,9 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: "<b>Kupno i Ulepszenie :</b>Przywo\u0142aj Drzewo"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 4
   Enemy: 0

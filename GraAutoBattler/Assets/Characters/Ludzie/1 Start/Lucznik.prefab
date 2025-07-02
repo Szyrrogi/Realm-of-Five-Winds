@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 5
-  Name: "\u0141ucznik"
+  Name: Srebrny Strzelec
   Cost: 3
   Star: 1
   Initiative: 30

@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Opancerzony Rycerz
+  Name: Rycerz
   Cost: 4
   Star: 2
   Initiative: 40
@@ -189,6 +189,7 @@ MonoBehaviour:
   MagicResist: 20
   Description: "<b>Gdy zostanie zaatakowany:</b> przeciwnik otrzymuje <color=#999999>25</color>
     obra\u017Ce\u0144"
+  Lore: 
   CPU: 0
   Typy: 03000000
   UpgradeLevel: 0

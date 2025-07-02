@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Czerw
+  Name: "Po\u017Ceracz"
   Cost: 7
   Star: 3
   Initiative: 74
@@ -113,6 +113,7 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: <b>Skok</b> Po zabiciu przeciwnika otrzymuje 40/40
+  Lore: 
   CPU: 0
   Typy: 00000000
   UpgradeLevel: 1

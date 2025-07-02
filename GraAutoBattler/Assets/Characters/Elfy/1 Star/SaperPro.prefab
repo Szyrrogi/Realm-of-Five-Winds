@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 202
-  Name: Saper
+  Name: Traper
   Cost: 3
   Star: 1
   Initiative: 50
@@ -113,7 +113,9 @@ MonoBehaviour:
   AP: 20
   MagicResist: 0
   Description: "Podczas <b>\u0142\u0105czenia</b>, zysuje 100% Mocy zakl\u0119\u0107."
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0

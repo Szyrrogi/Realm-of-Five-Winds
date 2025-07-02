@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: "Le\u015Bnik"
+  Name: Likajos
   Cost: 3
   Star: 1
   Initiative: 95

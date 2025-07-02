@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Nauczyciel
+  Name: Instruktor
   Cost: 4
   Star: 2
   Initiative: 75
@@ -114,7 +114,9 @@ MonoBehaviour:
   MagicResist: 0
   Description: "<b>Pocz\u0105tek Walki: </b>Uczy jednsotk\u0119 przed sob\u0105 atakowa\u0107
     dystansowo"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 2
   Enemy: 0

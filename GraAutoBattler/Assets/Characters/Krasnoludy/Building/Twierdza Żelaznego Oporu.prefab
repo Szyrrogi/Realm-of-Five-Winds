@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: "Twierdza \u017Belaznego Oporu"
+  Name: Forteca
   Cost: 5
   Star: 2
   Initiative: 20
@@ -189,8 +189,10 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: "<b>Poczatek Walki: </b>Zwi\u0119ksz Obron\u0119 wszystkim jednostkom
-    w rz\u0119dzie o 10"
+    w rz\u0119dzie o 20"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0

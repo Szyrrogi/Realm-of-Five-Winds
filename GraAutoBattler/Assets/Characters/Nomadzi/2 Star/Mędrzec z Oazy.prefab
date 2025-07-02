@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: "M\u0119drzec"
+  Name: Pustelnik
   Cost: 5
   Star: 2
   Initiative: 91
@@ -115,7 +115,9 @@ MonoBehaviour:
   Description: "<b>Pocz\u0105tek walki: </b>Je\u017Celi w rz\u0119dzie wszystkie
     jednsotki maj\u0105 nieparzyst\u0105 ilo\u015B\u0107 zdrowia, M\u0119drzec podwaja
     swoje statystyki"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0

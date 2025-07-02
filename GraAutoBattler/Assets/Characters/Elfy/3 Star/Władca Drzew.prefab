@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: "W\u0142adca Drzew"
+  Name: Ojciec Zagajnika
   Cost: 6
   Star: 3
   Initiative: 60

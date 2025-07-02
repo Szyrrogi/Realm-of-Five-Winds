@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 51
-  Name: "Tawerna Rekrut\xF3w"
+  Name: "Ob\xF3z wojenny"
   Cost: 2
   Star: 3
   Initiative: 20
@@ -191,6 +191,7 @@ MonoBehaviour:
   MagicResist: 0
   Description: "W sklepie pojawiaj\u0105 si\u0119 jedynie jednostki warte 3 lub mniej
     z\u0142ota"
+  Lore: 
   CPU: 0
   Typy: 
   UpgradeLevel: 0

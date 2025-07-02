@@ -103,7 +103,7 @@ MonoBehaviour:
   Id: 0
   Name: "Nied\u017Awiedz"
   Cost: 5
-  Star: 4
+  Star: 0
   Initiative: 60
   MaxHealth: 70
   Health: 70

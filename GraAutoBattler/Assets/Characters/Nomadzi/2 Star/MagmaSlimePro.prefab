@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 120
-  Name: Magmowy Szlam
+  Name: Stopiony Szlam
   Cost: 5
   Star: 2
   Initiative: 50
@@ -115,7 +115,9 @@ MonoBehaviour:
   MagicResist: 20
   Description: "Zwi\u0119ksza atak jednoste przed soba o warto\u015B\u0107 swojej
     Mocy Zakl\u0119\u0107"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0

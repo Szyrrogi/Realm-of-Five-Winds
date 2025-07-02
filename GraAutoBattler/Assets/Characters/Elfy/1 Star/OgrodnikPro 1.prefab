@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Ogrodnik
+  Name: Opiekun
   Cost: 3
   Star: 1
   Initiative: 15
@@ -188,7 +188,9 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: 
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0

@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 63
-  Name: "Paj\u0105k"
+  Name: Arachnid
   Cost: 3
   Star: 1
   Initiative: 86

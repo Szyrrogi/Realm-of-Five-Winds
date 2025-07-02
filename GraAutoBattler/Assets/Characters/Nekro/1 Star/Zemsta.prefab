@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 67
-  Name: Zemsta
+  Name: "Rozcz\u0142onkowane Zw\u0142oki"
   Cost: 2
   Star: 1
   Initiative: 80

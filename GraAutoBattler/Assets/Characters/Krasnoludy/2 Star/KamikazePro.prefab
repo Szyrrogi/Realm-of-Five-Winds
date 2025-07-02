@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Kamikaze
+  Name: Szaleniec
   Cost: 4
   Star: 2
   Initiative: 95
@@ -113,7 +113,9 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: "<b>Ochrona</b>. Otrzymuje potr\xF3jne obra\u017Cenia"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0

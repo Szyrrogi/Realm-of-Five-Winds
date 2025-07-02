@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: "Si\u0142acz"
+  Name: "Mia\u017Cd\u017Cycie"
   Cost: 4
   Star: 2
   Initiative: 30
@@ -113,7 +113,9 @@ MonoBehaviour:
   AP: 60
   MagicResist: 0
   Description: '<b>Ulepszenie: </b> Otrzymuje 50 Zdrowia'
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0
@@ -129,6 +131,8 @@ MonoBehaviour:
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 1819705648667262722, guid: 5000a55ab4c10bb4ab9e5aa7c746ac05, type: 3}
   Evolution: 0
+  afterFirstShoot: 0
+  synergy: 0
 --- !u!114 &8731495660794391217
 MonoBehaviour:
   m_ObjectHideFlags: 0

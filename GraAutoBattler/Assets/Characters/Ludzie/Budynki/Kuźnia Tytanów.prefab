@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: "Ku\u017Ania Tytan\xF3w"
+  Name: "Ku\u017Ania"
   Cost: 6
   Star: 3
   Initiative: 20
@@ -191,12 +191,20 @@ MonoBehaviour:
   MagicResist: 0
   Description: "W sklepie pojawiaj\u0105 si\u0119 jedynie jednostki warte 4 lub wi\u0119cej
     z\u0142ota"
+  Lore: 
+  CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
+  fraction: 0
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
+  attackAP: 0
+  Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   HealthText: {fileID: 3501279418940951141}
 --- !u!114 &293025936813746910
 MonoBehaviour:

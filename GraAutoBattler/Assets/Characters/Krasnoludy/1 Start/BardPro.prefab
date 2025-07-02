@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Bard
+  Name: Minstrel
   Cost: 2
   Star: 1
   Initiative: 50
@@ -114,7 +114,9 @@ MonoBehaviour:
   MagicResist: 0
   Description: "<b>Pocz\u0105tek Walki: </b>Daj jednostce przed sob\u0105 dwukrotnie
     efekt <b>Morali</b>"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0

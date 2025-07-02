@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 41
-  Name: Namiot Leczniczy
+  Name: Lazaret
   Cost: 3
   Star: 2
   Initiative: 35
@@ -189,6 +189,7 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: "<b>Akcja: </b>Leczy wszyskich sojusznik\xF3w w rz\u0119dzie o 10"
+  Lore: 
   CPU: 0
   Typy: 
   UpgradeLevel: 0

@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Mina
+  Name: "Pu\u0142apka"
   Cost: 1
   Star: 0
   Initiative: 50
@@ -114,7 +114,9 @@ MonoBehaviour:
   MagicResist: 0
   Description: "Nie porusza si\u0119 oraz nie atakuje. <b>Po Zaatakowaniu: </b>Zadaje
     obra\u017Cenia r\xF3wne Mocy Zakl\u0119\u0107 wszystkich saper\xF3w"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 2
   Enemy: 0

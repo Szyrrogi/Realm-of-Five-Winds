@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 12
-  Name: Rycerz
+  Name: Najemne Ostrze
   Cost: 3
   Star: 1
   Initiative: 40

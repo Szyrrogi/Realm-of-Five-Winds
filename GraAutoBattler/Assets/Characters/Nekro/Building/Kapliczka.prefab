@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 96
-  Name: Kapliczka
+  Name: Ossuarium
   Cost: 8
   Star: 3
   Initiative: 30
@@ -190,7 +190,9 @@ MonoBehaviour:
   MagicResist: 0
   Description: "<b>Po Walce: </b> zwi\u0119ksza proces ulepszenia pierwszej jednostki
     w rz\u0119dzie o 1"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0

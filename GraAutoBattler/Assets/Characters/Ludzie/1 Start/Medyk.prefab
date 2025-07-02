@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 8
-  Name: Medyk
+  Name: Medyczka
   Cost: 2
   Star: 1
   Initiative: 35
@@ -113,6 +113,7 @@ MonoBehaviour:
   AP: 10
   MagicResist: 10
   Description: "<b>Akcja: </b>Leczy jednostk\u0119 przed sob\u0105 o 10 Zdrowia"
+  Lore: 
   CPU: 0
   Typy: 
   UpgradeLevel: 1

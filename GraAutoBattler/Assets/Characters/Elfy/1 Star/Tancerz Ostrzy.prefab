@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Tancerz Ostrzy
+  Name: "Prze\u015Bladowca"
   Cost: 3
   Star: 1
   Initiative: 67
@@ -113,7 +113,9 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: Wykonuje dwa ataki
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0
@@ -129,6 +131,7 @@ MonoBehaviour:
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 1819705648667262722, guid: c9b6a44b5aa6ba84f973ca7355b842b0, type: 3}
   Evolution: 0
+  Synergy: 0
 --- !u!114 &8731495660794391217
 MonoBehaviour:
   m_ObjectHideFlags: 0

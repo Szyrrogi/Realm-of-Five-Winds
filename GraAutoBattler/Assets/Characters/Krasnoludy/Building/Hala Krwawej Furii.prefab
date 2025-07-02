@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Hala Krwawej Furii
+  Name: Sala Trofeuw
   Cost: 3
   Star: 1
   Initiative: 20
@@ -190,7 +190,9 @@ MonoBehaviour:
   MagicResist: 0
   Description: "<b>Poczatek Walki: </b>Zwi\u0119ksz Atak wszystkim jednostkom w rz\u0119dzie
     o 10"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0

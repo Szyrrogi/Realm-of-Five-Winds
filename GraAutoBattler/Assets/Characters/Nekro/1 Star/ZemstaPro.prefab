@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 68
-  Name: Zemsta
+  Name: "Rozcz\u0142onkowane Zw\u0142oki"
   Cost: 2
   Star: 1
   Initiative: 80
@@ -188,6 +188,7 @@ MonoBehaviour:
   AP: 0
   MagicResist: 5
   Description: 
+  Lore: 
   CPU: 0
   Typy: 02000000
   UpgradeLevel: 1

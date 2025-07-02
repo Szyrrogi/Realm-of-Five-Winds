@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Arcydruid
+  Name: "Zmiennokszta\u0142tny"
   Cost: 9
   Star: 4
   Initiative: 65

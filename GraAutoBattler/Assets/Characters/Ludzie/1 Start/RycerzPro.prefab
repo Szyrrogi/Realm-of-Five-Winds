@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 13
-  Name: Rycerz
+  Name: Najemne Ostrze
   Cost: 3
   Star: 1
   Initiative: 40
@@ -113,6 +113,7 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: "Zwi\u0119ksza obron\u0119 o 60 przy atakach z dystansu"
+  Lore: 
   CPU: 0
   Typy: 03000000
   UpgradeLevel: 1

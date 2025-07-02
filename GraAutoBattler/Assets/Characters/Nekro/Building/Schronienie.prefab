@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 94
-  Name: Schronienie
+  Name: "Nawiedzony Dw\xF3r"
   Cost: 4
   Star: 2
   Initiative: 20

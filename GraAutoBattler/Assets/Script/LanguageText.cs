@@ -16,8 +16,8 @@ public class LanguageText : MonoBehaviour
     void Update()
     {
         if(textUI != null)
-            textUI.text = text[PauseMenu.language];
+            textUI.text = text[PauseMenu.Language];
         if(textUIPro != null)
-            textUIPro.text = text[PauseMenu.language];
+            textUIPro.text = text[PauseMenu.Language];
     }
 }

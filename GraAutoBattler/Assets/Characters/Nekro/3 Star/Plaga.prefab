@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 83
-  Name: Plaga
+  Name: "Ska\u017Cony"
   Cost: 6
   Star: 3
   Initiative: 20
@@ -113,7 +113,9 @@ MonoBehaviour:
   AP: 40
   MagicResist: 0
   Description: "<b>Atak: </b>Narzuca zatrucie na wszystkich przeciwnik\xF3w w rz\u0119dzie"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0

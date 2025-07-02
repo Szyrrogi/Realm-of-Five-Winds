@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Arcydruid
+  Name: "Zmiennokszta\u0142tny"
   Cost: 9
   Star: 4
   Initiative: 65
@@ -115,7 +115,9 @@ MonoBehaviour:
   MagicResist: 0
   Description: "<b>Ostatni Oddech: </b>Przemie\u0144 si\u0119 w bestie i podw\xF3j
     jej statystyki"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0

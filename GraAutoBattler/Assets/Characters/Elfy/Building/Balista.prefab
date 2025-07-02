@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 229
-  Name: Balista
+  Name: Miotacz Cierni
   Cost: 4
   Star: 3
   Initiative: 40
@@ -190,7 +190,9 @@ MonoBehaviour:
   MagicResist: 0
   Description: "<b>Akcja: </b>Wystrzel z nieograniczonym zasi\u0119giem pocisk zadaj\u0105cy
     20 obra\u017Ce\u0144"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0

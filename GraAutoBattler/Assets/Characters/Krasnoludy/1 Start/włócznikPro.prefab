@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 158
-  Name: "W\u0142\xF3cznik"
+  Name: Oszczepnik
   Cost: 6
   Star: 1
   Initiative: 25
