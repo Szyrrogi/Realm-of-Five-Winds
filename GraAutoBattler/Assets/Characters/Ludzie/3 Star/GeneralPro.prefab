@@ -176,7 +176,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 27
-  Name: General
+  Name:
+  - General
+  - General
+  - General
+  - "G\xE9n\xE9ral"
+  - General
   Cost: 6
   Star: 3
   Initiative: 80
@@ -189,6 +194,7 @@ MonoBehaviour:
   MagicResist: 15
   Description: "<b>Ostatni Oddech:</b> Przywo\u0142aj <b>Ulepszonego</b> Opancerzonego
     Rycerza"
+  Lore: 
   CPU: 0
   Typy: 03000000
   UpgradeLevel: 0

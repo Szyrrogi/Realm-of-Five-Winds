@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 4
-  Name: "Jask\xF3\u0142ka"
+  Name:
+  - "Jask\xF3\u0142ka"
+  - Swallow
+  - Golondrina
+  - Hirondelle
+  - Schwalbe
   Cost: 2
   Star: 1
   Initiative: 100

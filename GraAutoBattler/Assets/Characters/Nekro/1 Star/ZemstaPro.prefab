@@ -176,7 +176,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 68
-  Name: "Rozcz\u0142onkowane Zw\u0142oki"
+  Name:
+  - "Rozcz\u0142onkowane Zw\u0142oki"
+  - Dismembered Corpse
+  - "Cad\xE1ver Desmembrado"
+  - "Cadavre D\xE9membr\xE9"
+  - "Zerst\xFCckelte Leiche"
   Cost: 2
   Star: 1
   Initiative: 80

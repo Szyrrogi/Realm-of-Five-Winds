@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 26
-  Name: General
+  Name:
+  - General
+  - General
+  - General
+  - "G\xE9n\xE9ral"
+  - General
   Cost: 6
   Star: 3
   Initiative: 80

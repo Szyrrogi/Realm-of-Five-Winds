@@ -177,7 +177,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 44
-  Name: Strzelnica
+  Name:
+  - Strzelnica
+  - Shooting Range
+  - Campo de Tiro
+  - Champ de Tir
+  - "Schie\xDFstand"
   Cost: 4
   Star: 1
   Initiative: 20
@@ -190,6 +195,7 @@ MonoBehaviour:
   MagicResist: 0
   Description: "<b>Pocz\u0105tek Walki: </b>Zwi\u0119ksza atak jednostkom dystansowym
     o 20 w rz\u0119dzie"
+  Lore: 
   CPU: 0
   Typy: 
   UpgradeLevel: 0

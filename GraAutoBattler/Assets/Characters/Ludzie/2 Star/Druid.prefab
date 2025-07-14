@@ -236,7 +236,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 18
-  Name: Druid
+  Name:
+  - Druid
+  - Druid
+  - Druida
+  - Druide
+  - Druide
   Cost: 5
   Star: 2
   Initiative: 55

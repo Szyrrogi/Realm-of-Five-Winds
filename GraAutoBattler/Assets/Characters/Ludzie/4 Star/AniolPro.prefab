@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 33
-  Name: "Anio\u0142"
+  Name:
+  - "Anio\u0142"
+  - Angel
+  - "\xC1ngel"
+  - Ange
+  - Engel
   Cost: 8
   Star: 4
   Initiative: 75
@@ -113,6 +118,7 @@ MonoBehaviour:
   AP: 40
   MagicResist: 10
   Description: Wykonuje trzy ataki, magiczny, fizyczny oraz losowy
+  Lore: 
   CPU: 0
   Typy: 04000000
   UpgradeLevel: 1

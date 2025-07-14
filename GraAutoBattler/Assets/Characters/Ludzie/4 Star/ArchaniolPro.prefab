@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 35
-  Name: "Archanio\u0142"
+  Name:
+  - "Archanio\u0142"
+  - Archangel
+  - "Arc\xE1ngel"
+  - Archange
+  - Erzengel
   Cost: 9
   Star: 4
   Initiative: 70
@@ -113,6 +118,7 @@ MonoBehaviour:
   AP: 40
   MagicResist: 35
   Description: "Pierwsze dwie jednostka, kt\xF3ra zginie, zostaje wskrzeszona"
+  Lore: 
   CPU: 0
   Typy: 04000000
   UpgradeLevel: 1

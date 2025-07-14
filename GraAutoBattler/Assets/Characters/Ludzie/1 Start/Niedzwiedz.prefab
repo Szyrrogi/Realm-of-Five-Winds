@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: "Nied\u017Awiedz"
+  Name:
+  - "Nied\u017Awiedz"
+  - Bear
+  - Oso
+  - Ours
+  - "B\xE4r"
   Cost: 5
   Star: 0
   Initiative: 60

@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 247
-  Name: "Je\u017Adziec Gryfi"
+  Name:
+  - "Je\u017Adziec Gryfi"
+  - Griffin rider
+  - Jinete de Grifo
+  - Cavalier Griffon
+  - Greifenreiter
   Cost: 32
   Star: 0
   Initiative: 117

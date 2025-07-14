@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 34
-  Name: "Archanio\u0142"
+  Name:
+  - "Archanio\u0142"
+  - Archangel
+  - "Arc\xE1ngel"
+  - Archange
+  - Erzengel
   Cost: 9
   Star: 4
   Initiative: 70

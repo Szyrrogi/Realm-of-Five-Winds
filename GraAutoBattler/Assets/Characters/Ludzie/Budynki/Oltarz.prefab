@@ -177,7 +177,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 42
-  Name: "O\u0142tarz"
+  Name:
+  - "O\u0142tarz"
+  - Altar
+  - Altar
+  - Autel
+  - Altar
   Cost: 5
   Star: 2
   Initiative: 15
@@ -189,7 +194,9 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: "<b>Poczatek Walki: </b>Podwaja atak pierwszej jednostce w rz\u0119dzie"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
@@ -199,6 +206,8 @@ MonoBehaviour:
   BoskaTarcza: 0
   attackAP: 0
   Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   HealthText: {fileID: 3501279418940951141}
 --- !u!114 &6985540666553226679
 MonoBehaviour:

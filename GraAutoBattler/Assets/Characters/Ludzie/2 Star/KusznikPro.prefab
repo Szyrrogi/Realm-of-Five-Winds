@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Kusznik
+  Name:
+  - Kusznik
+  - Crossbowman
+  - Ballestero
+  - "Arbal\xE9trier"
+  - "Armbrustsch\xFCtze"
   Cost: 4
   Star: 2
   Initiative: 20
@@ -113,17 +118,24 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: "Pierwszy atak zadaje potr\xF3jne obra\u017Cenia"
+  Lore: 
+  CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 0
   Enemy: 0
+  fraction: 0
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
+  attackAP: 0
+  Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   AttackText: {fileID: 5187295522447798132}
   HealthText: {fileID: 6430296136860862158}
   EvolveHeroes: {fileID: 7934681543930097476}
   Evolution: 1
-  attackAP: 0
 --- !u!114 &6699983802921889276
 MonoBehaviour:
   m_ObjectHideFlags: 0

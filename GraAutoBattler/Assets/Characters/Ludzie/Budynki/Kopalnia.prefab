@@ -178,7 +178,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 45
-  Name: Kopalnia
+  Name:
+  - Kopalnia
+  - Mine
+  - Mine
+  - Mine
+  - Mine
   Cost: 6
   Star: 2
   Initiative: 20
@@ -190,7 +195,9 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: "<b>Wtasowuje</b> z\u0142oto do <b>puli</b>"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
@@ -218,6 +225,7 @@ MonoBehaviour:
   shop: {fileID: 0}
   zloto: {fileID: 1819705648667262722, guid: ad69845e279454543adb9c8a7eb2b195, type: 3}
   kopalnia: {fileID: 1819705648667262722}
+  Extra: 0
 --- !u!114 &6985540666553226679
 MonoBehaviour:
   m_ObjectHideFlags: 0

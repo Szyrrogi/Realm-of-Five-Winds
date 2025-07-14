@@ -102,7 +102,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 16
-  Name: Budowlaniec
+  Name:
+  - Budowlaniec
+  - Builder
+  - Constructor
+  - "B\xE2tisseur"
+  - Baumeister
   Cost: 4
   Star: 2
   Initiative: 50

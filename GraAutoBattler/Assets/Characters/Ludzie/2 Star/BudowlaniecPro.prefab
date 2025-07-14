@@ -102,7 +102,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 17
-  Name: Budowlaniec
+  Name:
+  - Budowlaniec
+  - Builder
+  - Constructor
+  - "B\xE2tisseur"
+  - Baumeister
   Cost: 4
   Star: 2
   Initiative: 50
@@ -115,7 +120,9 @@ MonoBehaviour:
   MagicResist: 0
   Description: "Zwi\u0119ksza szans\u0119 na pojawienie si\u0119 budynku w sklepie
     <b>Od\u015Bwie\u017Cenie: </b>Zmniejsza koszt budynk\xF3w o 2. "
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 0
   Enemy: 0

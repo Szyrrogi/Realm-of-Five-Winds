@@ -236,7 +236,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 49
-  Name: Arcymag
+  Name:
+  - Arcymag
+  - Archmage
+  - Archimago
+  - Archimage
+  - Erzmagier
   Cost: 8
   Star: 4
   Initiative: 65

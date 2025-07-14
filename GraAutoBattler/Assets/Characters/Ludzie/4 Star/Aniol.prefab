@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 32
-  Name: "Anio\u0142"
+  Name:
+  - "Anio\u0142"
+  - Angel
+  - "\xC1ngel"
+  - Ange
+  - Engel
   Cost: 8
   Star: 4
   Initiative: 75

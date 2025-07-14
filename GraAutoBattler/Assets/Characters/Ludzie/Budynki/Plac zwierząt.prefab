@@ -177,7 +177,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 43
-  Name: "Plac zwierz\u0105t"
+  Name:
+  - "Plac zwierz\u0105t"
+  - Obedience School
+  - Corral de Animales
+  - "Enclos \xE0 B\xEAtes"
+  - Tiergehege
   Cost: 4
   Star: 1
   Initiative: 20
@@ -190,6 +195,7 @@ MonoBehaviour:
   MagicResist: 0
   Description: "<b>Poczatek Walki: </b>Zwi\u0119ksz zwierz\u0119tom w rz\u0119dzie
     atak oraz zdrowie o 20"
+  Lore: 
   CPU: 0
   Typy: 00000000
   UpgradeLevel: 0

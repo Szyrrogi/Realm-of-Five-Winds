@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 56
-  Name: Jajo Arachnida
+  Name:
+  - Jajo Arachnida
+  - Arachnid Egg
+  - "Huevo Ar\xE1cnido"
+  - "\u0152uf d'Arachnide"
+  - Arachniden-Ei
   Cost: 1
   Star: 0
   Initiative: 5

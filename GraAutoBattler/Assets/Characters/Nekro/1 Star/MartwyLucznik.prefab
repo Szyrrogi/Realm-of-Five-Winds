@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 57
-  Name: "Ko\u015Bciany \u0141ucznik"
+  Name:
+  - "Ko\u015Bciany \u0141ucznik"
+  - Skeletal Archer
+  - "Arquero Esquel\xE9tico"
+  - Archer Squelettique
+  - "Skelett-Bogensch\xFCtze"
   Cost: 2
   Star: 1
   Initiative: 45

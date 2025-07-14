@@ -58,7 +58,7 @@ public class SaveManager : MonoBehaviour
         public int Pole;
 
         public int Id;
-        public string Name;
+        //public string Name;
         public int Cost;
         public int RealCost;
 
@@ -177,7 +177,7 @@ public class SaveManager : MonoBehaviour
                             Line = linia.nr,
                             Pole = pole.nr,
                             Id = unit.Id,
-                            Name = unit.Name,
+                            //Name = unit.Name,
                             Cost = unit.Cost,
                             RealCost = unit.RealCost,
                             Initiative = unit.Initiative,
@@ -215,7 +215,7 @@ public class SaveManager : MonoBehaviour
                     Line = -1,
                     Pole = pole.nr,
                     Id = unit.Id,
-                    Name = unit.Name,
+                    //Name = unit.Name,
                     Cost = unit.Cost,
                     RealCost = unit.RealCost,
                     Initiative = unit.Initiative,
@@ -538,7 +538,7 @@ public class SaveManager : MonoBehaviour
             if (unitComponent != null)
             {
                 unitComponent.Id = unitData.Id;
-                unitComponent.Name = unitData.Name;
+                //unitComponent.Name = unitData.Name;
                 unitComponent.Cost = unitData.Cost;
                 unitComponent.RealCost = unitData.RealCost;
                 unitComponent.Initiative = unitData.Initiative;
@@ -584,7 +584,7 @@ public class SaveManager : MonoBehaviour
             if (unitComponent != null)
             {
                 unitComponent.Id = unitData.Id;
-                unitComponent.Name = unitData.Name;
+                //unitComponent.Name = unitData.Name;
                 unitComponent.Cost = unitData.Cost;
                 unitComponent.RealCost = unitData.RealCost;
                 unitComponent.Initiative = unitData.Initiative;

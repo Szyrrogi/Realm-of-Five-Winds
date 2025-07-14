@@ -18,7 +18,7 @@ public class PlayerManager : MonoBehaviour
 
     private static readonly string apiURL = "https://api.m455yn.dev/rofw/update-face";
 
-    public static string Version = "0.7.3";
+    public static string Version = "0.8.1";
     public static int PlayerFaceId;
     public static string Name = "Player";
     public static int Id = 0;

@@ -8,12 +8,12 @@
     "lose": 3,
     "round": 0,
     "shop": [
-        38,
-        14,
-        4,
-        14,
-        4
+        44,
+        10,
+        2,
+        0,
+        2
     ],
-    "nextFight": "{\n    \"playerName\": \"SigmaSigmaBoy\",\n    \"number\": 8,\n    \"levelUp\": 1,\n    \"units\": [\n        {\n            \"Line\": 1,\n            \"Pole\": 0,\n            \"Id\": 65,\n            \"Name\": \"Szczur\",\n            \"Cost\": 1,\n            \"RealCost\": 1,\n            \"Initiative\": 100,\n            \"MaxHealth\": 8,\n            \"Health\": 8,\n            \"Attack\": 8,\n            \"Defense\": 5,\n            \"Range\": 0,\n            \"AP\": 0,\n            \"MagicResist\": 0,\n            \"Description\": \"\",\n            \"UpgradeLevel\": 1,\n            \"SpellId\": 0\n        },\n        {\n            \"Line\": 1,\n            \"Pole\": 1,\n            \"Id\": 57,\n            \"Name\": \"Kościany Łucznik\",\n            \"Cost\": 2,\n            \"RealCost\": 2,\n            \"Initiative\": 45,\n            \"MaxHealth\": 20,\n            \"Health\": 20,\n            \"Attack\": 15,\n            \"Defense\": 5,\n            \"Range\": 1,\n            \"AP\": 0,\n            \"MagicResist\": 0,\n            \"Description\": \"<b>Ulepszenie:</b> otrzymuje 30 Ataku\",\n            \"UpgradeLevel\": 1,\n            \"SpellId\": 0\n        },\n        {\n            \"Line\": 2,\n            \"Pole\": 1,\n            \"Id\": 57,\n            \"Name\": \"Kościany Łucznik\",\n            \"Cost\": 2,\n            \"RealCost\": 2,\n            \"Initiative\": 45,\n            \"MaxHealth\": 20,\n            \"Health\": 20,\n            \"Attack\": 15,\n            \"Defense\": 5,\n            \"Range\": 1,\n            \"AP\": 0,\n            \"MagicResist\": 0,\n            \"Description\": \"<b>Ulepszenie:</b> otrzymuje 30 Ataku\",\n            \"UpgradeLevel\": 1,\n            \"SpellId\": 0\n        }\n    ]\n}",
+    "nextFight": "{\n    \"playerName\": \"FRogalskyy\",\n    \"number\": 6,\n    \"levelUp\": 1,\n    \"units\": [\n        {\n            \"Line\": 1,\n            \"Pole\": 0,\n            \"Id\": 195,\n            \"Name\": \"Druidka\",\n            \"Cost\": 2,\n            \"RealCost\": 2,\n            \"Initiative\": 40,\n            \"MaxHealth\": 30,\n            \"Health\": 30,\n            \"Attack\": 10,\n            \"Defense\": 5,\n            \"Range\": 0,\n            \"AP\": 15,\n            \"MagicResist\": 0,\n            \"Description\": \"<b>Początek Walki: </b>Otrzymuje 10 Mocy Zaklęć za każdą jednostke z typem drzewa na <b>arenie</b>\",\n            \"UpgradeLevel\": 1,\n            \"SpellId\": 0\n        },\n        {\n            \"Line\": 2,\n            \"Pole\": 0,\n            \"Id\": 197,\n            \"Name\": \"Obierzyświat\",\n            \"Cost\": 2,\n            \"RealCost\": 2,\n            \"Initiative\": 40,\n            \"MaxHealth\": 25,\n            \"Health\": 25,\n            \"Attack\": 25,\n            \"Defense\": 5,\n            \"Range\": 0,\n            \"AP\": 0,\n            \"MagicResist\": 0,\n            \"Description\": \"<b>Początek Walki: </b>Jeżeli na Arenie znajduje się przyjazna jednostka z innej frakcji otrzymuje 15/15. Jeżeli z dwóch innych frakcji zamiast tego 30/30\",\n            \"UpgradeLevel\": 1,\n            \"SpellId\": 0\n        }\n    ]\n}",
     "units": []
 }

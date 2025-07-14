@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 14
-  Name: Wilk
+  Name:
+  - Wilk
+  - Wolf
+  - Lobo
+  - Loup
+  - Wolf
   Cost: 2
   Star: 1
   Initiative: 60

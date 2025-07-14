@@ -6,7 +6,7 @@ public class Unit : MonoBehaviour
 {
     [Header("Basic Information")]
     public int Id;
-    public string Name;
+    public string[] Name;
     public int Cost;
     public int Star;
 

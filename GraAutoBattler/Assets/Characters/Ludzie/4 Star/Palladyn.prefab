@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 36
-  Name: Paladyn
+  Name:
+  - Paladyn
+  - Paladin
+  - "Palad\xEDn"
+  - Paladin
+  - Paladin
   Cost: 9
   Star: 4
   Initiative: 80

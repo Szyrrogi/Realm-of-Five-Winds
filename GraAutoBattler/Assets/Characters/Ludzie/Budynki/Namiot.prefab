@@ -177,7 +177,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 41
-  Name: Lazaret
+  Name:
+  - Lazaret
+  - Infirmary
+  - "Enfermer\xEDa"
+  - Infirmerie
+  - Lazarett
   Cost: 3
   Star: 2
   Initiative: 35

@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 20
-  Name: Gryf
+  Name:
+  - Gryf
+  - Griffin
+  - Grifo
+  - Griffon
+  - Greif
   Cost: 5
   Star: 2
   Initiative: 90

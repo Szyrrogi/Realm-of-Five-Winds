@@ -25,7 +25,7 @@ public class ShopObject : MonoBehaviour
     public void SetLook()
     {
                 image.sprite = unit.GetComponent<SpriteRenderer>().sprite;
-                name.text = unit.GetComponent<Unit>().Name;
+                name.text = unit.GetComponent<Unit>().Name[PauseMenu.Language];
                 price.text = 
                 (unit.GetComponent<Unit>().RealCost == 0 ? unit.GetComponent<Unit>().Cost.ToString() : unit.GetComponent<Unit>().RealCost.ToString());
                 if(unit.GetComponent<Heros>())
@@ -67,7 +67,7 @@ public class ShopObject : MonoBehaviour
 
         unit = nullObject;
         image.sprite = nullObject.GetComponent<SpriteRenderer>().sprite;
-        name.text = nullObject.GetComponent<Unit>().Name;
+        name.text = nullObject.GetComponent<Unit>().Name[PauseMenu.Language];
         price.text = nullObject.GetComponent<Unit>().RealCost.ToString();
         stats.SetActive(false);
         UpdateType();

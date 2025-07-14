@@ -43,7 +43,7 @@ public class DescriptionManager : MonoBehaviour
 
             
 
-            text[0].text = unit.Name;
+            text[0].text = unit.Name[PauseMenu.Language];
             if(!unit.attackAP)
             {
                 if(unit.Range == 0)

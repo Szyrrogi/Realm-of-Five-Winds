@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 59
-  Name: "Ko\u015Bciany Wojownik"
+  Name:
+  - "Ko\u015Bciany Wojownik"
+  - Skeletal Warrior
+  - "Guerrero Esquel\xE9tico"
+  - Guerrier Squelettique
+  - Skelett-Krieger
   Cost: 2
   Star: 1
   Initiative: 40

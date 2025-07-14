@@ -176,7 +176,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 29
-  Name: "Kap\u0142an"
+  Name:
+  - "Kap\u0142an"
+  - Priest
+  - Sacerdote
+  - "Pr\xEAtre"
+  - Priester
   Cost: 6
   Star: 2
   Initiative: 43

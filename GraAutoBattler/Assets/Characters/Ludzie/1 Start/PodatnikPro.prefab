@@ -176,7 +176,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 11
-  Name: Podatnik
+  Name:
+  - Podatnik
+  - Peasant
+  - Contribuyente
+  - Contribuable
+  - Steuerzahler
   Cost: 2
   Star: 1
   Initiative: 20

@@ -177,7 +177,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 38
-  Name: Koszary
+  Name:
+  - Koszary
+  - Barracks
+  - Cuartel
+  - Caserne
+  - Kaserne
   Cost: 5
   Star: 1
   Initiative: 20

@@ -376,12 +376,12 @@ public class FightManager : MonoBehaviour
                 try
                 {
                     SqlCommand cmd = new SqlCommand(@"
-                INSERT INTO AutoBattlerGame (Version, Name, FaceId, Date, LP, PlayerId, Comp, Round)  
-                VALUES (@Version, @Name, @PlayerFaceId, @DataNow, @LP, @Id, @Team, @Round);
+                INSERT INTO AutoBattlerGame (Version, FaceId, Date, LP, PlayerId, Comp, Round)  
+                VALUES (@Version, @PlayerFaceId, @DataNow, @LP, @Id, @Team, @Round);
                 ", DB.con);
 
                     cmd.Parameters.AddWithValue("Version", PlayerManager.Version);
-                    cmd.Parameters.AddWithValue("Name", PlayerManager.Name);
+                    //cmd.Parameters.AddWithValue("Name", PlayerManager.Name);
                     cmd.Parameters.AddWithValue("PlayerFaceId", PlayerManager.PlayerFaceId);
                     cmd.Parameters.AddWithValue("DataNow", DateTime.Now);
                     cmd.Parameters.AddWithValue("Round", StatsManager.Round - 1);
@@ -757,7 +757,7 @@ public class FightManager : MonoBehaviour
             .OrderBy(unit => unit.Initiative)       // Sortowanie po Initiative rosnąco
             .ThenBy(unit => unit.Cost)              // W przypadku równej Initiative, sortowanie po Cost
             .ThenBy(unit => unit.Health)            // W przypadku równej Initiative i Cost, sortowanie po Health
-            .ThenBy(unit => unit.Name)              // Na końcu sortowanie alfabetyczne po Name
+           // .ThenBy(unit => unit.Name)              // Na końcu sortowanie alfabetyczne po Name
             .ThenBy(unit => unit.CPU)
             .ToList();
         units.Reverse();

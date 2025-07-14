@@ -177,7 +177,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 40
-  Name: Punkt Handlowy
+  Name:
+  - Punkt Handlowy
+  - Trading Post
+  - Puesto de Comercio
+  - 'Poste de Commerce '
+  - Handelsplatz
   Cost: 5
   Star: 2
   Initiative: 20

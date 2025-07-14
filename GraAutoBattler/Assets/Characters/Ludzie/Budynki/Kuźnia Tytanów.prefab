@@ -178,7 +178,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: "Ku\u017Ania"
+  Name:
+  - "Ku\u017Ania"
+  - Forge
+  - Forja
+  - Forge
+  - Schmiede
   Cost: 6
   Star: 3
   Initiative: 20

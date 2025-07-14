@@ -176,7 +176,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 64
-  Name: Arachnid
+  Name:
+  - Arachnid
+  - Arachnid
+  - "Ar\xE1cnido"
+  - Arachnide
+  - Arachnid
   Cost: 6
   Star: 1
   Initiative: 94

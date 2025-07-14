@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Giermek
+  Name:
+  - Giermek
+  - Squire
+  - Escudero
+  - "\xC9cuyer"
+  - Knappe
   Cost: 2
   Star: 1
   Initiative: 40
@@ -113,6 +118,7 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: 
+  Lore: 
   CPU: 0
   Typy: 03000000
   UpgradeLevel: 1

@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 2
-  Name: Giermek
+  Name:
+  - Giermek
+  - Squire
+  - Escudero
+  - "\xC9cuyer"
+  - Knappe
   Cost: 2
   Star: 1
   Initiative: 40

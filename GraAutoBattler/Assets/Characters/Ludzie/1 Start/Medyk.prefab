@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 8
-  Name: Medyczka
+  Name:
+  - Medyczka
+  - Medic
+  - "M\xE9dica"
+  - "M\xE9dic"
+  - Heilerin
   Cost: 2
   Star: 1
   Initiative: 35

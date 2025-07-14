@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 31
-  Name: Sarin
+  Name:
+  - Sarin
+  - Sarin
+  - Sarin
+  - Sarin
+  - Sarin
   Cost: 7
   Star: 3
   Initiative: 90

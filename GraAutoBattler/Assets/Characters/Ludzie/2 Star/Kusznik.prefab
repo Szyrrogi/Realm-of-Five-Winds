@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Kusznik
+  Name:
+  - Kusznik
+  - Crossbowman
+  - Ballestero
+  - "Arbal\xE9trier"
+  - "Armbrustsch\xFCtze"
   Cost: 4
   Star: 2
   Initiative: 20

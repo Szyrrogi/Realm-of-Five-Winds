@@ -35,7 +35,7 @@ public class Loch : Building
         }
         int rng = unit.GetComponent<Unit>().Id;
         shop.character[i].image.sprite = unit.GetComponent<SpriteRenderer>().sprite;
-        shop.character[i].name.text = unit.GetComponent<Unit>().Name;
+        shop.character[i].name.text = unit.GetComponent<Unit>().Name[PauseMenu.Language];
         shop.character[i].price.text = unit.GetComponent<Unit>().Cost.ToString();
         shop.character[i].unit = unit;
         }

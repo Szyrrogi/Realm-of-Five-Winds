@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 30
-  Name: Darelin
+  Name:
+  - Darelin
+  - Darelin
+  - Darelin
+  - Darelin
+  - Darelin
   Cost: 7
   Star: 3
   Initiative: 85

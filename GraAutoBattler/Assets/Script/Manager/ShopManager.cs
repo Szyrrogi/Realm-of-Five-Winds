@@ -101,7 +101,6 @@ public class ShopManager : MonoBehaviour
         foreach(ShopVisitor obj in shopVisitors)
         {
             obj.FirstRoll();
-            //Debug.Log(obj.gameObject.name);
         } 
     }
     public List<GameObject> filteredObjects;
@@ -140,7 +139,7 @@ public class ShopManager : MonoBehaviour
 
                 filteredObjects[rng].GetComponent<Unit>().RealCost = 0;
                 character[i].image.sprite = filteredObjects[rng].GetComponent<SpriteRenderer>().sprite;
-                character[i].name.text = filteredObjects[rng].GetComponent<Unit>().Name;
+                character[i].name.text = filteredObjects[rng].GetComponent<Unit>().Name[PauseMenu.Language];
                 character[i].price.text = 
                 (filteredObjects[rng].GetComponent<Unit>().RealCost == 0 ? filteredObjects[rng].GetComponent<Unit>().Cost.ToString() : filteredObjects[rng].GetComponent<Unit>().RealCost.ToString());
                 if(character[i].unit.GetComponent<Heros>())

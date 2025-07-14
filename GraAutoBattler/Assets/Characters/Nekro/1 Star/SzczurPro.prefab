@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 66
-  Name: Szczur
+  Name:
+  - Szczur
+  - Rat
+  - Rata
+  - Rat
+  - Ratte
   Cost: 1
   Star: 1
   Initiative: 100
@@ -113,6 +118,7 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: "<b>Ostatni Oddech:</b> Przywo\u0142aj Szczura"
+  Lore: 
   CPU: 0
   Typy: 0000000007000000
   UpgradeLevel: 1

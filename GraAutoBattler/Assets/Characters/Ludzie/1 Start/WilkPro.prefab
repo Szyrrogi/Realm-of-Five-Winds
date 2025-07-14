@@ -176,7 +176,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 15
-  Name: Wilkor
+  Name:
+  - Wilkor
+  - Greatwolf
+  - Huargo
+  - Warg
+  - Warg
   Cost: 2
   Star: 1
   Initiative: 60

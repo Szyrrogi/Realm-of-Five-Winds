@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Treser Besti
+  Name:
+  - Treser Besti
+  - Beast Tamer
+  - Domador de Bestias
+  - "Dompteur de B\xEAtes"
+  - "Bestienb\xE4ndiger"
   Cost: 4
   Star: 2
   Initiative: 60
