@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: "Rusa\u0142ka"
+  Name:
+  - "Rusa\u0142ka"
+  - Nymph
+  - Ninfa
+  - Nymphe
+  - Nymphe
   Cost: 5
   Star: 2
   Initiative: 5

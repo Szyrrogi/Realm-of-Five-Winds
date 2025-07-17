@@ -100,8 +100,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a195593bda9815f44a70fce64af9e37b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
-  Name: Tarczownik
+  Id: 5
+  Name:
+  - Tarczownik
+  - Shieldbearer
+  - Portaescudos
+  - Porte-bouclier
+  - "Schildtr\xE4ger"
   Cost: 3
   Star: 1
   Initiative: 10

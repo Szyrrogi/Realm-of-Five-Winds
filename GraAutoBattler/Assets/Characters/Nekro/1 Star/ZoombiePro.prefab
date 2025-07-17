@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 70
-  Name: Zombie
+  Name:
+  - Zombie
+  - Zombie
+  - Zombi
+  - Zombie
+  - Zombie
   Cost: 3
   Star: 1
   Initiative: 40

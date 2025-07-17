@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 153
-  Name: Sprzedawca
+  Name:
+  - Sprzedawca
+  - Merchant
+  - Mercader
+  - Marchand
+  - "H\xE4ndler"
   Cost: 2
   Star: 1
   Initiative: 45

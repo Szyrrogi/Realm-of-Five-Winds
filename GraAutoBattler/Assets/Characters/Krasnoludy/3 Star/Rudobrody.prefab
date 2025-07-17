@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 175
-  Name: Rudobrody
+  Name:
+  - Rudobrody
+  - Barbarossa
+  - Barbarroja
+  - Barbe-Rousse
+  - Rotbart
   Cost: 6
   Star: 3
   Initiative: 55

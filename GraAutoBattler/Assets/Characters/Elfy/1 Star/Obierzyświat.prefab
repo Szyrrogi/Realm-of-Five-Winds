@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: "Obie\u017Cy\u015Bwiat"
+  Name:
+  - "Obie\u017Cy\u015Bwiat"
+  - Wanderer
+  - Trotamundos
+  - Vagabond
+  - Weltenbummler
   Cost: 2
   Star: 1
   Initiative: 40

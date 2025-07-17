@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 251
-  Name: Martwy Wij
+  Name:
+  - "Martwy \u017Cmij"
+  - 'Undead Wyrm '
+  - "Ciempi\xE9s Mortal"
+  - Mille-Pattes Mort
+  - "Todes-Tausendf\xFC\xDFler"
   Cost: 48
   Star: 0
   Initiative: 65

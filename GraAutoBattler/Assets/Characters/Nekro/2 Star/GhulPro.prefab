@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Trupojad
+  Name:
+  - Trupojad
+  - Ghoul
+  - "Necr\xF3fago"
+  - Goule
+  - Ghul
   Cost: 4
   Star: 2
   Initiative: 50

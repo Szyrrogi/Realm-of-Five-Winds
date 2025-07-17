@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 79
-  Name: "Wilko\u0142ak"
+  Name:
+  - "Wilko\u0142ak"
+  - Werewolf
+  - Hombre Lobo
+  - Loup-Garou
+  - Werwolf
   Cost: 4
   Star: 2
   Initiative: 80

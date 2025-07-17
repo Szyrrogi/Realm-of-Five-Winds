@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Starobrordy
+  Name:
+  - Starobrordy
+  - Greybeard
+  - Barbagris
+  - Barbe-Grise
+  - Graubart
   Cost: 8
   Star: 4
   Initiative: 65

@@ -177,7 +177,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Pijalnia
+  Name:
+  - Pijalnia
+  - Tavern
+  - Taberna
+  - Taverne
+  - Taverne
   Cost: 4
   Star: 2
   Initiative: 20

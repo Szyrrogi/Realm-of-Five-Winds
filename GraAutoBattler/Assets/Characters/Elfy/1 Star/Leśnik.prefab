@@ -102,7 +102,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Likajos
+  Name:
+  - Likajos
+  - Wolfkin
+  - Cazador de lobos
+  - Lykaios
+  - Lykaios
   Cost: 3
   Star: 1
   Initiative: 95

@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 195
-  Name: "Wr\xF3\u017Cka"
+  Name:
+  - "Wr\xF3\u017Cka"
+  - Fay
+  - Hada
+  - "F\xE9e"
+  - "F\xE9e"
   Cost: 2
   Star: 1
   Initiative: 40

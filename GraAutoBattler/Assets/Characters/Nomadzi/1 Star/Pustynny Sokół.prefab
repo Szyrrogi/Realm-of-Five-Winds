@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: "Pustynny Sok\xF3\u0142"
+  Name:
+  - "Pustynny Sok\xF3\u0142"
+  - Desert Falcon
+  - "Halc\xF3n del Desierto"
+  - "Faucon du D\xE9sert"
+  - "W\xFCstenfalke"
   Cost: 3
   Star: 1
   Initiative: 80

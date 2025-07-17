@@ -177,7 +177,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 91
-  Name: Mroczna chata
+  Name:
+  - Mroczna chata
+  - Dark Hut
+  - Choza Oscura
+  - Cabane Sombre
+  - "Dunkle H\xFCtte"
   Cost: 5
   Star: 1
   Initiative: 20
@@ -189,7 +194,9 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: '<b>Po Walce: </b> zmniejsz koszt poziomu o 1'
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
@@ -199,6 +206,8 @@ MonoBehaviour:
   BoskaTarcza: 0
   attackAP: 0
   Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   HealthText: {fileID: 3501279418940951141}
 --- !u!114 &6985540666553226679
 MonoBehaviour:

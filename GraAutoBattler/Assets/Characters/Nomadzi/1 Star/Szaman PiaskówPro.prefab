@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Poszukiwacz Kul
+  Name:
+  - Poszukiwacz Kul
+  - Orb Seeker
+  - Buscador de Esferas
+  - "Chercheur de Sph\xE8res"
+  - Kugelsucher
   Cost: 2
   Star: 1
   Initiative: 65

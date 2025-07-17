@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: "Mura\u017C"
+  Name:
+  - "Mura\u017C"
+  - Mason
+  - "Alba\xF1il"
+  - "Ma\xE7on"
+  - Maurer
   Cost: 6
   Star: 3
   Initiative: 20

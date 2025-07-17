@@ -177,7 +177,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Sala Trofeuw
+  Name:
+  - "Sala Trofe\xF3w"
+  - Trophy Hall
+  - Sala de Trofeos
+  - "Salle des Troph\xE9es"
+  - "Troph\xE4enhalle"
   Cost: 3
   Star: 1
   Initiative: 20

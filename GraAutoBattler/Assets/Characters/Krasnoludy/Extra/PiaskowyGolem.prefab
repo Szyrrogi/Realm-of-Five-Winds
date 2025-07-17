@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 183
-  Name: Piaskowy Golem
+  Name:
+  - Piaskowy Golem
+  - Sand Golem
+  - Golem de Arena
+  - Golem de Sable
+  - Sandgolem
   Cost: 9
   Star: 0
   Initiative: 60

@@ -108,32 +108,32 @@ public class Bestiariusz : MonoBehaviour
         string firstLine = "";
         string savePath1 = Application.dataPath + "/Save/Achivments.txt";
 
-        // Sprawdź, czy plik istnieje
-        if (File.Exists(savePath1))
+        // Jeśli plik nie istnieje — utwórz go z literą "S"
+        if (!File.Exists(savePath1))
         {
-            // Odczytaj wszystkie linie z pliku
-            string[] allLines = File.ReadAllLines(savePath1);
+            File.WriteAllText(savePath1, "S");
+            Debug.LogWarning("Plik nie istniał — został utworzony z literą 'S': " + savePath1);
+        }
 
-            // Jeśli plik nie jest pusty, weź pierwszą linię
-            if (allLines.Length > 0)
-            {
-                firstLine = allLines[0];
-                Debug.Log("Pierwsza linia: " + firstLine);
-            }
-            else
-            {
-                Debug.LogWarning("Plik jest pusty!");
-            }
+        // Odczytaj wszystkie linie z pliku
+        string[] allLines = File.ReadAllLines(savePath1);
+
+        // Jeśli plik nie jest pusty, weź pierwszą linię
+        if (allLines.Length > 0)
+        {
+            firstLine = allLines[0];
+            Debug.Log("Pierwsza linia: " + firstLine);
         }
         else
         {
-            Debug.LogError("Plik nie istnieje: " + savePath1);
+            Debug.LogWarning("Plik jest pusty!");
         }
+
         int j = 0;
         foreach (GameObject New in Osiagniecia)
         {
             Debug.Log("weszło");
-            GameObject newSynergy = Instantiate(New, Achievements.transform); // Parent od razu
+            GameObject newSynergy = Instantiate(New, Achievements.transform);
             newSynergy.SetActive(true);
             if (!firstLine.Contains($"S{j}S"))
             {
@@ -142,12 +142,12 @@ public class Bestiariusz : MonoBehaviour
             RectTransform rectTransform = newSynergy.GetComponent<RectTransform>();
             if (rectTransform != null)
             {
-                //rectTransform.anchoredPosition = transformY[0]; // Jeśli transformY[0] to Vector2
                 rectTransform.localPosition = new Vector3(transformY[j / 4].x, transformY[j % 4].y, 0);
             }
             j++;
         }
     }
+
 
     public void ShowSynergyVoid()
     {
@@ -158,45 +158,43 @@ public class Bestiariusz : MonoBehaviour
         string firstLine = "";
         string savePath1 = Application.dataPath + "/Save/Synergy.txt";
 
-        // Sprawdź, czy plik istnieje
-        if (File.Exists(savePath1))
+        // Jeśli plik nie istnieje — utwórz go z literą "S"
+        if (!File.Exists(savePath1))
         {
-            // Odczytaj wszystkie linie z pliku
-            string[] allLines = File.ReadAllLines(savePath1);
-            
-            // Jeśli plik nie jest pusty, weź pierwszą linię
-            if (allLines.Length > 0)
-            {
-                firstLine = allLines[0];
-                Debug.Log("Pierwsza linia: " + firstLine);
-            }
-            else
-            {
-                Debug.LogWarning("Plik jest pusty!");
-            }
+            File.WriteAllText(savePath1, "S");
+            Debug.LogWarning("Plik nie istniał — został utworzony z literą 'S': " + savePath1);
+        }
+
+        // Odczytaj wszystkie linie z pliku
+        string[] allLines = File.ReadAllLines(savePath1);
+
+        // Jeśli plik nie jest pusty, weź pierwszą linię
+        if (allLines.Length > 0)
+        {
+            firstLine = allLines[0];
+            Debug.Log("Pierwsza linia: " + firstLine);
         }
         else
         {
-            Debug.LogError("Plik nie istnieje: " + savePath1);
+            Debug.LogWarning("Plik jest pusty!");
         }
 
-        List <Synergy> prevSynergy = synergyManager.Synergie;
+        List<Synergy> prevSynergy = synergyManager.Synergie;
         prevSynergy = SortSynergy(prevSynergy, firstLine);
 
         Debug.Log(prevSynergy.Count);
-        int ile = 13;
-        for(int j = 0; j < prevSynergy.Count; j++)
-        { 
-            GameObject newSynergy = Instantiate(prevSynergy[j].opis.gameObject, Synergie.transform); // Parent od razu
+        for (int j = 0; j < prevSynergy.Count; j++)
+        {
+            GameObject newSynergy = Instantiate(prevSynergy[j].opis.gameObject, Synergie.transform);
             newSynergy.SetActive(true);
             RectTransform rectTransform = newSynergy.GetComponent<RectTransform>();
             if (rectTransform != null)
             {
-                //rectTransform.anchoredPosition = transformY[0]; // Jeśli transformY[0] to Vector2
-                rectTransform.localPosition = new Vector3(transformY[j/4].x, transformY[j%4].y, 0);
+                rectTransform.localPosition = new Vector3(transformY[j / 4].x, transformY[j % 4].y, 0);
             }
         }
     }
+
 
     public void Complete()
     {
@@ -244,7 +242,7 @@ public class Bestiariusz : MonoBehaviour
                     
                     continue;
                 }
-
+                Debug.Log("TU JESTEM");
                 // Aktywuj sloty
                 Face[i*2].gameObject.SetActive(true);
                 Face[i*2 + 1].gameObject.SetActive(true);
@@ -292,6 +290,7 @@ public class Bestiariusz : MonoBehaviour
             // Nowa logika dla type == 1 (8 elementów w 8 slotach, bez ewolucji i bez LORE)
             for (int i = 0; i < 8; i++)
             {
+                Debug.Log("TERAZ JESTEM");
                 int index = i + Page * 8;
 
                 if (index >= Show.Count || Show[index] == null)
@@ -323,6 +322,7 @@ public class Bestiariusz : MonoBehaviour
         // 8 slotów bez ewolucji i bez LORE
         for (int i = 0; i < 8; i++)
         {
+            Debug.Log("WTFFF");
             int index = i + Page * 8;
             bool slotValid = index < Show.Count && Show[index] != null;
 

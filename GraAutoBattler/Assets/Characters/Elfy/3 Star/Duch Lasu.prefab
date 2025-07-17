@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Duch Lasu
+  Name:
+  - Duch Lasu
+  - Forest Spirit
+  - "Esp\xEDritu del Bosque"
+  - "Esprit de la For\xEAt"
+  - Waldgeist
   Cost: 6
   Star: 3
   Initiative: 55

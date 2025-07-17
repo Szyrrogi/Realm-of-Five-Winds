@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: "\u017Bongler Dynamitu"
+  Name:
+  - "\u017Bongler Dynamitu"
+  - Dynamite Juggler
+  - Malabarista de Dinamita
+  - Jongleur de Dynamite
+  - Dynamit-Jongleur
   Cost: 8
   Star: 4
   Initiative: 35

@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 169
-  Name: "\u0141amaga"
+  Name:
+  - "\u0141amaga"
+  - Bungler
+  - Torpe
+  - Brute
+  - "Schl\xE4ger"
   Cost: 5
   Star: 2
   Initiative: 25
@@ -131,6 +136,7 @@ MonoBehaviour:
   HealthText: {fileID: 7890684635397795595}
   EvolveHeroes: {fileID: 1819705648667262722, guid: 0a91622026ed1624795577569151e815, type: 3}
   Evolution: 0
+  synergy: 0
 --- !u!114 &8731495660794391217
 MonoBehaviour:
   m_ObjectHideFlags: 0

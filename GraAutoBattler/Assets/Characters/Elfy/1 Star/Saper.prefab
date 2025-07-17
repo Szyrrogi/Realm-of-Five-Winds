@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Traper
+  Name:
+  - Traper
+  - Trapper
+  - Trampero
+  - Trappeur
+  - Fallensteller
   Cost: 2
   Star: 1
   Initiative: 50

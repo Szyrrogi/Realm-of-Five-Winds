@@ -178,7 +178,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 143
-  Name: "Wie\u017Ca Przywolania"
+  Name:
+  - "Wie\u017Ca Ognia "
+  - Tower of Fire
+  - Torre de fuego
+  - Tour de Feu
+  - Feuerturm
   Cost: 2
   Star: 2
   Initiative: 20

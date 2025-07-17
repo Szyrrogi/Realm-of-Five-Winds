@@ -177,7 +177,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 93
-  Name: Samotnia
+  Name:
+  - Samotnia
+  - Retreat
+  - Ermita
+  - Ermitage
+  - Einsiedelei
   Cost: 6
   Star: 2
   Initiative: 21
@@ -190,7 +195,9 @@ MonoBehaviour:
   MagicResist: 0
   Description: "<b>Poczatek Walki: </b>Zapewnia 10/10 pierwszej jednostce w rzedzie
     za ka\u017Cde puste pole"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
@@ -200,6 +207,8 @@ MonoBehaviour:
   BoskaTarcza: 0
   attackAP: 0
   Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   HealthText: {fileID: 3501279418940951141}
 --- !u!114 &6985540666553226679
 MonoBehaviour:

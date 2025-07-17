@@ -176,7 +176,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 86
-  Name: Mara Cmentarna
+  Name:
+  - Mara Cmentarna
+  - Grave Wight
+  - Espectro de Cementerio
+  - "Spectre de Cimeti\xE8re"
+  - Friedhofsgeist
   Cost: 6
   Star: 3
   Initiative: 90

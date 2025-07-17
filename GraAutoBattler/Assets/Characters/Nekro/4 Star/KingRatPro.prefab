@@ -176,7 +176,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: "Kr\xF3l Szczur\xF3w"
+  Name:
+  - "Kr\xF3l Szczur\xF3w"
+  - Rat King
+  - Rey de las Ratas
+  - Roi des Rats
+  - "Rattenk\xF6nig"
   Cost: 8
   Star: 4
   Initiative: 30

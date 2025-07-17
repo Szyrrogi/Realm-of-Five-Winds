@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Pustynny Przwodnik
+  Name:
+  - Pustynny Przewodnik
+  - Desert Guide
+  - "Gu\xEDa del Desierto"
+  - "Guide du D\xE9sert"
+  - "W\xFCstenf\xFChrer"
   Cost: 2
   Star: 1
   Initiative: 50
@@ -114,7 +119,9 @@ MonoBehaviour:
   MagicResist: 0
   Description: "<b>Pocz\u0105tek Walki :</b>Otrzymuje 80/80 je\u017Celi w rz\u0119dzie
     znajduje si\u0119 dok\u0142adnie trzech Pustynnych Przewodnik\xF3w"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0

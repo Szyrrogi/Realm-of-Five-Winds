@@ -100,8 +100,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b87366dd5d830f489f6d750dd9bd335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
-  Name: "Weso\u0142a Gromada"
+  Id: 5
+  Name:
+  - "Weso\u0142a Gromada"
+  - Jolly Bunch
+  - Banda Alegre
+  - Joyeuse Bande
+  - Lustige Truppe
   Cost: 2
   Star: 1
   Initiative: 36

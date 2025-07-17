@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: "Prze\u015Bladowca"
+  Name:
+  - "Prze\u015Bladowca"
+  - Pursuer
+  - Perseguidor
+  - Poursuivant
+  - Verfolger
   Cost: 3
   Star: 1
   Initiative: 67

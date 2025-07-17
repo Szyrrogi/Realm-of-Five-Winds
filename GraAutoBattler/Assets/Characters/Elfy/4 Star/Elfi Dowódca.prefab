@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Zielony Grot
+  Name:
+  - Zielony Grot
+  - Green Arrowhead
+  - Flecha Verde
+  - "Fl\xE8che Verte"
+  - "Gr\xFCner Pfeil"
   Cost: 8
   Star: 4
   Initiative: 65

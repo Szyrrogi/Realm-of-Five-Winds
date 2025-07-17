@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Ent
+  Name:
+  - Ent
+  - Ent
+  - Ent
+  - Ent
+  - Ent
   Cost: 2
   Star: 0
   Initiative: 10
@@ -113,6 +118,7 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: "<b>Sprzeda\u017C: </b>Zyskujesz darmowe od\u015Bwierzenie"
+  Lore: 
   CPU: 0
   Typy: 05000000
   UpgradeLevel: 1

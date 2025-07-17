@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Elfi Poeta
+  Name:
+  - Elfi Poeta
+  - Elvish Poet
+  - "Poeta \xC9lfico"
+  - "Po\xE8te Elfe"
+  - Elfenpoet
   Cost: 5
   Star: 2
   Initiative: 50

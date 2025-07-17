@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 106
-  Name: "Stra\u017Cnik Zapas\xF3w"
+  Name:
+  - "Stra\u017Cnik Zapas\xF3w"
+  - Supply Guardian
+  - "Guardi\xE1n de Suministros"
+  - "Gardien des R\xE9serves"
+  - "Vorratsh\xFCter"
   Cost: 2
   Star: 1
   Initiative: 24

@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 71
-  Name: Duch
+  Name:
+  - Duch
+  - Ghost
+  - Fantasma
+  - "Fant\xF4me"
+  - Geist
   Cost: 4
   Star: 2
   Initiative: 50

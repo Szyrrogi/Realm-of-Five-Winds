@@ -177,7 +177,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 95
-  Name: "Wie\u017Ca Nekromanty"
+  Name:
+  - "Wie\u017Ca Nekromanty"
+  - Necromancer's Tower
+  - Torre del Nigromante
+  - "Tour du N\xE9cromancien"
+  - Nekromantenturm
   Cost: 3
   Star: 2
   Initiative: 23

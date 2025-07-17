@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: "Kr\xF3l Szczur\xF3w"
+  Name:
+  - "Kr\xF3l Szczur\xF3w"
+  - Rat King
+  - Rey de las Ratas
+  - Roi des Rats
+  - "Rattenk\xF6nig"
   Cost: 8
   Star: 4
   Initiative: 30
@@ -114,6 +119,7 @@ MonoBehaviour:
   MagicResist: 0
   Description: "<b>Pocz\u0105tek Walki: </b>Otrzymuje 10/10 za ka\u017Cdego przyjaznego
     Szczura na mapie"
+  Lore: 
   CPU: 0
   Typy: 0000000007000000
   UpgradeLevel: 1

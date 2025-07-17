@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 215
-  Name: Drzewiec
+  Name:
+  - Drzewiec
+  - Treant
+  - "\xC1rbol Guerrero"
+  - Treant
+  - "Baumw\xE4chter"
   Cost: 7
   Star: 3
   Initiative: 20

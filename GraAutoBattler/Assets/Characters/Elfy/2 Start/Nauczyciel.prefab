@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Instruktor
+  Name:
+  - Instruktor
+  - Instructor
+  - Instructor
+  - Instructeur
+  - Ausbilder
   Cost: 4
   Star: 2
   Initiative: 75

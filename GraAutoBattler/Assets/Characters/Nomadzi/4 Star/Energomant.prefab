@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Energomanta
+  Name:
+  - Energomanta
+  - Energomancer
+  - Energomante
+  - "\xC9nergomancien"
+  - Energomant
   Cost: 8
   Star: 4
   Initiative: 55

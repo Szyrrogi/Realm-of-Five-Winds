@@ -177,7 +177,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 94
-  Name: "Nawiedzony Dw\xF3r"
+  Name:
+  - "Nawiedzony Dw\xF3r"
+  - Haunted Manor
+  - "Mansi\xF3n Encantada"
+  - "Manoir Hant\xE9"
+  - Verfluchtes Anwesen
   Cost: 4
   Star: 2
   Initiative: 20

@@ -177,7 +177,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 229
-  Name: Miotacz Cierni
+  Name:
+  - Miotacz Cierni
+  - Thorn Thrower
+  - Lanzador de Espinas
+  - "Lanceur d'\xC9pines"
+  - Dornenwerfer
   Cost: 4
   Star: 3
   Initiative: 40

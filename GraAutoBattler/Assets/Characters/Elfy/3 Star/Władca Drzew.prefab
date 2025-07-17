@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Ojciec Zagajnika
+  Name:
+  - Ojciec Zagajnika
+  - Grove Father
+  - Padre de la Arboleda
+  - "P\xE8re du Bosquet"
+  - Hainvater
   Cost: 6
   Star: 3
   Initiative: 60

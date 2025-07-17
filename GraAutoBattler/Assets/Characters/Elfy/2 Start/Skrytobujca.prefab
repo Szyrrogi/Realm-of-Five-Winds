@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: "Skrytob\xF3jca"
+  Name:
+  - "Skrytob\xF3jca"
+  - Assassin
+  - Asesino
+  - Assassin
+  - "Meuchelm\xF6rder"
   Cost: 5
   Star: 2
   Initiative: 75
@@ -114,7 +119,9 @@ MonoBehaviour:
   MagicResist: 0
   Description: "<b>Pocz\u0105tek Walki: </b>Atakuje najbardziej oddalon\u0105 wrog\u0105
     jednostk\u0119 w rz\u0119dzie"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 1
   UpgradeNeed: 3
   Enemy: 0

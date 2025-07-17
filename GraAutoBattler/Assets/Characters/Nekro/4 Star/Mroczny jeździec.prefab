@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 89
-  Name: "Mroczny Je\u017Adziec"
+  Name:
+  - "Mroczny Je\u017Adziec"
+  - Dark Rider
+  - Jinete Oscuro
+  - Cavalier Noir
+  - Dunkler Reiter
   Cost: 8
   Star: 4
   Initiative: 95

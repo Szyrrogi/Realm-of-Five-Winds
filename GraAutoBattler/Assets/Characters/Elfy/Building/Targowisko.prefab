@@ -177,7 +177,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Port Handlowy
+  Name:
+  - Port Handlowy
+  - Trading Post
+  - Puerto Comercial
+  - Port Commercial
+  - Handelshafen
   Cost: 3
   Star: 2
   Initiative: 20

@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Tragarz
+  Name:
+  - Tragarz
+  - Porter
+  - Porteador
+  - Porteur
+  - "Tr\xE4ger"
   Cost: 2
   Star: 1
   Initiative: 40

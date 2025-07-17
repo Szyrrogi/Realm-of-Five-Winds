@@ -19,7 +19,7 @@ public class SynergyManager : MonoBehaviour
         foreach(Synergy character in Synergie)
         {
             character.gameObject.GetComponent<Synergy>().Id = i;
-            Debug.Log(character.Id + " " + character.gameObject.name);
+            //Debug.Log(character.Id + " " + character.gameObject.name);
             i++;
         }
     }

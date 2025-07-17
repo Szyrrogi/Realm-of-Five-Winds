@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 184
-  Name: Rekrut
+  Name:
+  - Rekrut
+  - Recruit
+  - Recluta
+  - Recrue
+  - Rekrut
   Cost: 1
   Star: 0
   Initiative: 50

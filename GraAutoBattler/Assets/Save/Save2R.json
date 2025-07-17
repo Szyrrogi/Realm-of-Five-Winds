@@ -1,19 +1,19 @@
 {
-    "playerId": 2,
+    "playerId": 0,
     "money": 5,
     "incom": 6,
     "poddymka": false,
     "win": 0,
-    "fractions": "00101",
+    "fractions": "10000",
     "lose": 3,
     "round": 0,
     "shop": [
-        147,
-        110,
-        155,
-        110,
-        116
+        43,
+        2,
+        10,
+        12,
+        4
     ],
-    "nextFight": "{\n    \"playerName\": \"Owca\",\n    \"number\": 4,\n    \"levelUp\": 1,\n    \"units\": [\n        {\n            \"Line\": 0,\n            \"Pole\": 1,\n            \"Id\": 199,\n            \"Name\": \"Ogrodnik\",\n            \"Cost\": 2,\n            \"RealCost\": 2,\n            \"Initiative\": 15,\n            \"MaxHealth\": 20,\n            \"Health\": 20,\n            \"Attack\": 20,\n            \"Defense\": 5,\n            \"Range\": 0,\n            \"AP\": 0,\n            \"MagicResist\": 0,\n            \"Description\": \"<b>Kupno i Ulepszenie :</b>Przywołaj Drzewo\",\n            \"UpgradeLevel\": 1,\n            \"SpellId\": 0\n        },\n        {\n            \"Line\": 1,\n            \"Pole\": 1,\n            \"Id\": 227,\n            \"Name\": \"Drzewo\",\n            \"Cost\": 1,\n            \"RealCost\": 0,\n            \"Initiative\": 10,\n            \"MaxHealth\": 15,\n            \"Health\": 15,\n            \"Attack\": 0,\n            \"Defense\": 5,\n            \"Range\": 0,\n            \"AP\": 0,\n            \"MagicResist\": 0,\n            \"Description\": \"Nie porusza się. <b>Sprzedaz: </b>Otrzymujesz darmowe odświerzenie sklepu\",\n            \"UpgradeLevel\": 1,\n            \"SpellId\": 0\n        },\n        {\n            \"Line\": 2,\n            \"Pole\": 1,\n            \"Id\": 191,\n            \"Name\": \"Elfi Strzelec\",\n            \"Cost\": 3,\n            \"RealCost\": 3,\n            \"Initiative\": 80,\n            \"MaxHealth\": 20,\n            \"Health\": 20,\n            \"Attack\": 10,\n            \"Defense\": 5,\n            \"Range\": 1,\n            \"AP\": 0,\n            \"MagicResist\": 0,\n            \"Description\": \"<b>Początek Walki: </b>Otrzymuje +10/5 za każdą jednostke z typem drzewa na <b>arenie</b>\",\n            \"UpgradeLevel\": 1,\n            \"SpellId\": 0\n        }\n    ]\n}",
+    "nextFight": "{\n    \"playerName\": \"SzyRRogi\",\n    \"number\": 3,\n    \"levelUp\": 1,\n    \"units\": [\n        {\n            \"Line\": 0,\n            \"Pole\": 0,\n            \"Id\": 112,\n            \"Name\": \"Wicher Piasków\",\n            \"Cost\": 2,\n            \"RealCost\": 2,\n            \"Initiative\": 80,\n            \"MaxHealth\": 18,\n            \"Health\": 18,\n            \"Attack\": 18,\n            \"Defense\": 7,\n            \"Range\": 0,\n            \"AP\": 0,\n            \"MagicResist\": 10,\n            \"Description\": \"<b>Skok, Początek Walki: </b>Otrzymuje 5/5 jeżeli w sąsiadujących rzędach na tym samym polu znajduje się Wiecher Piasków\",\n            \"UpgradeLevel\": 1,\n            \"SpellId\": 0\n        }\n    ]\n}",
     "units": []
 }

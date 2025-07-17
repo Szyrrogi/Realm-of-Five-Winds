@@ -177,7 +177,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: "T\u0119cza"
+  Name:
+  - "T\u0119cza"
+  - Rainbow
+  - "Arco\xEDris"
+  - Arc-en-Ciel
+  - Regenbogen
   Cost: 4
   Star: 2
   Initiative: 20
@@ -190,6 +195,7 @@ MonoBehaviour:
   MagicResist: 0
   Description: "<b>Koniec Walki: </b>Zmniejsz zdrowie o 1, gdy zdrowie b\u0119dzie
     wynosi\u0107 0, otrzymujesz specialn\u0105 nagrod\u0119!"
+  Lore: 
   CPU: 0
   Typy: 
   UpgradeLevel: 0

@@ -102,7 +102,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 120
-  Name: "D\u017Cinn"
+  Name:
+  - "D\u017Cinn"
+  - Genie
+  - Genio
+  - Djinn
+  - Dschinn
   Cost: 5
   Star: 2
   Initiative: 50

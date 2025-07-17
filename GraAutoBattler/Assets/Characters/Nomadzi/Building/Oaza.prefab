@@ -177,7 +177,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Punkt Mocy
+  Name:
+  - Punkt Mocy
+  - Energy Node
+  - Nodo de Poder
+  - "N\u0153ud de Puissance"
+  - Kraftknoten
   Cost: 5
   Star: 3
   Initiative: 80

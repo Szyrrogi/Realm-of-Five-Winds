@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 87
-  Name: Arcywampir
+  Name:
+  - Arcywampir
+  - Archvampire
+  - Archivampiro
+  - Archevampire
+  - Erzvampir
   Cost: 9
   Star: 4
   Initiative: 80
@@ -113,6 +118,7 @@ MonoBehaviour:
   AP: 0
   MagicResist: 10
   Description: "<b>Atak: </b>Leczy si\u0119 o 50% zadanych obra\u017Ce\u0144"
+  Lore: 
   CPU: 0
   Typy: 06000000
   UpgradeLevel: 1

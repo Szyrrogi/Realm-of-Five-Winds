@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 75
-  Name: "Graba\u017C"
+  Name:
+  - Grabarz
+  - Grave Digger
+  - Saqueador de Tumbas
+  - Pilleur de Tombes
+  - "Grabr\xE4uber"
   Cost: 6
   Star: 2
   Initiative: 5

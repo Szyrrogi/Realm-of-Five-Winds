@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 167
-  Name: "\u0141ajza"
+  Name:
+  - "\u0141ajza"
+  - Scoundrel
+  - Canalla
+  - Canaille
+  - Schurke
   Cost: 5
   Star: 2
   Initiative: 82

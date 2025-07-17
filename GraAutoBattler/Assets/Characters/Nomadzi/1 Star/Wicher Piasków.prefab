@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 102
-  Name: "Wicher Piask\xF3w"
+  Name:
+  - "Wicher Piask\xF3w"
+  - Desert Gale
+  - Tormenta de Arena
+  - "Temp\xEAte de Sable"
+  - Sandsturm
   Cost: 2
   Star: 1
   Initiative: 80

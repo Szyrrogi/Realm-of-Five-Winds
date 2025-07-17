@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 80
-  Name: "Wilko\u0142ak"
+  Name:
+  - "Wilko\u0142ak"
+  - Werewolf
+  - Hombre Lobo
+  - Loup-Garou
+  - Werwolf
   Cost: 4
   Star: 2
   Initiative: 80
@@ -114,6 +119,7 @@ MonoBehaviour:
   MagicResist: 0
   Description: "<b>Pocz\u0105tek Walki:</b>W przypadku parzystej ilo\u015Bci wygranych
     wilko\u0142ak otrzymuje +40/40"
+  Lore: 
   CPU: 0
   Typy: 01000000
   UpgradeLevel: 1

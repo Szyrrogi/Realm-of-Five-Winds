@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Minstrel
+  Name:
+  - Minstrel
+  - Minstrel
+  - Juglar
+  - "M\xE9nestrel"
+  - "Minnes\xE4nger"
   Cost: 2
   Star: 1
   Initiative: 50

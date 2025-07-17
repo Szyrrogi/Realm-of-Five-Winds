@@ -177,7 +177,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 98
-  Name: Cmentarz
+  Name:
+  - Cmentarz
+  - Graveyard
+  - Cementerio
+  - "Cimeti\xE8re"
+  - Friedhof
   Cost: 4
   Star: 1
   Initiative: 20
@@ -189,6 +194,7 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: "<b>Poczatek Walki: </b>Zwi\u0119ksz atak oraz zdrowie o 20 dla Szkielet\xF3w"
+  Lore: 
   CPU: 0
   Typy: 02000000
   UpgradeLevel: 0

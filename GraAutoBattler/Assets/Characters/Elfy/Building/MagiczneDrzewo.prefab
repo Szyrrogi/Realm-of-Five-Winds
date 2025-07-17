@@ -177,7 +177,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Drzewo Magii
+  Name:
+  - Drzewo Magii
+  - Tree of Magic
+  - "\xC1rbol de Magia"
+  - Arbre de Magie
+  - Magiebaum
   Cost: 2
   Star: 2
   Initiative: 20

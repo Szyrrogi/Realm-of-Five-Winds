@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 227
-  Name: Drzewo
+  Name:
+  - Drzewo
+  - Tree
+  - "\xC1rbol"
+  - Arbre
+  - Baum
   Cost: 1
   Star: 0
   Initiative: 10
@@ -114,6 +119,7 @@ MonoBehaviour:
   MagicResist: 0
   Description: "Nie porusza si\u0119. <b>Sprzedaz: </b>Otrzymujesz darmowe od\u015Bwierzenie
     sklepu"
+  Lore: 
   CPU: 0
   Typy: 05000000
   UpgradeLevel: 1

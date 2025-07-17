@@ -177,7 +177,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 96
-  Name: Ossuarium
+  Name:
+  - Ossuarium
+  - Ossuary
+  - Osario
+  - Ossuaire
+  - Ossarium
   Cost: 8
   Star: 3
   Initiative: 30

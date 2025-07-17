@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Opiekun
+  Name:
+  - Opiekun
+  - Caretaker
+  - "Guardi\xE1n"
+  - Gardien
+  - "W\xE4chter"
   Cost: 2
   Star: 1
   Initiative: 15

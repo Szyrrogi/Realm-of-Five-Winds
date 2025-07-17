@@ -177,7 +177,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Loch
+  Name:
+  - Loch
+  - Dungeon
+  - Mazmorra
+  - Donjon
+  - Verlies
   Cost: 3
   Star: 2
   Initiative: 20
@@ -189,7 +194,9 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: "Pierwsza wroga jednostka, kt\xF3ra zostanie zabita, trafia do sklepu"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
@@ -202,6 +209,7 @@ MonoBehaviour:
   CanJump: 0
   ReadyToJump: 0
   HealthText: {fileID: 3501279418940951141}
+  nekro: 0
   shop: {fileID: 0}
 --- !u!114 &6985540666553226679
 MonoBehaviour:

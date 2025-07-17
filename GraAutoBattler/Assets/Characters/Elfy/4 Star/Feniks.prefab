@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Feniks
+  Name:
+  - Feniks
+  - Phoenix
+  - "F\xE9nix"
+  - "Ph\xE9nix"
+  - "Ph\xF6nix"
   Cost: 9
   Star: 4
   Initiative: 85
@@ -114,6 +119,7 @@ MonoBehaviour:
   MagicResist: 0
   Description: "<b>Ostatni Oddech:</b> Przywr\xF3\u0107 te jednostk\u0119 z pe\u0142nym
     zdrowiem"
+  Lore: 
   CPU: 0
   Typy: 00000000
   UpgradeLevel: 1

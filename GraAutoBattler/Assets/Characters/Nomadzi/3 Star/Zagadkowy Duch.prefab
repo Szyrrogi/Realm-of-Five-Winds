@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Zagadkowy Duch
+  Name:
+  - Zagadkowy Duch
+  - Spirit of Riddles
+  - "Esp\xEDritu Enigm\xE1tico"
+  - "Esprit \xC9nigmatique"
+  - "R\xE4tselhafter Geist"
   Cost: 6
   Star: 3
   Initiative: 30

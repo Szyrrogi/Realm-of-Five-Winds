@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Wilk Alfa
+  Name:
+  - Wilk Alfa
+  - Alpha Wolf
+  - Lobo Alfa
+  - Loup Alpha
+  - Alphawolf
   Cost: 4
   Star: 2
   Initiative: 10

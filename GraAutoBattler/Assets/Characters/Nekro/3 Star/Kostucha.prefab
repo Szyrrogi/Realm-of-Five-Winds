@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 81
-  Name: Kostucha
+  Name:
+  - Kostucha
+  - Reaper
+  - Banshee
+  - Banshee
+  - Banshee
   Cost: 6
   Star: 3
   Initiative: 66

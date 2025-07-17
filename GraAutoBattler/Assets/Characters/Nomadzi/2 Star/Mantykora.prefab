@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Mantykora
+  Name:
+  - Mantykora
+  - Manticore
+  - "Mant\xEDcora"
+  - Manticore
+  - Mantikor
   Cost: 5
   Star: 2
   Initiative: 40
@@ -114,6 +119,7 @@ MonoBehaviour:
   MagicResist: 0
   Description: "<b>Skok, Pocz\u0105tek Walki: </b>Otrzymuje 50/50 je\u017Celi w s\u0105siaduj\u0105cych
     rz\u0119dach na tym samym polu nie ma jednostek"
+  Lore: 
   CPU: 0
   Typy: 00000000
   UpgradeLevel: 1

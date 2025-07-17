@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Chimera
+  Name:
+  - Chimera
+  - Chimera
+  - Quimera
+  - "Chim\xE8re"
+  - "Chim\xE4re"
   Cost: 8
   Star: 4
   Initiative: 15

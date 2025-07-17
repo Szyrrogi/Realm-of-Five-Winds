@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 185
-  Name: Wielki Golem
+  Name:
+  - Wielki Golem
+  - Great Golem
+  - Gran Golem
+  - Grand Golem
+  - "Gro\xDFgolem"
   Cost: 11
   Star: 0
   Initiative: 42

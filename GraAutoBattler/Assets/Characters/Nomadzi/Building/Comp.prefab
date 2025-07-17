@@ -177,7 +177,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: "Ob\xF3z"
+  Name:
+  - "Ob\xF3z"
+  - Camp
+  - Campamento
+  - Camp
+  - Lager
   Cost: 4
   Star: 1
   Initiative: 20
@@ -190,7 +195,9 @@ MonoBehaviour:
   MagicResist: 0
   Description: "<b>Poczatek Walki: </b>Daje 18/18 dla jednostek posiadaj\u0105cych
     <b>Skok</b>"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0

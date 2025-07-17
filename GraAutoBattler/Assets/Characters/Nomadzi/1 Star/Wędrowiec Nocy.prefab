@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: "W\u0119drowiec Nocy"
+  Name:
+  - "W\u0119drowiec Nocy"
+  - Night Wanderer
+  - Errante Nocturno
+  - "R\xF4deur Nocturne"
+  - Nachtwanderer
   Cost: 3
   Star: 1
   Initiative: 35

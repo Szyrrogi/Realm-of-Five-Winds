@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: "Z\u0142oty Szakal"
+  Name:
+  - "Z\u0142oty Szakal"
+  - Golden Jackal
+  - Chacal Dorado
+  - "Chacal Dor\xE9"
+  - Goldschakal
   Cost: 2
   Star: 1
   Initiative: 45

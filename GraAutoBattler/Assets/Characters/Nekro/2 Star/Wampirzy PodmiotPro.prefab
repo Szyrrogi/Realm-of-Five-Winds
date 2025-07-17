@@ -176,7 +176,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Wampirzy Pomiot
+  Name:
+  - Wampirzy Pomiot
+  - Vampire Spawn
+  - "Engendro Vamp\xEDrico"
+  - Rejeton Vampirique
+  - Vampirbrut
   Cost: 4
   Star: 2
   Initiative: 40
@@ -188,6 +193,7 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: "<b>Atak: </b>Leczy si\u0119 o 70% zadanych obra\u017Ce\u0144"
+  Lore: 
   CPU: 0
   Typy: 06000000
   UpgradeLevel: 0

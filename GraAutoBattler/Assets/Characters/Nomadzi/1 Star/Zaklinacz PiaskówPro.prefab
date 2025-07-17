@@ -312,7 +312,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: "Zaklinacz Piask\xF3w"
+  Name:
+  - "Zaklinacz Piask\xF3w"
+  - Sand Enchanter
+  - Encantador de Arena
+  - Enchanteur de Sable
+  - Sandzauberer
   Cost: 2
   Star: 1
   Initiative: 45

@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Pustelnik
+  Name:
+  - Pustelnik
+  - Hermit
+  - "Ermita\xF1o"
+  - Ermite
+  - Eremit
   Cost: 5
   Star: 2
   Initiative: 91

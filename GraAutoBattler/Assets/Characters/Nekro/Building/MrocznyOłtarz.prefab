@@ -177,7 +177,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 92
-  Name: "Mroczny O\u0142tarz"
+  Name:
+  - "Mroczny O\u0142tarz"
+  - Dark Altar
+  - Altar Oscuro
+  - Autel Noir
+  - Dunkler Altar
   Cost: 9
   Star: 4
   Initiative: 20

@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: "Upad\u0142y Ksi\u0105\u017C\u0119"
+  Name:
+  - "Upad\u0142y Ksi\u0105\u017C\u0119"
+  - Fallen Prince
+  - "Pr\xEDncipe Ca\xEDdo"
+  - "Prince D\xE9chu"
+  - Gefallener Prinz
   Cost: 8
   Star: 4
   Initiative: 60

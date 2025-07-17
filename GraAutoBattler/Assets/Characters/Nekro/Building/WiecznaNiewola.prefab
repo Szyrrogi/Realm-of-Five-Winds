@@ -177,7 +177,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: "Wieczne Wi\u0119zienie"
+  Name:
+  - "Wieczne Wi\u0119zienie"
+  - Eternal Prison
+  - "Prisi\xF3n Eterna"
+  - "Prison \xC9ternelle"
+  - "Ewiges Gef\xE4ngnis"
   Cost: 4
   Star: 2
   Initiative: 20

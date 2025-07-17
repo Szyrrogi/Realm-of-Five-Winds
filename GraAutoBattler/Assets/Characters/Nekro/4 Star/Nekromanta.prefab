@@ -102,7 +102,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 99
-  Name: Nekromanta
+  Name:
+  - Nekromanta
+  - Necromancer
+  - Nigromante
+  - "N\xE9cromancien"
+  - Nekromant
   Cost: 8
   Star: 4
   Initiative: 75

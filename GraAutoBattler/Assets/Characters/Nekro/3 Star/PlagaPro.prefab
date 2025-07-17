@@ -176,7 +176,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 84
-  Name: "Ska\u017Cony"
+  Name:
+  - "Ska\u017Cony"
+  - Infected
+  - Infectado
+  - "Infect\xE9"
+  - Verseuchter
   Cost: 6
   Star: 3
   Initiative: 80

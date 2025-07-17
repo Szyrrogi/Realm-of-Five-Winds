@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: "Po\u017Ceracz"
+  Name:
+  - "Po\u017Ceracz"
+  - Devourer
+  - Devorador
+  - "D\xE9vorant"
+  - Verschlinger
   Cost: 7
   Star: 3
   Initiative: 74

@@ -177,7 +177,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 97
-  Name: "Kana\u0142"
+  Name:
+  - Rynsztok
+  - Gutter
+  - Cloaca
+  - "\xC9gout"
+  - Kanalisation
   Cost: 2
   Star: 1
   Initiative: 20
@@ -189,6 +194,7 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: "<b>Poczatek Walki: </b>Zwi\u0119ksz atak oraz zdrowie o 15 dla szczur\xF3w"
+  Lore: 
   CPU: 0
   Typy: 07000000
   UpgradeLevel: 0
