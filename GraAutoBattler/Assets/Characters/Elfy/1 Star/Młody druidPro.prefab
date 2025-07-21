@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: "Wr\xF3\u017Cka"
+  Name: []
   Cost: 3
   Star: 1
   Initiative: 40
@@ -113,7 +113,7 @@ MonoBehaviour:
   AP: 15
   MagicResist: 0
   Description: "<b>Pocz\u0105tek Walki: </b>Otrzymuje 20 Mocy Zakl\u0119\u0107 za
-    ka\u017Cd\u0105 jednostk\u0119 z typem drzewa na <b>arenie</b>"
+    ka\u017Cd\u0105 jednostk\u0119 b\u0119d\u0105c\u0105 drzewem na <b>arenie</b>"
   Lore: 
   CPU: 0
   Typy: 

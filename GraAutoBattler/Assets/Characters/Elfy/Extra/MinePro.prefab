@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: "Pu\u0142apka"
+  Name:
+  - "Pu\u0142apka"
+  - Trap
+  - Trampa
+  - "Pi\xE8ge"
+  - Falle
   Cost: 1
   Star: 0
   Initiative: 50

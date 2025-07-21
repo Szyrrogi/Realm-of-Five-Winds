@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 101
-  Name: 
+  Name:
+  - 
+  - 
+  - 
+  - 
+  - 
   Cost: 0
   Star: 0
   Initiative: 0
@@ -113,7 +118,9 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: 
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0

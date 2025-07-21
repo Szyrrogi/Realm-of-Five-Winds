@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 5
-  Name: Pirokataklizm
+  Name:
+  - Pirokataklizm
+  - Pyrocataclysm
+  - Pirocataclismo
+  - Pyrocataclysme
+  - Pyrokataklysmus
   Cost: 4
   Star: 4
   Initiative: 0

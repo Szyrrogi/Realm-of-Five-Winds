@@ -193,7 +193,7 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: '<b>Po Walce: </b> zmniejsz koszt poziomu o 1'
+  Description: '<b>Po Walce: </b> Zmniejsz koszt poziomu o 1'
   Lore: 
   CPU: 0
   Typy: 

@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Przywolanie Szczura
+  Name:
+  - "Przywo\u0142anie Szczura"
+  - Summon Rat
+  - "Invocaci\xF3n de la Rata"
+  - Invocation du Rat
+  - "Beschw\xF6rung der Ratte"
   Cost: 1
   Star: 1
   Initiative: 0
@@ -113,7 +118,9 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: "Przywo\u0142uje Szczura"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0

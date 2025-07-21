@@ -57,7 +57,8 @@ public class ShopManager : MonoBehaviour
             nizka = LevelUpCost;
         }
         LevelUpText.text = (LevelUpCost - nizka).ToString();
-        FreeRollText.text = FreeRoll == 0  ? "" : "Darmowe odświeżenia: " + FreeRoll.ToString();
+        string[] freeRollLanguage = { "Darmowe odświeżenia", "Free Refreshes", "Refrescos Gratis", "Rafraîchissements Gratuits", "Kostenlose Aktualisierungen" };
+        FreeRollText.text = FreeRoll == 0  ? "" : freeRollLanguage[PauseMenu.Language] + ": " + FreeRoll.ToString();
         RollCostText.text = (FreeRoll == 0 ? RollCost.ToString() : "0");
         if(DragObject.moveObject == null)
         {
@@ -66,7 +67,8 @@ public class ShopManager : MonoBehaviour
         }
         else
         {
-            sellText.text = "Sprzedaż " + ((DragObject.moveObject.GetComponent<Unit>().RealCost != 0 ? DragObject.moveObject.GetComponent<Unit>().RealCost : DragObject.moveObject.GetComponent<Unit>().Cost) - 1) + " $";
+            string[] sellLanguage = { "Sprzedaż", "	Sale", "Oferta", "Promotion", "Angebot" };
+            sellText.text = sellLanguage[PauseMenu.Language] + " " + ((DragObject.moveObject.GetComponent<Unit>().RealCost != 0 ? DragObject.moveObject.GetComponent<Unit>().RealCost : DragObject.moveObject.GetComponent<Unit>().Cost) - 1) + " $";
             sprzedarz.SetActive(true); 
         }
         foreach(ShopVisitor shopVis in shopVisitors)
@@ -157,6 +159,8 @@ public class ShopManager : MonoBehaviour
             } 
         }
     }
+    public GameObject MrocznaChata;
+
     protected List<GameObject> FilterObjects(List<GameObject> objects)
     {
         List<GameObject> result = new List<GameObject>();
@@ -165,14 +169,19 @@ public class ShopManager : MonoBehaviour
         {
             Heros hero = obj.GetComponent<Heros>();
 
-            if ((!hero || !hero.Evolution) && obj.GetComponent<Unit>().Star <= (StatsManager.Round / 3) + 1 && (obj.GetComponent<Unit>().Star != 0) 
+            if ((!hero || !hero.Evolution) && obj.GetComponent<Unit>().Star <= (StatsManager.Round / 3) + 1 && (obj.GetComponent<Unit>().Star != 0)
             && (Fraction.fractionList == null || Fraction.fractionList.Contains(obj.GetComponent<Unit>().fraction)))
             {
                 result.Add(obj);
             }
         }
 
-        return result;
+        if (levelUp == 4 && result.Contains(MrocznaChata))
+        {
+            result.Remove(MrocznaChata);
+        }
+
+            return result;
     }
     public void LevelUp()
     {

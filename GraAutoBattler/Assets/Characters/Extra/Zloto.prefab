@@ -177,7 +177,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: "Z\u0142oto"
+  Name:
+  - "Z\u0142oto"
+  - Gold
+  - Oro
+  - Or
+  - Gold
   Cost: 0
   Star: 0
   Initiative: 0
@@ -188,14 +193,25 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "Otrzymujesz 2 z\u0142ota"
+  Description: "Otrzymujesz 2 sztuki z\u0142ota"
+  Lore: 
+  CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
+  fraction: 0
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
+  attackAP: 0
+  Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
+  AttackText: {fileID: 0}
   HealthText: {fileID: 3501279418940951141}
+  EvolveHeroes: {fileID: 0}
+  Evolution: 0
 --- !u!114 &6985540666553226679
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -24,8 +24,8 @@ public class DruidZycia : Heros
     public override string DescriptionEdit()
     {
         if(Evolution)
-            return "<b>Początek Walki: </b>Zwiększ atak i zdrowie wszystki jednostkom z typem drzewa, na <b>arenie</b> o <color=#B803FF>" + (AP) + "</color>" ;
+            return "<b>Początek Walki: </b>Zwiększ atak i zdrowie wszystkich jednostek będących drzewami na <b>arenie</b> o <color=#B803FF>" + (AP) + "</color>" ;
         else
-            return "<b>Początek Walki: </b>Zwiększ zdrowie wszystkim jednostkom z typem drzewa, na <b>arenie</b> o <color=#B803FF>" + (AP) + "</color>" ;
+            return "<b>Początek Walki: </b>Zwiększ zdrowie wszystkich jednostek będących drzewami na <b>arenie</b> o <color=#B803FF>" + (AP) + "</color>" ;
     }
 }

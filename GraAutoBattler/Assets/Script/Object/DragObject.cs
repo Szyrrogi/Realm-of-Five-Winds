@@ -28,6 +28,24 @@ public class DragObject : MonoBehaviour
         }
     }
 
+    bool SameUnit(Unit a, Unit b)
+    {
+        if (b && pole != potencialPole && !ShopManager.isLoockUpgrade && pole.unit.GetComponent<Heros>())
+        {
+            if (a.Name[0] == b.Name[0])
+                return true;
+            if (a.Name[0] == "Wilk" && b.Name[0] == "Wilkor")
+                return true;
+            if (b.Name[0] == "Wilk" && a.Name[0] == "Wilkor")
+                return true;
+            if (a.Name[0] == "Darelin" && b.Name[0] == "Sarin")
+                return true;
+            if (b.Name[0] == "Darelin" && a.Name[0] == "Sarin")
+                return true;
+        }
+        return false;
+    }
+
     void OnMouseUp()
     {
         isDragging = false;
@@ -62,8 +80,7 @@ public class DragObject : MonoBehaviour
                     }
                     else
                     {
-                        if(pole.unit.GetComponent<Unit>().Name == potencialPole.unit.GetComponent<Unit>().Name 
-                        && potencialPole.unit.GetComponent<Unit>() && pole != potencialPole && !ShopManager.isLoockUpgrade && pole.unit.GetComponent<Heros>())   //ŁĄczenie jednostek!!!
+                        if(SameUnit(pole.unit.GetComponent<Unit>(),potencialPole.unit.GetComponent<Unit>()))  //ŁĄczenie jednostek!!!
                         {
                             if(pole.unit.GetComponent<Unit>().Health > potencialPole.unit.GetComponent<Unit>().Health)
                             {

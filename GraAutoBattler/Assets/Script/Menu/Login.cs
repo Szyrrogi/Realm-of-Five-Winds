@@ -142,13 +142,38 @@ public class Login : MonoBehaviour
                 PlayerManager.PlayerFaceId = response.face;
                 PlayerManager.Id = response.id;
 
-                //string savePathSynergy = Application.dataPath + "/Save/Synergy.txt";
-                string savePathSynergy = Path.Combine(saveFolder, "Synergy.txt");
-                File.WriteAllText(savePathSynergy, response.synergies);
+                // Upewnij się, że folder istnieje
+                Directory.CreateDirectory(saveFolder);
 
-                //string savePathAchievements = Application.dataPath + "/Save/Achivments.txt";
+                // Ścieżki do plików
+                string savePathSynergy = Path.Combine(saveFolder, "Synergy.txt");
                 string savePathAchievements = Path.Combine(saveFolder, "Achievements.txt");
-                File.WriteAllText(savePathAchievements, response.achievements);
+
+                // Tworzenie plików tylko jeśli nie istnieją
+                if (!File.Exists(savePathSynergy))
+                {
+                    File.WriteAllText(savePathSynergy, response.synergies);
+                }
+
+                if (!File.Exists(savePathAchievements))
+                {
+                    File.WriteAllText(savePathAchievements, response.achievements);
+                }
+
+                string[] files = Directory.GetFiles(saveFolder);
+                if (files.Length == 0)
+                {
+                    Debug.Log("Folder jest pusty: " + saveFolder);
+                }
+                else
+                {
+                    foreach (string file in files)
+                    {
+                        Debug.Log("Plik w folderze: " + file);
+                    }
+                }
+
+                Debug.Log("To ma miejsce: " + response.achievements);
 
                 SaveLoginData(username, password);
 
@@ -156,6 +181,8 @@ public class Login : MonoBehaviour
                 menu.SetActive(true);
                 loggedP = true;
                 ranking.Start();
+
+
             }
         }
     }

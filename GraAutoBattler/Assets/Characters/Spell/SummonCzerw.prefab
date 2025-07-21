@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Przywolanie Czerw
+  Name:
+  - "Przywo\u0142anie Po\u017Ceracza"
+  - Summon Devourer
+  - "Invocaci\xF3n del Devorador"
+  - "Invocation du D\xE9vorateur"
+  - "Beschw\xF6rung des Verschlingers"
   Cost: 6
   Star: 5
   Initiative: 0

@@ -6,11 +6,16 @@ public class DrzewoSmierci : Building
 {
     public override IEnumerator OnBattleStart()
     {
-        foreach(Unit unit in EventSystem.eventSystem.GetComponent<FightManager>().units)
+        int ile = Drzewo.IleDrzew(Enemy);
+        foreach (Pole pole in GetComponent<DragObject>().pole.GetComponent<Pole>().line.GetComponent<Linia>().pola)
         {
-            if((unit.gameObject.GetComponent<Drzewo>()) && unit.Enemy == Enemy)
+            if (pole.unit != null)
             {
-                unit.gameObject.GetComponent<Drzewo>().DMGBuff();
+                int buff = ile * 10;
+                pole.unit.GetComponent<Unit>().ShowPopUp(buff.ToString(), new Color(1f, 0.66f, 0f));
+                pole.unit.GetComponent<Unit>().Attack += buff;
+                yield return new WaitForSeconds(0.5f);
+                break;
             }
         }
         yield return null;

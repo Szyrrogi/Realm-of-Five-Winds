@@ -119,7 +119,6 @@ public class Heros : Unit
                 wolne.RemoveAt(rng);
             }
         }while(wolne.Count != 0);
-        Debug.Log(wolne.Count + " SKOK");
         if (wolne.Count != 0)
         {
             Debug.Log("weszlo");

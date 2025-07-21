@@ -6,22 +6,24 @@ public class Nauczyciel : Heros
 {
     public override IEnumerator OnBattleStart()
     {
-        Pole pole = findPole().GetComponent<Pole>();
-        if(pole.unit != null)
+        Pole poleee = findPole().GetComponent<Pole>();
+        if(poleee.unit != null)
         {
-            Unit unitt = pole.unit.GetComponent<Unit>();
+            Unit unitt = poleee.unit.GetComponent<Unit>();
             unitt.Range = 1;
             unitt.ShowPopUp("+Zasięg", Color.green);
             yield return new WaitForSeconds(0.3f);
         }
         if(Evolution)
         {
-            Unit unit = PrefUnit();
-            if(unit != null)
+            foreach (Pole pole in GetComponent<DragObject>().pole.line.pola)
             {
-                unit.Range = 1;
-                unit.ShowPopUp("+Zasięg", Color.green);
-                yield return new WaitForSeconds(0.3f);
+                if (pole.unit != null)
+                {
+                    pole.unit.GetComponent<Unit>().Range = 1;
+                    pole.unit.GetComponent<Unit>().ShowPopUp("+Zasięg", Color.green);
+                    yield return new WaitForSeconds(0.3f);
+                }
             }
         }
         yield return null;

@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 8
-  Name: "Arkaniczny Strza\u0142"
+  Name:
+  - Pocisk Mocy
+  - Power Bolt
+  - Rayo de Poder
+  - "\xC9clair de Puissance"
+  - Kraftgeschoss
   Cost: 3
   Star: 3
   Initiative: 0
@@ -113,7 +118,9 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: "<b>Atak: </b>Zadaje zawsze 70 obra\u017Cen"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
@@ -123,6 +130,8 @@ MonoBehaviour:
   BoskaTarcza: 0
   attackAP: 0
   Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   unit: {fileID: 0}
   OffensifSpell: 1
   spellType: 2

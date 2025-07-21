@@ -360,7 +360,7 @@ public class Unit : MonoBehaviour
 
     public void ShowPopUp(string text, Color color)
     {
-        Debug.Log(gameObject.name);
+        //Debug.Log(gameObject.name);
         GameObject pop = Instantiate(PopUp, gameObject.transform.position, Quaternion.identity);
         pop.GetComponent<PopUp>().SetText(text, color);
     }

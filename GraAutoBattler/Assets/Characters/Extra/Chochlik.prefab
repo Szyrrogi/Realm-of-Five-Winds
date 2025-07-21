@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 53
-  Name: Chochlik
+  Name:
+  - Chochlik
+  - Boggart
+  - Trasgo
+  - Lutin
+  - Kobold
   Cost: 1
   Star: 0
   Initiative: 50
@@ -116,7 +121,7 @@ MonoBehaviour:
     pojawi\u0107"
   Lore: 
   CPU: 0
-  Typy: 
+  Typy: 08000000
   UpgradeLevel: 1
   UpgradeNeed: 0
   Enemy: 0

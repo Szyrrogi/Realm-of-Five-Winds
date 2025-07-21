@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 7
-  Name: "P\u0142on\u0105ca pot\u0119ga"
+  Name:
+  - Ognisty Gniew
+  - Fiery Wrath
+  - Ira Ardiente
+  - "Col\xE8re Ardente"
+  - Feuriger Zorn
   Cost: 2
   Star: 3
   Initiative: 0
@@ -114,7 +119,9 @@ MonoBehaviour:
   MagicResist: 0
   Description: "<b>Pocz\u0105tek Walki: </b>Zwi\u0119ksza atak jednostki przed sob\u0105
     w zale\u017Cno\u015Bci od Mocy Zakl\u0119\u0107"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
@@ -124,6 +131,8 @@ MonoBehaviour:
   BoskaTarcza: 0
   attackAP: 0
   Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   unit: {fileID: 0}
   OffensifSpell: 0
   spellType: 1

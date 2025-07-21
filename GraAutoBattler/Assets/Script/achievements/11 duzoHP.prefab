@@ -217,7 +217,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Zdob\u0105d\u017A 600 zdrowia na jednostce"
+  m_text: "Posiadaj jednostk\u0119, kt\xF3ra ma 600 lub wi\u0119cej punkt\xF3w \u017Cycia"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

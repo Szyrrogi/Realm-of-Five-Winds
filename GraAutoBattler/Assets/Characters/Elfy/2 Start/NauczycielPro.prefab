@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Instruktor
+  Name: []
   Cost: 4
   Star: 2
   Initiative: 75
@@ -112,8 +112,8 @@ MonoBehaviour:
   Range: 1
   AP: 0
   MagicResist: 0
-  Description: "<b>Pocz\u0105tek Walki: </b>Uczy jednsotk\u0119 przed sob\u0105 i
-    za sob\u0105 atakowa\u0107 dystansowo"
+  Description: "<b>Pocz\u0105tek Walki: </b>Uczy wszystkie jednostki w rz\u0119dzie
+    atakowa\u0107 dystansowo"
   Lore: 
   CPU: 0
   Typy: 

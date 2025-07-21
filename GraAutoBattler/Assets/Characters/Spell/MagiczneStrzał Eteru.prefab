@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 9
-  Name: "Strza\u0142a Eteru"
+  Name:
+  - Uderzenie Mocy
+  - Power Strike
+  - Golpe de Poder
+  - Coup de Puissance
+  - Kraftschlag
   Cost: 4
   Star: 4
   Initiative: 0

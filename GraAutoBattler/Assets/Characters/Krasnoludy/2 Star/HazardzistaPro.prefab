@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Hazardzista
+  Name: []
   Cost: 4
   Star: 2
   Initiative: 68
@@ -112,8 +112,8 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 40
-  Description: "<b>Pocz\u0105tek Walki:</b> Zyskaj lub tracisz 2 sztuki z\u0142ota
-    z wi\u0119ksza szans\u0105 na wygran\u0105"
+  Description: "<b>Pocz\u0105tek Walki:</b> Zyskaj 2 sztuki z\u0142ota lub tracisz
+    1 sztuki z\u0142ota"
   Lore: 
   CPU: 0
   Typy: 

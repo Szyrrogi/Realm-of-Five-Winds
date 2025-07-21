@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 4
-  Name: Iskra
+  Name:
+  - Magiczne Uderzenie
+  - Magic Strike
+  - "Golpe M\xE1gico"
+  - Frappe Magique
+  - Magischer Schlag
   Cost: 1
   Star: 1
   Initiative: 0
@@ -114,7 +119,9 @@ MonoBehaviour:
   MagicResist: 0
   Description: "<b>Atak: </b>Zadaje obra\u017Cenia r\xF3wne Mocy Zakl\u0119\u0107.
     Nie dystansowe"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0

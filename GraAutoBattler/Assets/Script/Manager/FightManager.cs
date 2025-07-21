@@ -55,6 +55,7 @@ public class FightManager : MonoBehaviour
     public EventObject fatyga;
     public GameObject ShildObject;
     //public Music music;
+    public MusicManager musicManager;
     private bool isBattleRunning = false;
 
     public void Start()
@@ -207,6 +208,7 @@ public class FightManager : MonoBehaviour
         if (IsFight == false)
         {
             //music.SetMusic(1);
+            musicManager.SetToBattle();
             EventSystem.eventSystem.GetComponent<ShopManager>().FreeRoll = 0;
             shop.SetActive(false);
             fightUI.SetActive(true);
@@ -224,7 +226,6 @@ public class FightManager : MonoBehaviour
             setList();
             SortUnits();
             yield return (StartCoroutine(Battle()));
-            Debug.Log("Zgery essa");
             foreach (var kvp in EventSystem.eventSystem.GetComponent<SynergyManager>().ActiveSynergyObjects)
             {
                 GameObject gameObject = kvp.Value; // Get the GameObject from the dictionary
@@ -250,6 +251,7 @@ public class FightManager : MonoBehaviour
             }
 
             //music.SetMusic(0);
+            musicManager.SetToShop();
             SaveManager.Save(PlayerManager.Name, PlayerManager.PlayerFaceId, ShopManager.levelUp);
         }
         isBattleRunning = false;
@@ -448,6 +450,7 @@ public class FightManager : MonoBehaviour
         int enemyWin = 0;
         for (int i = 0; i < 3; i++)
         {
+            Debug.Log(i + "  |   " + linie[i].KtoWygral);
             if (linie[i].KtoWygral == 1)
                 graczWin++;
             if (linie[i].KtoWygral == 2)
@@ -456,6 +459,7 @@ public class FightManager : MonoBehaviour
 
         if (graczWin > enemyWin)
         {
+            Debug.Log("WINNN");
             //if(StatsManager.win != 10)
             StartCoroutine(ShowEndScreen(0));
             AddToBase();
@@ -489,9 +493,11 @@ public class FightManager : MonoBehaviour
         }
         else if (graczWin < enemyWin)
         {
+            Debug.Log("LOSEEE");
+            StatsManager.life--;
             if (StatsManager.life != 0)
                 StartCoroutine(ShowEndScreen(1));
-            StatsManager.life--;
+            
             if (Multi.multi)
             {
                 GetComponent<PhotonView>().RPC("ZmniejszZdrowie", RpcTarget.All, MultiHP.ID);
@@ -532,6 +538,7 @@ public class FightManager : MonoBehaviour
         }
         else
         {
+            Debug.Log("remis");
             AddToBase();
             if (!RankedManager.Ranked)
                 StatsManager.win++;
@@ -707,12 +714,12 @@ public class FightManager : MonoBehaviour
         StartCoroutine(MoveAndZoomCamera(new Vector3(0, 0, -20f), mainCamera.orthographicSize - 1f));
         EventSystem.eventSystem.GetComponent<SynergyManager>().ClearEnemySynergies();
         
-        if((StatsManager.Round == 2 || StatsManager.Round == 7) && StatsManager.life != 3 && !Multi.multi)
+        if((StatsManager.Round == 2 || StatsManager.Round == 7) && StatsManager.life != 3 && StatsManager.life != 0 && !Multi.multi)
         {
             StartCoroutine(ShowEndScreen(3));
             StatsManager.life++;
         }
-        if (StatsManager.Round == 2 && StatsManager.life != MultiOptions.Hearth && Multi.multi)
+        if (StatsManager.Round == 2 && StatsManager.life != MultiOptions.Hearth && StatsManager.life != 0 && Multi.multi)
         {
             StartCoroutine(ShowEndScreen(3));
             StatsManager.life++;

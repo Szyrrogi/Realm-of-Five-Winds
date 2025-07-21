@@ -193,8 +193,8 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "<b>Pocz\u0105tek Walki: </b>Drzewa zapewniaj\u0105 jednostkom w rz\u0119dzie
-    9 Zdrowia"
+  Description: "<b>Pocz\u0105tek Walki: </b>Zwi\u0119ksz Zdrowie pierwszej jednostce
+    w rz\u0119dzie o 10 za ka\u017Cde zdrewo na Arenie"
   Lore: 
   CPU: 0
   Typy: 

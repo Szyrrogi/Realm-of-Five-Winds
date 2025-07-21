@@ -1196,6 +1196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 64933840}
   - component: {fileID: 64933842}
+  - component: {fileID: 64933843}
   - component: {fileID: 64933841}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -1272,8 +1273,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 25.38
+  m_fontSizeBase: 25.38
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1322,6 +1323,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 64933839}
   m_CullTransparentMesh: 1
+--- !u!114 &64933843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64933839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f992473e998b94e9e82fcaab5b5548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textUI: {fileID: 0}
+  textUIPro: {fileID: 64933841}
+  text:
+  - Gra Rankingowa
+  - Ranked Game
+  - Juego Clasificatorio
+  - "Jeu Class\xE9"
+  - Ranglistenspiel
 --- !u!1 &79980470
 GameObject:
   m_ObjectHideFlags: 0
@@ -2795,6 +2816,7 @@ GameObject:
   m_Component:
   - component: {fileID: 291814535}
   - component: {fileID: 291814537}
+  - component: {fileID: 291814538}
   - component: {fileID: 291814536}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -2919,6 +2941,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 291814534}
   m_CullTransparentMesh: 1
+--- !u!114 &291814538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291814534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f992473e998b94e9e82fcaab5b5548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textUI: {fileID: 0}
+  textUIPro: {fileID: 291814536}
+  text:
+  - Bestiariusz
+  - Bestiary
+  - Bestiario
+  - Bestiaire
+  - Bestiarium
 --- !u!1 &292417229
 GameObject:
   m_ObjectHideFlags: 0
@@ -3561,6 +3603,7 @@ GameObject:
   m_Component:
   - component: {fileID: 425663051}
   - component: {fileID: 425663053}
+  - component: {fileID: 425663054}
   - component: {fileID: 425663052}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -3635,8 +3678,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3685,6 +3728,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 425663050}
   m_CullTransparentMesh: 1
+--- !u!114 &425663054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425663050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f992473e998b94e9e82fcaab5b5548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textUI: {fileID: 0}
+  textUIPro: {fileID: 425663052}
+  text:
+  - Gra Swobodna
+  - Free Play
+  - Juego Libre
+  - Jeu Libre
+  - Freies Spiel
 --- !u!1 &425668843
 GameObject:
   m_ObjectHideFlags: 0
@@ -4583,6 +4646,7 @@ GameObject:
   m_Component:
   - component: {fileID: 510959975}
   - component: {fileID: 510959977}
+  - component: {fileID: 510959978}
   - component: {fileID: 510959976}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -4707,6 +4771,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 510959974}
   m_CullTransparentMesh: 1
+--- !u!114 &510959978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510959974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f992473e998b94e9e82fcaab5b5548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textUI: {fileID: 0}
+  textUIPro: {fileID: 510959976}
+  text:
+  - Wczytaj
+  - Load
+  - Cargar
+  - Charger
+  - Laden
 --- !u!1 &525703659
 GameObject:
   m_ObjectHideFlags: 0
@@ -6605,7 +6689,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Version 0.8.1
+  m_text: Version 0.8.2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8055,6 +8139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1177460682}
   - component: {fileID: 1177460684}
+  - component: {fileID: 1177460685}
   - component: {fileID: 1177460683}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -8179,6 +8264,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177460681}
   m_CullTransparentMesh: 1
+--- !u!114 &1177460685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177460681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f992473e998b94e9e82fcaab5b5548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textUI: {fileID: 0}
+  textUIPro: {fileID: 1177460683}
+  text:
+  - Zaloguj
+  - Log In
+  - "Iniciar sesi\xF3n"
+  - Se Connecter
+  - Anmelden
 --- !u!1 &1202077925
 GameObject:
   m_ObjectHideFlags: 0
@@ -8438,6 +8543,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1294509860}
   - component: {fileID: 1294509862}
+  - component: {fileID: 1294509863}
   - component: {fileID: 1294509861}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -8512,8 +8618,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.44
-  m_fontSizeBase: 31.44
+  m_fontSize: 24.67
+  m_fontSizeBase: 24.67
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8562,6 +8668,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1294509859}
   m_CullTransparentMesh: 1
+--- !u!114 &1294509863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294509859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f992473e998b94e9e82fcaab5b5548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textUI: {fileID: 0}
+  textUIPro: {fileID: 1294509861}
+  text:
+  - "W\u0142asna Gra"
+  - Custom Game
+  - Juego Personalizado
+  - "Partie Personnalis\xE9e"
+  - Eigenes Spiel
 --- !u!1 &1312033884
 GameObject:
   m_ObjectHideFlags: 0
@@ -8572,6 +8698,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1312033885}
   - component: {fileID: 1312033887}
+  - component: {fileID: 1312033888}
   - component: {fileID: 1312033886}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -8696,6 +8823,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1312033884}
   m_CullTransparentMesh: 1
+--- !u!114 &1312033888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312033884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f992473e998b94e9e82fcaab5b5548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textUI: {fileID: 0}
+  textUIPro: {fileID: 1312033886}
+  text:
+  - Zarejestruj
+  - Register
+  - Registrarse
+  - "S\u2019inscrire"
+  - Registrieren
 --- !u!1 &1314105206
 GameObject:
   m_ObjectHideFlags: 0
@@ -9029,6 +9176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1323275835}
   - component: {fileID: 1323275837}
+  - component: {fileID: 1323275838}
   - component: {fileID: 1323275836}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -9153,6 +9301,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1323275834}
   m_CullTransparentMesh: 1
+--- !u!114 &1323275838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323275834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f992473e998b94e9e82fcaab5b5548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textUI: {fileID: 0}
+  textUIPro: {fileID: 1323275836}
+  text:
+  - Graj Przeciw SI
+  - Play vs AI
+  - Jugar contra IA
+  - "Jouer contre l\u2019IA"
+  - Gegen KI spielen
 --- !u!1 &1326521331
 GameObject:
   m_ObjectHideFlags: 0
@@ -9340,7 +9508,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -6494452915471523804, guid: f81ac0f4ee4477a4eb9def64578797e8, type: 2}
-  m_audioClip: {fileID: 8300000, guid: a5de3e330287a0d478b479163cce9112, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e2372c5214e70dc4184e457b2849899e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.143
   m_Pitch: 1
@@ -10471,6 +10639,111 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1462117926}
+  m_CullTransparentMesh: 1
+--- !u!1 &1463611235
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1463611236}
+  - component: {fileID: 1463611239}
+  - component: {fileID: 1463611238}
+  - component: {fileID: 1463611237}
+  m_Layer: 5
+  m_Name: Opcje
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1463611236
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463611235}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1772606324}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 872, y: -458}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1463611237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463611235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 428212917}
+          m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+          m_MethodName: TogglePause
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1463611238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463611235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: ff330a439e644b841a9809d30530fcfa, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1463611239
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463611235}
   m_CullTransparentMesh: 1
 --- !u!1 &1485651178
 GameObject:
@@ -12780,6 +13053,7 @@ RectTransform:
   - {fileID: 1413661141}
   - {fileID: 1581197738}
   - {fileID: 107070002}
+  - {fileID: 1463611236}
   m_Father: {fileID: 1869335872}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -13196,6 +13470,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1806950405}
   - component: {fileID: 1806950407}
+  - component: {fileID: 1806950408}
   - component: {fileID: 1806950406}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -13320,6 +13595,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1806950404}
   m_CullTransparentMesh: 1
+--- !u!114 &1806950408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806950404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f992473e998b94e9e82fcaab5b5548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textUI: {fileID: 0}
+  textUIPro: {fileID: 1806950406}
+  text:
+  - Tutorial
+  - Tutorial
+  - Tutorial
+  - Tutoriel
+  - Tutorial
 --- !u!1 &1818141119
 GameObject:
   m_ObjectHideFlags: 0
@@ -14163,6 +14458,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1873690042}
   - component: {fileID: 1873690044}
+  - component: {fileID: 1873690045}
   - component: {fileID: 1873690043}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -14287,6 +14583,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1873690041}
   m_CullTransparentMesh: 1
+--- !u!114 &1873690045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873690041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f992473e998b94e9e82fcaab5b5548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textUI: {fileID: 0}
+  textUIPro: {fileID: 1873690043}
+  text:
+  - Wyloguj
+  - Log Out
+  - "Cerrar sesi\xF3n"
+  - "Se D\xE9connecter"
+  - Abmelden
 --- !u!1 &1877828631
 GameObject:
   m_ObjectHideFlags: 0
@@ -15481,6 +15797,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2036616885}
   - component: {fileID: 2036616887}
+  - component: {fileID: 2036616888}
   - component: {fileID: 2036616886}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -15605,6 +15922,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2036616884}
   m_CullTransparentMesh: 1
+--- !u!114 &2036616888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036616884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f992473e998b94e9e82fcaab5b5548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textUI: {fileID: 0}
+  textUIPro: {fileID: 2036616886}
+  text:
+  - Najlepsi Gracze
+  - Top Players
+  - Mejores Jugadores
+  - Meilleurs Joueurs
+  - Beste Spieler
 --- !u!1 &2051672273
 GameObject:
   m_ObjectHideFlags: 0

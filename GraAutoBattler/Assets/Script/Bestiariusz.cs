@@ -32,6 +32,42 @@ public class Bestiariusz : MonoBehaviour
     public List<GameObject> Osiagniecia;
     public Vector2[] transformY;
 
+    public GameObject[] obiekty;
+
+    public void Update()
+    {
+        if (!Login.loggedP)
+        {
+            obiekty[2].SetActive(false);
+            obiekty[3].SetActive(false);
+        }
+        else
+        {
+            obiekty[2].SetActive(true);
+            obiekty[3].SetActive(true);
+        }
+
+        if (type == 2 || type == 3 || type == 4)
+        {
+            for (int i = 5; i < 11; i++)
+            {
+                obiekty[i].SetActive(false);
+            }
+        }
+        else
+        {
+            for (int i = 5; i < 11; i++)
+            {
+                obiekty[i].SetActive(true);
+            }
+            if (type == 1)
+                obiekty[10].SetActive(false);
+            else
+                obiekty[10].SetActive(true);
+        }
+        
+    }
+
 
     public void ShowSzczegoly(int i)
     {
@@ -52,12 +88,12 @@ public class Bestiariusz : MonoBehaviour
             Page++;
             FillInterfaceWithoutEvolutions();
         }
-        else
-        if (Page * 4 < Show.Count - 4)
+        if (type != -1 && Page * 4 < Show.Count - 4)
         {
             Page++;
             Complete();
         }
+        
     }
 
     public void Prev()
@@ -73,6 +109,7 @@ public class Bestiariusz : MonoBehaviour
             Page--;
             Complete();
         }
+        Debug.Log(Page);
     }
 
     public void Start()
@@ -94,6 +131,7 @@ public class Bestiariusz : MonoBehaviour
 
     public void ShowZasadyVoid()
     {
+        SetType(4);
         Synergie.SetActive(false);
         Achievements.SetActive(false);
         Zasady.SetActive(true);
@@ -232,6 +270,7 @@ public class Bestiariusz : MonoBehaviour
 
                 if (index >= Show.Count || Show[index] == null)
                 {
+                    Debug.Log("TU JESTEM???");
                     Face[i*2].gameObject.SetActive(false);
                     Face[i*2 + 1].gameObject.SetActive(false);
                     Opisy[i*2].gameObject.SetActive(false);
@@ -249,6 +288,7 @@ public class Bestiariusz : MonoBehaviour
                 Opisy[i*2].gameObject.SetActive(true);
                 Opisy[i*2 + 1].gameObject.SetActive(true);
 
+
                 var spriteRenderer = Show[index].GetComponent<SpriteRenderer>();
                 var herosComponent = Show[index].GetComponent<Heros>();
                 var unitComponent = Show[index].GetComponent<Unit>();
@@ -262,16 +302,16 @@ public class Bestiariusz : MonoBehaviour
                 if (herosComponent?.EvolveHeroes != null)
                 {
                     var evolveSpriteRenderer = herosComponent.EvolveHeroes.GetComponent<SpriteRenderer>();
-                    Face[i*2 + 1].sprite = evolveSpriteRenderer?.sprite;
-                    
+                    Face[i * 2 + 1].sprite = evolveSpriteRenderer?.sprite;
+
                     var evolveUnit = herosComponent.EvolveHeroes.GetComponent<Unit>();
-                    Opisy[i*2 + 1].unit = evolveUnit;
-                    Opisy[i*2 + 1].gameObject.SetActive(evolveUnit != null);
+                    Opisy[i * 2 + 1].unit = evolveUnit;
+                    Opisy[i * 2 + 1].gameObject.SetActive(true);
                 }
                 else
                 {
-                    Face[i*2 + 1].sprite = null;
-                    Opisy[i*2 + 1].gameObject.SetActive(false);
+                    Face[i * 2 + 1].sprite = null;
+                    Opisy[i * 2 + 1].gameObject.SetActive(false);
                 }
 
                 // Lore tylko dla type == 0
@@ -322,7 +362,6 @@ public class Bestiariusz : MonoBehaviour
         // 8 slotów bez ewolucji i bez LORE
         for (int i = 0; i < 8; i++)
         {
-            Debug.Log("WTFFF");
             int index = i + Page * 8;
             bool slotValid = index < Show.Count && Show[index] != null;
 
@@ -377,19 +416,22 @@ public class Bestiariusz : MonoBehaviour
             Page = 0;
             Show = characterManager.characters;
             Show = characterManager.characters
-            .Where(go => go.GetComponent<Heros>() != null 
-                  && go.GetComponent<Heros>().Star == 0)
-            .OrderBy(go => go.GetComponent<Heros>().Cost)
-            .ToList();
+                .Where(go => go.GetComponent<Heros>() != null
+                        && go.GetComponent<Heros>().Star == 0)
+                .GroupBy(go => go.GetComponent<Heros>().Name[0]) // grupujemy po pierwszej literze
+                .OrderBy(group => group.Min(go => go.GetComponent<Heros>().Cost)) // sortujemy grupy po minimalnym koszcie
+                .SelectMany(group => group.OrderBy(go => go.GetComponent<Heros>().Cost)) // sortowanie wewnątrz grupy po koszcie
+                .ToList();
+
 
             foreach (Transform child in Synergie.transform)
-                {
-                    Destroy(child.gameObject); // Niszczy każdy obiekt-dziecko
-                }
-        foreach (Transform child in Achievements.transform)
-                {
-                    Destroy(child.gameObject); // Niszczy każdy obiekt-dziecko
-                }
+            {
+                Destroy(child.gameObject); // Niszczy każdy obiekt-dziecko
+            }
+            foreach (Transform child in Achievements.transform)
+            {
+                Destroy(child.gameObject); // Niszczy każdy obiekt-dziecko
+            }
 
             // Obsługa specjalnych typów
             if (type == 2)
@@ -410,21 +452,25 @@ public class Bestiariusz : MonoBehaviour
             }
 
             FillInterfaceWithoutEvolutions();
-    
-        return;
+
+            return;
+        }
+        if(type == -1 && frakcjaIndex != 5)
+        {
+            type = 0;
         }
         // Sprawdź czy indeks jest w zakresie dostępnych frakcji
-            if (System.Enum.IsDefined(typeof(Fraction.fractionType), frakcjaIndex))
-            {
-                Frakcja = (Fraction.fractionType)frakcjaIndex;
-                Page = 0;
-                Start(); // Odśwież widok
-            }
-            else
-            {
-                Debug.LogWarning($"Nieznany indeks frakcji: {frakcjaIndex}");
-                // Możesz tutaj ustawić domyślną frakcję lub zignorować
-            }
+        if (System.Enum.IsDefined(typeof(Fraction.fractionType), frakcjaIndex))
+        {
+            Frakcja = (Fraction.fractionType)frakcjaIndex;
+            Page = 0;
+            Start(); // Odśwież widok
+        }
+        else
+        {
+            Debug.LogWarning($"Nieznany indeks frakcji: {frakcjaIndex}");
+            // Możesz tutaj ustawić domyślną frakcję lub zignorować
+        }
     }
 
     public static void AddAchivments(int nr)

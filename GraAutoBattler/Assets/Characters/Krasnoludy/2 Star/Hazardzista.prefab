@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f749c2144a631d84ba453bf1a4b81665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
+  Id: 254
   Name:
   - Hazardzista
   - Gambler
@@ -115,9 +115,10 @@ MonoBehaviour:
   Attack: 40
   Defense: 20
   Range: 0
-  AP: 0
+  AP: 40
   MagicResist: 40
-  Description: "<b>Pocz\u0105tek Walki:</b> Zyskaj lub tracisz 2 sztuki z\u0142ota"
+  Description: "<b>Pocz\u0105tek Walki:</b> Zyskaj 2 sztuki z\u0142ota lub stra\u0107
+    1 sztuk\u0119 z\u0142ota"
   Lore: 
   CPU: 0
   Typy: 

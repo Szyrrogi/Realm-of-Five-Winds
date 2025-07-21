@@ -117,7 +117,7 @@ MonoBehaviour:
   Range: 0
   AP: 0
   MagicResist: 0
-  Description: "<b>Sprzeda\u017C: </b>Zyskujesz darmowe od\u015Bwierzenie"
+  Description: "<b>Sprzeda\u017C: </b>Zyskujesz darmowe od\u015Bwie\u017Cenie sklepu"
   Lore: 
   CPU: 0
   Typy: 05000000

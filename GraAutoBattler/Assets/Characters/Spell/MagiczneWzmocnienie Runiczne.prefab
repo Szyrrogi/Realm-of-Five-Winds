@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 10
-  Name: Wzmocnienie Runiczne
+  Name:
+  - "Nape\u0142nienie Magi\u0105"
+  - Magic Infusion
+  - "Infusi\xF3n M\xE1gica"
+  - Infusion Magique
+  - Magische Aufladung
   Cost: 4
   Star: 3
   Initiative: 0
@@ -113,7 +118,9 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: "<b>Akcja: </b>Zwi\u0119ksza Moc Zakl\u0119\u0107 wszstkim w rz\u0119dzie"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
@@ -123,6 +130,8 @@ MonoBehaviour:
   BoskaTarcza: 0
   attackAP: 0
   Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   unit: {fileID: 0}
   OffensifSpell: 0
   spellType: 2

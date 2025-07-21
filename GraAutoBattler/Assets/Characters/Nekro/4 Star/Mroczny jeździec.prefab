@@ -110,8 +110,8 @@ MonoBehaviour:
   Cost: 8
   Star: 4
   Initiative: 95
-  MaxHealth: 200
-  Health: 200
+  MaxHealth: 205
+  Health: 205
   Attack: 70
   Defense: 20
   Range: 0

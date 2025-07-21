@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Przywolanie WilkaA Alfa
+  Name:
+  - "Przywo\u0142anie Wilka Alfa"
+  - Summon the Alpha Wolf
+  - "Invocaci\xF3n del Lobo Alfa"
+  - Invocation du Loup Alpha
+  - "Beschw\xF6rung des Alpha-Wolfs"
   Cost: 4
   Star: 3
   Initiative: 0

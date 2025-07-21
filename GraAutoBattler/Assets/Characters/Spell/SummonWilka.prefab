@@ -101,7 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Przywolanie Wilka
+  Name:
+  - "Przywo\u0142anie Wilka"
+  - Summon Wolf
+  - "Invocaci\xF3n del Lobo"
+  - Invocation du Loup
+  - "Beschw\xF6rung des Wolfes"
   Cost: 1
   Star: 1
   Initiative: 0
@@ -113,13 +118,20 @@ MonoBehaviour:
   AP: 0
   MagicResist: 0
   Description: "Przywo\u0142uje Wilka"
+  Lore: 
   CPU: 0
+  Typy: 
   UpgradeLevel: 0
   UpgradeNeed: 0
   Enemy: 0
+  fraction: 0
   RealCost: 0
   PopUp: {fileID: 0}
   BoskaTarcza: 0
+  attackAP: 0
+  Skip: 0
+  CanJump: 0
+  ReadyToJump: 0
   unit: {fileID: 0}
   OffensifSpell: 0
   spellType: 0

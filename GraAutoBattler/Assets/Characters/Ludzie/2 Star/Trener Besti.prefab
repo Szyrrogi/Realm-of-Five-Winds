@@ -110,15 +110,15 @@ MonoBehaviour:
   Cost: 4
   Star: 2
   Initiative: 60
-  MaxHealth: 30
-  Health: 30
+  MaxHealth: 35
+  Health: 35
   Attack: 50
   Defense: 10
   Range: 0
   AP: 0
   MagicResist: 40
   Description: "<b>Pocz\u0105tek Walki: </b>Zwi\u0119ksz zwierz\u0119ciu przed sob\u0105
-    i za sob\u0105 si\u0142\u0119 o 30 oraz zmniejsz zrowi\u0119 o 10"
+    i za sob\u0105 si\u0142\u0119 o 30 oraz zmniejsz zdrowie o 10"
   Lore: 
   CPU: 0
   Typy: 
