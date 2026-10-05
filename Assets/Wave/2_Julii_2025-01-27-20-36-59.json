@@ -1,0 +1,58 @@
+{
+    "playerName": "Julii",
+    "number": 1,
+    "levelUp": 1,
+    "units": [
+        {
+            "Line": 0,
+            "Pole": 0,
+            "Id": 24,
+            "Name": "Opancerzony Rycerz",
+            "Cost": 4,
+            "Initiative": 40,
+            "MaxHealth": 85,
+            "Health": 85,
+            "Attack": 15,
+            "Defense": 30,
+            "Range": 0,
+            "AP": 0,
+            "MagicResist": 20,
+            "Description": "Gdy zostanie zaatakowany, przeciwnik otrzymuje 10 obrażeń",
+            "UpgradeLevel": 1
+        },
+        {
+            "Line": 1,
+            "Pole": 0,
+            "Id": 3,
+            "Name": "Giermek",
+            "Cost": 4,
+            "Initiative": 48,
+            "MaxHealth": 30,
+            "Health": 48,
+            "Attack": 23,
+            "Defense": 5,
+            "Range": 0,
+            "AP": 0,
+            "MagicResist": 0,
+            "Description": "",
+            "UpgradeLevel": 1
+        },
+        {
+            "Line": 1,
+            "Pole": 1,
+            "Id": 8,
+            "Name": "Medyk",
+            "Cost": 7,
+            "Initiative": 41,
+            "MaxHealth": 64,
+            "Health": 64,
+            "Attack": 7,
+            "Defense": 5,
+            "Range": 0,
+            "AP": 16,
+            "MagicResist": 10,
+            "Description": "Medyk leczy jednostkę przed sobą o 10 zdrowia",
+            "UpgradeLevel": 1
+        }
+    ]
+}

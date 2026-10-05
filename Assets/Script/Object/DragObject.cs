@@ -1,0 +1,162 @@
+using UnityEngine;
+
+public class DragObject : MonoBehaviour
+{
+    private bool isDragging = false;
+    private Vector3 offset;
+    private Camera mainCamera;
+    public static GameObject moveObject;
+    public Pole pole;
+    public Pole potencialPole;
+
+    void Start()
+    {
+        mainCamera = Camera.main;  // Pobierz główną kamerę
+    }
+
+
+    public void OnMouseDown()
+    {
+        if(FightManager.IsFight == false && FightManager.IsOptions == false)
+        {
+            isDragging = true;
+
+            moveObject = this.gameObject;
+            Vector3 mousePosition = GetMouseWorldPosition();
+            offset = transform.position - mousePosition;
+            DescriptionManager.opis.SetActive(false);
+        }
+    }
+
+    bool SameUnit(Unit a, Unit b)
+    {
+        if (b && pole != potencialPole && !ShopManager.isLoockUpgrade && pole.unit.GetComponent<Heros>())
+        {
+            if (a.Name[0] == b.Name[0])
+                return true;
+            if (a.Name[0] == "Wilk" && b.Name[0] == "Wilkor")
+                return true;
+            if (b.Name[0] == "Wilk" && a.Name[0] == "Wilkor")
+                return true;
+            if (a.Name[0] == "Darelin" && b.Name[0] == "Sarin")
+                return true;
+            if (b.Name[0] == "Darelin" && a.Name[0] == "Sarin")
+                return true;
+        }
+        return false;
+    }
+
+    void OnMouseUp()
+    {
+        isDragging = false;
+        moveObject = null;
+        if(EventSystem.eventSystem.GetComponent<ShopManager>().dol.transform.position.x < gameObject.transform.position.x && 
+            EventSystem.eventSystem.GetComponent<ShopManager>().gora.transform.position.x > gameObject.transform.position.x &&
+            EventSystem.eventSystem.GetComponent<ShopManager>().dol.transform.position.y < gameObject.transform.position.y && 
+            EventSystem.eventSystem.GetComponent<ShopManager>().gora.transform.position.y > gameObject.transform.position.y)
+                gameObject.GetComponent<Unit>().Sell();
+        if(potencialPole != null)
+        {
+            float distanceX = Mathf.Sqrt(Mathf.Pow(potencialPole.transform.position.x - transform.position.x, 2));
+            float distanceY = Mathf.Sqrt(Mathf.Pow(potencialPole.transform.position.y - transform.position.y, 2));
+            float distance = distanceX + distanceY;
+
+            if(distance < 0.8f && (!GetComponent<Spell>() || potencialPole.line == null || (GetComponent<Spell>() && potencialPole.unit != null 
+            && potencialPole.unit.GetComponent<Wizard>() && potencialPole.unit.GetComponent<Wizard>().spellCanLearn.Contains(GetComponent<Spell>().spellType))))
+            //&& !((!potencialPole.unit.GetComponent<Heros>() && potencialPole.unit.GetComponent<Building>()) || (potencialPole.unit.GetComponent<Heros>() && !potencialPole.unit.GetComponent<Building>())))
+            {
+                if (potencialPole.unit != null && pole != null)
+                {
+                    if (GetComponent<Spell>() && potencialPole.unit.GetComponent<Wizard>())
+                    {
+                        potencialPole.unit.GetComponent<Wizard>().AddSpell(GetComponent<Spell>());
+                        pole.unit = null;
+                        pole = null;
+                        potencialPole = null;
+                        transform.position = new Vector3(90f, 90f, 90f);
+                        EventSystem.eventSystem.GetComponent<ShopManager>().PlaySound(MusicManager.musicManager.SpellLearn);
+                        //Destroy(this.gameObject);
+                        return;
+                    }
+                    else
+                    {
+                        if (SameUnit(pole.unit.GetComponent<Unit>(), potencialPole.unit.GetComponent<Unit>()))  //ŁĄczenie jednostek!!!
+                        {
+                            if (pole.unit.GetComponent<Unit>().Health > potencialPole.unit.GetComponent<Unit>().Health)
+                            {
+                                bool helper = pole.unit.GetComponent<Heros>().Evolution;
+                                pole.unit.GetComponent<Heros>().UpgradeHeros(potencialPole.unit.GetComponent<Unit>());
+                                if (helper == pole.unit.GetComponent<Heros>().Evolution)
+                                {
+                                    pole.unit = null;
+                                    pole.potencialUnit = null;
+                                }
+                            }
+                            else
+                            {
+                                potencialPole.unit.GetComponent<Heros>().UpgradeHeros(pole.unit.GetComponent<Unit>());  //???
+                                return;
+                            }
+                        }
+                        else
+                        {
+                            if ((((!potencialPole.unit.GetComponent<Heros>() && pole.unit.GetComponent<Building>()) || (potencialPole.unit.GetComponent<Heros>() && !pole.unit.GetComponent<Building>()))
+                            || (!potencialPole.onlyHeros && !potencialPole.onlyBuilding && !pole.onlyHeros && !pole.onlyBuilding)) && !potencialPole.unit.GetComponent<Spell>()
+                            || (EventSystem.eventSystem.GetComponent<ShopManager>().lawka.Contains(potencialPole) && EventSystem.eventSystem.GetComponent<ShopManager>().lawka.Contains(pole)))
+                            {
+                                pole.unit = potencialPole.unit;
+                                pole.unit.GetComponent<DragObject>().pole = pole;
+                                Vector3 noway = pole.transform.position;
+                                noway.z -= 2f;
+                                pole.unit.transform.position = noway;
+                                MusicManager.musicManager.PlaySound(MusicManager.musicManager.Put);
+                            }
+                            else    //potencialPole to drugi
+                            {
+                                pole.Start();
+                                return;
+                            }
+                        }
+                    }
+                }
+                else
+                if (pole != null)
+                {
+                    MusicManager.musicManager.PlaySound(MusicManager.musicManager.Put);
+                    pole.unit = null;
+                }
+                pole = potencialPole;
+                pole.unit = this.gameObject;
+            }
+        }
+        if(pole != null)
+        {
+            if (pole != null)
+            {
+                Vector3 newPosition = pole.transform.position;
+
+                newPosition.z -= 5f;
+
+                transform.position = newPosition;
+            }
+
+        }
+    }
+
+    void Update()
+    {
+        if (isDragging)
+        {
+            Vector3 mousePosition = GetMouseWorldPosition();
+            mousePosition.z = -5f;
+            transform.position = mousePosition + offset;
+        }
+    }
+
+    private Vector3 GetMouseWorldPosition()
+    {
+        Vector3 mouseScreenPosition = Input.mousePosition;
+        mouseScreenPosition.z = mainCamera.WorldToScreenPoint(transform.position).z;  
+        return mainCamera.ScreenToWorldPoint(mouseScreenPosition);
+    }
+}

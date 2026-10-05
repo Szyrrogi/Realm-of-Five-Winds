@@ -1,0 +1,24 @@
+{
+    "playerName": "Julii",
+    "number": 1,
+    "levelUp": 1,
+    "units": [
+        {
+            "Line": 1,
+            "Pole": 0,
+            "Id": 12,
+            "Name": "Rycerz",
+            "Cost": 3,
+            "Initiative": 40,
+            "MaxHealth": 60,
+            "Health": 60,
+            "Attack": 10,
+            "Defense": 15,
+            "Range": 0,
+            "AP": 0,
+            "MagicResist": 0,
+            "Description": "Zwiększa obronę o 30 przy atakach z dystansu",
+            "UpgradeLevel": 1
+        }
+    ]
+}

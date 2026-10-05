@@ -1,0 +1,58 @@
+{
+    "playerName": "Julii",
+    "number": 1,
+    "levelUp": 1,
+    "units": [
+        {
+            "Line": 0,
+            "Pole": 0,
+            "Id": 24,
+            "Name": "Opancerzony Rycerz",
+            "Cost": 4,
+            "Initiative": 40,
+            "MaxHealth": 85,
+            "Health": 85,
+            "Attack": 15,
+            "Defense": 30,
+            "Range": 0,
+            "AP": 0,
+            "MagicResist": 20,
+            "Description": "Gdy zostanie zaatakowany, przeciwnik otrzymuje 10 obrażeń",
+            "UpgradeLevel": 1
+        },
+        {
+            "Line": 1,
+            "Pole": 0,
+            "Id": 3,
+            "Name": "Giermek",
+            "Cost": 4,
+            "Initiative": 48,
+            "MaxHealth": 30,
+            "Health": 48,
+            "Attack": 23,
+            "Defense": 5,
+            "Range": 0,
+            "AP": 0,
+            "MagicResist": 0,
+            "Description": "",
+            "UpgradeLevel": 1
+        },
+        {
+            "Line": 1,
+            "Pole": 1,
+            "Id": 12,
+            "Name": "Rycerz",
+            "Cost": 3,
+            "Initiative": 40,
+            "MaxHealth": 60,
+            "Health": 60,
+            "Attack": 10,
+            "Defense": 15,
+            "Range": 0,
+            "AP": 0,
+            "MagicResist": 0,
+            "Description": "Zwiększa obronę o 30 przy atakach z dystansu",
+            "UpgradeLevel": 1
+        }
+    ]
+}

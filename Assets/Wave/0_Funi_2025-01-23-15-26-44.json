@@ -1,0 +1,41 @@
+{
+    "playerName": "Funi",
+    "number": 3,
+    "levelUp": 1,
+    "units": [
+        {
+            "Line": 1,
+            "Pole": 0,
+            "Id": 14,
+            "Name": "Wilk",
+            "Cost": 2,
+            "Initiative": 60,
+            "MaxHealth": 30,
+            "Health": 30,
+            "Attack": 15,
+            "Defense": 5,
+            "Range": 0,
+            "AP": 0,
+            "MagicResist": 0,
+            "Description": "Wilk otrzymuje 5 ataku za każdedo przyjaznego wilka na planszy",
+            "UpgradeLevel": 1
+        },
+        {
+            "Line": 2,
+            "Pole": 0,
+            "Id": 14,
+            "Name": "Wilk",
+            "Cost": 2,
+            "Initiative": 60,
+            "MaxHealth": 30,
+            "Health": 30,
+            "Attack": 15,
+            "Defense": 5,
+            "Range": 0,
+            "AP": 0,
+            "MagicResist": 0,
+            "Description": "Wilk otrzymuje 5 ataku za każdedo przyjaznego wilka na planszy",
+            "UpgradeLevel": 1
+        }
+    ]
+}
