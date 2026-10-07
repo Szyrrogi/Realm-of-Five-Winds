@@ -110,6 +110,7 @@ public class Unit : MonoBehaviour
     public Fraction.fractionType fraction;
     
     public int RealCost;
+    [HideInInspector] public int Uid; // stały numer jednostki gracza (tryb fabularny, trwała śmierć)
     [HideInInspector]
     public GameObject PopUp;
     public bool BoskaTarcza;
@@ -231,6 +232,7 @@ public class Unit : MonoBehaviour
 
     public virtual void Sell()
     {
+        if (Enemy) return;
         EventSystem.eventSystem.GetComponent<ShopManager>().SellSound();
         if (RealCost != 0)
             MoneyManager.money += RealCost - 1;
@@ -386,6 +388,7 @@ public class Unit : MonoBehaviour
         if(BoskaTarcza)
         {
             BoskaTarcza = false;
+            HeroAbilities.OnShieldLost(this);
             MusicManager.musicManager.PlaySound(MusicManager.musicManager.RemoveShild);
             GameObject pop = Instantiate(PopUp, gameObject.transform.position, Quaternion.identity);
             pop.GetComponent<PopUp>().SetText("0", Color.red);

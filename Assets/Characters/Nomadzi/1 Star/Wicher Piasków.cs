@@ -12,7 +12,8 @@ public class WicherPiasków : Heros
         {
             int j = Enemy ? i + 3 : i;
             FightManager fightManager = EventSystem.eventSystem.GetComponent<FightManager>();
-            GameObject unit = fightManager.linie[j].pola[GetComponent<DragObject>().pole.nr].unit;
+            Pole tamto = fightManager.GetPole(j, GetComponent<DragObject>().pole.nr); // rzędy mogą mieć różną długość
+            GameObject unit = tamto != null ? tamto.unit : null;
             if(unit != null && unit.GetComponent<Unit>().Name[0] == Name[0] && unit != gameObject)
             {
                 yield return new WaitForSeconds(0.4f );

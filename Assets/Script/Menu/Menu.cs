@@ -22,24 +22,6 @@ public class Menu : MonoBehaviour
             login.SetActive(false);
             logout.SetActive(true);
         }
-        string savePath2 = Application.dataPath + "/Save/Save2.json";
-        if (File.Exists(savePath2))
-        {
-            string json = File.ReadAllText(savePath2);
-            SaveManager.SaveData2 data = JsonUtility.FromJson<SaveManager.SaveData2>(json);
-
-            if (data.playerId == PlayerManager.Id)
-            {
-                Load.SetActive(true);
-            }
-            else
-            {
-                Load.SetActive(false);
-            }
-        }
-        else
-        {
-            Load.SetActive(false);
-        }
+        Load.SetActive(SaveService.HasRunFor("", PlayerManager.Id));
     }
 }

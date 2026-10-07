@@ -1,37 +1,33 @@
 {
     "playerId": 0,
-    "money": 29,
-    "incom": 9,
+    "money": 5,
+    "incom": 6,
     "poddymka": false,
-    "win": 1,
+    "win": 0,
     "fractions": "10000",
     "lose": 3,
-    "round": 3,
+    "round": 0,
     "shop": [
-        4,
-        5,
-        10,
-        8,
-        8
+        43,
+        2,
+        38,
+        44,
+        4
     ],
-    "nextFight": "{\r\n    \"playerName\": \"JerzyJerzyn\",\r\n    \"number\": 8,\r\n    \"levelUp\": 2,\r\n    \"units\": [\r\n        {\r\n            \"Line\": 0,\r\n            \"Pole\": 0,\r\n            \"Id\": 165,\r\n            \"Name\": \"Wesoła Gromada\",\r\n            \"Cost\": 4,\r\n            \"RealCost\": 0,\r\n            \"Initiative\": 39,\r\n            \"MaxHealth\": 49,\r\n            \"Health\": 49,\r\n            \"Attack\": 28,\r\n            \"Defense\": 30,\r\n            \"Range\": 0,\r\n            \"AP\": 0,\r\n            \"MagicResist\": 0,\r\n            \"Description\": \"Może zostać ulepszony wielokrotnie. <b>Ulepszenie: </b>Otrzymuje 15 Obrony\",\r\n            \"UpgradeLevel\": 1,\r\n            \"SpellId\": 0\r\n        },\r\n        {\r\n            \"Line\": 0,\r\n            \"Pole\": 1,\r\n            \"Id\": 145,\r\n            \"Name\": \"Bard\",\r\n            \"Cost\": 2,\r\n            \"RealCost\": 2,\r\n            \"Initiative\": 50,\r\n            \"MaxHealth\": 20,\r\n            \"Health\": 20,\r\n            \"Attack\": 20,\r\n            \"Defense\": 5,\r\n            \"Range\": 0,\r\n            \"AP\": 0,\r\n            \"MagicResist\": 0,\r\n            \"Description\": \"<b>Początek Walki: </b>Daj jednostce przed sobą efekt <b>Morali</b>\",\r\n            \"UpgradeLevel\": 1,\r\n            \"SpellId\": 0\r\n        },\r\n        {\r\n            \"Line\": 1,\r\n            \"Pole\": 0,\r\n            \"Id\": 184,\r\n            \"Name\": \"Ochotnik\",\r\n            \"Cost\": 1,\r\n            \"RealCost\": 1,\r\n            \"Initiative\": 50,\r\n            \"MaxHealth\": 40,\r\n            \"Health\": 40,\r\n            \"Attack\": 40,\r\n            \"Defense\": 15,\r\n            \"Range\": 0,\r\n            \"AP\": 0,\r\n            \"MagicResist\": 15,\r\n            \"Description\": \"\",\r\n            \"UpgradeLevel\": 1,\r\n            \"SpellId\": 0\r\n        },\r\n        {\r\n            \"Line\": 1,\r\n            \"Pole\": 1,\r\n            \"Id\": 153,\r\n            \"Name\": \"Sprzedawca\",\r\n            \"Cost\": 2,\r\n            \"RealCost\": 3,\r\n            \"Initiative\": 45,\r\n            \"MaxHealth\": 25,\r\n            \"Health\": 25,\r\n            \"Attack\": 20,\r\n            \"Defense\": 5,\r\n            \"Range\": 0,\r\n            \"AP\": 0,\r\n            \"MagicResist\": 0,\r\n            \"Description\": \"Może zostać sprzedany za pełną cenę\",\r\n            \"UpgradeLevel\": 1,\r\n            \"SpellId\": 0\r\n        },\r\n        {\r\n            \"Line\": 1,\r\n            \"Pole\": 2,\r\n            \"Id\": 153,\r\n            \"Name\": \"Sprzedawca\",\r\n            \"Cost\": 2,\r\n            \"RealCost\": 3,\r\n            \"Initiative\": 45,\r\n            \"MaxHealth\": 25,\r\n            \"Health\": 25,\r\n            \"Attack\": 20,\r\n            \"Defense\": 5,\r\n            \"Range\": 0,\r\n            \"AP\": 0,\r\n            \"MagicResist\": 0,\r\n            \"Description\": \"Może zostać sprzedany za pełną cenę\",\r\n            \"UpgradeLevel\": 1,\r\n            \"SpellId\": 0\r\n        },\r\n        {\r\n            \"Line\": 2,\r\n            \"Pole\": 0,\r\n            \"Id\": 184,\r\n            \"Name\": \"Ochotnik\",\r\n            \"Cost\": 1,\r\n            \"RealCost\": 1,\r\n            \"Initiative\": 50,\r\n            \"MaxHealth\": 40,\r\n            \"Health\": 40,\r\n            \"Attack\": 40,\r\n            \"Defense\": 15,\r\n            \"Range\": 0,\r\n            \"AP\": 0,\r\n            \"MagicResist\": 15,\r\n            \"Description\": \"\",\r\n            \"UpgradeLevel\": 1,\r\n            \"SpellId\": 0\r\n        },\r\n        {\r\n            \"Line\": 2,\r\n            \"Pole\": 1,\r\n            \"Id\": 153,\r\n            \"Name\": \"Sprzedawca\",\r\n            \"Cost\": 2,\r\n            \"RealCost\": 3,\r\n            \"Initiative\": 45,\r\n            \"MaxHealth\": 25,\r\n            \"Health\": 25,\r\n            \"Attack\": 20,\r\n            \"Defense\": 5,\r\n            \"Range\": 0,\r\n            \"AP\": 0,\r\n            \"MagicResist\": 0,\r\n            \"Description\": \"Może zostać sprzedany za pełną cenę\",\r\n            \"UpgradeLevel\": 1,\r\n            \"SpellId\": 0\r\n        },\r\n        {\r\n            \"Line\": 2,\r\n            \"Pole\": 2,\r\n            \"Id\": 157,\r\n            \"Name\": \"Włócznik\",\r\n            \"Cost\": 3,\r\n            \"RealCost\": 3,\r\n            \"Initiative\": 23,\r\n            \"MaxHealth\": 20,\r\n            \"Health\": 20,\r\n            \"Attack\": 15,\r\n            \"Defense\": 5,\r\n            \"Range\": 1,\r\n            \"AP\": 0,\r\n            \"MagicResist\": 0,\r\n            \"Description\": \"Nieograniczony zasięg. Nie porusza się.\",\r\n            \"UpgradeLevel\": 1,\r\n            \"SpellId\": 0\r\n        },\r\n        {\r\n            \"Line\": 2,\r\n            \"Pole\": 3,\r\n            \"Id\": 187,\r\n            \"Name\": \"Hala Rekrutów\",\r\n            \"Cost\": 3,\r\n            \"RealCost\": 3,\r\n            \"Initiative\": 20,\r\n            \"MaxHealth\": 30,\r\n            \"Health\": 30,\r\n            \"Attack\": 0,\r\n            \"Defense\": 0,\r\n            \"Range\": 0,\r\n            \"AP\": 0,\r\n            \"MagicResist\": 0,\r\n            \"Description\": \"<b>Wtasowuje</b> Rekrutów do <b>puli</b>\",\r\n            \"UpgradeLevel\": 1,\r\n            \"SpellId\": 0\r\n        }\r\n    ]\r\n}",
+    "nextFight": "",
     "units": [],
-    "allRoll": 5,
-    "time": 61.7420768737793,
-    "popular": [
-        {
-            "Key": 5,
-            "Value": 2
-        }
+    "allRoll": 1,
+    "levelDiscount": 0,
+    "heroSaved": true,
+    "heroRerolls": 0,
+    "heroLastShopRound": -1,
+    "heroOffer": [
+        2,
+        1
     ],
-    "strong": [
-        {
-            "Key": 0,
-            "Value": 100
-        },
-        {
-            "Key": 5,
-            "Value": 150
-        }
-    ]
+    "storyMission": "",
+    "storyDialogueRound": -1,
+    "time": 0.732139527797699,
+    "popular": [],
+    "strong": []
 }

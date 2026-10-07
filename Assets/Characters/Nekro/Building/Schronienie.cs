@@ -14,9 +14,10 @@ public class Schronienie : Building
             if (pole.unit != null && (pole.unit.GetComponent<Unit>().Typy.Contains(type) || pole.unit.GetComponent<Unit>().Typy.Contains(type2)) && pole.unit.GetComponent<Heros>())
             {
 
-                pole.unit.GetComponent<Unit>().Health += 20;
-                pole.unit.GetComponent<Unit>().MaxHealth += 20;
-                pole.unit.GetComponent<Unit>().Attack += 20;
+                int extra = pole.unit.GetComponent<Unit>().Typy.Contains(CreatureType.Wampir) ? HeroAbilities.NawiedzonyDworBonus(Enemy) : 0;
+                pole.unit.GetComponent<Unit>().Health += 20 + extra;
+                pole.unit.GetComponent<Unit>().MaxHealth += 20 + extra;
+                pole.unit.GetComponent<Unit>().Attack += 20 + extra;
                 pole.unit.GetComponent<Unit>().AP += 20;
 
 

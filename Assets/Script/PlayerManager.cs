@@ -151,6 +151,8 @@ public class PlayerManager : MonoBehaviour
             {
                 Multi.multi = false;
                 Tutorial.tutorial = false;
+                SI = false;                  // bez tego po partii z SI zwykła gra zapisywała do Zapis5.json
+                StoryManager.Active = false;
                 SceneManager.LoadScene(4);
             }
             else
@@ -169,6 +171,7 @@ public class PlayerManager : MonoBehaviour
         Multi.multi = false;
         RankedManager.Ranked = false;
         Tutorial.tutorial = false;
+        StoryManager.Active = false;
         SI = true;
         SceneManager.LoadScene(9);
     }
@@ -178,6 +181,7 @@ public class PlayerManager : MonoBehaviour
         Multi.multi = false;
         RankedManager.Ranked = false;
         Tutorial.tutorial = false;
+        StoryManager.Active = false;
         SI = false;
         SceneManager.LoadScene(10);
     }
@@ -191,6 +195,7 @@ public class PlayerManager : MonoBehaviour
             {
                 Multi.multi = true;
                 SI = false;
+                StoryManager.Active = false;
                 Tutorial.tutorial = false;
                 SceneManager.LoadScene(6);
             }
@@ -210,6 +215,7 @@ public class PlayerManager : MonoBehaviour
         Multi.multi = false;
         RankedManager.Ranked = false;
         SI = false;
+        StoryManager.Active = false;
         Tutorial.tutorial = true;
         SceneManager.LoadScene(5);
     }
@@ -218,25 +224,8 @@ public class PlayerManager : MonoBehaviour
         if (Login.loggedP)
         {
             RankedManager.Ranked = true;
-            string savePath2 = Application.dataPath + "/Save/Save2R.json";
-            if (File.Exists(savePath2))
-            {
-                string json = File.ReadAllText(savePath2);
-                SaveManager.SaveData2 data = JsonUtility.FromJson<SaveManager.SaveData2>(json);
-
-                if (data.playerId == PlayerManager.Id)
-                {
-                    isSave = true;
-                }
-                else
-                {
-                    isSave = false;
-                }
-            }
-            else
-            {
-                isSave = false;
-            }
+            StoryManager.Active = false;
+            isSave = SaveService.HasRunFor("R", PlayerManager.Id);
             if (isSave || Fraction.fractionList.Count != 0)
             {
                 Multi.multi = false;

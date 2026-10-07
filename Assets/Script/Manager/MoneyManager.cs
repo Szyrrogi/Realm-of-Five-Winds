@@ -20,12 +20,12 @@ public class MoneyManager : MonoBehaviour
     void Update()
     {
         moneyText.text = money.ToString();
-        incomeText.text = "+" + income.ToString();
+        incomeText.text = "+" + (income + HeroAbilities.BonusIncome());
     }
 
     public static void ActiveIncom()
     {
-        money += income;
+        money += income + HeroAbilities.BonusIncome();
         //if(StatsManager.Round % 2 == 0)
         if(income < 12)
             income++;

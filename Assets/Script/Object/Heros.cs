@@ -189,10 +189,11 @@ public class Heros : Unit
 
         if (!Evolution)
         {
+            int need = HeroAbilities.UpgradeNeed(this);
             GameObject pop = Instantiate(PopUp, gameObject.transform.position, Quaternion.identity);
-            pop.GetComponent<PopUp>().SetText(UpgradeLevel + "/" + UpgradeNeed, Color.white);
+            pop.GetComponent<PopUp>().SetText(UpgradeLevel + "/" + need, Color.white);
 
-            if (UpgradeLevel >= UpgradeNeed)
+            if (UpgradeLevel >= need)
             {
                 
                 Evolve();

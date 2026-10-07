@@ -26,13 +26,26 @@ public class ShopObject : MonoBehaviour
     public ShopManager shopManager;
     public AudioClip kupnoSound;
 
+    /// <summary>Cena po zniżkach bohatera – jedno źródło prawdy dla wyświetlania, sprawdzania i pobierania złota.</summary>
+    public int Cena()
+    {
+        if (unit == null || unit == nullObject) return 0;
+        Unit u = unit.GetComponent<Unit>();
+        int baza = u.RealCost != 0 ? u.RealCost : u.Cost;
+        return HeroAbilities.ShopPrice(unit, baza);
+    }
+
+    public void OdswiezCene()
+    {
+        if (unit != null && unit != nullObject) price.text = Cena().ToString();
+    }
+
     public void SetLook()
     {
         image.sprite = unit.GetComponent<SpriteRenderer>().sprite;
         name.text = unit.GetComponent<Unit>().Name[PauseMenu.Language];
         
-        price.text =
-        (unit.GetComponent<Unit>().RealCost == 0 ? unit.GetComponent<Unit>().Cost.ToString() : unit.GetComponent<Unit>().RealCost.ToString());
+        price.text = Cena().ToString();
         if (unit.GetComponent<Heros>())
             SetStats();
         else
@@ -48,7 +61,7 @@ public class ShopObject : MonoBehaviour
                 unit.GetComponent<UpadlyKsiaze>().Cost = 1;
             else
                 unit.GetComponent<UpadlyKsiaze>().Cost = 20 - MoneyManager.money;
-            price.text = unit.GetComponent<UpadlyKsiaze>().Cost.ToString();
+            price.text = Cena().ToString();
             // switch (unit.GetComponent<Unit>().Star)
             // {
             //     case 0:
@@ -87,8 +100,8 @@ public class ShopObject : MonoBehaviour
 
     void kupno()
     {
-        if((int.Parse(price.text)) != 0)
-            MoneyManager.money -= unit.GetComponent<Unit>().RealCost;
+        int cena = Cena();
+        MoneyManager.money -= cena;
         Pole poleDocelowe = null;
         foreach (Pole pole in EventSystem.eventSystem.GetComponent<ShopManager>().lawka)
         {
@@ -101,6 +114,7 @@ public class ShopObject : MonoBehaviour
         Vector3 pos = poleDocelowe.gameObject.transform.position;
         pos.z -= 2f;
         GameObject newUnit = Instantiate(unit, pos, Quaternion.identity);
+        newUnit.GetComponent<Unit>().RealCost = cena; // wartość przy sprzedaży (Bank w AfterBuy dalej ją koryguje)
         poleDocelowe.unit = newUnit; // Przypisanie jednostki do pola
         newUnit.GetComponent<DragObject>().pole = poleDocelowe;
         newUnit.GetComponent<Unit>().AfterBuy();
@@ -201,7 +215,7 @@ public class ShopObject : MonoBehaviour
     {
         if(unit == nullObject)
             return false;
-        if ((int.Parse(price.text)) > MoneyManager.money)
+        if (Cena() > MoneyManager.money)
             return false;
         foreach(Pole pole in EventSystem.eventSystem.GetComponent<ShopManager>().lawka)
         {

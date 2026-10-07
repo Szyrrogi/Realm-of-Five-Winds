@@ -148,18 +148,7 @@ public class Multi : MonoBehaviour
         if(PhotonNetwork.LocalPlayer.ActorNumber == id)
         {
             SaveManager.Save(PlayerManager.Name, PlayerManager.PlayerFaceId, ShopManager.levelUp, BohaterManager.bohaterId);
-            string jsonContent = "";
-            string filePath = Application.dataPath + "/Save/Zapis3.json";
-            
-            if (File.Exists(filePath))
-            {
-                jsonContent = File.ReadAllText(filePath);
-            // Debug.Log("Zawartość pliku zapis3.json:\n" + jsonContent);
-            }
-            else
-            {
-                Debug.LogError("Plik zapis3.json nie istnieje w ścieżce: " + filePath);
-            }
+            string jsonContent = SaveService.ExportBoard();
             
             photonView.RPC("WlaczFightStart", RpcTarget.All, powrot, jsonContent);
 

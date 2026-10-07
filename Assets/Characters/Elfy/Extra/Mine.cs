@@ -39,6 +39,7 @@ public class Mine : Heros
                 GameObject pop = Instantiate(PopUp, enemy.transform.position, Quaternion.identity);
                 pop.GetComponent<PopUp>().SetText("0",  new Color(0.5f,0,1f));
                 enemy.GetComponent<Unit>().BoskaTarcza = false;
+                HeroAbilities.OnShieldLost(enemy.GetComponent<Unit>());
             }
             else
             {

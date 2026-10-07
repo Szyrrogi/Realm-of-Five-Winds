@@ -1,0 +1,33 @@
+{
+    "playerId": 76,
+    "money": 5,
+    "incom": 6,
+    "poddymka": false,
+    "win": 0,
+    "fractions": "10000",
+    "lose": 3,
+    "round": 0,
+    "shop": [
+        4,
+        10,
+        5,
+        4,
+        38
+    ],
+    "nextFight": "{\r\n    \"playerName\": \"Owca\",\r\n    \"number\": 4,\r\n    \"levelUp\": 1,\r\n    \"units\": [\r\n        {\r\n            \"Line\": 0,\r\n            \"Pole\": 0,\r\n            \"Id\": 65,\r\n            \"Name\": \"Szczur\",\r\n            \"Cost\": 1,\r\n            \"RealCost\": 1,\r\n            \"Initiative\": 100,\r\n            \"MaxHealth\": 8,\r\n            \"Health\": 8,\r\n            \"Attack\": 8,\r\n            \"Defense\": 5,\r\n            \"Range\": 0,\r\n            \"AP\": 0,\r\n            \"MagicResist\": 0,\r\n            \"Description\": \"\",\r\n            \"UpgradeLevel\": 1,\r\n            \"SpellId\": 0\r\n        },\r\n        {\r\n            \"Line\": 1,\r\n            \"Pole\": 0,\r\n            \"Id\": 116,\r\n            \"Name\": \"Zaklinacz Piasków\",\r\n            \"Cost\": 2,\r\n            \"RealCost\": 2,\r\n            \"Initiative\": 45,\r\n            \"MaxHealth\": 37,\r\n            \"Health\": 37,\r\n            \"Attack\": 5,\r\n            \"Defense\": 6,\r\n            \"Range\": 0,\r\n            \"AP\": 33,\r\n            \"MagicResist\": 10,\r\n            \"Description\": \"Może uczyć się zaklęć mocy\",\r\n            \"UpgradeLevel\": 1,\r\n            \"SpellId\": 12\r\n        },\r\n        {\r\n            \"Line\": 2,\r\n            \"Pole\": 0,\r\n            \"Id\": 116,\r\n            \"Name\": \"Zaklinacz Piasków\",\r\n            \"Cost\": 2,\r\n            \"RealCost\": 2,\r\n            \"Initiative\": 45,\r\n            \"MaxHealth\": 37,\r\n            \"Health\": 37,\r\n            \"Attack\": 5,\r\n            \"Defense\": 6,\r\n            \"Range\": 0,\r\n            \"AP\": 33,\r\n            \"MagicResist\": 10,\r\n            \"Description\": \"Może uczyć się zaklęć mocy\",\r\n            \"UpgradeLevel\": 1,\r\n            \"SpellId\": 12\r\n        }\r\n    ]\r\n}",
+    "units": [],
+    "allRoll": 1,
+    "levelDiscount": 0,
+    "heroSaved": true,
+    "heroRerolls": 2147483647,
+    "heroLastShopRound": -1,
+    "heroOffer": [
+        1,
+        2
+    ],
+    "storyMission": "",
+    "storyDialogueRound": -1,
+    "time": 0.14309899508953095,
+    "popular": [],
+    "strong": []
+}

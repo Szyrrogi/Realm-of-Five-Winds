@@ -48,7 +48,7 @@ public class Linia : MonoBehaviour
         return PoleType.Ogolne;
     }
 
-    private bool JestZgodnaJednostkaZPolem(GameObject unit, Pole pole)
+    public static bool Pasuje(GameObject unit, Pole pole)
     {
         bool hero = unit.GetComponent<Heros>() != null || unit.GetComponent<Spell>() != null;
         bool building = unit.GetComponent<Building>() != null;
@@ -108,7 +108,7 @@ public class Linia : MonoBehaviour
     {
         int indeks = poziom - 1;
         if (kosztyUlepszen == null || indeks < 0 || indeks >= kosztyUlepszen.Length) return -1;
-        return kosztyUlepszen[indeks];
+        return Mathf.Max(0, kosztyUlepszen[indeks] - (enemyLine ? 0 : ShopManager.nizka));
     }
 
     public bool MoznaUlepszyc()
@@ -128,6 +128,7 @@ public class Linia : MonoBehaviour
         if (koszt < 0 || MoneyManager.money < koszt) return;
 
         MoneyManager.money -= koszt;
+        ShopManager.nizka = 0; // zniżka z Mrocznej chaty zużyta
         Upgrade(poziom); // poziom to aktualnie obowiązujący indeks w roadPrefabs
         poziom++;
 
@@ -168,6 +169,12 @@ public class Linia : MonoBehaviour
         int maxPoziom = (roadPrefabs != null && roadPrefabs.Length > 0) ? roadPrefabs.Length : 1;
         docelowyPoziom = Mathf.Clamp(docelowyPoziom, 1, maxPoziom);
 
+        if (poziom >= 1 && docelowyPoziom < poziom)
+        {
+            Debug.LogWarning($"SetLevel: próba zmniejszenia rzędu {nr} z {poziom} do {docelowyPoziom} – pomijam.");
+            return;
+        }
+
         if (poziom < 1)
         {
             // Brak zainicjalizowanej drogi (np. po ResetLinia() przy wczytywaniu zapisu) —
@@ -198,7 +205,7 @@ public class Linia : MonoBehaviour
         }
     }
 
-    public void Upgrade(int level)
+    private void Upgrade(int level)
     {
         if (level < roadPrefabs.Length)
         {
@@ -316,7 +323,7 @@ public class Linia : MonoBehaviour
             Pole docelowe = null;
             foreach (PoleType kandydatTyp in new[] { PoleType.Ogolne, PoleType.Jednostka, PoleType.Budynek })
             {
-                if (wolnePolaWgTypu[kandydatTyp].Count > 0 && JestZgodnaJednostkaZPolem(unit, wolnePolaWgTypu[kandydatTyp].Peek()))
+                if (wolnePolaWgTypu[kandydatTyp].Count > 0 && Pasuje(unit, wolnePolaWgTypu[kandydatTyp].Peek()))
                 {
                     docelowe = wolnePolaWgTypu[kandydatTyp].Dequeue();
                     break;
@@ -329,7 +336,11 @@ public class Linia : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning($"Nie udało się znaleźć wolnego pola typu '{typ}' dla jednostki '{unit.name}' po podmianie drogi na linii {nr}.");
+                // Nigdy nie zostawiamy jednostki bez pola: gracz -> ławka, wróg -> usunięty.
+                Pole wolna = enemyLine ? null : EventSystem.eventSystem.GetComponent<ShopManager>().lawka.Find(p => p.unit == null);
+                if (wolna != null) { wolna.unit = unit; wolna.Start(); }
+                else Destroy(unit);
+                Debug.LogWarning($"Brak pola dla '{unit.name}' po podmianie drogi na linii {nr}.");
             }
         }
     }

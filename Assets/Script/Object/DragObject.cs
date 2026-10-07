@@ -17,6 +17,8 @@ public class DragObject : MonoBehaviour
 
     public void OnMouseDown()
     {
+        Unit u = GetComponent<Unit>();
+        if (u != null && u.Enemy) return; // wrogów nie da się ruszyć ani sprzedać
         if(FightManager.IsFight == false && FightManager.IsOptions == false)
         {
             isDragging = true;

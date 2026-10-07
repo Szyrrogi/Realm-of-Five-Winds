@@ -65,6 +65,17 @@ public class EnemyManager : MonoBehaviour
 
     void Start()
     {
+        if (StoryManager.Active)
+        {
+            Comps = StoryManager.BuildComps();
+            foreach (MissionWave w in StoryManager.Mission.waves)
+            {
+                Names.Add(w.enemyName);
+                Faces.Add(w.enemyFace);
+                LP.Add(1000);
+            }
+            return;
+        }
         // if (!PlayerManager.isSave)
         // {
         if(PlayerManager.SI)

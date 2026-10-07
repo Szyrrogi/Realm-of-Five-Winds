@@ -36,7 +36,7 @@ public class Drzewo : Heros
 
     public override void Sell()
     {
-        EventSystem.eventSystem.GetComponent<ShopManager>().FreeRoll++;
+        EventSystem.eventSystem.GetComponent<ShopManager>().FreeRoll += HeroAbilities.FreeRollsFromTree();
         if(RealCost != 0)
             MoneyManager.money += RealCost - 1;
         else

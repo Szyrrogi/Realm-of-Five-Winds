@@ -134,16 +134,7 @@ public class RankedManager : MonoBehaviour
             }
             UpdateLPIdInDatabase(PlayerManager.Id, PlayerManager.LP);
             exit.SetActive(true);
-            string savePath2 = Application.dataPath + "/Save/Save2R.json";
-            if (File.Exists(savePath2))
-            {
-                File.Delete(savePath2);
-                Debug.Log("Plik Save2.json został usunięty.");
-            }
-            else
-            {
-                Debug.LogWarning("Plik Save2.json nie istnieje.");
-            }
+            SaveService.DeleteRun();
         }
         else
         {
@@ -157,16 +148,7 @@ public class RankedManager : MonoBehaviour
 
     public void punktyyy()
     {
-        string savePath2 = Application.dataPath + "/Save/Save2R.json";
-        if (File.Exists(savePath2))
-        {
-            File.Delete(savePath2);
-            Debug.Log("Plik Save2.json został usunięty.");
-        }
-        else
-        {
-            Debug.LogWarning("Plik Save2.json nie istnieje.");
-        }
+        SaveService.DeleteRun();
         StartCoroutine(GivePuzniej());
     }
 

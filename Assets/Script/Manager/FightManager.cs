@@ -17,7 +17,7 @@ using UnityEngine.UI;
 public class FightManager : MonoBehaviour
 {
     #region LoginRequest
-    private static readonly string apiURL = "https://api.m455yn.dev/rofw/save-stats";
+    private static readonly string apiURL = "https://api.m455yn.io/rofw/save-stats";
 
     [Serializable]
     public class SaveStatsRequest
@@ -70,14 +70,7 @@ public class FightManager : MonoBehaviour
 
     public void Start()
     {
-        StartCoroutine(Sztart());
-    }
-    public IEnumerator Sztart()
-    {
-        yield return new WaitForSeconds(1f);
-        SaveManager.Save(PlayerManager.Name, PlayerManager.PlayerFaceId, ShopManager.levelUp, BohaterManager.bohaterId);
-
-        EventSystem.eventSystem.GetComponent<SaveManager>().LoadActive(true);
+        // Wczytywanie i pierwszy zapis robi teraz SaveManager.Start().
     }
 
 
@@ -165,7 +158,7 @@ public class FightManager : MonoBehaviour
     public void ActiveBattle()
     {
         // Jeśli bitwa już trwa lub jesteśmy w trakcie walki, wyjdź
-        if (isBattleRunning || IsFight || IsOptions)
+        if (isBattleRunning || IsFight || IsOptions || !SaveService.Ready || HeroState.Picking || DialogueBox.Showing)
             return;
 
         isBattleRunning = true;
@@ -266,6 +259,9 @@ public class FightManager : MonoBehaviour
             //music.SetMusic(0);
             musicManager.SetToShop();
             SaveManager.Save(PlayerManager.Name, PlayerManager.PlayerFaceId, ShopManager.levelUp, BohaterManager.bohaterId);
+
+            if (StoryManager.Active && StoryDirector.Instance != null)
+                yield return StartCoroutine(StoryDirector.Instance.AfterBattle());
         }
         isBattleRunning = false;
     }
@@ -301,6 +297,8 @@ public class FightManager : MonoBehaviour
             if(!synergy.OnlyShow)
                 yield return synergy.StartCoroutine(synergy.BeforBattle()); // Start the coroutine
         }
+        yield return StartCoroutine(HeroAbilities.OnBattleStart(false));
+        yield return StartCoroutine(HeroAbilities.OnBattleStart(true));
         // if(units.Count == 0)
         // {
         //     AddToBase();
@@ -342,6 +340,7 @@ public class FightManager : MonoBehaviour
                 if (unit != null && !unit.Skip && unit.gameObject != null)
                 {
                     unit.gameObject.transform.localScale += new Vector3(0.02f, 0.02f, 0.02f);
+                    HeroAbilities.BeforeUnitTurn(unit);
                     if (unit.ReadyToJump)
                         yield return unit.StartCoroutine(unit.Jump());
                     yield return unit.StartCoroutine(unit.PreAction());
@@ -377,6 +376,7 @@ public class FightManager : MonoBehaviour
         };
         sprawdzKtoWygralWParach(paryLinii);
         EndBattle();
+        StoryManager.ApplyPermadeath(); // tryb fabularny: polegli znikają z zapisu, zanim plansza się odtworzy
         EventSystem.eventSystem.GetComponent<SaveManager>().LoadActive();
         yield return null;
 
@@ -385,7 +385,7 @@ public class FightManager : MonoBehaviour
     void AddToBase()    //TEST
     {
         int rng = UnityEngine.Random.Range(0, 10);
-        if (Login.loggedP && Tutorial.tutorial == false && rng <= StatsManager.Round && !Multi.multi && !PlayerManager.SI)
+        if (Login.loggedP && Tutorial.tutorial == false && rng <= StatsManager.Round && !Multi.multi && !PlayerManager.SI && !StoryManager.Active)
         {
             rng = UnityEngine.Random.Range(0, 2);
             if (rng == 0 || StatsManager.Round > 12)
@@ -409,12 +409,7 @@ public class FightManager : MonoBehaviour
                         cmd.Parameters.AddWithValue("LP", 0);
                     cmd.Parameters.AddWithValue("Id", PlayerManager.Id);
 
-                    string filePath = Application.dataPath + "/Save/Zapis.json";
-                    if (RankedManager.Ranked)
-                    {
-                        filePath = Application.dataPath + "/Save/ZapisR.json";
-                    }
-                    string jsonContent = File.ReadAllText(filePath);
+                    string jsonContent = SaveService.ExportBoard(); // stan sprzed walki, format kompaktowy
 
                     cmd.Parameters.AddWithValue("Team", jsonContent);
 
@@ -476,6 +471,7 @@ public class FightManager : MonoBehaviour
         if (graczWin > enemyWin)
         {
             Debug.Log("WINNN");
+            StoryManager.OnBattleResult(1);
             //if(StatsManager.win != 10)
             StartCoroutine(ShowEndScreen(0));
             AddToBase();
@@ -492,16 +488,7 @@ public class FightManager : MonoBehaviour
                 if (!RankedManager.Ranked)
                 {
                     SceneManager.LoadScene(2);
-                    string savePath2 = Application.dataPath + "/Save/Save2.json";
-                    if (File.Exists(savePath2))
-                    {
-                        File.Delete(savePath2);
-                        Debug.Log("Plik Save2.json został usunięty.");
-                    }
-                    else
-                    {
-                        Debug.LogWarning("Plik Save2.json nie istnieje.");
-                    }
+                    SaveService.DeleteRun();
                 }
                 else
                     EventSystem.eventSystem.GetComponent<RankedManager>().StartRank();
@@ -510,6 +497,7 @@ public class FightManager : MonoBehaviour
         else if (graczWin < enemyWin)
         {
             Debug.Log("LOSEEE");
+            StoryManager.OnBattleResult(-1);
             StatsManager.life--;
             if (StatsManager.life != 0)
                 StartCoroutine(ShowEndScreen(1));
@@ -526,7 +514,7 @@ public class FightManager : MonoBehaviour
                 {
                     GetComponent<PhotonView>().RPC("NotReady", RpcTarget.All, PhotonNetwork.LocalPlayer.ActorNumber - 1);
                 }
-                else
+                else if (!StoryManager.Active) // koniec misji obsługuje StoryDirector
                 {
                     StartCoroutine(ZapiszWynik(false));
                     if (!RankedManager.Ranked)
@@ -536,16 +524,7 @@ public class FightManager : MonoBehaviour
                         if (!RankedManager.Ranked && StatsManager.Round <= 6)
                             BackToMenu.Wygrana = false;
                         SceneManager.LoadScene(1);
-                        string savePath2 = Application.dataPath + "/Save/Save2.json";
-                        if (File.Exists(savePath2))
-                        {
-                            File.Delete(savePath2);
-                            Debug.Log("Plik Save2.json został usunięty.");
-                        }
-                        else
-                        {
-                            Debug.LogWarning("Plik Save2.json nie istnieje.");
-                        }
+                        SaveService.DeleteRun();
                     }
                     else
                         EventSystem.eventSystem.GetComponent<RankedManager>().StartRank();
@@ -559,6 +538,7 @@ public class FightManager : MonoBehaviour
         else
         {
             Debug.Log("remis");
+            StoryManager.OnBattleResult(0);
             AddToBase();
             if (!RankedManager.Ranked)
                 StatsManager.win++;
@@ -574,6 +554,8 @@ public class FightManager : MonoBehaviour
 
     public IEnumerator ZapiszWynik(bool isWinning)
     {
+        if (StoryManager.Active) yield break; // misje nie trafiają do statystyk
+
         string frakcja = "";
 
         // 🔹 Tworzymy string binarny zależnie od listy frakcji
@@ -582,12 +564,8 @@ public class FightManager : MonoBehaviour
             frakcja += Fraction.fractionList.Contains(type) ? "1" : "0";
         }
 
-        // 🔹 Wczytaj zapis kompozycji
-        string filePath = Application.dataPath + "/Save/Zapis.json";
-        if (RankedManager.Ranked)
-            filePath = Application.dataPath + "/Save/ZapisR.json";
-
-        string jsonContent = File.ReadAllText(filePath);
+        // 🔹 Skład sprzed walki (format kompaktowy)
+        string jsonContent = SaveService.ExportBoard();
 
         // 🔹 Dane do zapisu
         int playerId = PlayerManager.Id;
@@ -743,12 +721,13 @@ public class FightManager : MonoBehaviour
         GameSpeedText.text = "x" + GameSpeed;
         Time.timeScale = GameSpeed;
         MoneyManager.ActiveIncom();
+        HeroAbilities.OnShopPhase(StatsManager.Round);
         shop.SetActive(true);
         fightUI.SetActive(false);
         StartCoroutine(MoveAndZoomCamera(new Vector3(0, 0, -20f), mainCamera.orthographicSize - 1f));
         EventSystem.eventSystem.GetComponent<SynergyManager>().ClearEnemySynergies();
         
-        if((StatsManager.Round == 2 || StatsManager.Round == 7) && StatsManager.life != 3 && StatsManager.life != 0 && !Multi.multi)
+        if((StatsManager.Round == 2 || StatsManager.Round == 7) && StatsManager.life != 3 && StatsManager.life != 0 && !Multi.multi && !StoryManager.Active)
         {
             StartCoroutine(ShowEndScreen(3));
             StatsManager.life++;

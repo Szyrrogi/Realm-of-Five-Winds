@@ -7,7 +7,7 @@ public class Zemsta : Heros
     public override void AfterBattle()
     {
         
-        if(!Evolution)
+        if (!Evolution && !HeroAbilities.ZemstaKeepsStats(Enemy))
         {
             Attack -= 10;
             MaxHealth -= 10;

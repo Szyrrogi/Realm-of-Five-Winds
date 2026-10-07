@@ -3,62 +3,11 @@
     "number": 0,
     "levelUp": 1,
     "bohater": 0,
+    "bohaterLevel": 0,
     "lineLevels": [
         1,
         1,
         1
     ],
-    "units": [
-        {
-            "Line": 1,
-            "Pole": 0,
-            "Id": 0,
-            "Cost": 3,
-            "RealCost": 0,
-            "Initiative": 50,
-            "MaxHealth": 45,
-            "Health": 45,
-            "Attack": 10,
-            "Defense": 5,
-            "Range": 0,
-            "AP": 25,
-            "MagicResist": 15,
-            "UpgradeLevel": 1,
-            "SpellId": 0
-        },
-        {
-            "Line": 1,
-            "Pole": 1,
-            "Id": 5,
-            "Cost": 3,
-            "RealCost": 3,
-            "Initiative": 30,
-            "MaxHealth": 25,
-            "Health": 25,
-            "Attack": 25,
-            "Defense": 5,
-            "Range": 1,
-            "AP": 0,
-            "MagicResist": 0,
-            "UpgradeLevel": 1,
-            "SpellId": 0
-        },
-        {
-            "Line": 2,
-            "Pole": 1,
-            "Id": 5,
-            "Cost": 3,
-            "RealCost": 3,
-            "Initiative": 30,
-            "MaxHealth": 25,
-            "Health": 25,
-            "Attack": 25,
-            "Defense": 5,
-            "Range": 1,
-            "AP": 0,
-            "MagicResist": 0,
-            "UpgradeLevel": 1,
-            "SpellId": 0
-        }
-    ]
+    "units": []
 }

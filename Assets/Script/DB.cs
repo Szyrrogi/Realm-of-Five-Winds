@@ -10,7 +10,7 @@ using System.Text;
 public class DB : MonoBehaviour
 {
     //public static string conStr = "Data Source=145.239.80.7;Initial Catalog=DB_SZYRROGI;User ID=szyrrogi;Password=szyrrogi;Connect Timeout=10;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-    public static string conStr = "Data Source=db.m455yn.dev;Initial Catalog=SZYRROGI_AUTOBATTLER;User ID=szyrrogi;Password=fwN7444_1t;Connect Timeout=10;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+    public static string conStr = "Data Source=db.m455yn.io;Initial Catalog=SZYRROGI_AUTOBATTLER;User ID=szyrrogi;Password=fwN7444_1t;Connect Timeout=10;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
     void Start()
     {
         // Zarejestruj dostawcę stron kodowych

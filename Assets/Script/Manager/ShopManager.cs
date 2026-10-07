@@ -84,11 +84,6 @@ public class ShopManager : MonoBehaviour
 
     void Update()
     {
-        if(nizka > LevelUpCost)
-        {
-            nizka = LevelUpCost;
-        }
-        LevelUpText.text = (LevelUpCost - nizka).ToString();
         string[] freeRollLanguage = { "Darmowe odświeżenia", "Free Refreshes", "Refrescos Gratis", "Rafraîchissements Gratuits", "Kostenlose Aktualisierungen" };
         FreeRollText.text = FreeRoll == 0  ? "" : freeRollLanguage[PauseMenu.Language] + ": " + FreeRoll.ToString();
         RollCostText.text = (FreeRoll == 0 ? RollCost.ToString() : "0");
@@ -134,6 +129,7 @@ public class ShopManager : MonoBehaviour
         {
             obj.FirstRoll();
         } 
+        foreach (ShopObject s in character) s.OdswiezCene();
     }
     public List<GameObject> filteredObjects;
 
@@ -199,8 +195,7 @@ public class ShopManager : MonoBehaviour
                         character[i].naText.color = Color.red;
                         break;
                 }
-                character[i].price.text =
-                (filteredObjects[rng].GetComponent<Unit>().RealCost == 0 ? filteredObjects[rng].GetComponent<Unit>().Cost.ToString() : filteredObjects[rng].GetComponent<Unit>().RealCost.ToString());
+                character[i].price.text = character[i].Cena().ToString();
                 
                 if (character[i].unit.GetComponent<Heros>())
                     character[i].SetStats();
@@ -214,6 +209,7 @@ public class ShopManager : MonoBehaviour
             {
                 obj.PostRoll();
             }
+            foreach (ShopObject s in character) s.OdswiezCene(); // Budowlaniec / Darmowe Zaklęcie zmieniają cenę w PostRoll
 
             if (PlayerManager.Id != 0)
                 SaveManager.Save(PlayerManager.Name, PlayerManager.PlayerFaceId, ShopManager.levelUp, BohaterManager.bohaterId);
@@ -223,6 +219,9 @@ public class ShopManager : MonoBehaviour
 
     protected List<GameObject> FilterObjects(List<GameObject> objects)
     {
+        if (StoryManager.Active)
+            return StoryManager.FilterShop(objects);
+
         List<GameObject> result = new List<GameObject>();
 
         foreach (var obj in objects)
@@ -236,7 +235,7 @@ public class ShopManager : MonoBehaviour
             }
         }
 
-        if (levelUp == 4 && result.Contains(MrocznaChata))
+        if (WszystkieRzedyNaMax() && result.Contains(MrocznaChata))
         {
             result.Remove(MrocznaChata);
         }
@@ -244,24 +243,13 @@ public class ShopManager : MonoBehaviour
         return result;
     }
 
-    public void LevelUp()
+    // Globalny Level Up usunięty – rzędy ulepsza się osobno (Linia.TryUpgrade).
+    bool WszystkieRzedyNaMax()
     {
-        if(MoneyManager.money >= LevelUpCost - nizka && levelUp < 4 && (FightManager.IsFight == false && FightManager.IsOptions == false))
-        {
-            MoneyManager.money -= LevelUpCost - nizka;
-            for(int i = 0; i < 3; i++)
-            {
-                // TUTAJ ZMIANA: Usunięto zawiłą logikę podmiany numeracji. Wysyłamy prosto docelowy poziom do Linii
-                EventSystem.eventSystem.GetComponent<FightManager>().linie[i].Upgrade(levelUp);
-            }
-            nizka = 0;
-            LevelUpCost++;
-            levelUp++;
-            if(levelUp == 4)
-            {
-                LevelUpCost = 0;
-            }   
-        }
+        List<Linia> linie = EventSystem.eventSystem.GetComponent<FightManager>().linie;
+        for (int i = 0; i < 3; i++)
+            if (linie[i].MoznaUlepszyc()) return false;
+        return true;
     }
 
     void Start()
