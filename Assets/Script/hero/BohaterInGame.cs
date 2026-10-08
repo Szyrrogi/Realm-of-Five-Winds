@@ -8,7 +8,7 @@ public class BohaterInGame : MonoBehaviour
     [Header("Zdolności (NOWE) – po 3 elementy: zdolność 1, 2, 3")]
     public SpriteRenderer[] abilityIcons;   // każdy z colliderem i HeroAbilityButton
     public TMP_Text[] abilityLabels;        // koszt albo pusto, gdy kupione
-    public TMP_Text tooltip;                // opis zdolności po najechaniu myszą (opcjonalny)
+    public TMP_Text tooltip;                // JEDEN wspólny opis: pokazuje tekst tej zdolności, nad którą jest mysz (text1/2/3)
 
     public static BohaterInGame Instance;
     BohaterData data;
@@ -20,6 +20,7 @@ public class BohaterInGame : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        HideTooltip(); // opis pokazuje się dopiero po najechaniu na ikonę
     }
 
     // Stare API – zostaje dla zgodności.

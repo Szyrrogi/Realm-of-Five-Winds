@@ -1,33 +1,35 @@
 {
-    "playerId": 0,
-    "money": 5,
-    "incom": 6,
+    "playerId": 76,
+    "money": 3,
+    "incom": 7,
     "poddymka": false,
     "win": 0,
-    "fractions": "10000",
-    "lose": 3,
-    "round": 0,
+    "fractions": "00010",
+    "lose": 2,
+    "round": 1,
     "shop": [
-        43,
-        2,
-        38,
-        44,
-        4
+        201,
+        197,
+        232,
+        195,
+        199
     ],
-    "nextFight": "",
+    "nextFight": "{\r\n    \"playerName\": \"Knee gas\",\r\n    \"number\": 0,\r\n    \"levelUp\": 2,\r\n    \"units\": [\r\n        {\r\n            \"Line\": 0,\r\n            \"Pole\": 1,\r\n            \"Id\": 2,\r\n            \"Name\": \"Giermek\",\r\n            \"Cost\": 2,\r\n            \"RealCost\": 2,\r\n            \"Initiative\": 40,\r\n            \"MaxHealth\": 35,\r\n            \"Health\": 35,\r\n            \"Attack\": 20,\r\n            \"Defense\": 5,\r\n            \"Range\": 0,\r\n            \"AP\": 0,\r\n            \"MagicResist\": 0,\r\n            \"Description\": \"<b>Ulepszenie:</b> Przywołaj Opancerzonego Rycerza\",\r\n            \"UpgradeLevel\": 1,\r\n            \"SpellId\": 0\r\n        },\r\n        {\r\n            \"Line\": 1,\r\n            \"Pole\": 1,\r\n            \"Id\": 12,\r\n            \"Name\": \"Rycerz\",\r\n            \"Cost\": 3,\r\n            \"RealCost\": 3,\r\n            \"Initiative\": 40,\r\n            \"MaxHealth\": 65,\r\n            \"Health\": 65,\r\n            \"Attack\": 20,\r\n            \"Defense\": 15,\r\n            \"Range\": 0,\r\n            \"AP\": 0,\r\n            \"MagicResist\": 0,\r\n            \"Description\": \"Zwiększa obronę o 30 przy atakach z dystansu\",\r\n            \"UpgradeLevel\": 1,\r\n            \"SpellId\": 0\r\n        }\r\n    ]\r\n}",
     "units": [],
-    "allRoll": 1,
+    "allRoll": 4,
     "levelDiscount": 0,
     "heroSaved": true,
     "heroRerolls": 0,
-    "heroLastShopRound": -1,
-    "heroOffer": [
-        2,
-        1
-    ],
+    "heroLastShopRound": 1,
+    "heroOffer": [],
     "storyMission": "",
     "storyDialogueRound": -1,
-    "time": 0.732139527797699,
-    "popular": [],
+    "time": 25.263538360595704,
+    "popular": [
+        {
+            "Key": 199,
+            "Value": 1
+        }
+    ],
     "strong": []
 }

@@ -17,5 +17,5 @@ MonoBehaviour:
   text1: Przez pierwsze 3 tury otrzymujesz szczura
   text2: "szczury wymagaj\u0105 2 do ulepszenia"
   text3: "szczury kr\xF3l otrzymuje dodatkowe 7/7 za ka\u017Cdego szczura"
-  bohaterId: 3
+  bohaterId: 4
   fraction: 1

@@ -17,5 +17,5 @@ MonoBehaviour:
   text1: "Ludki z tarcz\u0105 otrzymuj\u0105 +5/5"
   text2: "Pierwszy ziom w rz\u0119dzie ma tarcze"
   text3: "pierwsze 3 tarcze kt\xF3re spadn\u0105 tworz\u0105 si\u0119 ponownie"
-  bohaterId: 11
+  bohaterId: 12
   fraction: 4

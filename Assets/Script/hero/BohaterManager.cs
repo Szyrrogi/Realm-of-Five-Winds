@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BohaterManager : MonoBehaviour
 {
@@ -12,8 +13,9 @@ public class BohaterManager : MonoBehaviour
     public BohaterInGame bohaterInGame;
 
     [Header("Losowanie (NOWE)")]
-    public GameObject RerollButton;        // obiekt z colliderem + BohaterRerollButton (albo UI Button -> Reroll())
-    public TMP_Text RerollText;
+    public GameObject RerollButton;        // np. istniejący "Button (Legacy)" w panelu Choose Hero
+    public TMP_Text RerollText;            // tekst TextMeshPro na przycisku (jeśli taki masz)
+    public Text RerollTextLegacy;          // albo zwykły tekst (Legacy) – przycisk Legacy ma taki w dziecku "Text (Legacy)"
 
     public static BohaterManager Instance;
 
@@ -93,6 +95,9 @@ public class BohaterManager : MonoBehaviour
         RefreshRerollUI();
     }
 
+    /// <summary>Stara nazwa – istniejący przycisk w scenie ma OnClick ustawiony na Roll().</summary>
+    public void Roll() => Reroll();
+
     /// <summary>Przycisk losowania.</summary>
     public void Reroll()
     {
@@ -105,11 +110,10 @@ public class BohaterManager : MonoBehaviour
     {
         bool bezLimitu = HeroState.RerollsLeft == int.MaxValue;
         if (RerollButton != null) RerollButton.SetActive(bezLimitu || HeroState.RerollsLeft > 0);
-        if (RerollText != null)
-        {
-            string slowo = RerollWord[PauseMenu.Language];
-            RerollText.text = bezLimitu ? slowo : $"{slowo} ({HeroState.RerollsLeft})";
-        }
+        string slowo = RerollWord[PauseMenu.Language];
+        string napis = bezLimitu ? slowo : $"{slowo} ({HeroState.RerollsLeft})";
+        if (RerollText != null) RerollText.text = napis;
+        if (RerollTextLegacy != null) RerollTextLegacy.text = napis;
     }
 
     /// <summary>Bohater.OnMouseDown() ustawia ChoseBohater i woła Pick() – tak jak wcześniej.</summary>

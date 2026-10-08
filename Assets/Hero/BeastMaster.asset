@@ -17,5 +17,5 @@ MonoBehaviour:
   text1: Wilki +5 HP
   text2: "Gryfy i je\u017Adzcy maj\u0105 tarcze "
   text3: Zwierzeta z innych frakcji +20/20
-  bohaterId: 0
+  bohaterId: 3
   fraction: 0

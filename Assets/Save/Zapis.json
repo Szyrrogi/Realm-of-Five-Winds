@@ -2,12 +2,51 @@
     "playerName": "nowy",
     "number": 0,
     "levelUp": 1,
-    "bohater": 0,
-    "bohaterLevel": 0,
+    "bohater": 6,
+    "bohaterLevel": 1,
     "lineLevels": [
         1,
         1,
         1
     ],
-    "units": []
+    "units": [
+        {
+            "Line": 1,
+            "Pole": 1,
+            "Id": 65,
+            "Cost": 1,
+            "RealCost": 1,
+            "Initiative": 100,
+            "MaxHealth": 8,
+            "Health": 8,
+            "Attack": 8,
+            "Defense": 5,
+            "Range": 0,
+            "AP": 0,
+            "MagicResist": 0,
+            "UpgradeLevel": 1,
+            "SpellId": 0,
+            "Spell": false,
+            "Uid": 1
+        },
+        {
+            "Line": 2,
+            "Pole": 0,
+            "Id": 61,
+            "Cost": 3,
+            "RealCost": 3,
+            "Initiative": 45,
+            "MaxHealth": 35,
+            "Health": 35,
+            "Attack": 20,
+            "Defense": 5,
+            "Range": 0,
+            "AP": 12,
+            "MagicResist": 0,
+            "UpgradeLevel": 1,
+            "SpellId": 0,
+            "Spell": false,
+            "Uid": 2
+        }
+    ]
 }

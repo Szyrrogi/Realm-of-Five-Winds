@@ -17,5 +17,5 @@ MonoBehaviour:
   text1: "Drzewa daj\u0105 2 rolki"
   text2: wymagane 2 enty na drzewca
   text3: "Drzewce orrzymuj\u0105 +100HP"
-  bohaterId: 12
+  bohaterId: 13
   fraction: 3

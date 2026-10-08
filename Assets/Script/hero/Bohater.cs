@@ -1,11 +1,17 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using TMPro;
-// using System.Diagnostics;
 
-public class Bohater : MonoBehaviour
+/// <summary>
+/// Karta bohatera w panelu wyboru (UI na CanvasMain).
+/// Klik działa przez system UI (IPointerClickHandler) – OnMouseDown nie trafia w elementy
+/// Canvasa w trybie Screen Space – Overlay, dlatego wcześniej wybór nie reagował.
+/// Wymaga: Image z zaznaczonym Raycast Target na tym obiekcie (albo na dziecku) i obiektu EventSystem w scenie.
+/// </summary>
+public class Bohater : MonoBehaviour, IPointerClickHandler
 {
-    public BohaterData data; // ← tutaj przeciągasz stworzony plik danych
+    public BohaterData data; // ustawiane przez BohaterManager przy losowaniu
     public TextMeshProUGUI Name;
 
     public Image Image;
@@ -17,14 +23,10 @@ public class Bohater : MonoBehaviour
     public void Start()
     {
         if (data == null)
-        {
-            Debug.LogWarning("Brak przypisanego BohaterData!");
-            return;
-        }
+            return; // karta czeka, aż BohaterManager wylosuje bohatera
+
         if (Name != null)
-        {
             Name.text = data.name;
-        }
 
         if (Image != null && data.Image != null)
             Image.sprite = data.Image;
@@ -38,9 +40,19 @@ public class Bohater : MonoBehaviour
         if (Text3 != null)
             Text3.text = data.text3;
     }
-    public void OnMouseDown()
+
+    public void OnPointerClick(PointerEventData eventData)
     {
-        bohaterManager.ChoseBohater = data;
-        bohaterManager.Pick();
+        Wybierz();
+    }
+
+    /// <summary>Można też podpiąć pod Button.OnClick.</summary>
+    public void Wybierz()
+    {
+        if (data == null) return;
+        BohaterManager manager = bohaterManager != null ? bohaterManager : BohaterManager.Instance;
+        if (manager == null) return;
+        manager.ChoseBohater = data;
+        manager.Pick();
     }
 }
