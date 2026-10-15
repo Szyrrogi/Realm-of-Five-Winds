@@ -1,44 +1,78 @@
 {
     "playerId": 76,
-    "money": 7,
-    "incom": 7,
+    "money": 0,
+    "incom": 6,
     "poddymka": false,
-    "win": 1,
-    "fractions": "01000",
+    "win": 0,
+    "fractions": "10000",
     "lose": 3,
-    "round": 1,
+    "round": 0,
     "shop": [
-        59,
-        67,
-        69,
-        97,
-        63
+        8,
+        10,
+        8,
+        12,
+        0
     ],
-    "nextFight": "{\r\n    \"playerName\": \"Knee gas\",\r\n    \"number\": 0,\r\n    \"levelUp\": 1,\r\n    \"units\": [\r\n        {\r\n            \"Line\": 0,\r\n            \"Pole\": 0,\r\n            \"Id\": 116,\r\n            \"Name\": \"Zaklinacz Piasków\",\r\n            \"Cost\": 2,\r\n            \"RealCost\": 2,\r\n            \"Initiative\": 45,\r\n            \"MaxHealth\": 37,\r\n            \"Health\": 37,\r\n            \"Attack\": 5,\r\n            \"Defense\": 6,\r\n            \"Range\": 0,\r\n            \"AP\": 33,\r\n            \"MagicResist\": 10,\r\n            \"Description\": \"Może uczyć się zaklęć mocy\",\r\n            \"UpgradeLevel\": 1,\r\n            \"SpellId\": 12\r\n        },\r\n        {\r\n            \"Line\": 0,\r\n            \"Pole\": 1,\r\n            \"Id\": 108,\r\n            \"Name\": \"Szaman Piasków\",\r\n            \"Cost\": 2,\r\n            \"RealCost\": 2,\r\n            \"Initiative\": 65,\r\n            \"MaxHealth\": 40,\r\n            \"Health\": 40,\r\n            \"Attack\": 5,\r\n            \"Defense\": 0,\r\n            \"Range\": 0,\r\n            \"AP\": 15,\r\n            \"MagicResist\": 10,\r\n            \"Description\": \"<b>Początek Walki: </b>Zwiększ Moc Zaklęć jednostce przed sobą o 20\",\r\n            \"UpgradeLevel\": 1,\r\n            \"SpellId\": 0\r\n        },\r\n        {\r\n            \"Line\": 0,\r\n            \"Pole\": 2,\r\n            \"Id\": 142,\r\n            \"Name\": \"Wieża Ognia\",\r\n            \"Cost\": 2,\r\n            \"RealCost\": 2,\r\n            \"Initiative\": 20,\r\n            \"MaxHealth\": 30,\r\n            \"Health\": 30,\r\n            \"Attack\": 0,\r\n            \"Defense\": 0,\r\n            \"Range\": 0,\r\n            \"AP\": 0,\r\n            \"MagicResist\": 0,\r\n            \"Description\": \"<b>Wtasowuje</b> zaklęcia Ognia <b>puli</b>\",\r\n            \"UpgradeLevel\": 1,\r\n            \"SpellId\": 0\r\n        },\r\n        {\r\n            \"Line\": 1,\r\n            \"Pole\": 0,\r\n            \"Id\": 112,\r\n            \"Name\": \"Wicher Piasków\",\r\n            \"Cost\": 2,\r\n            \"RealCost\": 2,\r\n            \"Initiative\": 80,\r\n            \"MaxHealth\": 18,\r\n            \"Health\": 18,\r\n            \"Attack\": 18,\r\n            \"Defense\": 7,\r\n            \"Range\": 0,\r\n            \"AP\": 0,\r\n            \"MagicResist\": 10,\r\n            \"Description\": \"<b>Skok, Początek Walki: </b>Otrzymuje 5/5 jeżeli w sąsiadujących rzędach na tym samym polu znajduje się Wiecher Piasków\",\r\n            \"UpgradeLevel\": 1,\r\n            \"SpellId\": 0\r\n        },\r\n        {\r\n            \"Line\": 1,\r\n            \"Pole\": 1,\r\n            \"Id\": 104,\r\n            \"Name\": \"Pustynny Sokół\",\r\n            \"Cost\": 3,\r\n            \"RealCost\": 3,\r\n            \"Initiative\": 80,\r\n            \"MaxHealth\": 18,\r\n            \"Health\": 18,\r\n            \"Attack\": 18,\r\n            \"Defense\": 7,\r\n            \"Range\": 1,\r\n            \"AP\": 0,\r\n            \"MagicResist\": 10,\r\n            \"Description\": \"<b>Skok, Początek Walki: </b>Otrzymuje 5 Atak jeżeli w sąsiadujących rzędach na tym samym polu znajduje się Pustynny Sokół\",\r\n            \"UpgradeLevel\": 1,\r\n            \"SpellId\": 0\r\n        }\r\n    ]\r\n}",
-    "units": [],
+    "nextFight": "{\r\n    \"playerName\": \"FRogalskyy\",\r\n    \"number\": 6,\r\n    \"levelUp\": 1,\r\n    \"units\": [\r\n        {\r\n            \"Line\": 1,\r\n            \"Pole\": 0,\r\n            \"Id\": 155,\r\n            \"Name\": \"Tarczownik\",\r\n            \"Cost\": 3,\r\n            \"RealCost\": 3,\r\n            \"Initiative\": 10,\r\n            \"MaxHealth\": 31,\r\n            \"Health\": 31,\r\n            \"Attack\": 31,\r\n            \"Defense\": 5,\r\n            \"Range\": 0,\r\n            \"AP\": 0,\r\n            \"MagicResist\": 0,\r\n            \"Description\": \"<b>Ochrona</b>\",\r\n            \"UpgradeLevel\": 1,\r\n            \"SpellId\": 0\r\n        },\r\n        {\r\n            \"Line\": 2,\r\n            \"Pole\": 0,\r\n            \"Id\": 151,\r\n            \"Name\": \"Ściana\",\r\n            \"Cost\": 1,\r\n            \"RealCost\": 1,\r\n            \"Initiative\": 0,\r\n            \"MaxHealth\": 80,\r\n            \"Health\": 80,\r\n            \"Attack\": 0,\r\n            \"Defense\": 10,\r\n            \"Range\": 0,\r\n            \"AP\": 0,\r\n            \"MagicResist\": 0,\r\n            \"Description\": \"Nie porusza się oraz nie atakuje\",\r\n            \"UpgradeLevel\": 1,\r\n            \"SpellId\": 0\r\n        }\r\n    ]\r\n}",
+    "units": [
+        {
+            "Line": -1,
+            "Pole": 0,
+            "Id": 0,
+            "Cost": 3,
+            "RealCost": 3,
+            "Initiative": 50,
+            "MaxHealth": 45,
+            "Health": 45,
+            "Attack": 10,
+            "Defense": 5,
+            "Range": 0,
+            "AP": 25,
+            "MagicResist": 15,
+            "UpgradeLevel": 1,
+            "SpellId": 0,
+            "Spell": false,
+            "Uid": 1
+        },
+        {
+            "Line": -1,
+            "Pole": 1,
+            "Id": 2,
+            "Cost": 2,
+            "RealCost": 2,
+            "Initiative": 40,
+            "MaxHealth": 35,
+            "Health": 35,
+            "Attack": 20,
+            "Defense": 5,
+            "Range": 0,
+            "AP": 0,
+            "MagicResist": 0,
+            "UpgradeLevel": 1,
+            "SpellId": 0,
+            "Spell": false,
+            "Uid": 2
+        }
+    ],
     "allRoll": 2,
     "levelDiscount": 0,
     "heroSaved": true,
     "heroRerolls": 2147483647,
-    "heroLastShopRound": 1,
+    "heroLastShopRound": 0,
     "heroOffer": [],
     "storyMission": "",
     "storyDialogueRound": -1,
-    "time": 41.795074462890628,
+    "time": 34.46915054321289,
     "popular": [
         {
-            "Key": 65,
+            "Key": 0,
             "Value": 1
         },
         {
-            "Key": 61,
+            "Key": 2,
             "Value": 1
         }
     ],
-    "strong": [
-        {
-            "Key": 61,
-            "Value": 48
-        }
-    ]
+    "strong": []
 }

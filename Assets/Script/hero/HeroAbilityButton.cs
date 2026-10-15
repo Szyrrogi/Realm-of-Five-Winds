@@ -1,12 +1,14 @@
 using UnityEngine;
 
-/// <summary>Ikona zdolności bohatera (obiekt świata z Collider2D – tak jak karty Bohater).</summary>
+/// <summary>
+/// Plus z ceną pod opisami zdolności (obiekt świata z BoxCollider2D).
+/// Klik kupuje następną zdolność – najpierw 2, potem 3.
+/// </summary>
 public class HeroAbilityButton : MonoBehaviour
 {
-    [Tooltip("1, 2 albo 3")]
-    public int ability = 1;
-
-    void OnMouseDown() => BohaterInGame.Instance.Buy(ability);
-    void OnMouseEnter() => BohaterInGame.Instance.ShowTooltip(ability);
-    void OnMouseExit() => BohaterInGame.Instance.HideTooltip();
+    void OnMouseDown()
+    {
+        if (BohaterInGame.Instance != null)
+            BohaterInGame.Instance.BuyNext();
+    }
 }
